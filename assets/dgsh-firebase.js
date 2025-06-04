@@ -447,75 +447,99 @@ const ensureFirebaseUser = async function() {
    }
  };
  
- // FIXED: Add scanned code with proper duplicate detection
+// FIXED: Add scanned code using a transaction to avoid duplicates
 const addScannedCode = async function(code, metadata = {}) {
   if (!code) {
     return { success: false, reason: 'invalid_code' };
   }
-  
+
   try {
     console.log('Adding scanned code:', code);
-    
+
     // Ensure user exists first
     await ensureFirebaseUser();
-    
+
     const userId = getUserId();
     if (!userId) {
       return { success: false, reason: 'no_user_id' };
     }
-    
+
     const userDocRef = _db.collection('users').doc(userId);
-    
-    // STEP 1: Get current document to check for duplicates
-    const currentDoc = await userDocRef.get();
-    if (!currentDoc.exists) {
-      return { success: false, reason: 'user_document_not_found' };
+    const MAX_RETRIES = 3;
+    let txnResult;
+
+    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+      try {
+        txnResult = await _db.runTransaction(async tx => {
+          const currentDoc = await tx.get(userDocRef);
+          if (!currentDoc.exists) {
+            throw new Error('user_document_not_found');
+          }
+
+          const data = currentDoc.data();
+          const currentScannedCodes = data.scannedCodes || [];
+
+          const isDuplicate = currentScannedCodes.some(scan => scan.code === code);
+          if (isDuplicate) {
+            return { duplicate: true, newCount: currentScannedCodes.length };
+          }
+
+          const newScan = {
+            code: code,
+            timestamp: Date.now(),
+            ...metadata
+          };
+
+          const updatedScannedCodes = [...currentScannedCodes, newScan];
+
+          tx.update(userDocRef, {
+            scannedCodes: updatedScannedCodes,
+            drawingEntries: updatedScannedCodes.length,
+            lastScanTime: Date.now(),
+            updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+          });
+
+          return { duplicate: false, newCount: updatedScannedCodes.length };
+        });
+
+        // Transaction succeeded, break the retry loop
+        break;
+      } catch (err) {
+        if (attempt === MAX_RETRIES) {
+          throw err;
+        }
+        console.warn(`Transaction attempt ${attempt} failed, retrying...`, err);
+      }
     }
-    
-    const currentData = currentDoc.data();
-    const currentScannedCodes = currentData.scannedCodes || [];
-    
-    // STEP 2: Check for duplicate codes (by code value only, ignore timestamp)
-    const isDuplicate = currentScannedCodes.some(scan => scan.code === code);
-    
-    if (isDuplicate) {
+
+    if (!txnResult) {
+      return { success: false, reason: 'transaction_failed' };
+    }
+
+    if (txnResult.duplicate) {
       console.log('Code already scanned:', code);
-      return { 
-        success: false, 
+      return {
+        success: false,
         reason: 'already_scanned',
-        newCount: currentScannedCodes.length 
+        newCount: txnResult.newCount
       };
     }
-    
-    // STEP 3: Add new scan with timestamp
-    const newScan = {
-      code: code,
-      timestamp: Date.now(),
-      ...metadata
-    };
-    
-    const updatedScannedCodes = [...currentScannedCodes, newScan];
-    
-    // STEP 4: Update the document
-    await userDocRef.update({
-      scannedCodes: updatedScannedCodes,
-      drawingEntries: updatedScannedCodes.length, // Update drawing entries
-      lastScanTime: Date.now(),
-      updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-    });
-    
-    console.log('Code successfully added. New count:', updatedScannedCodes.length);
-    
-    // STEP 5: Invalidate cache to force refresh
+
+    console.log('Code successfully added. New count:', txnResult.newCount);
+
+    // Invalidate cache to force refresh
     invalidateCache('userData');
-    
-    return { 
-      success: true, 
-      newCount: updatedScannedCodes.length 
+
+    return {
+      success: true,
+      newCount: txnResult.newCount
     };
-    
+
   } catch (error) {
-    console.error("Error adding scanned code:", error);
+    console.error('Error adding scanned code:', error);
+    if (error.message === 'user_document_not_found') {
+      return { success: false, reason: 'user_document_not_found' };
+    }
     return { success: false, reason: 'error', message: error.message };
   }
 };

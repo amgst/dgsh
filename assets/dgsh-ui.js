@@ -556,21 +556,30 @@ const DGSHUI = (function() {
 
     try {
       showMessage('Processing QR code...', 'info', 2000);
-      
+
       // STEP 1: Ensure Firebase user exists first
       if (window.DGSHFirebase && DGSHFirebase.ensureFirebaseUser) {
         console.log('Ensuring Firebase user exists...');
         await DGSHFirebase.ensureFirebaseUser();
       }
-      
-      // STEP 2: Try Firebase scan with proper duplicate checking
+
+      // STEP 2: Validate QR code against database
+      if (window.DGSHFirebase && DGSHFirebase.validateQRCode) {
+        const valid = await DGSHFirebase.validateQRCode(code);
+        if (!valid) {
+          showMessage('Invalid or inactive QR code', 'error');
+          return { success: false, reason: 'invalid_code' };
+        }
+      }
+
+      // STEP 3: Try Firebase scan with proper duplicate checking
       let result = { success: false };
-      
+
       if (window.DGSHFirebase && DGSHFirebase.addScannedCode) {
         result = await DGSHFirebase.addScannedCode(code, metadata);
       }
 
-      // STEP 3: Handle result
+      // STEP 4: Handle result
       if (result.success) {
         // Update local count - don't reload everything
         if (_userData) {
