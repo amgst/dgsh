@@ -1,0 +1,408 @@
+{
+  "sections": {
+    "custom_liquid_FtXPHE": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<br><br><BR><center><font color=\"d81d38\"><b><h4>BUY A GOLD PACK, GET A GOLD PACK FREE!<\/h4><\/u><\/b><\/font>"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "bold_discounts_the_sales_app_sale_clock_dfUfHy": {
+          "type": "shopify:\/\/apps\/bold-discounts-the-sales-app\/blocks\/sale-clock\/22ca27ee-084f-4527-b863-69a3cd4c8b2c",
+          "disabled": true,
+          "settings": {
+            "is_preview_enabled": true,
+            "templates": "template_1",
+            "text_align": "center",
+            "font_size": 14,
+            "font_color": "#bf0209",
+            "margin_size": 0,
+            "padding_size": 0,
+            "border_color": "#000000",
+            "border_size": 0,
+            "background_color": "rgba(0,0,0,0)",
+            "custom_css": "#shappify_count_down {}"
+          }
+        },
+        "title_and_price": {
+          "type": "title_and_price",
+          "disabled": true,
+          "settings": {
+            "show_tax_and_shipping": false
+          }
+        },
+        "custom_liquid_KhAwe7": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<h1 class='product-detail__title small-title'>{{ product.title }}<\/h1>"
+          }
+        },
+        "yotpo_product_reviews_ugc_star_rating_QVRcwW": {
+          "type": "shopify:\/\/apps\/yotpo-product-reviews\/blocks\/star-rating\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "bundle_RGUfkW": {
+          "type": "bundle",
+          "settings": {
+            "product_1": "imaginary-ends-gold-pack",
+            "holofoils_1": 7,
+            "product_2": "imaginary-ends-gold-pack-3-pack",
+            "holofoils_2": 21,
+            "product_3": "imaginary-ends-gold-pack-5-pack",
+            "holofoils_3": 35,
+            "product_4": "imaginary-ends-gold-pack-10-pack",
+            "holofoils_4": 70,
+            "default_selection": "1"
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "disabled": true,
+          "settings": {
+            "size_chart_enabled": false,
+            "size_chart_option_name": "Size",
+            "size_chart_page_id": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "disabled": true,
+          "settings": {
+            "show_quantity_selector": true,
+            "enable_payment_button": false,
+            "show_pickup_availability": true,
+            "show_backorder_text": false,
+            "show_inventory_notice": "never",
+            "show_inventory_count": "low",
+            "inventory_notice_threshold": 10
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "full_width": false,
+            "show_tabs": false,
+            "tab_2_title": "",
+            "tab_2_content": "",
+            "tab_2_page": "",
+            "tab_3_title": "",
+            "tab_3_content": "",
+            "tab_3_page": ""
+          }
+        },
+        "sharing": {
+          "type": "sharing",
+          "settings": {}
+        },
+        "product_icons_Lab8RY": {
+          "type": "product_icons",
+          "settings": {
+            "show_product_icons": true,
+            "icon_position": "top-left",
+            "icon_size": 80,
+            "icon_size_mobile": 30,
+            "flex_direction": "column"
+          }
+        }
+      },
+      "block_order": [
+        "bold_discounts_the_sales_app_sale_clock_dfUfHy",
+        "title_and_price",
+        "custom_liquid_KhAwe7",
+        "yotpo_product_reviews_ugc_star_rating_QVRcwW",
+        "bundle_RGUfkW",
+        "variant_picker",
+        "buy_buttons",
+        "description",
+        "sharing",
+        "product_icons_Lab8RY"
+      ],
+      "settings": {
+        "enable_sticky_media": true,
+        "media_size": "medium",
+        "media_layout": "thumbnails-below",
+        "enable_video_looping": false
+      }
+    },
+    "1732136480dd5b8c60": {
+      "type": "apps",
+      "blocks": {
+        "videeo_mobile_commerce_custom_popclips_carousel_fgjMYr": {
+          "type": "shopify:\/\/apps\/videeo-mobile-commerce\/blocks\/custom-popclips-carousel\/acf9f8eb-c211-4324-a19b-9f362f43b225",
+          "settings": {
+            "published_carousel_id": "01JD5P1QFHHSNDA068KWJY6C7M"
+          }
+        }
+      },
+      "block_order": [
+        "videeo_mobile_commerce_custom_popclips_carousel_fgjMYr"
+      ],
+      "settings": {
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "card_styles_qMW4CU": {
+      "type": "card-styles",
+      "settings": {
+        "h2_font_size": 48,
+        "h2_font_size_m": 32,
+        "h3_font_size": 26,
+        "h3_font_size_m": 26,
+        "p_font_size": 22,
+        "p_font_size_m": 18,
+        "button_font_size": 28,
+        "img_animation": 800,
+        "main_color": "#3e117c",
+        "background_image": "shopify:\/\/shop_images\/Rainbow-back1.png"
+      }
+    },
+    "cards_multi_section_6YLKnd": {
+      "type": "cards-multi-section",
+      "blocks": {
+        "cards_3ArDAa": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/goldpacks1_5b2ed16e-78c5-494c-9a63-d2d378ca4bbf.png",
+            "card_description": "Each Imaginary Ends Gold Pack Comes with <b>7 guaranteed holofoils<\/b> from the Imaginary Ends expansion."
+          }
+        },
+        "cards_DXWMVV": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/goldpacks2_598a40a6-6de6-4ee8-a222-622fd91a7145.png",
+            "card_description": "Each Imaginary Ends holofoil is marked with a rarity tier symbol ranging from <b>Common to Relic!<\/b>"
+          }
+        },
+        "cards_Fw4ALn": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/goldpacks3b.png",
+            "card_description": "All the Doomlings from the Imaginary Ends Expansion can be found as holofoils. But the \n<b>rare Relic Doomlings<\/b> can only be found in holofoil form."
+          }
+        },
+        "cards_Wa6FGg": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/goldpacks4_c15650d4-9402-475e-88d0-8b6f2abb30fb.png",
+            "card_description": "There are also rare alt art cards you can find as holofoils, as well as some <b>additional surprises...<\/b>"
+          }
+        }
+      },
+      "block_order": [
+        "cards_3ArDAa",
+        "cards_DXWMVV",
+        "cards_Fw4ALn",
+        "cards_Wa6FGg"
+      ],
+      "custom_css": [],
+      "settings": {
+        "card_id": "deeplings",
+        "section_title": "",
+        "sub_section_title": "WHAT'S IN THE GOLD PACK?",
+        "back_desk": "shopify:\/\/shop_images\/DesktopBG_6edcd1fb-b814-4305-8e0a-f389d701d0e6.png",
+        "back_mob": "shopify:\/\/shop_images\/MobileBG_decefeb4-ca43-4673-a401-08fd0cea3a48.png",
+        "back_color": "",
+        "image_1": "shopify:\/\/shop_images\/gold1_f7f0852d-62db-4250-b419-cec77f3061fa.png",
+        "image_2": "shopify:\/\/shop_images\/cards_eb90a4aa-ade1-44eb-861c-3be08353f670.png",
+        "image_3": "shopify:\/\/shop_images\/gold2_857d27d8-894a-46c2-895c-a9b35ca61b9b.png",
+        "full_width": true,
+        "btn_enable": true,
+        "button_custom": true,
+        "button_custom_color": "#ffffff",
+        "button_custom_back_color": "#ed0782",
+        "button_custom_hover_color": "#ed0782",
+        "button_text": "GET GOLD PACKS",
+        "button_link": ""
+      }
+    },
+    "cards_multi_columns_6k8DDV": {
+      "type": "cards-multi-columns",
+      "blocks": {
+        "boxes_L38JE7": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/common_7dc8501c-4066-4e52-86e2-100d6238f4fa.png",
+            "box_title": "",
+            "box_link": "#glitterlings",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_NBwbFk": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/unusual_313e3a12-a936-4743-93aa-440b41a5a828.png",
+            "box_title": "",
+            "box_link": "#fuzelings",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_WjT8cy": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/scarce_ab033d57-7ad7-4d6a-8627-f7b376afbf6a.png",
+            "box_title": "",
+            "box_link": "#moonlings",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_CXeh9B": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/endangered.png",
+            "box_title": "",
+            "box_link": "",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_NGwgDC": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/legendary.png",
+            "box_title": "",
+            "box_link": "",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_LCkWkr": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/relic.png",
+            "box_title": "",
+            "box_link": "#deeplings",
+            "open_in_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "boxes_L38JE7",
+        "boxes_NBwbFk",
+        "boxes_WjT8cy",
+        "boxes_CXeh9B",
+        "boxes_NGwgDC",
+        "boxes_LCkWkr"
+      ],
+      "disabled": true,
+      "settings": {
+        "padding_top": 8,
+        "padding_bottom": 24,
+        "section_title": "<h2>DISCOVER\n<strong>6 RARITY TIERS<\/strong> <\/h2>",
+        "background_image": "shopify:\/\/shop_images\/ImaginaryEnds_sparkle2_copy.jpg",
+        "img_size": 260,
+        "enable_hover_effect": false,
+        "hover_scale": 105,
+        "arrow_style": "default",
+        "arrow_width": 23,
+        "arrow_height": 46,
+        "mobile_autoplay": true
+      }
+    },
+    "cards_title_BdYUhK": {
+      "type": "cards-title",
+      "settings": {
+        "section_title": "<h2>\n<strong>6 RARITY TIERS<\/strong> TO DISCOVER<\/h2>"
+      }
+    },
+    "plush_hero_arTrBT": {
+      "type": "plush-hero",
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/raritytiers_desktop2_a2911ffc-0ba0-48a8-a17b-6fdba024db59.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/raritytiers_mobile2_e37c9dfa-a420-4561-ac6d-b5cd44c5b4ce.jpg",
+        "desk-hero-alt": "rarity tier icons - common, unusual, scarce, endangered, legendary, relic. 44% chance to be common, 30% chance to be unusual, 13% chance to be scarce, 8% chance to be endangered, 3% chance to be legendary, 2% chance to be relic\/other. *each card has a 20% chance to be alt art.",
+        "button_link": ""
+      }
+    },
+    "custom_liquid_aDyi6N": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br><br>"
+      }
+    },
+    "plush_hero_hXnxwN": {
+      "type": "plush-hero",
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/ie_banner.png",
+        "mob-hero": "shopify:\/\/shop_images\/ie_banner_m.png",
+        "desk-hero-alt": "just want the game cards? No problem! Get the Imaginary Ends Expansion ready to play now! buy now - image of imaginary ends box",
+        "button_link": "shopify:\/\/products\/imaginary-ends"
+      }
+    },
+    "recent": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {
+        "show_recently_viewed": true,
+        "show_vendor": false
+      }
+    },
+    "1715807764413a9b63": {
+      "type": "apps",
+      "blocks": {
+        "yotpo_product_reviews_ugc_reviews_UVPbJr": {
+          "type": "shopify:\/\/apps\/yotpo-product-reviews\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "reviews_from_amazon_amazon_reviews_Fzr3yk": {
+          "type": "shopify:\/\/apps\/reviews-from-amazon\/blocks\/Amazon reviews\/d2a0c9ad-3f97-43c4-9e0c-bc1a4007a201",
+          "settings": {
+            "heading": "Amazon reviews"
+          }
+        }
+      },
+      "block_order": [
+        "yotpo_product_reviews_ugc_reviews_UVPbJr",
+        "reviews_from_amazon_amazon_reviews_Fzr3yk"
+      ],
+      "settings": {
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "title": "You may also like",
+        "grid": 4,
+        "show_vendor": false
+      }
+    },
+    "custom_liquid_MaTF8R": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script>\n  window.addEventListener('load', function() {\n  var _learnq = window._learnq || [];\n  function addedToCart() {\n   fetch(`${window.location.origin}\/cart.js`)\n   .then(res => res.clone().json().then(data => {\n    var cart = {\n      total_price: data.total_price\/100,\n      $value: data.total_price\/100,\n      total_discount: data.total_discount,\n      original_total_price: data.original_total_price\/100,\n      items: data.items\n    }\n    if (item !== 'undefined') {\n      cart = Object.assign(cart, item)\n    }\n    if (klAjax) {\n       _learnq.push(['track', 'Added to Cart', cart]);\n       klAjax = false;\n      }\n   }))\n  };\n  (function (ns, fetch) {\n    ns.fetch = function() {\n      const response = fetch.apply(this, arguments);\n      response.then(res => {\n        if (`${window.location.origin}\/cart\/add.js`\n          .includes(res.url) && res.url !== '') {\n              addedToCart()\n        }\n      });\n      return response\n     }\n  }(window, window.fetch));\n  var klAjax = true;\n  var atcButtons = document.querySelectorAll(\"form[action*='\/cart\/add'] button[type='submit']\");\n  for (var i = 0; i < atcButtons.length; i++) { \n    atcButtons[i].addEventListener(\"click\", function() {\n      if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', item]);\n        klAjax = false;\n      }\n    })\n  }\n  });\n<\/script>"
+      }
+    },
+    "custom_liquid_RXU9xM": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script>\n  window.addEventListener('load', function() {\n  var _learnq = window._learnq || [];\n  function addedToCart() {\n   fetch(`${window.location.origin}\/cart.js`)\n   .then(res => res.clone().json().then(data => {\n    var cart = {\n      total_price: data.total_price\/100,\n      $value: data.total_price\/100,\n      total_discount: data.total_discount,\n      original_total_price: data.original_total_price\/100,\n      items: data.items\n    }\n    if (item !== 'undefined') {\n      cart = Object.assign(cart, item)\n    }\n    if (klAjax) {\n       _learnq.push(['track', 'Added to Cart', cart]);\n       klAjax = false;\n      }\n   }))\n  };\n  (function (ns, fetch) {\n    ns.fetch = function() {\n      const response = fetch.apply(this, arguments);\n      response.then(res => {\n        if (`${window.location.origin}\/cart\/add.js`\n          .includes(res.url) && res.url !== '') {\n              addedToCart()\n        }\n      });\n      return response\n     }\n  }(window, window.fetch));\n  var klAjax = true;\n  var atcButtons = document.querySelectorAll(\"form[action*='\/cart\/add'] button[type='submit']\");\n  for (var i = 0; i < atcButtons.length; i++) { \n    atcButtons[i].addEventListener(\"click\", function() {\n      if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', item]);\n        klAjax = false;\n      }\n    })\n  }\n  });\n<\/script>"
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_FtXPHE",
+    "main",
+    "1732136480dd5b8c60",
+    "card_styles_qMW4CU",
+    "cards_multi_section_6YLKnd",
+    "cards_multi_columns_6k8DDV",
+    "cards_title_BdYUhK",
+    "plush_hero_arTrBT",
+    "custom_liquid_aDyi6N",
+    "plush_hero_hXnxwN",
+    "recent",
+    "1715807764413a9b63",
+    "recommendations",
+    "custom_liquid_MaTF8R",
+    "custom_liquid_RXU9xM"
+  ]
+}

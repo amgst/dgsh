@@ -1,0 +1,123 @@
+.markets-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;  
+}
+
+.markets-wrapper-target {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}      
+
+.markets-wrapper .btn-amazon-wrapper {
+/*  display: flex;*/
+  justify-content: center;
+}
+
+.markets-wrapper .btn-amazon,
+.markets-wrapper .btn-target,
+.markets-wrapper .btn-walmart {
+  justify-content: center;  
+  font-family: Lato, sans-serif;
+  border: 0;
+  outline: none;
+  box-shadow: none !important;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 20px;
+  text-transform: uppercase;
+  transition: all .3s ease;
+}
+.markets-wrapper.markets-wrapper-target{ flex-direction:column; }
+.markets-wrapper.markets-wrapper-target .btn-target {
+    padding: 12px 24px !important;
+}
+   
+  
+
+.markets-wrapper .btn-amazon,
+.markets-wrapper .btn-walmart {
+width: auto !important;
+}
+.markets-wrapper .btn-target{ width:100%; }
+.markets-wrapper .btn-amazon {
+  background-color: #fd8609 !important;
+  color: #fff !important;
+  padding: 10px 18px !important;
+  align-items: flex-end;
+  display: inline-flex ;
+}
+
+.markets-wrapper .btn-target {
+  background-color: #ae000a !important;
+  color: #fff !important;
+  padding: 9px 24px !important;
+  align-items: center;
+  display: inline-flex ;
+}
+
+.markets-wrapper .btn-walmart {
+  background-color: #0a5ac3 !important;
+  color: #fff !important;
+  padding: 9px 24px !important;
+  align-items: center;
+  display: inline-flex;
+}
+
+
+.markets-wrapper .btn-target img,
+.markets-wrapper .btn-walmart img {
+  max-width: 98px;
+}
+
+.markets-wrapper .btn-amazon img {
+  margin-bottom: -2px;
+}
+.markets-wrapper span{ min-width:52px; }
+.markets-wrapper span.before,
+.markets-wrapper span.after {
+  text-transform: none;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+.markets-wrapper span.before {
+  margin-right: 6px;
+}
+
+.markets-wrapper span.after {
+  margin-left: 7px;
+}
+
+.markets-wrapper span.buywith {
+  text-align: center;
+  display: block;
+  margin: 10px 0;
+  font-weight: bold;
+}   
+@media screen and (min-width: 1100px) {
+  .markets-wrapper {
+    flex-direction: row;
+  }
+}
+.markets-wrapper-target { margin-bottom: 20px;} 
+
+@media screen and (max-width: 750px) {
+
+.markets-wrapper-wallmart {  
+  display: flex; 
+  justify-content: center;
+  flex-direction: column;
+  
+}  
+  .markets-wrapper .btn-walmart {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .markets-wrapper .btn-walmart {
+    margin-right: 15px;
+  }
+}

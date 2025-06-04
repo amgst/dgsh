@@ -1,0 +1,205 @@
+{
+  "sections": {
+    "plush_hero_UhfQQN": {
+      "type": "plush-hero",
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/HeroTest_B_Desktop.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/HeroTest_B_Mobile.jpg",
+        "desk-hero-alt": "Doomlings cards and plushies with the words 'delightful friends for the end of the world!' button: shop now",
+        "button_link": "shopify:\/\/collections\/all"
+      }
+    },
+    "2090b1d6-52d0-4058-984e-b978d272778b": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "h1 {display: none;}"
+      ],
+      "settings": {
+        "custom_liquid": "<h1>Doomlings - The Best Card Game For The End of The World!<\/h1>"
+      }
+    },
+    "packages_zgrrFj": {
+      "type": "packages",
+      "blocks": {
+        "package_LXzwz3": {
+          "type": "package",
+          "settings": {
+            "package_title": "Classic Game",
+            "product_image": "shopify:\/\/shop_images\/ClassicGame_Display_Website_509f172d-724b-492e-8277-242eb4680e90.jpg",
+            "product_link": "classic-doomlings-game",
+            "product_details": "<li>\n<span>•<\/span>  Base Game (167 cards)<\/li>\n<li>\n<span>•<\/span>  1 Collectible Mystery Holofoil<\/li>",
+            "product_linkcompare": "300-doomsleeves",
+            "price_adj_enable": false,
+            "enable_value_header": false,
+            "value_header_text": "",
+            "value_icon": "shopify:\/\/shop_images\/star.png",
+            "btn_text": "Order Now"
+          }
+        },
+        "package_c3G4Lf": {
+          "type": "package",
+          "settings": {
+            "package_title": "Deluxe Bundle",
+            "product_image": "shopify:\/\/shop_images\/DeluxeBundle_Display_BoxBigger_72723148-7891-4b08-8e21-fba470254d3a.jpg",
+            "product_link": "doomlings-deluxe-bundle",
+            "product_details": "<li>\n<span>•<\/span>  Base Game<\/li>\n<li>\n<span>•<\/span>  5 Upgrade Expansions<\/li>\n<li>\n<span>•<\/span>  3 Collectible Mystery Holofoils<\/li>\n<li>\n<span>•<\/span>  Art-Deco Game Box<\/li>\n<li>\n<span>•<\/span>  Community Playmat<\/li>",
+            "product_linkcompare": "deluxe-value",
+            "price_adj_enable": true,
+            "enable_value_header": true,
+            "value_header_text": "Most Popular",
+            "btn_text": "Order Now"
+          }
+        },
+        "package_AAhjhG": {
+          "type": "package",
+          "settings": {
+            "package_title": "Ultimate Bundle",
+            "product_image": "shopify:\/\/shop_images\/UltimateBundle_Display_Website.jpg",
+            "product_link": "doomlings-ultimate-bundle",
+            "product_details": "<li>\n<span>•<\/span>  Base Game<\/li>\n<li>\n<span>•<\/span>  5 Upgrade Expansions<\/li>\n<li>\n<span>•<\/span>  7 Collectible Mystery Holofoils<\/li>\n<li>\n<span>•<\/span>  Overlush Mystery Expansion<\/li>\n<li>\n<span>•<\/span>  Wooden Collector’s Box<\/li>\n<li>\n<span>•<\/span>  Art-Deco Game Box<\/li>\n<li>\n<span>•<\/span>  Community Playmat<\/li>\n<li>\n<span>•<\/span>  6 Individual Playmats<\/li>\n<li>\n<span>•<\/span>  300 DoomSleeves<\/li>\n<li>\n<span>•<\/span>  5 Sparkly Enamel Pins<\/li>",
+            "product_linkcompare": "ultimate-value",
+            "price_adj_enable": true,
+            "enable_value_header": true,
+            "value_header_text": "Best Value",
+            "value_icon": "shopify:\/\/shop_images\/star_55c59501-cac4-47d9-b4ca-2842faded55c.png",
+            "btn_text": "Order Now"
+          }
+        }
+      },
+      "block_order": [
+        "package_LXzwz3",
+        "package_c3G4Lf",
+        "package_AAhjhG"
+      ],
+      "settings": {
+        "section_title": "",
+        "padding_top": 40,
+        "padding_bottom": 28
+      }
+    },
+    "video_simple_AThJyy": {
+      "type": "video-simple",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "section_title": "HOW TO PLAY",
+        "video_url": "https:\/\/player.vimeo.com\/video\/763924993",
+        "cover_image": "shopify:\/\/shop_images\/VideoExplained_5482f7ae-f983-418f-b6d2-4272584d1b2e.png",
+        "video_width": 650,
+        "autoplay": true,
+        "loop": false,
+        "mute": false,
+        "button_text": "Are You Ready?",
+        "button_link": "shopify:\/\/collections\/games"
+      }
+    },
+    "find_us_ta83gV": {
+      "type": "find-us",
+      "blocks": {
+        "find_deEBQ8": {
+          "type": "find",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/Target_c302f804-3305-4fdf-88be-fbe544ec640c.png",
+            "image_link": ""
+          }
+        },
+        "find_Kcqf3C": {
+          "type": "find",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/Walmart_66c832bd-46ee-4b5b-adb4-2034881af88d.png",
+            "image_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "find_deEBQ8",
+        "find_Kcqf3C"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "section_title": "Find Us At"
+      }
+    },
+    "quote_section_GpmX4f": {
+      "type": "quote-section",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "quote": "This game is the worst, I never win!",
+        "quote_author": "Joel McHale",
+        "video": "https:\/\/youtu.be\/afoamAWYxNQ",
+        "custom_image": "shopify:\/\/shop_images\/joel-rev-light-new.png",
+        "brand_image": "shopify:\/\/shop_images\/Characters_Lockup_Desktop_688d09e8-c024-42b2-9cae-c30305256915.png",
+        "brand_image_mobile": "shopify:\/\/shop_images\/WhatIsThat_B.png",
+        "button_text": "Better Reviews",
+        "button_link": "shopify:\/\/pages\/read-reviews"
+      }
+    },
+    "reviews_LLcajF": {
+      "type": "reviews",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "section_title": ""
+      }
+    },
+    "brands_jRydW7": {
+      "type": "brands",
+      "blocks": {
+        "brands_GpVAka": {
+          "type": "brands",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/us-weekly-logo_9cbb0ec2-7ef3-48a5-8f94-a5b2b10b1ce2.png"
+          }
+        },
+        "brands_4yKU44": {
+          "type": "brands",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/buzzfeed-logo_3053fe3f-4525-455b-937a-0cf9360191e5.png"
+          }
+        },
+        "brands_hTkWn3": {
+          "type": "brands",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/et-logo_c52d5e83-912c-48ef-a855-bada667c1b4a.png"
+          }
+        },
+        "brands_EmdezL": {
+          "type": "brands",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/entrepeneur-logo_dcf35a37-d2a6-4ff0-8032-7983b79a09f1.png"
+          }
+        },
+        "brands_qyMxt9": {
+          "type": "brands",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/rs_logo-simp_ad3b7c76-6f22-4318-97a0-6b28f3ef46a3.png"
+          }
+        }
+      },
+      "block_order": [
+        "brands_GpVAka",
+        "brands_4yKU44",
+        "brands_hTkWn3",
+        "brands_EmdezL",
+        "brands_qyMxt9"
+      ],
+      "settings": {
+        "padding_top": 60,
+        "padding_bottom": 0,
+        "section_title": "As Seen on"
+      }
+    }
+  },
+  "order": [
+    "plush_hero_UhfQQN",
+    "2090b1d6-52d0-4058-984e-b978d272778b",
+    "packages_zgrrFj",
+    "video_simple_AThJyy",
+    "find_us_ta83gV",
+    "quote_section_GpmX4f",
+    "reviews_LLcajF",
+    "brands_jRydW7"
+  ]
+}

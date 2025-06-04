@@ -1,0 +1,283 @@
+{% comment %} this snippet is updated automatically - DO NOT EDIT! {% endcomment %}
+{% assign displaySettings = shop.metafields.mas_bb_config.settings.value %}
+<script type="text/javascript">
+    window.masBackStock = window.masBackStock || {};
+    window.masBackStock.settings = {{ shop.metafields.mas_bb_config.settings }};
+    window.masBackStock.currency = '{{ cart.currency.symbol }}';
+	{% if product %}
+	   window.masBackStock.map = [];
+  	   {% for variant in product.variants %}
+        {% if variant.metafields.mas_bb_disp %}
+  			{% if variant.metafields.mas_bb_disp.state %}
+              window.masBackStock.map.push({
+                id:'{{ variant.id }}',
+                state:{{ variant.metafields.mas_bb_disp.state.value | json }},
+                price:'{{ variant.price | money_without_trailing_zeros }}'
+              });
+  			{% endif %}
+        {% endif %}
+	   {% endfor %}
+    {% endif %}
+
+    {% assign backstockAllowed = true %}
+    {% if displaySettings.advanced_customertags != blank %}
+      {% assign backstockAllowed = false %}
+      {% for tag in displaySettings.advanced_customertags %}
+        {% if customer.tags contains tag %}
+    		{% assign backstockAllowed = true %}
+        {% endif %}
+    	{% endfor %}
+    {% endif %}
+</script>
+
+{% if backstockAllowed == true and displaySettings.display_active == true %}
+<script type="text/javascript">
+  async function mas_backstock_prepareaddtocart(variantId,init=true){
+    
+     //await new Promise(resolve => setTimeout(resolve, 3000));
+     console.log('BackStock product Variant add to cart form prep');
+    
+    let form = document.querySelectorAll('.ajax-product-form')[1] || document.querySelectorAll('.ajax-product-form')[0] || document.querySelectorAll('form[action="/cart/add"]')[0];
+console.log(form);    
+let qtyFormExt = document.querySelectorAll('quantity-input')[0]; // dawn
+    let btnAdd = document.querySelectorAll('[name="add"]:not([mas-backstock-button])')[0] || form.firstChild;
+    let masterSelect = form.querySelector('[name="id"]');
+    
+    if(variantId=='cur' && masterSelect) variantId = masterSelect.value;
+    else if(!variantId) return false;
+        
+    let pre = window.masBackStock.map.find(v=>v.id==variantId);
+    if(pre && form && ((pre || {}).state || {}).is_backorderable===true && ['in_stock','backordered','restocked'].indexOf(((pre || {}).state || {}).status)!==-1){
+
+      let btnBackorder = form.querySelector(`[mas-backstock-button]`);
+      let btnBackorderTxt = form.querySelector(`[mas-backstock-label]`);
+      let inputQty = ((typeof qtyFormExt)!=='undefined') ? qtyFormExt.querySelector('[name="quantity"]') : form.querySelector('[name="quantity"]');
+      let inputQtyValue = (inputQty) ? Number(inputQty.value) : 1;
+
+	  if(!btnBackorder){        
+        btnBackorder = document.createElement('button');
+        btnBackorder.style.display = 'none';
+        btnBackorder.classList = btnAdd.classList;
+        btnBackorder.classList.remove('btn-addtocart'); // patch custom theme js 09.15.21
+        btnBackorder.setAttribute('type','button');
+        btnBackorder.setAttribute('mas-backstock-button',true);
+        btnBackorder.classList.add('mas-backstock-preorder-btn');
+        btnBackorder.classList.add('mas-backstock-cstm-preorder-btn');
+        if(btnAdd.id) btnBackorder.id = btnAdd.id;
+
+        btnAdd.parentNode.insertBefore(btnBackorder,btnAdd);
+        btnBackorder.addEventListener('click',function(evt){ _mas_backstock_addbackorder(form,pre,evt); }, false);
+      }
+
+      if(!btnBackorderTxt){   
+        btnBackorderTxt = document.createElement('div');
+        btnBackorderTxt.style.display = 'none';
+        btnBackorderTxt.setAttribute('mas-backstock-label',true);
+        btnBackorderTxt.classList.add('mas-backstock-preorder-label');
+        btnBackorderTxt.classList.add('mas-backstock-cstm-preorder-label');
+
+        if(form.classList.contains('shopify-product-form')) form.prepend(btnBackorderTxt); 
+        else btnBackorder.parentNode.insertBefore(btnBackorderTxt,btnBackorder);
+      }  
+
+      (form.querySelectorAll('[data-mas-backstock-property-label]') || []).forEach(node => node.remove());  
+      
+
+      /* BackStock or Live offer Switchboard */
+      if(inputQtyValue > pre.state.left){   					// Map to backorder offer
+		  
+          if(masterSelect.value!=pre.id) masterSelect.value = pre.id;
+          if(inputQtyValue > pre.state.limit){
+            inputQty.value = pre.state.limit; 					// attempt to ensure limit before add to cart
+          }
+
+          if(!btnBackorder.innerHTML) btnBackorder.innerHTML = '{{ displaySettings.display_preorder | default: 'Backorder' }}';
+
+          if(btnBackorder.hasAttribute('aria-disabled')) btnBackorder.removeAttribute('aria-disabled');
+          if(btnBackorder.hasAttribute('disabled')) btnBackorder.removeAttribute('disabled');
+          
+          btnBackorderTxt.innerHTML = '{{ displaySettings.display_preorder | default: 'Backorder' }}: '+pre.state.label;
+          btnBackorderTxt.classList.add('mas-backstock-preorder-label');
+          btnBackorderTxt.classList.remove('mas-backstock-preorder-instock-label');
+
+          let labelProp = document.createElement("INPUT");
+    	    labelProp.setAttribute('type','hidden');
+    	                
+    	    if(pre.state.selling_plan_id){
+labelProp.setAttribute('name','selling_plan');
+labelProp.setAttribute('value',pre.state.selling_plan_id);
+}else{
+labelProp.setAttribute('name','properties[{{ displaySettings.display_preorder | default: 'Backorder' }}]');
+labelProp.setAttribute('value',pre.state.label);
+}
+
+    	    labelProp.setAttribute('data-mas-backstock-property-label',true);
+    	    form.prepend(labelProp); 
+
+          btnBackorder.style.display = 'block';
+          btnBackorderTxt.style.display = 'block';
+          btnAdd.style.display = 'none';
+          
+          setTimeout(() => btnAdd.style.display = 'none',300);  // Simple theme
+          {% if theme.name == 'Dawn' %}
+          form.addEventListener('submit', function(event) {     // Dawn theme - the way the form is serialized for fetch doesnt include properties
+          	event.stopImmediatePropagation();
+          }, true);
+          {% endif %}
+          
+          setTimeout(() => btnBackorder.classList.remove('mincartDisabled'),300);  // Hero theme
+          
+      }else{													// Live offer
+          
+          (form.querySelectorAll('[data-mas-backstock-property-label]') || []).forEach(node => node.remove());          
+
+          if(pre.state.label_instock){
+          	btnBackorderTxt.style.display = 'block';
+          	btnBackorderTxt.innerHTML = pre.state.label_instock;
+          	btnBackorderTxt.classList.remove('mas-backstock-preorder-label');
+          	btnBackorderTxt.classList.add('mas-backstock-preorder-instock-label');
+          }else{           
+            btnBackorderTxt.style.display = 'none';
+            btnBackorderTxt.classList.add('mas-backstock-preorder-label');
+            btnBackorderTxt.classList.remove('mas-backstock-preorder-instock-label');
+          }
+          
+          btnBackorder.style.display = 'none';        
+          btnBackorder.setAttribute('aria-disabled',true);
+          btnBackorder.setAttribute('disabled',true);
+          btnAdd.style.display = 'block';
+        
+      }
+      
+    }else{													// Clear additions if exist (ie variant change)
+
+    	if(document.querySelector(`[mas-backstock-button]`)) 
+          document.querySelector(`[mas-backstock-button]`).style.display = 'none';
+      if(document.querySelector(`[mas-backstock-label]`)) 
+          document.querySelector(`[mas-backstock-label]`).style.display = 'none';
+      if(typeof btnAdd !== 'undefined') btnAdd.style.display = 'block';
+        
+      (form.querySelectorAll('[data-mas-backstock-property-label]') || []).forEach(node => node.remove());  
+      
+    }
+    
+    
+    if(init){      											// set up qty and variant change listeners to reloop
+        (form.querySelectorAll('[name="quantity"]') || []).forEach(node => {
+          node.addEventListener('input',function(evt){ mas_backstock_prepareaddtocart('cur',false); }, false);
+        });
+        (form.querySelectorAll('.js-qty__adjust,.js--qty-adjuster,.quantity-input__button,.QuantitySelector__Button') || []).forEach(node => { // Brooklyn,Supply,Express
+          setTimeout(() => node.addEventListener('click',function(evt){ mas_backstock_prepareaddtocart('cur',false); }, false),200);
+        });
+
+        if((typeof qtyFormExt)!=='undefined'){        		// dawn - qty input is outside of form
+          (qtyFormExt.querySelectorAll('[name="quantity"]') || []).forEach(node => {
+            node.addEventListener('input',function(evt){ mas_backstock_prepareaddtocart('cur',false); }, false);
+          });
+          (qtyFormExt.querySelectorAll('.quantity__button') || []).forEach(node => {
+            setTimeout(() => node.addEventListener('click',function(evt){ mas_backstock_prepareaddtocart('cur',false); }, false),200);
+          });        
+        }
+      
+      	let dynQty = form.querySelector('.product-form__item--quantity'); // Venture redraws the qty box
+        if(dynQty){	
+          const observer = new MutationObserver((list,obs) => {
+            (form.querySelectorAll('[name="quantity"]') || []).forEach(node => {
+              node.addEventListener('input',function(evt){ mas_backstock_prepareaddtocart('cur',false); }, false);
+            });
+            (form.querySelectorAll('.js-qty__adjust,.js--qty-adjuster') || []).forEach(node => { // Brooklyn,Supply
+              node.addEventListener('click',function(evt){ mas_backstock_prepareaddtocart('cur',false); }, false);
+            });
+          });
+    	  observer.observe(dynQty,{attributes:false, childList:true, subtree:true});
+        }     
+    }  
+console.log('BackStock product Variant form prepared.');    
+  }
+  
+  
+  function _mas_backstock_addbackorder(form,pre,evt=null){    
+    if(evt) evt.preventDefault(); 					                                    // in case button would submit form before we update cart form..
+    let submitForm = document.querySelectorAll('[name="add"]')[0] || form.querySelectorAll('[data-product-add],.add_to_cart')[0]; 
+    if(submitForm){									// enable (in case of sold-out default) and simply submit for any cart or ajax
+    	  evt.target.innerHTML = '{{ displaySettings.display_preorder | default: 'Backorder' }} Added.';
+        setTimeout(() => evt.target.innerHTML = '{{ displaySettings.display_preorder | default: 'Backorder' }}',3000);
+        
+        evt.target.setAttribute('aria-disabled',true);
+        evt.target.setAttribute('disabled',true);
+        
+        if(submitForm.hasAttribute('aria-disabled')) submitForm.removeAttribute('aria-disabled');
+        if(submitForm.hasAttribute('disabled')) submitForm.removeAttribute('disabled');
+        submitForm.click();
+    }
+  }
+  
+ 
+  {% if product %}
+  document.addEventListener("DOMContentLoaded",() => { 
+    mas_backstock_prepareaddtocart('{{ product.selected_or_first_available_variant.id }}',true) 
+  });
+   
+  document.addEventListener('DOMContentLoaded', function(){	// Modern themes that use pushstate to track variant changes
+    function masUsePushState(handler){
+      function track (fn, handler, before) {
+        return function interceptor () {
+          if (before) {
+            handler.apply(this, arguments);
+            return fn.apply(this, arguments);
+          } else {
+            var result = fn.apply(this, arguments);
+            handler.apply(this, arguments);
+            return result;
+          }
+        };
+      }
+      function masVariantHandler () {
+        let newVariantId = window.location.search.replace(/.*variant=(\d+).*/, '$1');
+        if(newVariantId) handler(newVariantId);
+        else return;
+      }
+
+      // Assign listeners
+      window.history.pushState = track(history.pushState, masVariantHandler);
+      window.history.replaceState = track(history.replaceState, masVariantHandler);
+      window.addEventListener('popstate', masVariantHandler);
+    }
+    masUsePushState(function(variantId){
+      mas_backstock_prepareaddtocart(variantId,false);
+    });
+  });  
+  {% endif %}
+
+function wait(time) {
+    return new Promise(resolve => {
+        setTimeout(resolve, time);
+    });
+}
+console.log('Mercantile apps - BackStock snippet loaded.');
+</script>
+{% endif %}
+
+
+<style>
+  .mas-backstock-preorder-btn{
+    color: {{ displaySettings.display_preorderbtn_color | default: 'var(--color-body)' }} !important;
+    background-color: {{ displaySettings.display_preorderbtn_backgroundColor | default: 'var(--color-btn-primary)' }} !important;
+    font-weight:700
+  }
+  .mas-backstock-preorder-label{
+    color: {{ displaySettings.display_preorderlabel_color | default: '#8e4246' }};
+    width:100%;
+    padding-top: 0rem;
+    padding-bottom: 0.25rem;
+  }
+  .mas-backstock-preorder-instock-label{
+    color: {{ displaySettings.display_preorderlabel_instock_color | default: '#8e4246' }};
+    width:100%;
+    padding-top: 0rem;
+    padding-bottom: 0.25rem;
+  }
+  .btn+.btn, .shopify-payment-button .btn+.shopify-payment-button__button--unbranded, .shopify-payment-button .shopify-payment-button__button--unbranded+.btn, .shopify-payment-button .shopify-payment-button__button--unbranded+.shopify-payment-button__button--unbranded {
+    margin-left: 0px !important;
+  }
+</style>

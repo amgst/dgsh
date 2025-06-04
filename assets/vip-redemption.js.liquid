@@ -1,0 +1,276 @@
+// Storefront API Access Token
+const STOREFRONT_ACCESS_TOKEN = 'f5eb890cd8a49b501297b3999c4e3d91';
+
+// Add rate limiting
+const RATE_LIMIT = {
+  attempts: 0,
+  lastAttempt: 0,
+  maxAttempts: 5,
+  resetTime: 60000 // 1 minute
+};
+
+async function handleCodeSubmit(event) {
+  event.preventDefault();
+  
+  // Rate limiting check
+  const now = Date.now();
+  if (now - RATE_LIMIT.lastAttempt < RATE_LIMIT.resetTime) {
+    RATE_LIMIT.attempts++;
+    if (RATE_LIMIT.attempts > RATE_LIMIT.maxAttempts) {
+      alert('Too many attempts. Please try again later.');
+      return false;
+    }
+  } else {
+    RATE_LIMIT.attempts = 1;
+    RATE_LIMIT.lastAttempt = now;
+  }
+  
+  const form = event.target;
+  const input = form.querySelector('#redeemCode');
+  const submitButton = form.querySelector('button[type="submit"]');
+  const messageDiv = form.querySelector('.overlush-redeem__message');
+  
+  // Sanitize inputs
+  const discountCode = input.value.trim().replace(/[^a-zA-Z0-9-_]/g, '');
+  const productId = form.getAttribute('data-product-id');
+
+  // Enhanced validation
+  if (!discountCode) {
+    messageDiv.textContent = 'Please enter a discount code';
+    messageDiv.className = 'overlush-redeem__message overlush-redeem__message--error';
+    return false;
+  }
+
+  if (!productId || isNaN(parseInt(productId))) {
+    messageDiv.textContent = 'Invalid product configuration';
+    messageDiv.className = 'overlush-redeem__message overlush-redeem__message--error';
+    return false;
+  }
+
+  // Disable form during check
+  input.setAttribute('readonly', 'readonly');
+  submitButton.disabled = true;
+  submitButton.textContent = 'Checking...';
+  messageDiv.textContent = 'Checking discount code...';
+  messageDiv.className = 'overlush-redeem__message';
+
+  try {
+    // Use the version-agnostic endpoint
+    const apiEndpoint = '/api/graphql.json';
+    
+    // Create a new cart
+    const cartCreateQuery = `
+      mutation cartCreate {
+        cartCreate {
+          cart {
+            id
+          }
+          userErrors {
+            message
+            field
+          }
+        }
+      }
+    `;
+    
+    const cartResponse = await fetchGraphQL(apiEndpoint, cartCreateQuery);
+    
+    if (!cartResponse?.data?.cartCreate?.cart) {
+      throw new Error("Failed to create cart");
+    }
+    
+    const cartId = cartResponse.data.cartCreate.cart.id;
+
+    // Add the product to the cart
+    const addToCartQuery = `
+      mutation cartLinesAdd($cartId: ID!, $lines: [CartLineInput!]!) {
+        cartLinesAdd(cartId: $cartId, lines: $lines) {
+          cart {
+            id
+            cost {
+              subtotalAmount {
+                amount
+                currencyCode
+              }
+            }
+          }
+          userErrors {
+            message
+            field
+          }
+        }
+      }
+    `;
+    
+    const addToCartVariables = {
+      cartId: cartId,
+      lines: [{
+        merchandiseId: `gid://shopify/ProductVariant/${productId}`,
+        quantity: 1
+      }]
+    };
+    
+    const addToCartResponse = await fetchGraphQL(apiEndpoint, addToCartQuery, addToCartVariables);
+    
+    if (!addToCartResponse?.data?.cartLinesAdd?.cart) {
+      throw new Error("Failed to add product to cart");
+    }
+
+    // Apply discount code
+    const applyDiscountQuery = `
+      mutation cartDiscountCodesUpdate($cartId: ID!, $discountCodes: [String!]!) {
+        cartDiscountCodesUpdate(cartId: $cartId, discountCodes: $discountCodes) {
+          cart {
+            id
+            discountCodes {
+              code
+              applicable
+            }
+            cost {
+              totalAmount {
+                amount
+                currencyCode
+              }
+              subtotalAmount {
+                amount
+                currencyCode
+              }
+            }
+          }
+          userErrors {
+            message
+            field
+          }
+        }
+      }
+    `;
+    
+    const discountVariables = {
+      cartId: cartId,
+      discountCodes: [discountCode]
+    };
+    
+    const discountResponse = await fetchGraphQL(apiEndpoint, applyDiscountQuery, discountVariables);
+    
+    if (!discountResponse?.data?.cartDiscountCodesUpdate?.cart) {
+      throw new Error("Failed to apply discount code");
+    }
+    
+    const cart = discountResponse.data.cartDiscountCodesUpdate.cart;
+    
+    // Check if the discount code is applicable
+    if (cart.discountCodes?.length > 0 && cart.discountCodes[0].applicable) {
+      const originalPrice = parseFloat(cart.cost.subtotalAmount.amount);
+      const finalPrice = parseFloat(cart.cost.totalAmount.amount);
+      
+      // Calculate discount percentage with safety checks
+      let discountPercent = 0;
+      if (originalPrice > 0) {
+        discountPercent = ((originalPrice - finalPrice) / originalPrice) * 100;
+      }
+
+      // Check if it's a 100% discount (allowing for tiny floating point differences)
+      if (Math.abs(discountPercent - 100) < 0.1 || finalPrice === 0) {
+        messageDiv.textContent = 'Valid discount code! Processing your free item...';
+        messageDiv.classList.add('overlush-redeem__message--success');
+
+        // Get checkout URL
+        const checkoutUrlQuery = `
+          query getCartUrl($cartId: ID!) {
+            cart(id: $cartId) {
+              checkoutUrl
+            }
+          }
+        `;
+        
+        const checkoutUrlVariables = {
+          cartId: cartId
+        };
+        
+        const checkoutUrlResponse = await fetchGraphQL(apiEndpoint, checkoutUrlQuery, checkoutUrlVariables);
+        
+        if (!checkoutUrlResponse?.data?.cart?.checkoutUrl) {
+          throw new Error("Failed to get checkout URL");
+        }
+        
+        const checkoutUrl = checkoutUrlResponse.data.cart.checkoutUrl;
+        
+        // Redirect to checkout with delay for success message
+        setTimeout(() => {
+          window.location.href = checkoutUrl;
+        }, 1500);
+      } else {
+        messageDiv.textContent = `This code is valid but not for a free item.`;
+        messageDiv.classList.add('overlush-redeem__message--error');
+        
+        // Re-enable form
+        input.removeAttribute('readonly');
+        submitButton.disabled = false;
+        submitButton.textContent = 'REDEEM NOW';
+      }
+    } else {
+      // Invalid discount code
+      messageDiv.textContent = 'Invalid discount code. Please try again.';
+      messageDiv.classList.add('overlush-redeem__message--error');
+      
+      // Re-enable form
+      input.removeAttribute('readonly');
+      submitButton.disabled = false;
+      submitButton.textContent = 'REDEEM NOW';
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    messageDiv.textContent = 'Error checking code. Please try again.';
+    messageDiv.classList.add('overlush-redeem__message--error');
+    
+    // Re-enable form
+    input.removeAttribute('readonly');
+    submitButton.disabled = false;
+    submitButton.textContent = 'REDEEM NOW';
+  }
+  
+  return false;
+}
+
+// Helper function to handle GraphQL requests
+async function fetchGraphQL(endpoint, query, variables = {}) {
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Shopify-Storefront-Access-Token': STOREFRONT_ACCESS_TOKEN
+      },
+      body: JSON.stringify({
+        query,
+        variables
+      })
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error ${response.status}: ${response.statusText}`);
+    }
+    
+    const jsonResponse = await response.json();
+    
+    // Check for GraphQL errors
+    if (jsonResponse.errors?.length > 0) {
+      throw new Error(`GraphQL errors: ${JSON.stringify(jsonResponse.errors)}`);
+    }
+    
+    return jsonResponse;
+  } catch (error) {
+    console.error("Error in fetchGraphQL:", error);
+    throw error;
+  }
+}
+
+// Initialize when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  const redeemForm = document.getElementById('redeemForm');
+  
+  if (redeemForm) {
+    redeemForm.removeEventListener('submit', handleCodeSubmit);
+    redeemForm.addEventListener('submit', handleCodeSubmit);
+  }
+});

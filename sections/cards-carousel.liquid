@@ -1,0 +1,537 @@
+{% schema %}
+{
+  "name": "Cards Carousel",
+  "max_blocks": 30,
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    },
+    {
+      "type": "select",
+      "id": "page_style",
+      "label": "Page Style",
+      "options": [
+        {
+          "value": "doomlings",
+          "label": "Doomlings Style"
+        },
+        {
+          "value": "legends",
+          "label": "Legends Style"
+        }
+      ],
+      "default": "doomlings",
+      "info": "Controls the styling of various elements including buttons"
+    },     
+    {
+      "type": "html",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "New Cards"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "See All New Cards"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "btn_enable",
+      "label": "Show Button",
+      "default": true
+    }, 
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button Style",
+      "options": [
+        {
+          "value": "do-btn",
+          "label": "Style 1"
+        },
+        {
+          "value": "btn-doomlings",
+          "label": "Style 2"
+        }
+      ],
+      "default": "do-btn"
+    },
+    {
+      "type": "header",
+      "content": "Arrow Settings"
+    },
+    {
+      "type": "color",
+      "id": "arrow_color",
+      "label": "Arrow Color",
+      "default": "#000000",
+      "info": "Color for arrows"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "cards",
+      "name": "Cards",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "section",
+      "name": "Cards Carousel"
+    }
+  ]
+}
+{% endschema %}
+
+
+{% if section.settings.page_style == 'legends' %}
+    {% if section.settings.background_image %}
+    <div style="background-image: url('{{ section.settings.background_image | img_url: 'master' }}'); background-size: cover; background-position: center; overflow: hidden;">
+    {% else %}    
+    <div style="overflow: hidden;">
+    {% endif %}
+ {% else %}
+    {% if section.settings.background_image %}
+    <div style="background-image: url('{{ section.settings.background_image | img_url: 'master' }}'); background-size: 100% 100%; background-position: center; overflow: hidden;">
+    {% else %}    
+    <div style="overflow: hidden;">
+    {% endif %}
+{% endif %}
+
+
+    <div class="card-container section-{{ section.id }}-padding">
+        {% if section.settings.section_title != blank %}
+            <div class="section-title-image">
+                {{ section.settings.section_title }}
+            </div>
+        {% endif %}
+        <div class="swiper-outer">
+            <div class="swiper-container swiper-container-1">
+                <div class="swiper-wrapper">
+                    {% for block in section.blocks %}
+                        {% if block.settings.card_image %}
+                            <div class="swiper-slide">
+                                <div class="placeholder"></div>
+                                <img
+                                    alt="{{ block.settings.card_image.alt | escape }}"
+                                    class="lazyload swiper-lazy card-img"
+                                    data-src="{{ block.settings.card_image | img_url: 'master' }}"
+                                    onclick="openModal('{{ block.settings.card_image | img_url: 'master' }}')"
+                                    onload="removePlaceholder(this)"
+                                >
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- Custom Navigation -->
+            <div class="custom-next-1"></div>
+            <div class="custom-prev-1"></div>
+        </div>
+        {% if section.settings.btn_enable %}
+        <div class="as-footer">
+            {% if section.settings.page_style == 'legends' %}
+                <a class="btn-legends" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+             {% else %}                       
+                {% if section.settings.button_style == 'do-btn' %}
+                    <a class="do-btn btn-linked" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+                {% else %}
+                    <a class="btn-doomlings" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+                    {% style %}
+                        .btn-doomlings { font-size:20px; }
+                    {% endstyle %}
+                {% endif %}
+            {% endif %} 
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<!-- Modal structure -->
+<div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <div id="caption"></div>
+</div> 
+
+<script>
+    function removePlaceholder(imgElement) {
+        imgElement.previousElementSibling.style.display = 'none';
+    }
+
+    var swiper1;
+
+    function initializeSwiper() {
+        if (swiper1) {
+            swiper1.destroy(true, true);
+        }
+
+        swiper1 = new Swiper('.swiper-container-1', {
+            lazy: {
+                loadPrevNext: true,
+            },
+            slidesPerView: 2.4,
+            spaceBetween: 10,
+            centeredSlides: true,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            navigation: {
+                nextEl: '.custom-next-1',
+                prevEl: '.custom-prev-1',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2.4,
+                    spaceBetween: 10,
+                    centeredSlides: true,
+                    loop: true,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 10,
+                },
+                1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 20,
+                    centeredSlides: false,
+                    loop: false,
+                    autoplay: false, // Disable autoplay for larger screens
+                },
+            },
+        });
+    }
+
+    // Initialize Swiper on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        initializeSwiper();
+    });
+
+    // Reinitialize Swiper on window resize
+    window.addEventListener('resize', function() {
+        initializeSwiper();
+    });
+
+    function openModal(imageSrc) {
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImage");
+        modal.style.display = "block";
+        modalImg.src = imageSrc;
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("imageModal");
+        modal.style.display = "none";
+    }
+</script>
+
+
+{% style %}
+
+#shopify-section-{{section.id}} .swiper-wrapper { z-index: 0; }
+.section-{{ section.id }}-padding {
+    padding-top: 25px;
+    padding-bottom: 20px;
+    background-size: cover;
+}
+@media screen and (min-width: 768px) {
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+}
+@media (min-width:768px){
+  #shopify-section-{{section.id}} .swiper-container {
+    width: calc(100% - 80px);
+  }
+}
+
+#shopify-section-{{section.id}} .swiper-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; padding: 16px 20px;
+}
+@media (min-width: 768px){
+    #shopify-section-{{section.id}} .swiper-container {padding: 30px 20px;}
+}
+#shopify-section-{{section.id}} .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.swiper-outer {  position:relative; }
+
+
+{% if section.settings.page_style == 'legends' %}
+
+  #shopify-section-{{section.id}} .custom-next-1,
+  #shopify-section-{{section.id}} .custom-prev-1 {
+      position: absolute;
+      top: 44%;
+      transform: translateY(-50%);
+      width: 21px;
+      height: 44px;
+      z-index: 10;
+      cursor: pointer;
+      background-size: 100% 100%;
+  }
+  
+  #shopify-section-{{section.id}} .custom-next-1 {
+      right: 0px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 36'%3E%3Cpath d='M3 3 L18 18 L3 33' stroke='{{ section.settings.arrow_color | replace: '#', '%23' }}' stroke-width='6' stroke-linecap='butt' stroke-linejoin='miter' fill='none' /%3E%3C/svg%3E");
+  }
+  
+  #shopify-section-{{section.id}} .custom-prev-1 {
+      left: 0px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 36'%3E%3Cpath d='M21 3 L6 18 L21 33' stroke='{{ section.settings.arrow_color | replace: '#', '%23' }}' stroke-width='6' stroke-linecap='butt' stroke-linejoin='miter' fill='none' /%3E%3C/svg%3E");
+  }
+  
+  /* Mobile styles with SVG */
+  @media (max-width:768px){
+    #shopify-section-{{section.id}} .custom-next-1 {
+        right: 14px;
+        width: 13.8px;
+        height: 27.6px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 36'%3E%3Cpath d='M3 3 L18 18 L3 33' stroke='{{ section.settings.arrow_color | replace: '#', '%23' }}' stroke-width='6' stroke-linecap='butt' stroke-linejoin='miter' fill='none' /%3E%3C/svg%3E");
+    }
+    
+    #shopify-section-{{section.id}} .custom-prev-1 {
+        left: 14px;
+        width: 13.8px;
+        height: 27.6px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 36'%3E%3Cpath d='M21 3 L6 18 L21 33' stroke='{{ section.settings.arrow_color | replace: '#', '%23' }}' stroke-width='6' stroke-linecap='butt' stroke-linejoin='miter' fill='none' /%3E%3C/svg%3E");
+    }
+  }
+
+{% else %}
+
+  /* Original styles for all other pages */
+  #shopify-section-{{section.id}} .custom-next-1,
+  #shopify-section-{{section.id}} .custom-prev-1 {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 21px;
+      height: 44px;
+      z-index: 10;
+      cursor: pointer;
+      background-size: 100% 100%;
+  }
+  
+  #shopify-section-{{section.id}} .custom-next-1 {
+      right: 0px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 36'%3E%3Cpath d='M3 3 L18 18 L3 33' stroke='{{ section.settings.arrow_color | replace: '#', '%23' }}' stroke-width='6' stroke-linecap='butt' stroke-linejoin='miter' fill='none' /%3E%3C/svg%3E");
+  }
+  
+  #shopify-section-{{section.id}} .custom-prev-1 {
+      left: 0px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 36'%3E%3Cpath d='M21 3 L6 18 L21 33' stroke='{{ section.settings.arrow_color | replace: '#', '%23' }}' stroke-width='6' stroke-linecap='butt' stroke-linejoin='miter' fill='none' /%3E%3C/svg%3E");
+  }
+  
+  @media (max-width:768px){
+    #shopify-section-{{section.id}} .custom-next-1 {
+        right: 1px;
+        {% if section.settings.arrow_type == 'svg' %}
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 36'%3E%3Cpath d='M3 3 L18 18 L3 33' stroke='{{ section.settings.arrow_color | replace: '#', '%23' }}' stroke-width='6' stroke-linecap='butt' stroke-linejoin='miter' fill='none' /%3E%3C/svg%3E");
+        {% elsif section.settings.arrow_type == 'custom' and section.settings.arrow_next_custom %}
+          background-image: url('{{ section.settings.arrow_next_custom | img_url: 'master' }}');
+        {% else %}
+          background-image: url('https://cdn.shopify.com/s/files/1/0554/6190/4593/files/arrow-right2.png');
+        {% endif %}
+    }
+    #shopify-section-{{section.id}} .custom-prev-1 {
+        left: 1px;
+        {% if section.settings.arrow_type == 'svg' %}
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 36'%3E%3Cpath d='M21 3 L6 18 L21 33' stroke='{{ section.settings.arrow_color | replace: '#', '%23' }}' stroke-width='6' stroke-linecap='butt' stroke-linejoin='miter' fill='none' /%3E%3C/svg%3E");
+        {% elsif section.settings.arrow_type == 'custom' and section.settings.arrow_prev_custom %}
+          background-image: url('{{ section.settings.arrow_prev_custom | img_url: 'master' }}');
+        {% else %}
+          background-image: url('https://cdn.shopify.com/s/files/1/0554/6190/4593/files/arrow-left2.png');
+        {% endif %}
+    }  
+    #shopify-section-{{section.id}} .custom-prev-1 {
+      width: 13.8px;
+      height: 27.6px;
+      left: 14px;
+    }
+    #shopify-section-{{section.id}} .custom-next-1 {
+      width: 13.8px;
+      height: 27.6px;
+      right: 14px;
+    }
+  }
+
+{% endif %}
+
+
+
+#shopify-section-{{section.id}} .as-footer {
+    text-align: center;
+    z-index: 9;
+    position: relative;
+    margin-top: -50px;
+}
+#shopify-section-{{section.id}} img.card-img { width: 100%; height: auto;}
+#shopify-section-{{section.id}} .box-title {
+    color: #34006e;
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    line-height: 1.2;
+}
+.breadcrumbs-container { display: none;}
+.custom-prev-1.swiper-button-disabled,
+.custom-next-1.swiper-button-disabled {opacity: .5;}
+
+#shopify-section-{{section.id}} .swiper-slide {
+    transition: transform 0.3s ease;
+}
+#shopify-section-{{section.id}} .swiper-slide:hover {
+    transform: scale(1.1); cursor: pointer;
+}
+
+#shopify-section-{{section.id}} .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    padding-top: 60px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
+}
+
+#shopify-section-{{section.id}} .modal-content {
+    margin: auto;
+    display: block;
+    max-width: 700px;
+    height: 90%;
+    max-height: 800px;    
+}
+@media (max-width:768px){
+    #shopify-section-{{section.id}} .modal-content {
+        margin: auto;
+        display: block;
+        max-width: 700px;
+        height: 50%;
+        max-height: 800px;    
+    }
+}
+#shopify-section-{{section.id}} .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#shopify-section-{{section.id}} .close:hover,
+#shopify-section-{{section.id}} .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Add these styles to your existing  */
+@media ( max-width: 768px){
+    .section-title-image h2 { margin-bottom:0;  }
+    #shopify-section-{{section.id}} .swiper-slide {
+        position: relative;
+        padding-top: 65%; /* This creates a 1:1.4 aspect ratio - adjust as needed */
+        height: 0;
+        overflow: hidden;
+    }
+
+    /* Position the image absolutely within the slide */
+    #shopify-section-{{section.id}} .swiper-slide img.card-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    /* Style for placeholder during loading */
+    #shopify-section-{{section.id}} .placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Ensure the swiper container maintains consistent height */
+    #shopify-section-{{section.id}} .swiper-container {
+        height: auto;
+        min-height: 0;
+        min-width: 0;
+    }
+
+    /* Ensure wrapper doesn't collapse */
+    #shopify-section-{{section.id}} .swiper-wrapper {
+        height: auto !important;
+    }
+}
+{% endstyle %}

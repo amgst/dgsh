@@ -1,0 +1,430 @@
+{% schema %}
+{
+  "name": "Packages",
+  "max_blocks": 3,
+  "settings": [
+      {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    },  
+    {
+      "type": "range",
+      "id": "package_width",
+      "min": 0,
+      "max": 500,
+      "step": 5,
+      "unit": "px",
+      "label": "Package Width",
+      "default": 350
+    },      
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Get Started"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "package",
+      "name": "Package",
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "product_image",
+            "label": "Product Image"
+        },
+        {
+          "type": "product",
+          "id": "product_link",
+          "label": "Select Product"
+        },             
+     
+        {
+          "type": "text",
+          "id": "package_title",
+          "label": "Package Title",
+          "default": "Package Title"
+        },
+
+        {
+          "type": "checkbox",
+          "id": "price_sale_enable",
+          "label": "Sale Price Enable",
+          "info": "Slashed out number/ Price from dummy product",
+          "default": false
+        },        
+        {
+          "type": "product",
+          "id": "product_linkcompare",
+          "label": "Select Sale Price Dummy Product ",
+          "info": "this product selection is only for compare"
+        },   
+        {
+          "type": "checkbox",
+          "id": "price_adj_enable",
+          "label": "Value Price Enable",
+          "default": false,
+          "info": "Product compare-at price"
+        },                      
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text",
+          "default": "Order Now"
+        },               
+        {
+          "type": "html",
+          "id": "product_details",
+          "label": "Product Details"
+        },
+        {
+          "type": "checkbox",
+          "label": "Enable Value Header",
+          "id": "enable_value_header",
+          "default": false
+        },  
+        {
+          "type": "text",
+          "id": "value_header_text",
+          "label": "Value Header Text"
+        },          
+        {
+          "type": "image_picker",
+          "id": "value_icon",
+          "label": "Value Icon"
+        }                         
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "section",
+      "name": "Packages"
+    }
+  ]
+}
+
+
+{% endschema %}
+<div class="packages-container do-container section-{{ section.id }}-padding">
+    <div class="section_title">
+        <h2 id="sectionTitle">{{ section.settings.section_title }}</h2>
+    </div>
+    <div class="packages-wrapper" aria-labelledby="sectionTitle">
+        {% for block in section.blocks %}
+            <div class="package package-{{ block.id }}" tabindex="0">
+                <div class="products-game-opt">
+                    <div class="game-opt-prod">
+                        {% if block.settings.enable_value_header %}    
+                            <div class="value-header-wrapper" aria-hidden="true">                                
+                                <div class="value-header"> 
+                                    {% if block.settings.value_icon %}                    
+                                        <span>                        
+                                            <img
+                                                alt="{{ block.settings.value_icon.alt | escape }}"
+                                                class="lazyload"
+                                                data-src="{{ block.settings.value_icon | img_url: '50x' }}"
+                                                src="{{ block.settings.value_icon | img_url: '50x' }}"
+                                            >
+                                        </span>
+                                    {% endif %} 
+                                    {{ block.settings.value_header_text }}
+                                </div>
+                            </div>
+                        {% endif %}
+                        <div>
+                            {% if block.settings.product_image %}
+                                <a href="/products/{{ block.settings.product_link }}" aria-label="View {{ block.settings.package_title }}">
+                                    <img
+                                        alt="{{ block.settings.product_image.alt | escape }}"
+                                        class="lazyload"
+                                        data-src="{{ block.settings.product_image | img_url: 'master' }}"
+                                        src="{{ block.settings.product_image | img_url: 'master' }}"
+                                    >
+                                </a>
+                            {% endif %}
+                        </div>
+                        <div class="product-info">
+                            <div>
+                                
+                                <h3 class="prod-title">{{ block.settings.package_title }}</h3>
+                                <div class="prod-outer">
+                                <div class="prod-price">
+                                    {% assign product = all_products[block.settings.product_link] %} 
+                                    <span class="sale_price">{{ product.price | money }} </span>
+
+                                    {% if block.settings.price_sale_enable %}
+                                    {% assign product = all_products[block.settings.product_linkcompare] %}                                        
+                                    <span class="compare-price">{{ product.price | money }}</span>   
+                                </div>
+                                    {% style %}
+                                        #shopify-section-{{section.id}} .packages-container .package-{{ block.id }} .sale_price {color: #b5001a; font-weight: bold;}
+                                        .package-{{ block.id }} .compare-price {position: relative;color: #1a0040; font-weight: bold;}
+                                        .package-{{ block.id }} .compare-price::before {
+                                        content: "";
+                                        position: absolute;
+                                        width: 100%;
+                                        height: 3px;
+                                        background-color: #b5001a;
+                                        top: 50%;
+                                        left: 0;
+                                        transform: rotate(-8deg);
+                                        transform-origin: center;
+                                        }
+                                        #shopify-section-{{section.id}} .packages-container .package-{{ block.id }} .prod-price{ flex-direction:row; flex-wrap: nowrap; }
+                                        #shopify-section-{{section.id}} .packages-container .package-{{ block.id }} .prod-price{ margin-bottom:0; }
+                                        #shopify-section-{{section.id}} .packages-container .package-{{ block.id }} .value_price{display: flex;justify-content: center;}
+                                    {% endstyle %}
+                                {% endif %}
+
+                                {% if block.settings.price_adj_enable %}
+                                    {% assign product = all_products[block.settings.product_link] %}
+                                    <span class="value_price">{{ product.compare_at_price | money | remove: '.00'}}&nbsp;value!</span>                                         
+                                {% endif %}    
+                                {% unless  block.settings.price_sale_enable %}
+                                    </div>
+                                {% endunless %}
+                                </div>
+                                                                                                                                                                     
+                                    <!-- Yotpo Star Rating | category pages > snippets > product-block.liquid -->                        
+                                    {% assign product = all_products[block.settings.product_link] %}
+                                    <a href="/products/{{ product.handle }}#yotpo-app" class="yotpo-link" aria-label="Read reviews for {{ block.settings.package_title }}">
+                                        <div class="yotpo bottomLine" 
+                                            data-product-id="{{ product.id }}"
+                                            style="display:inline-block; padding-top:8px"
+                                            data-url="/products/{{ product.handle }}">
+                                        </div>
+                                    </a>
+                                    <style>
+                                        .yotpo .text-m {
+                                            padding-left: 5px;
+                                        }
+                                        .yotpo-sr-bottom-line-text { cursor:pointer; }
+                                    </style>
+                                    <!-- End of Yotpo -->
+                                    <div class="prod-list">
+                                        <ul>
+                                            {{ block.settings.product_details }}                          
+                                        </ul>
+                                    </div>
+                            </div>
+                            <div class="prod-link">
+                                <a class="do-btn"  
+                                    href="/products/{{ block.settings.product_link }}" aria-label="View more about {{ block.settings.package_title }}">{{ block.settings.btn_text }}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% style %}
+{% unless block.settings.price_sale_enable %}
+    #shopify-section-{{section.id}} .packages-container .prod-price { flex-direction: row;}
+{% else %}
+    #shopify-section-{{section.id}} .packages-container .prod-price { flex-direction: column;}    
+{% endunless %}
+.section-{{ section.id }}-padding {
+  padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+  padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+}
+
+@media screen and (min-width: 750px) {
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+}
+#shopify-section-{{section.id}} .packages-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#shopify-section-{{section.id}} .package {
+    margin: 12px;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+    border: 5px solid #50248f;
+    border-radius: 8px;
+    max-width: 100%;
+    padding: 20px 16px;
+    position: relative;
+
+    font-family: 'Lato', sans-serif;
+}
+
+#shopify-section-{{section.id}} .title h2 {
+    text-align: center;
+    font-family: Anton, Regular;
+    text-transform: uppercase;
+    font-size: 40px;
+}
+
+#shopify-section-{{section.id}} .prod-list {
+    font-weight: 700;
+}
+
+#shopify-section-{{section.id}} .prod-list ul li {
+    display: flex;
+}
+
+#shopify-section-{{section.id}} .prod-list ul li span {
+    font-size: 10px;
+}
+
+
+
+#shopify-section-{{section.id}} .packages-container h3.prod-title {
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #230051;
+    font-family: Anton, Regular;
+    text-align: center;
+    letter-spacing: 1px
+}
+
+#shopify-section-{{section.id}} .packages-container .prod-price {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    
+    align-content: center;
+}
+
+#shopify-section-{{section.id}} .packages-container .sale_price,
+#shopify-section-{{section.id}} .packages-container .value_price, 
+#shopify-section-{{section.id}} .packages-container .compare-price {
+    font-family: 'Lato', sans-serif;
+    display: flex;
+}
+
+#shopify-section-{{section.id}} .packages-container .sale_price,
+#shopify-section-{{section.id}} .packages-container .compare-price {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    margin-right: 5px;
+}
+
+#shopify-section-{{section.id}} .packages-container .value_price {
+    font-size: 15px; font-weight: bold;
+    line-height: 16px;
+    color: #00bd3e;margin-bottom: 4px;
+}
+
+#shopify-section-{{section.id}} .do-hr-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#shopify-section-{{section.id}} hr.do-hr {
+    display: block;
+    width: 120px;
+    border-top: 3px solid #50248f;
+    margin: 0 0 16px;
+}
+
+#shopify-section-{{section.id}} .value-header-wrapper {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+}
+
+#shopify-section-{{section.id}} .value-header span {
+    position: absolute;
+    left: -15px;
+    top: -13px;
+    display: block;
+}
+#shopify-section-{{section.id}}  sup {
+    top: 8px;
+}
+#shopify-section-{{section.id}} .value-header {
+    background: #50248f;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 8px;
+    padding: 10px 30px;
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900; 
+}
+#shopify-section-{{section.id}} .value-header img {max-width: 44px;}
+/* Responsive adjustments */
+{% if block.settings.price_sale_enable %}{% endif %}
+    .prod-outer {
+        min-height: 42px;
+    }
+
+@media (max-width: 768px) {
+   #shopify-section-{{section.id}} .prod-link { text-align:center; margin-top:20px; } 
+   #shopify-section-{{section.id}} .prod-list{display: flex;justify-content: center; margin-top: 15px;}
+   #shopify-section-{{section.id}} .package-package_LXzwz3 .game-opt-prod {margin-top:0px;}
+   #shopify-section-{{section.id}} .package-package_LXzwz3 .product-info { margin-top:10px; }
+}
+
+@media (min-width: 768px) {
+    #shopify-section-{{section.id}} .package {max-width: {{section.settings.package_width}}px; margin-bottom: 12px; padding-bottom: 105px;}
+    
+    #shopify-section-{{section.id}} .prod-link {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 186px;
+    }
+}
+
+{% if  block.settings.price_sale_enable %}       {% endif %}               
+
+
+ 
+{% endstyle %}
+
+
+    
+<script type="text/javascript">
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var userLanguage = navigator.language || navigator.userLanguage; 
+    var freeShippingCountries = ['en-US', 'en-GB', 'en-CA', 'de-DE', 'nl-NL']; // Example languages
+
+    // Deluxe Bundle - Show for US users
+    if (userLanguage === 'en-US') {
+      document.getElementById('deluxe-free-shipping').style.display = 'block';
+    }
+
+    // Ultimate Bundle - Show for US, UK, CAN, DE, NL users
+    if (freeShippingCountries.includes(userLanguage)) {
+      document.getElementById('ultimate-free-shipping').style.display = 'block';
+    }
+  });
+
+</script> 

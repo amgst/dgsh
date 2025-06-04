@@ -1,0 +1,421 @@
+{% schema %}
+  {
+    "name": "Whats Inside",
+    "settings": [
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Padding Top",
+          "default": 36
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Padding Bottom",
+          "default": 36
+        },
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Bottom",
+          "default": 0
+        },        
+        {
+          "type": "select",
+          "id": "page_style",
+          "label": "Page Style",
+          "options": [
+            {
+              "value": "doomlings",
+              "label": "Doomlings Style"
+            },
+            {
+              "value": "legends",
+              "label": "Legends Style"
+            }
+          ],
+          "default": "doomlings",
+          "info": "Controls the styling of various elements including buttons"
+        },            
+        {
+            "type": "text", 
+            "id": "section_title",
+            "label": "Title"
+        },      
+        {
+            "type": "text", 
+            "id": "section_sub_title",
+            "label": "Sub Title"
+        },           
+        {
+            "type": "image_picker", 
+            "id": "desk-hero",
+            "label": "Desktop Background"
+        },
+        {
+            "type": "image_picker",
+            "id": "mob-hero",
+            "label": "Mobile Background"
+        },  
+        {
+            "type": "image_picker",
+            "id": "character",
+            "label": "Character"
+        },     
+        {
+            "type": "image_picker",
+            "id": "character_mobile",
+            "label": "Character Mobile"
+        },              
+        {
+            "type": "text",
+            "id": "desk-hero-alt",
+            "label": "Accessibility Alt Text",
+            "default": "Describe the background image"
+        },   
+        {
+          "type": "checkbox",
+          "id": "btn_enable",
+          "label": "Show Button",
+          "default": true
+        },                    
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text"
+        }, 
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Heading Color",
+          "default": "#3f157d"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Subtitle Text Color",
+          "default": "#3f157d"
+        },
+        {
+          "type": "color",
+          "id": "card_title_color",
+          "label": "Card Title Color",
+          "default": "#000000"
+        },
+        {
+          "type": "color",
+          "id": "card_text_color",
+          "label": "Card Text Color",
+          "default": "#000000"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_text_shadow",
+          "label": "Enable Text Shadow",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "text_shadow_opacity",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "label": "Text Shadow Opacity",
+          "default": 30
+        },
+        {
+          "type": "select",
+          "id": "text_shadow_color",
+          "label": "Text Shadow Color",
+          "options": [
+            {
+              "value": "dark",
+              "label": "Dark"
+            },
+            {
+              "value": "light",
+              "label": "Light"
+            }
+          ],
+          "default": "dark"
+        }
+    ],
+    "blocks": [
+      {
+        "type": "inside",
+        "name": "Inside",
+        "settings": [
+          {
+            "type": "html",
+            "id": "point",
+            "label": "Card Type"
+          },
+          {
+            "type": "html",
+            "id": "point_explain",
+            "label": "Card Explain "
+          },
+          {
+              "type": "image_picker",
+              "id": "icon",
+              "label": "Icon"
+          }                   
+        ]
+      }
+    ],    
+    "presets": [
+      {
+        "category": "section",
+        "name": "Whats Inside"
+      }
+    ]
+  }
+{% endschema %}
+
+<div class="whats-wrapper section-{{ section.id }}-margin"> 
+  <div class="do-container section-{{ section.id }}-padding"  >
+    <div class="what-contents-wrapper">
+      <div class="whats-media">
+        <img
+          class="character-desktop"
+          alt="{{ section.settings.character.alt | escape }}"
+          src="{{ section.settings.character | img_url: 'master' }}">
+        <img
+          class="character-mobile"
+          alt="{{ section.settings.character_mobile.alt | escape }}"
+          src="{{ section.settings.character_mobile | img_url: 'master' }}">
+      </div>
+
+      <div class="what-contents">
+        <h2>{{ section.settings.section_title }}</h2>
+        <p>{{ section.settings.section_sub_title }}</p>
+        <div class="card-item-wrapper">
+          {% for block in section.blocks %}
+            <div class="card-item">
+                <div class="card-item-icon">
+                  {% if block.settings.icon %}                                      
+                    <img
+                      alt="{{ block.settings.icon.alt | escape }}"
+                      class="lazyload blur-up "
+                      data-src="{{ block.settings.icon | img_url: 'master' }}"
+                      src="{{ block.settings.icon | img_url: 'master' }}"  
+                      >
+                  {% endif %}
+                </div>
+                <div class="card-item-text">
+                    <h3>{{ block.settings.point}}</h3>
+                    <p>{{ block.settings.point_explain}}</p>
+                </div>
+            </div>                    
+          {% endfor %}   
+        </div>
+        {% if section.settings.page_style == 'legends' %}
+          {% if section.settings.btn_enable %}
+            <div class="whats-btn-wrapper">
+            <a class="btn-legends" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a></div>
+          {% endif %}  
+         {% else %}
+          {% if section.settings.btn_enable %}
+            <div class="whats-btn-wrapper">
+            <a class="do-btn btn-linked" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a></div>
+          {% endif %}  
+        {% endif %}        
+  
+      </div> 
+    </div>           
+  </div>
+</div>
+ 
+
+<style>
+  .section-{{ section.id }}-margin {
+    margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
+    margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-margin {
+      margin-top: {{ section.settings.margin_top }}px;
+      margin-bottom: {{ section.settings.margin_bottom }}px;      
+    }
+  } 
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;    
+    }
+  }   
+  .what-contents-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 20px;
+    flex-direction: row-reverse;
+    margin: 0 auto;
+  }
+  .whats-wrapper { 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .card-item-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+
+  .whats-btn-wrapper{ text-align:center; margin-top:20px; }
+  .whats-media img { max-width:460px; }
+  @media screen and (min-width: 750px) {
+    .whats-media {margin-left: -84px;}
+    .card-item-wrapper {min-width: 750px;flex-direction: row;}
+   }
+  #do-hero{
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+  }
+  .what-contents {max-width: 760px;}
+  .what-contents h2 {font-family: "Poppins", sans-serif;font-weight: 900; font-size: 50px; font-style: normal;text-align: center; margin: 0; margin-bottom:0; }
+  .what-contents p {font-size: 20px; font-weight: bold;text-align: center;margin: 0; max-width: 480px;
+  margin: 0 auto; 
+  margin-bottom: 34px;}
+
+{% if section.settings.page_style == 'legends' %}
+  .what-contents h2 {color: {{ section.settings.heading_color }}}
+  .what-contents p {color: {{ section.settings.text_color }}}
+  @media (max-width: 768px) {
+    .whats-media img {max-width: 100%;padding: 20px 10px;} 
+  }
+ {% else %}
+  .what-contents h2 {color: #014342}
+  .what-contents p {color: #014342}
+  @media (max-width: 768px) {
+    .whats-media img {max-width: 100%;padding: 20px 40px;} 
+  }  
+{% endif %}
+
+{% if section.settings.enable_text_shadow %}
+  {% assign shadow_opacity = section.settings.text_shadow_opacity | divided_by: 100.0 %}
+  {% if section.settings.text_shadow_color == 'dark' %}
+    .what-contents h2,
+    .what-contents p,
+    .card-item-text h3,
+    .card-item-text p {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, {{ shadow_opacity }});
+    }
+  {% else %}
+    .what-contents h2,
+    .what-contents p,
+    .card-item-text h3,
+    .card-item-text p {
+      text-shadow: 2px 2px 4px rgba(255, 255, 255, {{ shadow_opacity }});
+    }
+  {% endif %}
+{% endif %}
+
+
+  .card-item {display: flex;align-items: flex-start;}
+  .card-item-icon {    margin-right: 7px;
+    width: 36px;
+    margin-top: -2px; }
+  .card-item-text {max-width: 300px;text-align: left;}
+
+  .card-item-text h3 {
+    font-family: "Poppins", sans-serif;font-size: 24px; text-align: left;
+    line-height: 30px;
+    font-weight: 700;
+    margin-bottom: 0; text-wrap: nowrap;
+    text-transform: uppercase;  
+    color: {{ section.settings.card_title_color }};
+  }
+  .card-item-text p {
+    font-family: Lato, sans-serif;
+    font-size: 14px; 
+    line-height: 16px; 
+    text-align: left; 
+    margin-bottom: 10px;
+    color: {{ section.settings.card_text_color }};
+  }
+
+  @media (max-width: 1150px) {
+    #shopify-section-{{section.id}} .what-contents-wrapper { flex-direction: column-reverse;}
+  }
+  @media (max-width: 768px) {
+
+    #shopify-section-{{section.id}} .what-contents {text-align:center; }
+    #shopify-section-{{section.id}} .what-contents h2 {font-size: 32px; padding-top: 10px;}
+    #shopify-section-{{section.id}} .whats-wrapper { padding-top:0; }
+    .whats-wrapper { 
+      {% if section.settings.mob-hero %}
+        background-image: url('{{ section.settings.mob-hero | img_url: 'master' }}'); 
+      {% endif %}
+    }        
+  }
+  @media (min-width: 769px) {      
+      .card-item-text p { margin-bottom: 30px;}
+      .card-item {width: 370px;}
+    .whats-wrapper {  
+      background-color: #3ffbfe;
+      {% if section.settings.desk-hero %}
+        background-image: url('{{ section.settings.desk-hero | img_url: 'master' }}');
+      {% endif %}
+    }  
+    .card-item-text h3 {font-size: 30px;}  
+    .what-contents p {font-size: 23px;}
+    .card-item-text p {font-size: 14px;}
+  }
+  
+  /* Hide the mobile image by default */
+  .character-mobile {
+    display: none;
+  }
+
+  /* Show the mobile image and hide the desktop image on smaller screens */
+  @media only screen and (max-width: 767px) {
+    .character-desktop {
+      display: none;
+    }
+    .character-mobile {
+      display: block;
+    }
+  }
+
+</style>

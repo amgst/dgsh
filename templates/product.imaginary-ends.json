@@ -1,0 +1,871 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "richtext_nrVgGq": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "richtext": "<h6><strong>Buy 5 or more pins & get 20% OFF!<\/strong><\/h6>"
+          }
+        },
+        "bold_discounts_the_sales_app_sale_clock_dfUfHy": {
+          "type": "shopify:\/\/apps\/bold-discounts-the-sales-app\/blocks\/sale-clock\/22ca27ee-084f-4527-b863-69a3cd4c8b2c",
+          "settings": {
+            "is_preview_enabled": true,
+            "templates": "template_1",
+            "text_align": "center",
+            "font_size": 14,
+            "font_color": "#bf0209",
+            "margin_size": 0,
+            "padding_size": 0,
+            "border_color": "#000000",
+            "border_size": 0,
+            "background_color": "rgba(0,0,0,0)",
+            "custom_css": "#shappify_count_down {}"
+          }
+        },
+        "title_and_price": {
+          "type": "title_and_price",
+          "settings": {
+            "show_tax_and_shipping": false
+          }
+        },
+        "yotpo_product_reviews_ugc_star_rating_QVRcwW": {
+          "type": "shopify:\/\/apps\/yotpo-product-reviews\/blocks\/star-rating\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "type": {
+          "type": "type",
+          "disabled": true,
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "size_chart_enabled": false,
+            "size_chart_option_name": "Size",
+            "size_chart_page_id": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "enable_payment_button": false,
+            "show_pickup_availability": true,
+            "show_backorder_text": false,
+            "show_inventory_notice": "never",
+            "show_inventory_count": "low",
+            "inventory_notice_threshold": 10
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "full_width": false,
+            "show_tabs": false,
+            "tab_2_title": "",
+            "tab_2_content": "",
+            "tab_2_page": "",
+            "tab_3_title": "",
+            "tab_3_content": "",
+            "tab_3_page": ""
+          }
+        },
+        "product_icons_nqfBBw": {
+          "type": "product_icons",
+          "settings": {
+            "show_product_icons": true,
+            "icon_position": "top-left",
+            "icon_size": 80,
+            "icon_size_mobile": 30,
+            "flex_direction": "column"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_nrVgGq",
+        "bold_discounts_the_sales_app_sale_clock_dfUfHy",
+        "title_and_price",
+        "yotpo_product_reviews_ugc_star_rating_QVRcwW",
+        "vendor",
+        "type",
+        "variant_picker",
+        "buy_buttons",
+        "description",
+        "product_icons_nqfBBw"
+      ],
+      "settings": {
+        "enable_sticky_media": true,
+        "media_size": "small",
+        "media_layout": "thumbnails-below",
+        "enable_video_looping": false
+      }
+    },
+    "17321305820d789976": {
+      "type": "apps",
+      "blocks": {
+        "videeo_mobile_commerce_custom_popclips_carousel_9eqVyN": {
+          "type": "shopify:\/\/apps\/videeo-mobile-commerce\/blocks\/custom-popclips-carousel\/acf9f8eb-c211-4324-a19b-9f362f43b225",
+          "settings": {
+            "published_carousel_id": "01JK69TBYBVA976KS3R1EC7NTY"
+          }
+        }
+      },
+      "block_order": [
+        "videeo_mobile_commerce_custom_popclips_carousel_9eqVyN"
+      ],
+      "custom_css": [
+        "@media (max-width: 768px) {.container {margin-top: -60px; }}"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 32
+      }
+    },
+    "card_styles_qMW4CU": {
+      "type": "card-styles",
+      "settings": {
+        "h2_font_size": 48,
+        "h2_font_size_m": 32,
+        "h3_font_size": 26,
+        "h3_font_size_m": 26,
+        "p_font_size": 22,
+        "p_font_size_m": 18,
+        "button_font_size": 28,
+        "img_animation": 800,
+        "main_color": "#3e117c",
+        "background_image": "shopify:\/\/shop_images\/Rainbow-back1.png"
+      }
+    },
+    "cards_title_GW9Wbg": {
+      "type": "cards-title",
+      "settings": {
+        "section_title": ""
+      }
+    },
+    "plush_hero_48EXAx": {
+      "type": "plush-hero",
+      "custom_css": [],
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/IE_WorldImage_desktop_c2f58f69-1030-43b6-97a5-d8656944da6d.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/IE_WorldImage_mobile_d6bad444-afbf-47cb-a193-4f5fb6a37bd2.jpg",
+        "desk-hero-alt": "Enter the world of imaginary ends - image of woman looking out on the horizon of a rainbow magical world full of unique doomlings",
+        "button_link": ""
+      }
+    },
+    "cards_carousel_mmPzEe": {
+      "type": "cards-carousel",
+      "blocks": {
+        "cards_6xfcAb": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Remarkable_b4f1cbb3-d652-4dcf-8821-b64d5cdedf9a.png"
+          }
+        },
+        "cards_aKfFPg": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/TooMuchPink_2e7e6b84-b076-42a0-9657-3586532ae5f3.png"
+          }
+        },
+        "cards_Y9R7Qd": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Awesome_99f0e0ac-83bd-47b7-b3f1-52c19384b428.png"
+          }
+        },
+        "cards_qmxfyJ": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Fowler4_439e165c-4621-4361-8c5f-3f1c154ecfff.png"
+          }
+        },
+        "cards_U9FBxp": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Cryptic_99ff32b9-289c-4b53-a963-fa7a3efdd0e4.png"
+          }
+        },
+        "cards_UXUnqR": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/UnicornHorn.png"
+          }
+        },
+        "cards_kaeHqE": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/AgeofReverie.png"
+          }
+        },
+        "cards_g9grAA": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/MagicBeans_fc210819-e482-4c57-9d66-c7d66a75bcac.png"
+          }
+        },
+        "cards_J9gQTB": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Enigma.png"
+          }
+        },
+        "cards_j4gTa7": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Toddles1.png"
+          }
+        },
+        "cards_eY6nmM": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Rogloblers.png"
+          }
+        },
+        "cards_9pJHJc": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Isolation.png"
+          }
+        },
+        "cards_hHReDW": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Bubbly.png"
+          }
+        },
+        "cards_NQnXmk": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Pink.png"
+          }
+        },
+        "cards_EJqXxe": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/WorldsEndInsurance.png"
+          }
+        },
+        "cards_HpYgTg": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Glamorous_6f71c39e-5fc6-4423-b7ea-12cc190ce1fb.png"
+          }
+        },
+        "cards_7B3VaT": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Fowler1.png"
+          }
+        },
+        "cards_YU6g88": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/DimmingHat.png"
+          }
+        }
+      },
+      "block_order": [
+        "cards_6xfcAb",
+        "cards_aKfFPg",
+        "cards_Y9R7Qd",
+        "cards_qmxfyJ",
+        "cards_U9FBxp",
+        "cards_UXUnqR",
+        "cards_kaeHqE",
+        "cards_g9grAA",
+        "cards_J9gQTB",
+        "cards_j4gTa7",
+        "cards_eY6nmM",
+        "cards_9pJHJc",
+        "cards_hHReDW",
+        "cards_NQnXmk",
+        "cards_EJqXxe",
+        "cards_HpYgTg",
+        "cards_7B3VaT",
+        "cards_YU6g88"
+      ],
+      "custom_css": [
+        ".section-title-image h2 {margin-bottom: 10px;}"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 20,
+        "section_title": "<h2>127 <strong>NEW<\/strong> CARDS<\/h2>",
+        "button_text": "See All New Cards",
+        "button_link": "shopify:\/\/pages\/compendium",
+        "btn_enable": true,
+        "button_style": "do-btn",
+        "background_image": "shopify:\/\/shop_images\/rainbow.png"
+      }
+    },
+    "cards_multi_columns_6k8DDV": {
+      "type": "cards-multi-columns",
+      "blocks": {
+        "boxes_L38JE7": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/NAME2_353267f4-1427-4b04-b104-3a98f983f998.png",
+            "box_title": "",
+            "box_link": "#glitterlings",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_WjT8cy": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/2NAME2_f3a79b98-0f26-4044-85d5-7226bc30a758.png",
+            "box_title": "",
+            "box_link": "#moonlings",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_LCkWkr": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/3NAME2_ccdadb28-ed7c-4409-91c3-930c7146a6bd.png",
+            "box_title": "",
+            "box_link": "#deeplings",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_NBwbFk": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/4NAME2_821275b3-febf-46a6-81b2-120faf59cb70.png",
+            "box_title": "",
+            "box_link": "#fuzelings",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_gknXPA": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/5NAME2_e6ba51d0-a78c-4d9b-ae0b-053c5f6d9cc1.png",
+            "box_title": "",
+            "box_link": "#magical",
+            "open_in_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "boxes_L38JE7",
+        "boxes_WjT8cy",
+        "boxes_LCkWkr",
+        "boxes_NBwbFk",
+        "boxes_gknXPA"
+      ],
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 12,
+        "section_title": "<h2>\n<strong>5 NEW VARIETIES<\/strong> OF DOOMLINGS<\/h2>",
+        "background_image": "shopify:\/\/shop_images\/ImaginaryEnds_sparkle2_copy.jpg",
+        "img_size": 266,
+        "enable_hover_effect": false,
+        "hover_scale": 105,
+        "arrow_style": "default",
+        "arrow_width": 23,
+        "arrow_height": 46,
+        "mobile_autoplay": true
+      }
+    },
+    "cards_multi_section_AfEUdk": {
+      "type": "cards-multi-section",
+      "blocks": {
+        "cards_NJiadM": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Merhcants1.png",
+            "card_description": "Magical Merchants have smuggled their way into the age pile to sell you trinkets with “awesome” powers."
+          }
+        },
+        "cards_xbqwPa": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Merhcants2.png",
+            "card_description": "Unfortunately, some of these powers aren’t as awesome as they seem."
+          }
+        },
+        "cards_XEnBmM": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Merhcants3.png",
+            "card_description": "But don't worry! Complete the trinket's objective if you want to pocket it and score extra points!"
+          }
+        },
+        "cards_KbYq4r": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Merhcants4.png",
+            "card_description": "When you're ready for a new trinket, a \"magical\" merchant is just around the corner, waiting to sell you their latest and greatest! (Maybe keep your receipt, just in case.)"
+          }
+        }
+      },
+      "block_order": [
+        "cards_NJiadM",
+        "cards_xbqwPa",
+        "cards_XEnBmM",
+        "cards_KbYq4r"
+      ],
+      "custom_css": [
+        ".intro-img-one {z-index: 1;}",
+        ".intro-img-two {z-index: 2;}",
+        ".intro-img-three {z-index: 3;}",
+        ".intro-img-two {margin-right: -13%; margin-left: -15%;}"
+      ],
+      "settings": {
+        "card_id": "magical",
+        "section_title": "<h2> LET'S TAKE A <strong>CLOSER LOOK<\/strong>\n<\/h2>",
+        "sub_section_title": "A WHOLE NEW WAY TO PLAY DOOMLINGS",
+        "back_desk": "shopify:\/\/shop_images\/Titles_Desktop_Merchant_de4d7695-90aa-4364-af2d-91b42569eb7c.jpg",
+        "back_mob": "shopify:\/\/shop_images\/Titles_Mobile_Merchant_b11eafbb-55f0-4403-bc77-483ac5d6c401.jpg",
+        "back_color": "",
+        "image_1": "shopify:\/\/shop_images\/merchants-1_631c2050-4c28-4713-9c07-c73b66e95bb6.png",
+        "image_2": "shopify:\/\/shop_images\/merchants-2.png",
+        "image_3": "shopify:\/\/shop_images\/merchants-3.png",
+        "full_width": true,
+        "btn_enable": true,
+        "button_text": "GET IMAGINARY ENDS",
+        "button_link": ""
+      }
+    },
+    "video_two_WA8YzY": {
+      "type": "video-two",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 0,
+        "tiktok": false,
+        "tiktok_id": "",
+        "video_width": 900,
+        "section_title": "",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=pUb6-KryCNY",
+        "overlay_opacity": 10,
+        "button_text": "",
+        "button_link": "",
+        "image_position": "center center",
+        "mobile_play_mode": "popup",
+        "overlay_style": "full",
+        "color_overlay_bg": "#000000",
+        "content_overlay_opacity": 10,
+        "modal_overlay_opacity": 95,
+        "title": "",
+        "text": "",
+        "text_color": "#ffffff",
+        "overlay_position": "center-center"
+      }
+    },
+    "custom_liquid_YLyNH8": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br>"
+      }
+    },
+    "cards_multi_section_NpiEiq": {
+      "type": "cards-multi-section",
+      "blocks": {
+        "cards_pEr8EN": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Deeplings.png",
+            "card_description": "Lurking in the fathomless darkness are Deeplings, which feature the new \"suppress\" mechanic."
+          }
+        },
+        "cards_yRKDQa": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Deeplings2.png",
+            "card_description": "When you suppress a card, you hide it face-down underneath a trait in your trait pile."
+          }
+        },
+        "cards_ezner8": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Deeplings3.png",
+            "card_description": "Suppressed cards are worth 1 point each. And because they don't count as traits, you can grow in power while keeping your trait pile small!"
+          }
+        }
+      },
+      "block_order": [
+        "cards_pEr8EN",
+        "cards_yRKDQa",
+        "cards_ezner8"
+      ],
+      "custom_css": [
+        ".intro-img-one {z-index: 1;}",
+        ".intro-img-two {z-index: 3;}",
+        ".intro-img-three {z-index: 2;}",
+        ".intro-img-two {margin-right: -6%; margin-left: -9%;}"
+      ],
+      "settings": {
+        "card_id": "deeplings",
+        "section_title": "",
+        "sub_section_title": "NEW SUPPRESS MECHANIC",
+        "back_desk": "shopify:\/\/shop_images\/Titles_Desktop_Deep.jpg",
+        "back_mob": "shopify:\/\/shop_images\/Titles_Mobile_Deep_556114bc-7060-42d5-8ad5-3a1dc2b9aaf7.jpg",
+        "back_color": "",
+        "image_1": "shopify:\/\/shop_images\/deeplings-2.png",
+        "image_2": "shopify:\/\/shop_images\/deeplings-1.png",
+        "image_3": "shopify:\/\/shop_images\/deeplings-3.png",
+        "full_width": true,
+        "btn_enable": true,
+        "button_text": "GET IMAGINARY ENDS",
+        "button_link": ""
+      }
+    },
+    "cards_multi_section_pPzajp": {
+      "type": "cards-multi-section",
+      "blocks": {
+        "cards_VhjYdW": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Glitterlings1.png",
+            "card_description": "Glitterlings live in a happy-go-lucky land of make-believe where childhood never ends and cupcakes and marshmallows meet for tea."
+          }
+        },
+        "cards_Gp7FwD": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Glitterlings2.png",
+            "card_description": "These Sparkly Balls are all about CHANCE! With the right amount of luck, huge  new combos are possible."
+          }
+        }
+      },
+      "block_order": [
+        "cards_VhjYdW",
+        "cards_Gp7FwD"
+      ],
+      "custom_css": [
+        ".intro-img-one {z-index: 1;}",
+        ".intro-img-two {z-index: 3;}",
+        ".intro-img-three {z-index: 2;}",
+        ".intro-img-two {margin-right: -6%; margin-left: -9%;}"
+      ],
+      "settings": {
+        "card_id": "glitterlings",
+        "section_title": "",
+        "sub_section_title": "BIG CHANCES, BIG REWARDS",
+        "back_desk": "shopify:\/\/shop_images\/Titles_Desktop_Glitter.jpg",
+        "back_mob": "shopify:\/\/shop_images\/Titles_Mobile_Glitter.jpg",
+        "back_color": "",
+        "image_1": "shopify:\/\/shop_images\/glitterlings-2_96189634-7140-41ea-8504-3bc8256af3a9.png",
+        "image_2": "shopify:\/\/shop_images\/glitterlings-3_0754b319-ece4-43ed-b88f-e7b01f1ecebb.png",
+        "image_3": "shopify:\/\/shop_images\/glitterlings-1_4435a75f-898e-4d3c-8449-61ca834d5ab2.png",
+        "full_width": true,
+        "btn_enable": true,
+        "button_text": "GET IMAGINARY ENDS",
+        "button_link": ""
+      }
+    },
+    "custom_liquid_LYAbme": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br>"
+      }
+    },
+    "cards_multi_section_LyqwCB": {
+      "type": "cards-multi-section",
+      "blocks": {
+        "cards_PVJcA3": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Moonlings1.png",
+            "card_description": "Moonlings are weirdos. Not only do they speak their own language, they also force you to play with fewer cards"
+          }
+        },
+        "cards_c6N9VV": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Moonlings2.png",
+            "card_description": "But these unexpected visitors have some unexpected benefits too, allowing you to give unwanted cards to opponents and even rewarding you for having a lower Gene Pool!"
+          }
+        }
+      },
+      "block_order": [
+        "cards_PVJcA3",
+        "cards_c6N9VV"
+      ],
+      "custom_css": [
+        ".intro-img-one {z-index: 2;}",
+        ".intro-img-two {z-index: 1;}",
+        ".intro-img-three {z-index: 3;}",
+        ".intro-img-two {margin-right: -9%; margin-left: -9%;}"
+      ],
+      "settings": {
+        "card_id": "moonlings",
+        "section_title": "",
+        "sub_section_title": "UNEXPECTED SYNERGIES",
+        "back_desk": "shopify:\/\/shop_images\/Titles_Desktop_Moon.jpg",
+        "back_mob": "shopify:\/\/shop_images\/Titles_Mobile_Moon.jpg",
+        "back_color": "",
+        "image_1": "shopify:\/\/shop_images\/moonlings-3.png",
+        "image_2": "shopify:\/\/shop_images\/moonlings-1.png",
+        "image_3": "shopify:\/\/shop_images\/moonlings-2_d2869607-79c7-4d04-a232-20ed00bdff84.png",
+        "full_width": true,
+        "btn_enable": true,
+        "button_text": "GET IMAGINARY ENDS",
+        "button_link": ""
+      }
+    },
+    "custom_liquid_GFwVgx": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br>"
+      }
+    },
+    "cards_multi_section_WxpWf7": {
+      "type": "cards-multi-section",
+      "blocks": {
+        "cards_r6ybMQ": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Fuzelings_741c0bc7-4cc8-47ec-98c6-ffbfbd8b5d80.png",
+            "card_description": "Fuzelings combine the art and mechanics of Deeplings, Glitterlings, and Moonlings. They can help you get bigger bonuses from Drop of Life effects and trigger new combos!"
+          }
+        }
+      },
+      "block_order": [
+        "cards_r6ybMQ"
+      ],
+      "custom_css": [
+        ".intro-img-one {z-index: 1;}",
+        ".intro-img-two {z-index: 2;}",
+        ".intro-img-three {z-index: 1;}",
+        ".intro-img-two {margin-right: -9%; margin-left: -9%;}"
+      ],
+      "settings": {
+        "card_id": "fuzelings",
+        "section_title": "",
+        "sub_section_title": "BEST OF ALL WORLDS",
+        "back_desk": "shopify:\/\/shop_images\/Titles_Desktop_Fuze.jpg",
+        "back_mob": "shopify:\/\/shop_images\/Titles_Mobile_Fuze.jpg",
+        "back_color": "",
+        "image_1": "shopify:\/\/shop_images\/fuzeling2.png",
+        "image_2": "shopify:\/\/shop_images\/fuzeling3.png",
+        "image_3": "shopify:\/\/shop_images\/fuzeling1.png",
+        "full_width": true,
+        "btn_enable": true,
+        "button_text": "GET IMAGINARY ENDS",
+        "button_link": ""
+      }
+    },
+    "custom_liquid_BUwNQQ": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br>"
+      }
+    },
+    "cards_what_inside_hJT3Gg": {
+      "type": "cards-what-inside",
+      "blocks": {
+        "inside_X8zfVt": {
+          "type": "inside",
+          "settings": {
+            "point": "Glitterlings",
+            "point_explain": "18 new traits, 2 new ages, &amp; 1 new catastrophe",
+            "icon": "shopify:\/\/shop_images\/icon-glitter.png"
+          }
+        },
+        "inside_F6HUAx": {
+          "type": "inside",
+          "settings": {
+            "point": "Fuzelings",
+            "point_explain": "10 new traits, 2 new ages, &amp; 1 new catastrophe",
+            "icon": "shopify:\/\/shop_images\/icon-fuze_e601adbb-a43d-4cfa-808c-9094f62d55ab.png"
+          }
+        },
+        "inside_QxUqDH": {
+          "type": "inside",
+          "settings": {
+            "point": "Moonlings",
+            "point_explain": "18 new traits, 2 new ages, &amp; 1 new catastrophe",
+            "icon": "shopify:\/\/shop_images\/icon-moon.png"
+          }
+        },
+        "inside_7kPYwR": {
+          "type": "inside",
+          "settings": {
+            "point": "Magical Merchants",
+            "point_explain": "11 Merchants, 40 Trinkets",
+            "icon": "shopify:\/\/shop_images\/icon-merchant_6a7cc7ce-e3bb-4684-9ca8-db430042887e.png"
+          }
+        },
+        "inside_nL787h": {
+          "type": "inside",
+          "settings": {
+            "point": "Deeplings",
+            "point_explain": "18 new traits, 2 new ages, &amp; 1 new catastrophe",
+            "icon": "shopify:\/\/shop_images\/icon-deep.png"
+          }
+        },
+        "inside_iYAGQ7": {
+          "type": "inside",
+          "settings": {
+            "point": "MYSTERY HOLOFOIL",
+            "point_explain": "1 Mystery Holofoil from Imaginary Ends",
+            "icon": "shopify:\/\/shop_images\/icon-holo.png"
+          }
+        }
+      },
+      "block_order": [
+        "inside_X8zfVt",
+        "inside_F6HUAx",
+        "inside_QxUqDH",
+        "inside_7kPYwR",
+        "inside_nL787h",
+        "inside_iYAGQ7"
+      ],
+      "custom_css": [],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "section_title": "WHAT’S IN THE BOX?",
+        "section_sub_title": "With 127 cards across 5 expansions, this is our biggest variety pack ever!",
+        "desk-hero": "shopify:\/\/shop_images\/WhatsInBox_desktop.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/what-background-mobile_6348e48a-903d-4e93-ba77-d573f94bb87d.jpg",
+        "character": "shopify:\/\/shop_images\/Box_desktop.png",
+        "character_mobile": "shopify:\/\/shop_images\/Box_mobile.png",
+        "desk-hero-alt": "Describe the background image",
+        "btn_enable": true,
+        "button_text": "GET IMAGINARY ENDS",
+        "button_link": ""
+      }
+    },
+    "custom_liquid_cf74gy": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br><br><br>"
+      }
+    },
+    "cards_multi_section_min_ddmLEz": {
+      "type": "cards-multi-section-min",
+      "blocks": {
+        "cards_GFXGHC": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Holo.png",
+            "card_description": "For a limited time, all Imaginary Ends® boxes come with a <strong> 1st Edition Mystery Holofoil. <\/strong>These collectibles have guaranteed rarities of Scarce or Better, and contain the 1st Edition star!"
+          }
+        }
+      },
+      "block_order": [
+        "cards_GFXGHC"
+      ],
+      "disabled": true,
+      "settings": {
+        "card_id": "",
+        "image_1": "shopify:\/\/shop_images\/IE_Rainbow-ezgif.com-resize.gif",
+        "image_2": "shopify:\/\/shop_images\/IE_Stygian-ezgif.com-resize.gif",
+        "image_3": "shopify:\/\/shop_images\/IE_Ethereal-ezgif.com-resize.gif",
+        "image_4": "shopify:\/\/shop_images\/IE_Stygian-ezgif.com-resize.gif",
+        "full_width": true,
+        "btn_enable": true,
+        "button_text": "Get Imaginary Ends",
+        "button_link": ""
+      }
+    },
+    "coming_soon_d9jHUe": {
+      "type": "coming-soon",
+      "settings": {
+        "padding_top": 48,
+        "padding_bottom": 0,
+        "section_title": "IMAGINARY ENDS GOLD PACKS",
+        "sub_title": "AVAILABLE NOW",
+        "contents": "Collect every holofoil from the new collection, including alt arts and rare easter egg cards with Imaginary Ends® Gold Packs!",
+        "desk-hero": "shopify:\/\/shop_images\/bg_0ae6dce7-3f77-4f10-ac80-60593f1d561a.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/bg_m_8659de32-8886-4bbf-a250-4a4812b0c137.jpg",
+        "character": "shopify:\/\/shop_images\/packs_d.png",
+        "character_mobile": "shopify:\/\/shop_images\/packs_m.png",
+        "desk-hero-alt": "pretty space background image",
+        "btn_enable": true,
+        "button_text": "GET YOUR GOLD PACKS",
+        "button_link": "shopify:\/\/products\/imaginary-ends-gold-pack"
+      }
+    },
+    "custom_liquid_LFNCXr": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script>\n  window.addEventListener('load', function() {\n  var _learnq = window._learnq || [];\n  function addedToCart() {\n   fetch(`${window.location.origin}\/cart.js`)\n   .then(res => res.clone().json().then(data => {\n    var cart = {\n      total_price: data.total_price\/100,\n      $value: data.total_price\/100,\n      total_discount: data.total_discount,\n      original_total_price: data.original_total_price\/100,\n      items: data.items\n    }\n    if (item !== 'undefined') {\n      cart = Object.assign(cart, item)\n    }\n    if (klAjax) {\n       _learnq.push(['track', 'Added to Cart', cart]);\n       klAjax = false;\n      }\n   }))\n  };\n  (function (ns, fetch) {\n    ns.fetch = function() {\n      const response = fetch.apply(this, arguments);\n      response.then(res => {\n        if (`${window.location.origin}\/cart\/add.js`\n          .includes(res.url) && res.url !== '') {\n              addedToCart()\n        }\n      });\n      return response\n     }\n  }(window, window.fetch));\n  var klAjax = true;\n  var atcButtons = document.querySelectorAll(\"form[action*='\/cart\/add'] button[type='submit']\");\n  for (var i = 0; i < atcButtons.length; i++) { \n    atcButtons[i].addEventListener(\"click\", function() {\n      if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', item]);\n        klAjax = false;\n      }\n    })\n  }\n  });\n<\/script>"
+      }
+    },
+    "recent": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {
+        "show_recently_viewed": true,
+        "show_vendor": false
+      }
+    },
+    "1715807764413a9b63": {
+      "type": "apps",
+      "blocks": {
+        "yotpo_product_reviews_ugc_reviews_UVPbJr": {
+          "type": "shopify:\/\/apps\/yotpo-product-reviews\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "reviews_from_amazon_amazon_reviews_Fzr3yk": {
+          "type": "shopify:\/\/apps\/reviews-from-amazon\/blocks\/Amazon reviews\/d2a0c9ad-3f97-43c4-9e0c-bc1a4007a201",
+          "settings": {
+            "heading": "Amazon reviews"
+          }
+        }
+      },
+      "block_order": [
+        "yotpo_product_reviews_ugc_reviews_UVPbJr",
+        "reviews_from_amazon_amazon_reviews_Fzr3yk"
+      ],
+      "settings": {
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "title": "You may also like",
+        "grid": 4,
+        "show_vendor": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "17321305820d789976",
+    "card_styles_qMW4CU",
+    "cards_title_GW9Wbg",
+    "plush_hero_48EXAx",
+    "cards_carousel_mmPzEe",
+    "cards_multi_columns_6k8DDV",
+    "cards_multi_section_AfEUdk",
+    "video_two_WA8YzY",
+    "custom_liquid_YLyNH8",
+    "cards_multi_section_NpiEiq",
+    "cards_multi_section_pPzajp",
+    "custom_liquid_LYAbme",
+    "cards_multi_section_LyqwCB",
+    "custom_liquid_GFwVgx",
+    "cards_multi_section_WxpWf7",
+    "custom_liquid_BUwNQQ",
+    "cards_what_inside_hJT3Gg",
+    "custom_liquid_cf74gy",
+    "cards_multi_section_min_ddmLEz",
+    "coming_soon_d9jHUe",
+    "custom_liquid_LFNCXr",
+    "recent",
+    "1715807764413a9b63",
+    "recommendations"
+  ]
+}

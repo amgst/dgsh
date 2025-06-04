@@ -1,0 +1,576 @@
+
+{% schema %}
+{
+  "name": "Packages",
+  "max_blocks": 4,
+  "settings": [
+    { 
+      "type": "header",
+      "content": "Section Settings"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Get Started"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "package",
+      "name": "Package",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Package Content"
+        },
+        {
+          "type": "text",
+          "id": "package_title",
+          "label": "Package Title",
+          "default": "Package Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product Image"
+        },
+        {
+          "type": "product",
+          "id": "product_link",
+          "label": "Select Product"
+        },
+        {
+          "type": "html",
+          "id": "product_details",
+          "label": "Product Details"
+        },
+        {
+          "type": "header",
+          "content": "Pricing Options"
+        },
+        {
+          "type": "header",
+          "content": "Color Settings"
+        },
+        {
+          "type": "color",
+          "id": "sale_price_color",
+          "label": "Sale Price Color",
+          "default": "#b5001a"
+        },
+        {
+          "type": "color",
+          "id": "compare_price_color",
+          "label": "Compare Price Color",
+          "default": "#1a0040"
+        },  
+        {
+          "type": "color",
+          "id": "value_price_color",
+          "label": "Value Price Color",
+          "default": "#00bd3e"
+        },                    
+        {
+          "type": "checkbox",
+          "id": "price_sale_enable",
+          "label": "Enable Sale Price",
+          "info": "Shows slashed out price from dummy product",
+          "default": false
+        },
+        {
+          "type": "product",
+          "id": "product_linkcompare",
+          "label": "Select Sale Price Dummy Product",
+          "info": "This product selection is only for price comparison"
+        },
+        {
+          "type": "checkbox",
+          "id": "price_adj_enable",
+          "label": "Enable Value Price",
+          "default": false,
+          "info": "Shows product compare-at price"
+        },
+        {
+          "type": "header",
+          "content": "Value Header"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_value_header",
+          "label": "Enable Value Header"
+        },
+        {
+          "type": "text",
+          "id": "value_header_text",
+          "label": "Value Header Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "value_icon",
+          "label": "Value Icon"
+        },
+        {
+          "type": "color",
+          "id": "header_bg_color",
+          "label": "Value Header Background Color",
+          "default": "#50248f"
+        },
+        {
+          "type": "header",
+          "content": "Package Design"
+        },
+        {
+          "type": "image_picker",
+          "id": "border_image",
+          "label": "Background Image",
+          "info": "Upload an image to use as the background for this package."
+        },
+        {
+          "type": "color",
+          "id": "border_color",
+          "label": "Border Color",
+          "default": "#50248f"
+        },
+        {
+          "type": "header",
+          "content": "Call to Action"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button Text",
+          "default": "Order Now"
+        }  
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "section",
+      "name": "Packages"
+    }
+  ]
+}
+{% endschema %} 
+<div class="container large-section packages-container section-{{ section.id }}-padding">
+  <div class="page-width">
+    <h2 id="sectionTitle" class="section_title">{{ section.settings.section_title }}</h2>
+    <div class="packages-wrapper" aria-labelledby="sectionTitle">
+      {% for block in section.blocks %}
+        {% assign product = all_products[block.settings.product_link] %}
+        {% assign compare_product = all_products[block.settings.product_linkcompare] %}
+        <div class="package package-{{ block.id }}" tabindex="0"
+          style="
+            {% if block.settings.border_image %}
+              background-image: url({{ block.settings.border_image | img_url: 'original' }});
+              min-height: 300px; /* Reserve space for bg image */
+              background-size: 99% 100%;
+              background-position: center;
+              background-repeat: no-repeat;
+              padding: 0 35px 25px 35px; /* Combine padding values */
+            {% else %}
+              border: 5px solid {{ block.settings.border_color }};
+            {% endif %}
+          ">
+          {% style %}
+            @media ( min-width:768px){
+              .package { min-height:800px; }
+            }
+          {% endstyle %}
+          <div class="products-game-opt">
+            <div class="game-opt-prod">
+              {% if block.settings.enable_value_header %}    
+                <div class="value-header-wrapper" aria-hidden="true" 
+                     {% if block.settings.border_image %}style="position: relative; top: -20px;"{% endif %}>
+                  <div class="value-header" style="background: {{block.settings.header_bg_color}};"> 
+                    {% if block.settings.value_icon %}                    
+                      <span class="value-icon-wrapper">                        
+                        <img 
+                          alt="{{ block.settings.value_icon.alt | escape | default: 'Card game value icon' }}"
+                          class="lazyload"
+                          width="50"
+                          height="50"
+                          loading="lazy"
+                          src="{{ block.settings.value_icon | img_url: '50x50', crop: 'center' }}"
+                          srcset="{{ block.settings.value_icon | img_url: '50x50', crop: 'center' }} 1x,
+                                  {{ block.settings.value_icon | img_url: '100x100', crop: 'center' }} 2x"
+                          style="object-fit: contain;"
+                        >
+                      </span>
+                    {% endif %}
+                    {% style %}
+                      .value-icon-wrapper {
+                          display: inline-block;
+                          min-width: 50px;
+                          min-height: 50px;
+                        }
+
+                        img.lazyload {
+                          aspect-ratio: 1/1;
+                          
+                        }
+                    {% endstyle %}
+ 
+                    {{ block.settings.value_header_text }}
+                  </div>
+                </div>
+              {% endif %} 
+              {% if block.settings.product_image %}
+                <a href="{{ product.url }}" class="product-image" aria-label="View {{ block.settings.package_title }}">
+                  <img
+                    alt="{{ block.settings.product_image.alt | escape }}"
+                    class="lazyload product-image-resize"
+                    width="600"
+                    height="600"
+                    loading="lazy"
+                    src="{{ block.settings.product_image | img_url: '300x' }}"
+                    srcset="{{ block.settings.product_image | img_url: '300x' }} 300w,
+                            {{ block.settings.product_image | img_url: '600x' }} 600w"
+                    sizes="(max-width: 768px) 300px, 600px"
+                    {% if block.settings.border_image %}style="max-width: 94%; padding-top:16px;"{% endif %}
+                  >
+                </a>
+              {% endif %}
+
+              <div class="product-info">
+                <h3 class="prod-title" {% if block.settings.border_image %}style="padding-top:12px;"{% endif %}>{{ block.settings.package_title }}</h3>
+                <div class="prod-outer">
+                  <div class="prod-price">
+                    <span class="price-container"> <!-- Wrapper for price stability -->
+                      <span class="sale_price" style="color: {{block.settings.sale_price_color}}">{{ product.price | money }}</span>
+                      {% if block.settings.price_sale_enable %}
+                        <span class="compare-price" style="color: {{block.settings.compare_price_color}}">{{ compare_product.price | money }}</span>
+                      {% endif %}
+                    </span>
+                    {% if block.settings.price_adj_enable and product.compare_at_price %}
+                    <span class="value-price-container"> <!-- Wrapper for value price -->
+                      <span class="value_price" style="color: {{ block.settings.value_price_color }}">
+                        {{ product.compare_at_price | money | remove: '.00' }}&nbsp;value!
+                      </span>
+                    </span>
+                    {% endif %}
+                  </div>
+                </div>
+                <!-- Reserve space for reviews -->
+                <div class="yotpo-placeholder" style="min-height: 20px; margin: 10px 0;">
+                  <a href="{{ product.url }}#yotpo-app" class="yotpo-link" aria-label="Read reviews for {{ block.settings.package_title }}">
+                    <div class="yotpo bottomLine" data-product-id="{{ product.id }}" data-url="{{ product.url }}"></div>
+                  </a>
+                </div>
+                <div class="prod-list">
+                  <ul>{{ block.settings.product_details }}</ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="prod-link">
+            <a class="do-btn" href="{{ product.url }}" aria-label="View more about {{ block.settings.package_title }}">{{ block.settings.btn_text }}</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% style %}
+
+.section-{{ section.id }}-padding {
+  padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+  padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+}
+
+/* Grid Layout */
+#shopify-section-{{section.id}} .packages-wrapper { 
+    display: grid;
+    grid-template-columns: repeat(4, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+/*    max-width: 1200px;*/
+    margin: 0 auto;
+    justify-content: center; 
+}
+
+/* Package Card Styling */
+#shopify-section-{{section.id}} .package {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box; 
+    margin: 20px 0;
+    padding: 20px 16px;
+    border-radius: 8px;
+    position: relative;
+    width: 100%;
+}
+
+/* Section Title */
+#shopify-section-{{section.id}} .title h2 {
+    text-align: center;
+    font-family: Anton, Regular;
+    text-transform: uppercase;
+    font-size: 40px;
+}
+ 
+/* Product List */
+#shopify-section-{{section.id}} .prod-list {
+    padding-bottom: 20px;
+    font-weight: 700;
+}
+#shopify-section-{{section.id}} .prod-outer { text-align:center; } 
+@media (min-width:768px){
+  #shopify-section-{{section.id}} .prod-outer { min-height:53px; }
+} 
+
+#shopify-section-{{section.id}} .prod-list ul li {
+    display: flex;
+}
+
+#shopify-section-{{section.id}} .prod-list ul li span {
+    font-size: 10px;
+}
+
+/* Product Title */
+#shopify-section-{{section.id}} .packages-container h3.prod-title { 
+    font-size: 28px;
+    text-transform: uppercase;
+    color: #230051;
+    text-align: center;
+    letter-spacing: 1px;
+   
+}
+
+#shopify-section-{{section.id}} .packages-container h3.prod-title { letter-spacing: .5px;}
+/* Pricing Section */
+#shopify-section-{{section.id}} .packages-container .prod-price {
+/*    display: flex;*/
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 10px;
+    align-content: center;
+}
+
+#shopify-section-{{section.id}} .packages-container .prod-price span { display:block; }
+#shopify-section-{{section.id}} .packages-container .prod-price span span { display:inline-block; }
+
+#shopify-section-{{section.id}} .packages-container .sale_price,
+#shopify-section-{{section.id}} .packages-container .value_price, 
+#shopify-section-{{section.id}} .packages-container .compare-price {
+    font-family: 'Lato', sans-serif;
+    display: flex;
+}
+
+#shopify-section-{{section.id}} .packages-container .sale_price,
+#shopify-section-{{section.id}} .packages-container .compare-price {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 24px;
+    margin-right: 5px;
+}
+
+#shopify-section-{{section.id}} .packages-container .value_price {
+    font-size: 15px; 
+    font-weight: bold;
+    line-height: 16px;
+    margin-bottom: 4px;
+}
+
+/* Price Colors and Strike-through */
+#shopify-section-{{ section.id }} .packages-container .sale_price {
+    color: #b5001a;
+    font-weight: bold;
+}
+
+#shopify-section-{{ section.id }} .compare-price {
+    position: relative;
+    color: #1a0040;
+    font-weight: bold;
+}
+
+#shopify-section-{{ section.id }} .compare-price::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #b5001a;
+    top: 50%;
+    left: 0;
+    transform: rotate(-8deg);
+    transform-origin: center;
+}
+
+/* Horizontal Rule */
+#shopify-section-{{section.id}} .do-hr-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#shopify-section-{{section.id}} hr.do-hr {
+    display: block;
+    width: 120px;
+    border-top: 3px solid #50248f;
+    margin: 0 0 16px;
+}
+
+/* Value Header */
+#shopify-section-{{section.id}} .value-header-wrapper {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 240px;
+}
+
+#shopify-section-{{section.id}} .value-header {
+    color: white;
+    text-transform: uppercase;
+    border-radius: 8px;
+    padding: 10px 30px;
+    position: relative;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900; 
+}
+
+#shopify-section-{{section.id}} .value-header span {
+    position: absolute;
+    left: -15px;
+    top: -13px;
+    display: block;
+}
+
+#shopify-section-{{section.id}} .value-header img {
+    max-width: 44px;
+}
+
+/* Yotpo Reviews Integration */
+.yotpo .text-m {
+    padding-left: 5px;  
+}
+
+.yotpo-sr-bottom-line-text {
+    cursor: pointer;
+}
+
+/* Superscript Adjustment */
+#shopify-section-{{section.id}} sup {
+    top: 8px;
+}
+
+/* Product Image */
+#shopify-section-{{section.id}} .product-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Container settings */
+/*#shopify-section-{{section.id}} .page-width {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}*/
+
+/* Responsive Breakpoints */
+@media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+}
+
+/* Tablet and smaller desktop */
+@media screen and (max-width: 1024px) {
+    #shopify-section-{{section.id}} .packages-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 15px;
+    }
+
+    #shopify-section-{{section.id}} .package {
+        margin: 15px 0;
+    }
+}
+
+/* Mobile devices */
+@media screen and (max-width: 749px) {
+    #shopify-section-{{section.id}} .packages-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 10px;
+    }
+
+    #shopify-section-{{section.id}} .package {
+        margin: 10px 0;
+    }
+
+    #shopify-section-{{section.id}} .prod-link { 
+        text-align: center; 
+        margin-top: 20px; 
+    }
+
+    #shopify-section-{{section.id}} .prod-list {
+        display: flex;
+        justify-content: center; 
+        margin-top: 15px;
+    }
+
+    #shopify-section-{{section.id}} .package-package_LXzwz3 .game-opt-prod {
+        margin-top: 0px;
+    }
+
+    #shopify-section-{{section.id}} .package-package_LXzwz3 .product-info { 
+        margin-top: 10px; 
+    }
+}
+
+
+
+{% endstyle %}
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function () {
+    var userLanguage = navigator.language || navigator.userLanguage; 
+    var freeShippingCountries = ['en-US', 'en-GB', 'en-CA', 'de-DE', 'nl-NL']; // Example languages
+
+    // Deluxe Bundle - Show for US users
+    if (userLanguage === 'en-US') {
+      document.getElementById('deluxe-free-shipping').style.display = 'block';
+    }
+
+    // Ultimate Bundle - Show for US, UK, CAN, DE, NL users
+    if (freeShippingCountries.includes(userLanguage)) {
+      document.getElementById('ultimate-free-shipping').style.display = 'block';
+    }
+  });
+</script> 
+

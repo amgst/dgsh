@@ -1,0 +1,182 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_title": true,
+        "title_alignment": "left"
+      }
+    },
+    "password_eGrYaM": {
+      "type": "password",
+      "disabled": true,
+      "settings": {
+        "prompt_heading": "Enter Password to Access",
+        "correct_password": "IE-THANKYOU"
+      }
+    },
+    "main_product_single_g46RPN": {
+      "type": "main-product-single",
+      "blocks": {
+        "title_and_price_NzXFne": {
+          "type": "title_and_price",
+          "settings": {
+            "show_tax_and_shipping": false
+          }
+        },
+        "variant_picker_YrFQGN": {
+          "type": "variant_picker",
+          "settings": {
+            "size_chart_enabled": false,
+            "size_chart_option_name": "Size",
+            "size_chart_page_id": ""
+          }
+        },
+        "buy_buttons_g8cihU": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "enable_payment_button": false,
+            "show_pickup_availability": true,
+            "show_backorder_text": false,
+            "show_inventory_notice": "never",
+            "show_inventory_count": "low",
+            "inventory_notice_threshold": 10
+          }
+        },
+        "description_CkiUHh": {
+          "type": "description",
+          "settings": {
+            "full_width": false,
+            "show_tabs": false,
+            "tab_2_title": "",
+            "tab_2_content": "",
+            "tab_2_page": "",
+            "tab_3_title": "",
+            "tab_3_content": "",
+            "tab_3_page": ""
+          }
+        },
+        "sharing_RErh6U": {
+          "type": "sharing",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title_and_price_NzXFne",
+        "variant_picker_YrFQGN",
+        "buy_buttons_g8cihU",
+        "description_CkiUHh",
+        "sharing_RErh6U"
+      ],
+      "settings": {
+        "product": "imaginary-ends-gold-pack",
+        "enable_sticky_media": true,
+        "media_size": "small",
+        "media_layout": "thumbnails-below",
+        "enable_video_looping": false
+      }
+    },
+    "card_styles_RjN4CH": {
+      "type": "card-styles",
+      "settings": {
+        "h2_font_size": 52,
+        "h2_font_size_m": 32,
+        "h3_font_size": 24,
+        "h3_font_size_m": 18,
+        "p_font_size": 24,
+        "p_font_size_m": 18,
+        "button_font_size": 30,
+        "img_animation": 1000,
+        "main_color": "#3e117c",
+        "background_image": "shopify:\/\/shop_images\/Rainbow-back1.png"
+      }
+    },
+    "cards_multi_section_MBMNdm": {
+      "type": "cards-multi-section",
+      "blocks": {
+        "cards_DKckYT": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/goldpacks1_5b2ed16e-78c5-494c-9a63-d2d378ca4bbf.png",
+            "card_description": "Each Imaginary Ends Gold Pack comes with 7 guaranteed holofoils from the Imaginary Ends expansion."
+          }
+        },
+        "cards_JrmF9F": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/goldpacks2_598a40a6-6de6-4ee8-a222-622fd91a7145.png",
+            "card_description": "Each Imaginary Ends holofoil is marked with a rarity tier symbol ranging from Common to Relic!"
+          }
+        },
+        "cards_ptcfN3": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/goldpacks3b.png",
+            "card_description": "All the Doomlings from the Imaginary Ends expansion can be found as holofoils. But the rare Relic Doomlings can only be found in holofoil form."
+          }
+        },
+        "cards_Przbh8": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/goldpacks4_c15650d4-9402-475e-88d0-8b6f2abb30fb.png",
+            "card_description": "There are also rare alt art cards you can find as holofoils, as well as some additional surprises..."
+          }
+        }
+      },
+      "block_order": [
+        "cards_DKckYT",
+        "cards_JrmF9F",
+        "cards_ptcfN3",
+        "cards_Przbh8"
+      ],
+      "settings": {
+        "card_id": "",
+        "section_title": "",
+        "sub_section_title": "WHAT'S IN THE GOLD PACK?",
+        "back_desk": "shopify:\/\/shop_images\/DesktopBG_6edcd1fb-b814-4305-8e0a-f389d701d0e6.png",
+        "back_mob": "shopify:\/\/shop_images\/MobileBG_decefeb4-ca43-4673-a401-08fd0cea3a48.png",
+        "back_color": "",
+        "image_1": "shopify:\/\/shop_images\/gold1_f7f0852d-62db-4250-b419-cec77f3061fa.png",
+        "image_2": "shopify:\/\/shop_images\/cards_30750dae-a2db-4c35-88bd-220c19d3322f.png",
+        "image_3": "shopify:\/\/shop_images\/gold2.png",
+        "full_width": true,
+        "btn_enable": true,
+        "button_text": "GET GOLD PACKS",
+        "button_link": ""
+      }
+    },
+    "cards_title_48RdHy": {
+      "type": "cards-title",
+      "settings": {
+        "section_title": "<h2>\n<strong>6 RARITY TIERS<\/strong> TO DISCOVER<\/h2>"
+      }
+    },
+    "plush_hero_fAwVqf": {
+      "type": "plush-hero",
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/raritytiers_desktop_2e181439-3669-4186-a4ac-7e0d2f55879d.png",
+        "mob-hero": "shopify:\/\/shop_images\/raritytiers_mobile_bd58b0f3-3c66-4c05-af2c-a15fd9a43d5b.png",
+        "desk-hero-alt": "DOOMLINGS RARIty tier icons",
+        "button_link": ""
+      }
+    },
+    "custom_liquid_hJhJWy": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br><center><a class=\"btn-linked\" href>GET GOLD PACKS<\/a><\/center><br><br><br>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "password_eGrYaM",
+    "main_product_single_g46RPN",
+    "card_styles_RjN4CH",
+    "cards_multi_section_MBMNdm",
+    "cards_title_48RdHy",
+    "plush_hero_fAwVqf",
+    "custom_liquid_hJhJWy"
+  ]
+}

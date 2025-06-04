@@ -1,0 +1,95 @@
+{%- liquid
+  assign product = all_products[section.settings.product]
+  assign current_variant = product.selected_or_first_available_variant
+
+  assign featured_media = current_variant.featured_media | default: product.featured_media
+  assign show_size_chart = false
+
+  assign product_form_id = 'product-form-' | append: section.id | append: product.id
+  assign installments_form_id = product_form_id | append: '-installments'
+
+  assign form_class = 'row'
+  if settings.on_add_to_cart == 'ajax'
+    assign form_class = form_class | append: ' ajax-product-form'
+  endif
+  unless current_variant.available
+    assign form_class = form_class | append: ' variant--unavailable'
+  endunless
+
+  assign form_class_product = form_class | append: ' product-form'
+-%}
+                <div class="payment-buttons">
+
+                {% if product.variants.first.available %}
+                  <button type="button" class="btn btn--subtle-hover add-to-cart-and-checkout-btn">Buy It Now</button>
+                {% else %}
+                  <a href="#" class="klaviyo-bis-trigger btn btn-notify">Notify Me When Available</a>
+                  <p>Sorry, this product is currently out of stock!</p>
+                {% endif %}
+                  
+                </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script>
+                $(document).ready(function() {
+                  async function modifyCart(variantId, quantity) {
+                    // Get the button and update it
+                    var $button = $('.add-to-cart-and-checkout-btn');
+                    $button.text('Processing...').prop('disabled', true);
+
+                    try {
+                      // Clear the cart
+                      console.log('Clearing cart...');
+                      await $.ajax({
+                        type: 'POST',
+                        url: '/cart/clear.js',
+                        dataType: 'json'
+                      });
+                      console.log('Cart cleared, adding item...');
+
+                      // Add item to the cart
+                      await $.ajax({
+                        type: 'POST',
+                        url: '/cart/add.js',
+                        data: { quantity: quantity, id: variantId },
+                        dataType: 'json'
+                      });
+                      console.log('Item added, redirecting to checkout...');
+                      window.location.href = '/checkout';
+                    } catch (error) {
+                      alert('Error during cart modification: ' + error.responseText);
+                      console.error('Cart modification error:', error.responseText);
+                      $button.text('Buy It Now').prop('disabled', false); // Reset button if there is an error
+                    }
+                  }
+
+                  $('.add-to-cart-and-checkout-btn').on('click', function(e) {
+                    e.preventDefault();
+                    var variantId = {{ product.selected_or_first_available_variant.id }};
+                    var quantity = 1; // Adjust the quantity if needed
+                    modifyCart(variantId, quantity);
+                  });
+                });
+                </script>
+
+                {% style %}
+                .add-to-cart-and-checkout-btn, .btn-notify { background-color:#50248f;background-image: none !important; margin-top:15px; }
+                .add-to-cart-and-checkout-btn:hover, .btn-notify:hover { background-color:#230051 !important;background-image: none !important; }
+                .button-outer { margin-top: 25px; margin-bottom: -4px; display: flex;flex-direction: column-reverse; }
+                .AmazonLayout__amazon-layout .AmazonLayout__content {text-align: center;}
+                .btn-notify { border:0;box-shadow: none;    font-family: Lato, sans-serif;
+                font-weight: 900;
+                display: inline-block;
+                padding: 12px 30px;
+                text-align: center;
+                border: 0;
+                outline: none;
+                box-shadow: none !important;
+                text-decoration: none;
+                border-radius: 50px;
+                font-size: 20px;
+                text-transform: uppercase;
+                transition: all .3s ease;
+                background-image: linear-gradient(to right, #18c94b, #01b234);
+                color: #fff !important; }
+
+                {% endstyle %}       

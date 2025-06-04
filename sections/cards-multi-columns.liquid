@@ -1,0 +1,522 @@
+{% schema %}
+{
+  "name": "Box Multi Columns",
+  "max_blocks": 30,
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    },
+    {
+      "type": "html",
+      "id": "section_title",
+      "label": "Section Title", 
+      "default": "New Cards"
+    },    
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "range",
+      "id": "img_size",
+      "label": "Image Size",
+      "default": 300,
+      "min": 260,
+      "max": 360,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_hover_effect",
+      "label": "Enable Image Hover Effect",
+      "default": false,
+      "info": "Scale up images slightly when hovered"
+    },
+    {
+      "type": "range",
+      "id": "hover_scale",
+      "label": "Hover Scale Amount",
+      "default": 105,
+      "min": 100,
+      "max": 120,
+      "step": 1,
+      "unit": "%",
+      "info": "How much the image should scale up on hover"
+    },
+    {
+      "type": "header",
+      "content": "Navigation Arrows"
+    },
+    {
+      "type": "select",
+      "id": "arrow_style",
+      "label": "Arrow Style",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default Pink Arrows"
+        },
+        {
+          "value": "custom",
+          "label": "Custom Arrows"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "image_picker",
+      "id": "arrow_next",
+      "label": "Custom Next Arrow",
+      "info": "Only applies when Custom Arrows is selected"
+    },
+    {
+      "type": "image_picker",
+      "id": "arrow_prev",
+      "label": "Custom Previous Arrow",
+      "info": "Only applies when Custom Arrows is selected"
+    },
+    {
+      "type": "range",
+      "id": "arrow_width",
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Arrow Width",
+      "default": 23
+    },
+    {
+      "type": "range",
+      "id": "arrow_height",
+      "min": 20,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Arrow Height",
+      "default": 46
+    },
+    {
+      "type": "header",
+      "content": "Slider Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_autoplay",
+      "label": "Enable Autoplay on Mobile",
+      "default": true,
+      "info": "When disabled, mobile users will need to swipe manually"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "boxes",
+      "name": "Boxes",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "box_image",
+          "label": "Box Image"
+        },
+        {
+          "type": "text",
+          "id": "box_title",
+          "label": "Box Title"
+        },
+        {
+          "type": "url",
+          "id": "box_link",
+          "label": "Box Link"
+        },
+        {
+          "type": "checkbox",
+          "id": "open_in_new_tab",
+          "label": "Open Links in New Tab",
+          "default": false,
+          "info": "When enabled, all box links will open in a new browser tab"
+        }                
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "section",
+      "name": "Box Multi Columns"
+    }
+  ]  
+}
+{% endschema %}
+
+{% if section.settings.section_title != blank %}
+    <div class="section-title-image">
+        {{ section.settings.section_title }}
+    </div>
+{% endif %}
+
+<div style="background-image: url('{{ section.settings.background_image | img_url: 'master' }}'); background-size: cover; background-position: center;">
+    <div class="card-container section-{{ section.id }}-padding">
+        <div class="swiper-container swiper-container-2">
+            <div class="swiper-wrapper">
+                {% for block in section.blocks %}                    
+                    <div class="swiper-slide" {{ block.shopify_attributes }}>
+                        <div class="swiper-slide-contents">
+                            <div class="card-image-wrap">
+                                <div class="card-placeholder"></div>
+                                <a href="{{ block.settings.box_link }}" {% if section.settings.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}>
+                                    <img data-aos="fade-right" 
+                                         data-aos-delay="{{ forloop.index0 | times: 100 }}"
+                                         alt="{{ block.settings.box_image.alt | escape }}"
+                                         class="lazyload card-swiper-lazy"
+                                         data-src="{{ block.settings.box_image | img_url: 'master' }}"
+                                         onload="removeCardPlaceholder(this)">
+                                </a>
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                            </div>
+                        </div>
+                    </div>                                    
+                {% endfor %} 
+            </div>
+            <div class="custom-next-2"></div>
+            <div class="custom-prev-2"></div>
+        </div>
+    </div> 
+</div>
+
+<script>
+function removeCardPlaceholder(imgElement) {
+    if (imgElement.previousElementSibling && imgElement.previousElementSibling.classList.contains('card-placeholder')) {
+        imgElement.previousElementSibling.style.display = 'none';
+    }
+    imgElement.classList.add('lazyloaded');
+}
+
+var swiper = new Swiper('.swiper-container-2', {
+    loop: true,
+    lazy: {
+        loadPrevNext: true,
+    },
+    slidesPerView: 1,
+    spaceBetween: 10,
+    navigation: {
+        nextEl: '.custom-next-2',
+        prevEl: '.custom-prev-2',
+    },
+    autoplay: {% if section.settings.mobile_autoplay %}
+    {
+        delay: 3000,
+        disableOnInteraction: false,
+    }
+    {% else %}
+    false
+    {% endif %},
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+            autoplay: {% if section.settings.mobile_autoplay %}
+            {
+                delay: 3000,
+                disableOnInteraction: false,
+            }
+            {% else %}
+            false
+            {% endif %}
+        },
+        768: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            autoplay: {% if section.settings.mobile_autoplay %}
+            {
+                delay: 3000,
+                disableOnInteraction: false,
+            }
+            {% else %}
+            false
+            {% endif %}
+        },
+        1024: {
+            slidesPerView: 5,
+            spaceBetween: 40,
+            autoplay: false, // Always disable autoplay for desktop
+        },
+    },
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('a[href^="#"]');
+    const additionalOffset = 60;
+
+    for (const link of links) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                const offsetPosition = targetPosition + additionalOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+});
+</script>
+
+{% style %}
+    /* Section Title Styles */
+    #shopify-section-{{section.id}} .section-title-image h2 {
+        margin-top: 40px; 
+        margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+        #shopify-section-{{section.id}} .section-title-image h2 { 
+            margin-bottom: 20px; 
+        }
+    }
+
+    /* Container Styles */
+    #shopify-section-{{section.id}} .card-container {
+        
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* Swiper Container and Slide Styles */
+    #shopify-section-{{section.id}} .swiper-container {
+        width: 100%;
+        position: relative; 
+/*        overflow: hidden;*/
+    }
+
+    #shopify-section-{{section.id}} .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        justify-content: center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: flex-start;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+        
+    } 
+
+    #shopify-section-{{section.id}} .swiper-slide-contents { 
+        display: flex; 
+        flex-direction: column; 
+        align-items: center;
+        width: 100%;
+    }
+
+    /* Card and Image Styles */
+    #shopify-section-{{section.id}} .card-image-wrap {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        {% if section.settings.enable_hover_effect %}
+        cursor: pointer;
+        {% endif %}
+    }
+
+    #shopify-section-{{section.id}} .card-image-wrap a {
+        display: block;
+        z-index: 1;
+        position: relative;
+        background: transparent;
+        width: 100%;
+        text-align: center;
+    }
+
+    #shopify-section-{{section.id}} img { 
+        max-width: {{section.settings.img_size}}px;
+        width: 100%;
+        height: auto;
+        display: block;
+        background: transparent;
+        margin: 0 auto; 
+    }
+
+    @media (max-width: 768px) {
+        #shopify-section-{{section.id}} img {
+            max-width: 300px;
+        }
+    }
+
+    /* Image Hover Effect */
+    {% if section.settings.enable_hover_effect %}
+    #shopify-section-{{section.id}} .card-image-wrap img {
+        transition: transform 0.3s ease-in-out;
+        will-change: transform;
+    }
+    
+    #shopify-section-{{section.id}} .card-image-wrap:hover img {
+        transform: scale({{ section.settings.hover_scale | divided_by: 100.0 }});
+    }
+    {% endif %}
+
+    /* Navigation Arrow Base Styles */
+    #shopify-section-{{section.id}} .custom-next-2,
+    #shopify-section-{{section.id}} .custom-prev-2 {
+        position: absolute;
+        top: 50%;
+        width: {{ section.settings.arrow_width }}px;
+        height: {{ section.settings.arrow_height }}px;
+        margin-top: -{{ section.settings.arrow_height | divided_by: 2 }}px;
+        z-index: 10;
+        cursor: pointer;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: opacity 0.3s ease;
+        background-repeat: no-repeat;
+    }
+    #shopify-section-{{section.id}} .custom-next-2 {right: 14px;}
+    #shopify-section-{{section.id}} .custom-prev-2 {left: 14px;}
+    /* Arrow Styles based on settings */
+    {% if section.settings.arrow_style == 'default' %}
+        #shopify-section-{{section.id}} .custom-next-2 {            
+            background-image: url('https://cdn.shopify.com/s/files/1/0554/6190/4593/files/arrowpink-r.png?v=1718636940');
+        }
+        #shopify-section-{{section.id}} .custom-prev-2 {            
+            background-image: url('https://cdn.shopify.com/s/files/1/0554/6190/4593/files/arrowpink-l.png?v=1718636941');
+        }
+    {% else %}
+        #shopify-section-{{section.id}} .custom-next-2 {
+            {% if section.settings.arrow_next != blank %}
+                background-image: url({{ section.settings.arrow_next | img_url: 'master' }});
+            {% endif %}
+        }
+        #shopify-section-{{section.id}} .custom-prev-2 {
+            {% if section.settings.arrow_prev != blank %}
+                background-image: url({{ section.settings.arrow_prev | img_url: 'master' }});
+            {% endif %}
+        }
+    {% endif %}
+
+    /* Responsive Arrow Styles */
+    @media (max-width: 768px) {
+        #shopify-section-{{section.id}} .custom-prev-2 {
+            width: {{ section.settings.arrow_width | times: 0.6 }}px;
+            height: {{ section.settings.arrow_height | times: 0.6 }}px;            
+        }
+        #shopify-section-{{section.id}} .custom-next-2 {
+            width: {{ section.settings.arrow_width | times: 0.6 }}px;
+            height: {{ section.settings.arrow_height | times: 0.6 }}px;            
+        }
+    }
+
+    /* Disabled Arrow States */
+    #shopify-section-{{section.id}} .custom-prev-2.swiper-button-disabled,
+    #shopify-section-{{section.id}} .custom-next-2.swiper-button-disabled { 
+        opacity: .5; 
+    }
+
+    /* Section Padding */
+    .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+        background-size: cover;
+    }
+
+    /* Loading States */
+    #shopify-section-{{section.id}} .card-placeholder {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+    }
+
+    #shopify-section-{{section.id}} .swiper-lazy-preloader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+
+    #shopify-section-{{section.id}} .swiper-lazy-preloader-white {
+        --swiper-preloader-color: #ffffff;
+    }
+
+    /* Hide Breadcrumbs */
+    .breadcrumbs-container {
+        display: none;
+    }
+
+    /* Utility Classes */
+    #shopify-section-{{section.id}} .as-footer {
+        text-align: center;
+    }
+
+    /* Swiper Wrapper Styles */
+    #shopify-section-{{section.id}} .swiper-wrapper {
+        align-items: center;
+        display: flex;
+    }
+
+    /* Background Styles */
+    #shopify-section-{{section.id}} .section-background {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+    }
+
+    /* Lazy Loading Styles */
+    #shopify-section-{{section.id}} .lazyload {
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    #shopify-section-{{section.id}} .lazyloaded {
+        opacity: 1;
+    }
+
+    /* AOS Animation Styles */
+    [data-aos] {
+        pointer-events: none;
+    }
+    
+    .aos-animate {
+        pointer-events: auto;
+    }
+
+    /*.aos-init[data-aos][data-aos].aos-animate {
+        transform: unset;
+    }*/
+{% endstyle %}

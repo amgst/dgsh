@@ -1,0 +1,504 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_title": true,
+        "title_alignment": "left"
+      }
+    },
+    "card_styles_DE8dM7": {
+      "type": "card-styles",
+      "settings": {
+        "h2_font_size": 44,
+        "h2_font_size_m": 28,
+        "h3_font_size": 26,
+        "h3_font_size_m": 26,
+        "p_font_size": 22,
+        "p_font_size_m": 19,
+        "button_font_size": 28,
+        "img_animation": 800,
+        "main_color": "#3e117c",
+        "background_image": "shopify:\/\/shop_images\/x_9a1156cc-66fe-4e88-bfee-89334d173e3e.png"
+      }
+    },
+    "plush_hero_e4RaWd": {
+      "type": "plush-hero",
+      "custom_css": [],
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/HowtoPlay_Hero_Destkop_998b1670-1f8f-487c-ba94-5f07b5dc67e8.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/HowtoPlay_Hero_Mobile_52f75c90-756c-4b01-a66b-20c279e6c71c.jpg",
+        "desk-hero-alt": "How to Play",
+        "button_link": "shopify:\/\/collections\/all"
+      }
+    },
+    "custom_liquid_3bwwAQ": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br><p><div class=\"section-title-image\"><center><h2>LEARN IN <strong><\/strong><b>60 SECONDS!<\/b><\/h2><\/div><\/center>"
+      }
+    },
+    "video_two_meBWdy": {
+      "type": "video-two",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "video_width": 900,
+        "section_title": "",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=8PuWpqa70Uc",
+        "cover_image": "shopify:\/\/shop_images\/HowtoPlay_VideoThumb.jpg",
+        "overlay_opacity": 10,
+        "button_text": "GET DOOMLINGS",
+        "button_link": "shopify:\/\/collections\/all",
+        "image_position": "center center",
+        "mobile_play_mode": "popup",
+        "overlay_style": "full",
+        "color_overlay_bg": "#000000",
+        "content_overlay_opacity": 10,
+        "modal_overlay_opacity": 95,
+        "title": "",
+        "text": "",
+        "text_color": "#ffffff",
+        "overlay_position": "center-center"
+      }
+    },
+    "custom_liquid_dKRmPd": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<center><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0554\/6190\/4593\/files\/GameInfo.png?v=1732218251\" width=\"400\"><\/center>"
+      }
+    },
+    "custom_liquid_tJcmtC": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<BR><div class=\"section-title-image\"><center><h2>A <strong>DEEPER<\/strong> DIVE:<\/h2><\/div>"
+      }
+    },
+    "video_two_MgaEkq": {
+      "type": "video-two",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "video_width": 900,
+        "section_title": "",
+        "video_url": "https:\/\/youtu.be\/Dazb3yQH9vw",
+        "cover_image": "shopify:\/\/shop_images\/deal2.gif",
+        "overlay_opacity": 10,
+        "button_text": "GET DOOMLINGS",
+        "button_link": "shopify:\/\/collections\/all",
+        "image_position": "center center",
+        "mobile_play_mode": "popup",
+        "overlay_style": "full",
+        "color_overlay_bg": "#000000",
+        "content_overlay_opacity": 10,
+        "modal_overlay_opacity": 95,
+        "title": "",
+        "text": "",
+        "text_color": "#ffffff",
+        "overlay_position": "center-center"
+      }
+    },
+    "cards_multi_columns_6k8DDV": {
+      "type": "cards-multi-columns",
+      "blocks": {
+        "boxes_L38JE7": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/resources_icons-scoretool_55a7156d-ff04-46d6-aa10-2846b1bb81c6.png",
+            "box_title": "",
+            "box_link": "#glitterlings",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_WjT8cy": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/resources_icons-rulesheet_4e52d587-82f7-4756-b853-aafcbb87c08a.png",
+            "box_title": "",
+            "box_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0554\/6190\/4593\/files\/Doomlings_Rulebook.pdf?v=1709671623",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_LCkWkr": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/resources_icons-scoresheet_81f9a19f-5443-4f56-b964-0197d356e6ad.png",
+            "box_title": "",
+            "box_link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0554\/6190\/4593\/files\/Doomlings_PrintableScoreCards.pdf?v=1733435523",
+            "open_in_new_tab": true
+          }
+        },
+        "boxes_NBwbFk": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/resources_icons-onlinegame_f734a3e9-ffbb-4cfc-b848-01860a0adcf1.png",
+            "box_title": "",
+            "box_link": "https:\/\/tabletopia.com\/games\/doomlings-the-card-game",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_gknXPA": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/resources_icons-upgrade_e5fcb462-ba31-4c75-bb44-1eeeab7e2e85.png",
+            "box_title": "",
+            "box_link": "shopify:\/\/collections\/all",
+            "open_in_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "boxes_L38JE7",
+        "boxes_WjT8cy",
+        "boxes_LCkWkr",
+        "boxes_NBwbFk",
+        "boxes_gknXPA"
+      ],
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 20,
+        "section_title": "<div class=\"section-title-image\"><center><h2><strong>RESOURCES<\/strong><\/h2><\/center><\/div>",
+        "background_image": "shopify:\/\/shop_images\/1.jpg",
+        "img_size": 266,
+        "enable_hover_effect": true,
+        "hover_scale": 105,
+        "arrow_style": "default",
+        "arrow_width": 23,
+        "arrow_height": 46,
+        "mobile_autoplay": true
+      }
+    },
+    "cards_carousel_XWCPw4": {
+      "type": "cards-carousel",
+      "blocks": {
+        "cards_6xfcAb": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/r_ToeBeans.png"
+          }
+        },
+        "cards_aKfFPg": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/1_Crackletown.png"
+          }
+        },
+        "cards_g9grAA": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/MagicBeans_fc210819-e482-4c57-9d66-c7d66a75bcac.png"
+          }
+        },
+        "cards_qmxfyJ": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/AI_Takeover.png"
+          }
+        },
+        "cards_U9FBxp": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/c_Lucky.png"
+          }
+        },
+        "cards_UXUnqR": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Mega_Tsunami.png"
+          }
+        },
+        "cards_kaeHqE": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/r_BoomingCall.png"
+          }
+        },
+        "cards_J9gQTB": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Tiny_Little_Melons.png"
+          }
+        },
+        "cards_j4gTa7": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Badlands.png"
+          }
+        },
+        "cards_eY6nmM": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Flatulence.png"
+          }
+        },
+        "cards_Y9R7Qd": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Awesome_99f0e0ac-83bd-47b7-b3f1-52c19384b428.png"
+          }
+        },
+        "cards_9pJHJc": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/2_catInvasiveSpecies.png"
+          }
+        },
+        "cards_hHReDW": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Rogloblers.png"
+          }
+        },
+        "cards_NQnXmk": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Swarm5.png"
+          }
+        },
+        "cards_EJqXxe": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Echolocation.png"
+          }
+        },
+        "cards_HpYgTg": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/cd_Metamorphosis.png"
+          }
+        },
+        "cards_7B3VaT": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/1_GlimmeringGardens.png"
+          }
+        },
+        "cards_YU6g88": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/BonyPlates.png"
+          }
+        },
+        "cards_pMbtQL": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Kidney4.png"
+          }
+        },
+        "cards_kYmQkX": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Ephemeral.png"
+          }
+        },
+        "cards_UCcffC": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Pink.png"
+          }
+        },
+        "cards_EAU4V3": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/b_Cap.png"
+          }
+        },
+        "cards_bWaiJW": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/PhreakishEyes.png"
+          }
+        },
+        "cards_6xjyKp": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/BioengineeredPlague.png"
+          }
+        },
+        "cards_ihT4pX": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Self-Awareness.png"
+          }
+        },
+        "cards_7PFdRf": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Glitterstorm.png"
+          }
+        }
+      },
+      "block_order": [
+        "cards_6xfcAb",
+        "cards_aKfFPg",
+        "cards_g9grAA",
+        "cards_qmxfyJ",
+        "cards_U9FBxp",
+        "cards_UXUnqR",
+        "cards_kaeHqE",
+        "cards_J9gQTB",
+        "cards_j4gTa7",
+        "cards_eY6nmM",
+        "cards_Y9R7Qd",
+        "cards_9pJHJc",
+        "cards_hHReDW",
+        "cards_NQnXmk",
+        "cards_EJqXxe",
+        "cards_HpYgTg",
+        "cards_7B3VaT",
+        "cards_YU6g88",
+        "cards_pMbtQL",
+        "cards_kYmQkX",
+        "cards_UCcffC",
+        "cards_EAU4V3",
+        "cards_bWaiJW",
+        "cards_6xjyKp",
+        "cards_ihT4pX",
+        "cards_7PFdRf"
+      ],
+      "custom_css": [
+        ".section-title-image h2 {margin-bottom: 10px;}"
+      ],
+      "settings": {
+        "padding_top": 52,
+        "padding_bottom": 0,
+        "section_title": "<h2>\n<b>EXPLORE<\/b> THE CARDS<\/h2>",
+        "button_text": "SEE THE COMPENDIUM",
+        "button_link": "shopify:\/\/pages\/compendium",
+        "btn_enable": true,
+        "button_style": "btn-doomlings",
+        "background_image": "shopify:\/\/shop_images\/x_9a1156cc-66fe-4e88-bfee-89334d173e3e.png"
+      }
+    },
+    "cards_multi_section_LyqwCB": {
+      "type": "cards-multi-section",
+      "blocks": {
+        "cards_PVJcA3": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/PlaySections_1_fc071eed-393a-4d05-9433-8c98ce1d0f0e.png",
+            "card_description": "The object of the game is to <b>score the most points before the world ends!<\/b>"
+          }
+        },
+        "cards_c6N9VV": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/PlaySections_2.png",
+            "card_description": "Score points by <b>playing traits<\/b> on your turn. Each trait has a <b>point value<\/b>. Traits can have <b>special effects<\/b> like steal, swap, discard and more!"
+          }
+        },
+        "cards_Bipky7": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/PlaySections_3.png",
+            "card_description": "Play traits over multiple rounds, called <b>Ages<\/b>. Ages introduce a new rule for that round. <b>But be warned...<\/b>"
+          }
+        },
+        "cards_W9XcYg": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/PlaySections_4.png",
+            "card_description": "Hidden in the ages are <b>Catastrophes<\/b>! Catastrophes are special rounds with <i><b>adverse<\/b><\/i> rules & effects, forcing you to suddenly adapt your strategy."
+          }
+        },
+        "cards_NqpH3R": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/PlaySections_6.png",
+            "card_description": "After the third catastrophe strikes, <b>the world ends!<\/b> Use our <a href=\"https:\/\/www.scoredoomlings.com\"><b>Online Score Tool<\/b><\/a> to easily tally up the final scores. The player with the <b>most points wins!<\/b>"
+          }
+        }
+      },
+      "block_order": [
+        "cards_PVJcA3",
+        "cards_c6N9VV",
+        "cards_Bipky7",
+        "cards_W9XcYg",
+        "cards_NqpH3R"
+      ],
+      "custom_css": [
+        ".card-container {padding-top: 20px;}",
+        ".intro-img-one {z-index: 2;}",
+        ".intro-img-two {z-index: 1;}",
+        ".intro-img-three {z-index: 3;}",
+        ".intro-img-two {margin-right: -9%; margin-left: -9%;}"
+      ],
+      "settings": {
+        "card_id": "points",
+        "section_title": "<div class=\"section-title-image\"><center><h2>CAN YOU <strong>SURVIVE <\/strong>THE END OF THE WORLD?<\/h2><\/center><\/div>",
+        "sub_section_title": "",
+        "back_desk": "shopify:\/\/shop_images\/1-2_86fe2a13-2ab1-47cb-aef6-eb14f1b35081.jpg",
+        "back_mob": "shopify:\/\/shop_images\/pigeon.jpg",
+        "back_color": "",
+        "image_1": "shopify:\/\/shop_images\/x_9a1156cc-66fe-4e88-bfee-89334d173e3e.png",
+        "image_2": "shopify:\/\/shop_images\/x_9a1156cc-66fe-4e88-bfee-89334d173e3e.png",
+        "image_3": "shopify:\/\/shop_images\/x_9a1156cc-66fe-4e88-bfee-89334d173e3e.png",
+        "full_width": true,
+        "btn_enable": false,
+        "button_text": "GET IMAGINARY ENDS",
+        "button_link": "shopify:\/\/products\/imaginary-ends"
+      }
+    },
+    "custom_liquid_ypUPKr": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br>"
+      }
+    },
+    "footer_cta_P8ydQr": {
+      "type": "footer-cta",
+      "settings": {
+        "button_text": "Get Doomlings",
+        "button_link": "shopify:\/\/collections\/all",
+        "image_alt": "Doomlings looking up"
+      }
+    },
+    "custom_liquid_LYAbme": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"section-title-image\"><center><h2>SEE WHAT <strong>PEOPLE ARE SAYING!<\/h2><\/div><\/center>"
+      }
+    },
+    "17322963849ebda9c2": {
+      "type": "apps",
+      "blocks": {
+        "videeo_mobile_commerce_popclips_carousel_QWA9aJ": {
+          "type": "shopify:\/\/apps\/videeo-mobile-commerce\/blocks\/popclips-carousel\/acf9f8eb-c211-4324-a19b-9f362f43b225",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "videeo_mobile_commerce_popclips_carousel_QWA9aJ"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "custom_liquid_qnhWCi": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "card_styles_DE8dM7",
+    "plush_hero_e4RaWd",
+    "custom_liquid_3bwwAQ",
+    "video_two_meBWdy",
+    "custom_liquid_dKRmPd",
+    "custom_liquid_tJcmtC",
+    "video_two_MgaEkq",
+    "cards_multi_columns_6k8DDV",
+    "cards_carousel_XWCPw4",
+    "cards_multi_section_LyqwCB",
+    "custom_liquid_ypUPKr",
+    "footer_cta_P8ydQr",
+    "custom_liquid_LYAbme",
+    "17322963849ebda9c2",
+    "custom_liquid_qnhWCi"
+  ]
+}

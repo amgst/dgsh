@@ -1,0 +1,1 @@
+!function(i,n,s,t,a,u,d){i.InstantConfig=i.InstantConfig||{},d=i.InstantJS=i.InstantJS||{},d.trackQueue=[],d.track=function(){d.trackQueue.push(arguments)},u=n.createElement(s),u.async=!0,u.src=t,a=n.getElementsByTagName(s)[0],a.parentNode.insertBefore(u,a)}(window,document,'script','https://cdn.instant.one/instant.js?siteId=site_BzV7VKlHRs692QvhzhzkrVQc');

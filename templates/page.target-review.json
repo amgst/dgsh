@@ -1,0 +1,179 @@
+{
+  "sections": {
+    "rewards-page-249919": {
+      "type": "rewards-249919",
+      "disabled": true,
+      "settings": {}
+    },
+    "672a0cca-2dbb-4293-a3df-cb5cde8fc033": {
+      "type": "target_review",
+      "blocks": {
+        "384d3452-47b9-4641-a8d0-1fef8d569b60": {
+          "type": "target",
+          "settings": {
+            "product": "classic-doomlings-game"
+          }
+        },
+        "74607d1b-0e6d-4db0-b3ca-28882a7bc16f": {
+          "type": "target",
+          "settings": {
+            "product": "doomlings-deluxe-upgrade-pack"
+          }
+        },
+        "4946cfd0-24ce-4544-a348-b67262674800": {
+          "type": "target",
+          "settings": {
+            "product": "doomlings-overlush-mystery-expansion-4-pack"
+          }
+        },
+        "773b4cd0-005f-4ad8-b063-e325b34c7925": {
+          "type": "target",
+          "disabled": true,
+          "settings": {
+            "product": "6-pack-playmats"
+          }
+        },
+        "708400ec-9210-4268-a62b-727ec186fb7e": {
+          "type": "target",
+          "disabled": true,
+          "settings": {
+            "product": "4-pack-playmats"
+          }
+        },
+        "2b558b01-62f7-4dff-96ac-f5e85245d23c": {
+          "type": "target",
+          "disabled": true,
+          "settings": {
+            "product": "community-playmat"
+          }
+        },
+        "5125de85-1a22-4502-a7f0-f6a96712bf12": {
+          "type": "target",
+          "disabled": true,
+          "settings": {
+            "product": "single-playmat"
+          }
+        },
+        "7ce31d97-6b6d-4500-8a99-558c77cf19be": {
+          "type": "target",
+          "disabled": true,
+          "settings": {
+            "product": "playermat-bag"
+          }
+        },
+        "fd8ab8a9-e7c9-4112-9bff-2b104d372442": {
+          "type": "target",
+          "disabled": true,
+          "settings": {
+            "product": "300-doomsleeves"
+          }
+        },
+        "844a5d35-ded3-4706-9010-89c192d9d70c": {
+          "type": "target",
+          "disabled": true,
+          "settings": {
+            "product": "rainbow-scutes-enamel-pin-1"
+          }
+        },
+        "296fbae3-8965-4279-8102-4c5801f80872": {
+          "type": "target",
+          "disabled": true,
+          "settings": {
+            "product": "rainbow-scutes-t-shirt"
+          }
+        },
+        "e17f8383-d479-4045-8533-541e0b27c670": {
+          "type": "target",
+          "disabled": true,
+          "settings": {
+            "product": "enamel-pin-bundle-all-5-pins"
+          }
+        },
+        "3063584b-df6f-4c3a-8fa0-33ca99959b40": {
+          "type": "target",
+          "disabled": true,
+          "settings": {
+            "product": "doomlings-ultimate-bundle-og"
+          }
+        },
+        "353176c4-f51c-4511-a1bb-fcfe0b000fa4": {
+          "type": "target",
+          "disabled": true,
+          "settings": {
+            "product": "doomlings-gameplay-accessory-bundle"
+          }
+        },
+        "7aa11bd7-233e-44fe-9678-b7519b84852e": {
+          "type": "target",
+          "disabled": true,
+          "settings": {
+            "product": "nocturnal-enamel-pin"
+          }
+        },
+        "f4b912f3-32d2-42f7-baf8-6ec6468c50a0": {
+          "type": "target",
+          "disabled": true,
+          "settings": {
+            "product": "bubbles-enamel-pin"
+          }
+        },
+        "ae356b34-4f2f-44ba-b7b9-2aa671595f6c": {
+          "type": "target",
+          "disabled": true,
+          "settings": {
+            "product": "baby-heroic-enamel-pin"
+          }
+        },
+        "a2d58f1e-1366-4576-8445-553f531fff54": {
+          "type": "target",
+          "disabled": true,
+          "settings": {
+            "product": "red-panda-enamel-pin"
+          }
+        },
+        "bd16cc62-12df-4853-9d1f-427d9bdde897": {
+          "type": "target",
+          "disabled": true,
+          "settings": {
+            "product": "all-the-stickers"
+          }
+        }
+      },
+      "block_order": [
+        "384d3452-47b9-4641-a8d0-1fef8d569b60",
+        "74607d1b-0e6d-4db0-b3ca-28882a7bc16f",
+        "4946cfd0-24ce-4544-a348-b67262674800",
+        "773b4cd0-005f-4ad8-b063-e325b34c7925",
+        "708400ec-9210-4268-a62b-727ec186fb7e",
+        "2b558b01-62f7-4dff-96ac-f5e85245d23c",
+        "5125de85-1a22-4502-a7f0-f6a96712bf12",
+        "7ce31d97-6b6d-4500-8a99-558c77cf19be",
+        "fd8ab8a9-e7c9-4112-9bff-2b104d372442",
+        "844a5d35-ded3-4706-9010-89c192d9d70c",
+        "296fbae3-8965-4279-8102-4c5801f80872",
+        "e17f8383-d479-4045-8533-541e0b27c670",
+        "3063584b-df6f-4c3a-8fa0-33ca99959b40",
+        "353176c4-f51c-4511-a1bb-fcfe0b000fa4",
+        "7aa11bd7-233e-44fe-9678-b7519b84852e",
+        "f4b912f3-32d2-42f7-baf8-6ec6468c50a0",
+        "ae356b34-4f2f-44ba-b7b9-2aa671595f6c",
+        "a2d58f1e-1366-4576-8445-553f531fff54",
+        "bd16cc62-12df-4853-9d1f-427d9bdde897"
+      ],
+      "settings": {
+        "title": "Choose a Product Review"
+      }
+    },
+    "custom_liquid_BcrAEH": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br><br><br>"
+      }
+    }
+  },
+  "order": [
+    "rewards-page-249919",
+    "672a0cca-2dbb-4293-a3df-cb5cde8fc033",
+    "custom_liquid_BcrAEH"
+  ]
+}

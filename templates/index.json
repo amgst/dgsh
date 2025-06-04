@@ -1,0 +1,331 @@
+{
+  "sections": {
+    "plush_hero_UhfQQN": {
+      "type": "plush-hero",
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/HeroRedo_4_Desktop_Banner_1b2222a4-2de1-44cb-876a-332c75373fa5.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/HeroRedo_4_Mobile_Banner_13c62e2c-22e1-4874-a45a-d71c73cb40d0.jpg",
+        "desk-hero-alt": "Doomlings! A lightweight and easy-to-learn card game for 2-6 players. Can you survive the end of the world? Button: Shop Now",
+        "button_link": "shopify:\/\/collections\/all-products"
+      }
+    },
+    "2090b1d6-52d0-4058-984e-b978d272778b": {
+      "type": "custom-liquid",
+      "custom_css": [
+        "h1 {display: none;}"
+      ],
+      "settings": {
+        "custom_liquid": "<h1>Doomlings - The Best Card Game For The End of The World!<\/h1>"
+      }
+    },
+    "packages_zgrrFj": {
+      "type": "packages",
+      "blocks": {
+        "package_LXzwz3": {
+          "type": "package",
+          "settings": {
+            "package_title": "Classic Game",
+            "product_image": "shopify:\/\/shop_images\/Doomlings_ClassicGame_Display.jpg",
+            "product_link": "classic-doomlings-game",
+            "product_details": "<li>\n<span>•<\/span>  Base Game (167 cards)<\/li>\n<li>\n<span>•<\/span>  1 Collectible Mystery Holofoil<\/li>",
+            "sale_price_color": "#1a0040",
+            "compare_price_color": "#1a0040",
+            "value_price_color": "#00bd3e",
+            "price_sale_enable": false,
+            "product_linkcompare": "c-value-sale",
+            "price_adj_enable": false,
+            "enable_value_header": false,
+            "value_header_text": "",
+            "value_icon": "shopify:\/\/shop_images\/star.png",
+            "header_bg_color": "#50248f",
+            "border_color": "#50248f",
+            "btn_text": "Order Now"
+          }
+        },
+        "package_c3G4Lf": {
+          "type": "package",
+          "settings": {
+            "package_title": "Deluxe Bundle",
+            "product_image": "shopify:\/\/shop_images\/Doomlings_DeluxeBundle_Box_OverlushGift_2_dcb9c69c-c320-4277-8b86-d3317dcca454.jpg",
+            "product_link": "doomlings-deluxe-bundle-holiday-special",
+            "product_details": "<li>\n<span>•<\/span>  Base Game<\/li>\n<li>\n<span>•<\/span>  Upgrade Pack Expansion<\/li>\n<li>\n<span>•<\/span>  Art-Deco Game Box<\/li>\n<li>\n<span>•<\/span>  Community Playmat<\/li>\n<li>\n<span>•<\/span>  7 Collectible Mystery Holofoils<\/li>\n<li><br><\/li><li>\n<b><u>LIMITED TIME DEAL:<\/u><\/b>\n<\/li><li>\n<span>•<\/span>  FREE Overlush Mystery Expansion<\/li>\n<li>",
+            "sale_price_color": "#1a0040",
+            "compare_price_color": "#1a0040",
+            "value_price_color": "#00bd3e",
+            "price_sale_enable": false,
+            "product_linkcompare": "d-value-sale",
+            "price_adj_enable": true,
+            "enable_value_header": true,
+            "value_header_text": "SPECIAL DEAL",
+            "header_bg_color": "#50248f",
+            "border_color": "#50248f",
+            "btn_text": "Order Now"
+          }
+        },
+        "package_PQRtmz": {
+          "type": "package",
+          "settings": {
+            "package_title": "Supreme Bundle",
+            "product_image": "shopify:\/\/shop_images\/1_SupremeBundle_2024.png",
+            "product_link": "doomlings-supreme-bundle",
+            "product_details": "<li>\n<span>•<\/span> Base Game<\/li>\n<li>\n<span>•<\/span> Upgrade Pack Expansion<\/li>\n<li>\n<span>•<\/span> Overlush Mystery Expansion<\/li>\n<li>\n<span>•<\/span> Imaginary Ends Expansion<\/li>\n<li>\n<span>•<\/span> Art-Deco Game Box<\/li>\n<li>\n<span>•<\/span> Community Playmat<\/li>\n<li>\n<span>•<\/span> 4 Individual Playmats<\/li>\n<li>\n<span>•<\/span> 8 Collectible Mystery Holofoils<\/li>\n<li>",
+            "sale_price_color": "#1a0040",
+            "compare_price_color": "#1a0040",
+            "value_price_color": "#00bd3e",
+            "price_sale_enable": false,
+            "product_linkcompare": "s-value",
+            "price_adj_enable": true,
+            "enable_value_header": false,
+            "value_header_text": "HOLIDAY SPECIAL",
+            "header_bg_color": "#50248f",
+            "border_color": "#50248f",
+            "btn_text": "Order Now"
+          }
+        },
+        "package_AAhjhG": {
+          "type": "package",
+          "settings": {
+            "package_title": "Ultimate Bundle",
+            "product_image": "shopify:\/\/shop_images\/1_UltimateBundle_2024_bc748705-8b71-4bd9-bb7e-7ec2e89579d3.jpg",
+            "product_link": "ultimate-bundle",
+            "product_details": "<li>\n<span>•<\/span>  Base Game<\/li>\n<li>\n<span>•<\/span>  Upgrade Pack Expansion<\/li>\n<li>\n<span>•<\/span>  Overlush Mystery Expansion<\/li>\n<li>\n<span>•<\/span>  Imaginary Ends Expansion<\/li>\n<li>\n<span>•<\/span>  Wooden Collector’s Box<\/li>\n<li>\n<span>•<\/span>  Art-Deco Game Box<\/li>\n<li>\n<span>•<\/span>  Community Playmat<\/li>\n<li>\n<span>•<\/span>  6 Individual Playmats<\/li>\n<li>\n<span>•<\/span>  8 Collectible Mystery Holofoils<\/li>\n<li>",
+            "sale_price_color": "#230051",
+            "compare_price_color": "#1a0040",
+            "value_price_color": "#19ae2c",
+            "price_sale_enable": false,
+            "product_linkcompare": "ultimate-value",
+            "price_adj_enable": true,
+            "enable_value_header": true,
+            "value_header_text": "Best Value",
+            "value_icon": "shopify:\/\/shop_images\/star_55c59501-cac4-47d9-b4ca-2842faded55c.png",
+            "header_bg_color": "#50248f",
+            "border_color": "#50248f",
+            "btn_text": "Order Now"
+          }
+        }
+      },
+      "block_order": [
+        "package_LXzwz3",
+        "package_c3G4Lf",
+        "package_PQRtmz",
+        "package_AAhjhG"
+      ],
+      "settings": {
+        "section_title": "",
+        "padding_top": 44,
+        "padding_bottom": 40
+      }
+    },
+    "custom_liquid_H9wxFX": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br><div class=\"section_title section_title_brands\"><center><h2>WHAT IS DOOMLINGS?<\/h2><\/div><\/center>"
+      }
+    },
+    "video_two_gJarB3": {
+      "type": "video-two",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 20,
+        "tiktok": true,
+        "tiktok_id": "7133647168761597227",
+        "video_width": 900,
+        "section_title": "",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=8PuWpqa70Uc",
+        "cover_image": "shopify:\/\/shop_images\/HowtoPlay_VideoThumb.jpg",
+        "overlay_opacity": 10,
+        "button_text": "GET DOOMLINGS",
+        "button_link": "shopify:\/\/collections\/all",
+        "image_position": "center center",
+        "mobile_play_mode": "popup",
+        "overlay_style": "full",
+        "color_overlay_bg": "#000000",
+        "content_overlay_opacity": 10,
+        "modal_overlay_opacity": 95,
+        "title": "",
+        "text": "",
+        "text_color": "#ffffff",
+        "overlay_position": "center-center"
+      }
+    },
+    "reviews_LLcajF": {
+      "type": "reviews",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "section_title": "SEE WHAT PEOPLE ARE SAYING!"
+      }
+    },
+    "1731514855df586775": {
+      "type": "apps",
+      "blocks": {
+        "videeo_mobile_commerce_custom_popclips_carousel_4xDtUM": {
+          "type": "shopify:\/\/apps\/videeo-mobile-commerce\/blocks\/custom-popclips-carousel\/acf9f8eb-c211-4324-a19b-9f362f43b225",
+          "disabled": true,
+          "settings": {
+            "published_carousel_id": "01JD5V1PFRSCVR4GAJMWY4Q9ZE"
+          }
+        },
+        "videeo_mobile_commerce_popclips_carousel_azAJCg": {
+          "type": "shopify:\/\/apps\/videeo-mobile-commerce\/blocks\/popclips-carousel\/acf9f8eb-c211-4324-a19b-9f362f43b225",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "videeo_mobile_commerce_custom_popclips_carousel_4xDtUM",
+        "videeo_mobile_commerce_popclips_carousel_azAJCg"
+      ],
+      "settings": {
+        "padding_top": 32,
+        "padding_bottom": 40
+      }
+    },
+    "doomlings_promo_JnaYGU": {
+      "type": "doomlings-promo",
+      "settings": {
+        "container_max_width": 750,
+        "profile_image": "shopify:\/\/shop_images\/joel-rev-light-new.png",
+        "character_image": "shopify:\/\/shop_images\/r_Backbiter.png",
+        "video_url": "https:\/\/youtu.be\/afoamAWYxNQ?si=RmP-KHXgxRh7gTt9",
+        "quote": "This game is the worst, I never win!",
+        "quote_font_size": 28,
+        "quote_color": "#1a0140",
+        "author_name": "Joel McHale",
+        "author_credentials": "NBC's Community & FOX's Animal Control",
+        "character_bottom": -25,
+        "character_right": -85,
+        "character_size": 140,
+        "button_text": "GET DOOMLINGS",
+        "button_link": "shopify:\/\/collections\/all"
+      }
+    },
+    "find_us_ta83gV": {
+      "type": "find-us",
+      "blocks": {
+        "find_deEBQ8": {
+          "type": "find",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/Target_c302f804-3305-4fdf-88be-fbe544ec640c.png",
+            "image_link": ""
+          }
+        },
+        "find_Kcqf3C": {
+          "type": "find",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/Walmart_66c832bd-46ee-4b5b-adb4-2034881af88d.png",
+            "image_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "find_deEBQ8",
+        "find_Kcqf3C"
+      ],
+      "settings": {
+        "padding_top": 64,
+        "padding_bottom": 52,
+        "section_title": "Find Us At"
+      }
+    },
+    "172908825075ae9e83": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_FQJRxJ": {
+          "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "alignment": "center",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_FQJRxJ"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 36
+      }
+    },
+    "brands_jRydW7": {
+      "type": "brands",
+      "blocks": {
+        "brands_GpVAka": {
+          "type": "brands",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/us-weekly-logo_9cbb0ec2-7ef3-48a5-8f94-a5b2b10b1ce2.png"
+          }
+        },
+        "brands_4yKU44": {
+          "type": "brands",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/buzzfeed-logo_3053fe3f-4525-455b-937a-0cf9360191e5.png"
+          }
+        },
+        "brands_hTkWn3": {
+          "type": "brands",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/et-logo_c52d5e83-912c-48ef-a855-bada667c1b4a.png"
+          }
+        },
+        "brands_EmdezL": {
+          "type": "brands",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/entrepeneur-logo_3aa1645f-bcad-410a-b1c3-cb4d115fb4c5.png"
+          }
+        },
+        "brands_qyMxt9": {
+          "type": "brands",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/rs_logo-simp_ad3b7c76-6f22-4318-97a0-6b28f3ef46a3.png"
+          }
+        },
+        "brands_griH9e": {
+          "type": "brands",
+          "settings": {
+            "brand_image": "shopify:\/\/shop_images\/tv_090c61c9-0386-4acf-a060-9f24d83fd380.png"
+          }
+        }
+      },
+      "block_order": [
+        "brands_GpVAka",
+        "brands_4yKU44",
+        "brands_hTkWn3",
+        "brands_EmdezL",
+        "brands_qyMxt9",
+        "brands_griH9e"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "section_title": "As Seen on"
+      }
+    },
+    "footer_cta_JxEdqT": {
+      "type": "footer-cta",
+      "settings": {
+        "button_text": "Get Doomlings",
+        "button_link": "shopify:\/\/collections\/all",
+        "footer_image": "shopify:\/\/shop_images\/doom-bottom-toon_e9441b36-ee06-4e92-ba66-ec0d5bbdff78.svg",
+        "image_alt": "Doomlings looking up"
+      }
+    }
+  },
+  "order": [
+    "plush_hero_UhfQQN",
+    "2090b1d6-52d0-4058-984e-b978d272778b",
+    "packages_zgrrFj",
+    "custom_liquid_H9wxFX",
+    "video_two_gJarB3",
+    "reviews_LLcajF",
+    "1731514855df586775",
+    "doomlings_promo_JnaYGU",
+    "find_us_ta83gV",
+    "172908825075ae9e83",
+    "brands_jRydW7",
+    "footer_cta_JxEdqT"
+  ]
+}

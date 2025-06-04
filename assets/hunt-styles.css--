@@ -1,0 +1,462 @@
+/**
+ * Doomlings Scavenger Hunt (DGSH) Styles
+ * 
+ * Comprehensive styling for the scavenger hunt application.
+ * All classes use the dgsh- prefix to avoid conflicts with theme styles.
+ */
+
+/* Container and base styles */
+.dgsh-hunt-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Typography */
+.dgsh-main-title {
+  color: #5c2d91;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.dgsh-section-title {
+  color: #333;
+  margin: 20px 0 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.dgsh-intro-text {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Login section */
+.dgsh-button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.dgsh-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #f0f0f0;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.dgsh-btn:hover {
+  background: #e3e3e3;
+}
+
+.dgsh-btn-primary {
+  background: #5c2d91;
+  color: white;
+}
+
+.dgsh-btn-primary:hover {
+  background: #4a2476;
+}
+
+/* Progress bar */
+.dgsh-progress-section {
+  margin: 20px 0;
+}
+
+.dgsh-progress-bar {
+  height: 20px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+#dgsh-progress-fill {
+  height: 100%;
+  background: #5c2d91;
+  transition: width 0.5s;
+}
+
+.dgsh-progress-info {
+  font-size: 16px;
+  color: #666;
+  margin: 10px 0;
+}
+
+/* Rewards list */
+.dgsh-rewards-section {
+  margin: 30px 0;
+}
+
+.dgsh-rewards-list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.dgsh-reward-item {
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.dgsh-reward-item.dgsh-unlocked {
+  background: #f0fff0;
+  border-color: #9c9;
+}
+
+.dgsh-reward-item.dgsh-redeemed {
+  background: #f0f0ff;
+  border-color: #99c;
+}
+
+.dgsh-reward-name {
+  font-weight: 500;
+}
+
+.dgsh-reward-status {
+  color: #666;
+}
+
+.dgsh-success-message {
+  background: #dff0d8;
+  color: #3c763d;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+  animation: fadeIn 0.5s;
+}
+
+/* Redemption codes */
+.dgsh-codes-section {
+  margin: 30px 0;
+}
+
+.dgsh-empty-message {
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+}
+
+.dgsh-code-item {
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f8f8f8;
+}
+
+.dgsh-code-title {
+  margin-top: 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.dgsh-code-display {
+  font-family: monospace;
+  background: #fff;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 4px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.dgsh-show-qr-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* QR code display */
+.dgsh-qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.dgsh-qr-image {
+  width: 200px;
+  height: 200px;
+  margin: 15px auto;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.dgsh-qr-placeholder {
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+}
+
+.dgsh-redemption-code {
+  font-family: monospace;
+  font-size: 18px;
+  background: #f8f8f8;
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Modal styles */
+.dgsh-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.dgsh-modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.dgsh-modal-title {
+  color: #5c2d91;
+  margin-top: 0;
+}
+
+.dgsh-modal-message {
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.dgsh-modal-instructions {
+  margin: 15px 0;
+}
+
+/* Leaderboard styles */
+.dgsh-leaderboard-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+}
+
+.dgsh-leaderboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.dgsh-refresh-button {
+  background: none;
+  border: none;
+  color: #5c2d91;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.dgsh-refresh-button svg {
+  margin-right: 5px;
+}
+
+.dgsh-leaderboard-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dgsh-leaderboard-item {
+  display: flex;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  align-items: center;
+}
+
+.dgsh-leaderboard-rank {
+  font-size: 18px;
+  font-weight: bold;
+  width: 30px;
+  color: #5c2d91;
+}
+
+.dgsh-leaderboard-name {
+  flex-grow: 1;
+  font-weight: 500;
+}
+
+.dgsh-leaderboard-score {
+  font-weight: bold;
+  background: #5c2d91;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 12px;
+  min-width: 30px;
+  text-align: center;
+}
+
+.dgsh-current-user {
+  background-color: #f0f7ff;
+  border-left: 3px solid #5c2d91;
+}
+
+/* Sync status styles */
+.dgsh-sync-section {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dgsh-sync-status {
+  margin: 0;
+  font-size: 14px;
+}
+
+.dgsh-sync-status-synced {
+  color: #3c763d;
+}
+
+.dgsh-sync-status-syncing {
+  color: #31708f;
+}
+
+.dgsh-sync-status-error {
+  color: #a94442;
+}
+
+.dgsh-sync-status-offline {
+  color: #777;
+}
+
+.dgsh-sync-btn {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+/* Pagination styles */
+.dgsh-leaderboard-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.dgsh-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.dgsh-pagination-btn {
+  padding: 5px 10px;
+  background: #5c2d91;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dgsh-pagination-btn.dgsh-disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.dgsh-pagination-info {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .dgsh-hunt-container {
+    padding: 15px;
+  }
+  
+  .dgsh-code-display {
+    font-size: 14px;
+  }
+  
+  .dgsh-reward-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .dgsh-reward-status {
+    margin-top: 5px;
+  }
+  
+  .dgsh-modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+  
+  .dgsh-sync-section {
+    flex-direction: column;
+  }
+  
+  .dgsh-sync-status {
+    margin-bottom: 10px;
+  }
+  
+  .dgsh-sync-btn {
+    width: 100%;
+  }
+  
+  .dgsh-leaderboard-stats {
+    flex-direction: column;
+    gap: 5px;
+  }
+}

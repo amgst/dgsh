@@ -1,0 +1,725 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_title": true,
+        "title_alignment": "left"
+      }
+    },
+    "plush_hero_kNYdTP": {
+      "type": "plush-hero",
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/Contests_Desktop_f3d24926-e475-4b8d-8330-3bb9b175a1b2.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/Contests_Mobile_6f973eff-9fb8-4829-a8ba-316be0f31c48.jpg",
+        "desk-hero-alt": "DOOMLINGS CONTEST WINNERS - Doomlings fans are so creative! We wanted to give a HUGE shoutout to all of the amazing winners, runner-ups, and honorable mentions from our past contests. Make sure you follow us on social media to be the first to know when we host our NEXT contest...",
+        "button_link": ""
+      }
+    },
+    "contests_CnptkK": {
+      "type": "contests",
+      "blocks": {
+        "section_padding_RH6V3X": {
+          "type": "section_padding",
+          "settings": {
+            "section_padding_top": 30,
+            "section_padding_bottom": 20,
+            "section_padding_top_md": 10,
+            "section_padding_bottom_md": 30,
+            "section_padding_top_xs": 10,
+            "section_padding_bottom_xs": 20
+          }
+        },
+        "section_margin_AiqaQF": {
+          "type": "section_margin",
+          "settings": {
+            "section_margin_top": 0,
+            "section_margin_bottom": 0,
+            "section_margin_top_md": 0,
+            "section_margin_bottom_md": 0,
+            "section_margin_top_xs": 0,
+            "section_margin_bottom_xs": 0
+          }
+        },
+        "winner_zjTPtp": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/470582833_9798287206853814_5311792627522562059_n.jpg",
+            "icon_image_select": "first_medal",
+            "service_title": "Whiptail Cake",
+            "service_content": "<p>by Katrina McGrady<\/p>"
+          }
+        },
+        "winner_C7JnFX": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Snapinsta.app_469310004_1245996630039756_7247781869519759202_n_1080.jpg",
+            "icon_image_select": "second_medal",
+            "service_title": "Sentience Cake",
+            "service_content": "<p>by @ceezar.11⁠<\/p>"
+          }
+        },
+        "winner_RhyD9K": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Layer_6.jpg",
+            "icon_image_select": "third_medal",
+            "service_title": "Trait Cookies",
+            "service_content": "<p>by Michelle Simpson<\/p>"
+          }
+        },
+        "winner_CedWnh": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Snapinsta.app_469956183_561215763311000_1571903620938337616_n_1080.jpg",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Painted Valley Cake",
+            "service_content": "<p>by @sharpie.sharp⁠<\/p>"
+          }
+        },
+        "winner_jtqwaF": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/magicbeanspumpkin.jpg",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Fireskin Flambéd Cake",
+            "service_content": "<p>by @soup_r_stitious⁠<\/p>"
+          }
+        },
+        "winner_tVJxTV": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Snapinsta.app_470073370_1729643840930669_7081353269170617874_n_1080.jpg",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Dinolings Cake",
+            "service_content": "<p>by Lanie Helmsmueller<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "section_padding_RH6V3X",
+        "section_margin_AiqaQF",
+        "winner_zjTPtp",
+        "winner_C7JnFX",
+        "winner_RhyD9K",
+        "winner_CedWnh",
+        "winner_jtqwaF",
+        "winner_tVJxTV"
+      ],
+      "settings": {
+        "section_title": "JACK-O-LANTERN CONTEST 2024",
+        "image_border_radius": 20,
+        "section_color_enable": true,
+        "section_color": "#28104b",
+        "title_color": "#28104b",
+        "content_color": "#28104b"
+      }
+    },
+    "contests_JcMdxm": {
+      "type": "contests",
+      "blocks": {
+        "section_padding_6HeHnq": {
+          "type": "section_padding",
+          "settings": {
+            "section_padding_top": 0,
+            "section_padding_bottom": 20,
+            "section_padding_top_md": 10,
+            "section_padding_bottom_md": 30,
+            "section_padding_top_xs": 10,
+            "section_padding_bottom_xs": 20
+          }
+        },
+        "section_margin_mwm6nK": {
+          "type": "section_margin",
+          "settings": {
+            "section_margin_top": 0,
+            "section_margin_bottom": 0,
+            "section_margin_top_md": 0,
+            "section_margin_bottom_md": 0,
+            "section_margin_top_xs": 0,
+            "section_margin_bottom_xs": 0
+          }
+        },
+        "winner_HBMjPR": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/463452926_1043203164152468_6718789775398920673_n.jpg",
+            "icon_image_select": "first_medal",
+            "service_title": "Fireskin, Dominant & Drop of Life",
+            "service_content": "<p>by TJ Brown<\/p>"
+          }
+        },
+        "winner_fRgi7L": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/463562871_1570152314383731_3701115790363931407_n.jpg",
+            "icon_image_select": "second_medal",
+            "service_title": "Heroic",
+            "service_content": "<p>by @almeroach<\/p>"
+          }
+        },
+        "winner_VByNhf": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/465011010_1608880813337457_2341717670845566716_n_copy.jpg",
+            "icon_image_select": "third_medal",
+            "service_title": "Nocturnal",
+            "service_content": "<p>by Lori Saige<\/p>"
+          }
+        },
+        "winner_6UwAHh": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/464928112_7538405232950354_113051221323101550_n.jpg",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Cybernetic",
+            "service_content": "<p>by Manuel Casti<\/p>"
+          }
+        },
+        "winner_HWkC39": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/magicbeanspumpkin.jpg",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Magic Beans",
+            "service_content": "<p>by Anthony Raineri<\/p>"
+          }
+        },
+        "winner_AYgEG9": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/IMG_3659.jpg",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Ephemeral",
+            "service_content": "<p>by @jpg333<\/p>"
+          }
+        },
+        "winner_DrXQHr": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/463901406_742636594722399_7162891551713823417_n.jpg",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Grobblebobble",
+            "service_content": "<p>by Hillary Thompson<\/p>"
+          }
+        },
+        "winner_jbTeYU": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/465008219_8762412890477367_1620077093239394096_n.jpg",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Scutes",
+            "service_content": "<p>by Caroline Stepanik<\/p>"
+          }
+        },
+        "winner_MUAXtD": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/20241029_212133.jpg",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Vampirism",
+            "service_content": "<p>by @rvan.pavon<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "section_padding_6HeHnq",
+        "section_margin_mwm6nK",
+        "winner_HBMjPR",
+        "winner_fRgi7L",
+        "winner_VByNhf",
+        "winner_6UwAHh",
+        "winner_HWkC39",
+        "winner_AYgEG9",
+        "winner_DrXQHr",
+        "winner_jbTeYU",
+        "winner_MUAXtD"
+      ],
+      "settings": {
+        "section_title": "JACK-O-LANTERN CONTEST 2024",
+        "image_border_radius": 20,
+        "section_color_enable": true,
+        "section_color": "#28104b",
+        "title_color": "#28104b",
+        "content_color": "#28104b"
+      }
+    },
+    "contests_wJfgpC": {
+      "type": "contests",
+      "blocks": {
+        "section_padding_ETHmxa": {
+          "type": "section_padding",
+          "settings": {
+            "section_padding_top": 0,
+            "section_padding_bottom": 20,
+            "section_padding_top_md": 10,
+            "section_padding_bottom_md": 30,
+            "section_padding_top_xs": 10,
+            "section_padding_bottom_xs": 20
+          }
+        },
+        "section_margin_7twia8": {
+          "type": "section_margin",
+          "settings": {
+            "section_margin_top": 0,
+            "section_margin_bottom": 0,
+            "section_margin_top_md": 0,
+            "section_margin_bottom_md": 0,
+            "section_margin_top_xs": 0,
+            "section_margin_bottom_xs": 0
+          }
+        },
+        "winner_mpT9ek": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Swarm_King.png",
+            "icon_image_select": "first_medal",
+            "service_title": "Swarm King",
+            "service_content": "<p>by Jordan Cox<\/p>"
+          }
+        },
+        "winner_dyz3BX": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/DNA_Guardian.png",
+            "icon_image_select": "second_medal",
+            "service_title": "DNA Guardian",
+            "service_content": "<p>by Zach Uptin<\/p>"
+          }
+        },
+        "winner_i6khqN": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Kidney_Growth.png",
+            "icon_image_select": "third_medal",
+            "service_title": "Kidney Growth",
+            "service_content": "<p>by Michael Williams<\/p>"
+          }
+        },
+        "winner_ArRTTD": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Positivity.png",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Positivity",
+            "service_content": "<p>by Hunter Dana Redman<\/p>"
+          }
+        },
+        "winner_pHiEQi": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Judgemental.png",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Judgmental",
+            "service_content": "<p>by @iggykwealer<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "section_padding_ETHmxa",
+        "section_margin_7twia8",
+        "winner_mpT9ek",
+        "winner_dyz3BX",
+        "winner_i6khqN",
+        "winner_ArRTTD",
+        "winner_pHiEQi"
+      ],
+      "settings": {
+        "section_title": "CREATE-A-CARD CONTEST 2024",
+        "image_border_radius": 20,
+        "section_color_enable": true,
+        "section_color": "#28104b",
+        "title_color": "#28104b",
+        "content_color": "#28104b"
+      }
+    },
+    "contests_CJtxnV": {
+      "type": "contests",
+      "blocks": {
+        "section_padding_Edygzz": {
+          "type": "section_padding",
+          "settings": {
+            "section_padding_top": 10,
+            "section_padding_bottom": 20,
+            "section_padding_top_md": 10,
+            "section_padding_bottom_md": 30,
+            "section_padding_top_xs": 10,
+            "section_padding_bottom_xs": 20
+          }
+        },
+        "section_margin_PRXLtg": {
+          "type": "section_margin",
+          "settings": {
+            "section_margin_top": 0,
+            "section_margin_bottom": 0,
+            "section_margin_top_md": 0,
+            "section_margin_bottom_md": 0,
+            "section_margin_top_xs": 0,
+            "section_margin_bottom_xs": 0
+          }
+        },
+        "winner_kKnqei": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Adrenalized_JOHNATHONAO_O.png",
+            "icon_image_select": "first_medal",
+            "service_title": "Adrenalized",
+            "service_content": "<p>by @jonathonao_o<\/p>"
+          }
+        },
+        "winner_eDzqpM": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/4_horseman_wallflower_by_lys.png",
+            "icon_image_select": "second_medal",
+            "service_title": "4 Horseman",
+            "service_content": "<p>by @wallflower_by_lys<\/p>"
+          }
+        },
+        "winner_JR3bt3": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Binary_by_Castis_Kunststoffschmiede.png",
+            "icon_image_select": "third_medal",
+            "service_title": "Binary",
+            "service_content": "<p>by @castis_kunststoffschmiede<\/p>"
+          }
+        },
+        "winner_irRLjy": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Eyestalks_by_LizardJudd.png",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Eyestalks",
+            "service_content": "<p>by @lizardjudd<\/p>"
+          }
+        },
+        "winner_ebAMyz": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/The_End_of_the_World_by_Courtneypjudd.png",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Fireskin",
+            "service_content": "<p>by @courtneypjudd<\/p>"
+          }
+        },
+        "winner_jiBYmG": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Zombiefied_by_consequences2310.png",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Zombiefied",
+            "service_content": "<p>by @consequences2310<\/p>"
+          }
+        },
+        "winner_p6rDxV": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Nocturnal_by_jessie_lykins97.png",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Nocturnal",
+            "service_content": "<p>by @jessie_lykins97<\/p>"
+          }
+        },
+        "winner_Ydg6Br": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/sweetcakes_and_milkshakes_a0e90238-b9d6-4341-a30b-78c337b2b2ec.png",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Doomlings",
+            "service_content": "<p>by @sweetcakes_and_milkshakes<\/p>"
+          }
+        },
+        "winner_xXP46m": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/emicoe1796.png",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Heroic Swarm",
+            "service_content": "<p>by @emicoe1796<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "section_padding_Edygzz",
+        "section_margin_PRXLtg",
+        "winner_kKnqei",
+        "winner_eDzqpM",
+        "winner_JR3bt3",
+        "winner_irRLjy",
+        "winner_ebAMyz",
+        "winner_jiBYmG",
+        "winner_p6rDxV",
+        "winner_Ydg6Br",
+        "winner_xXP46m"
+      ],
+      "settings": {
+        "section_title": "Jack-o-Lantern Contest 2023",
+        "image_border_radius": 20,
+        "section_color_enable": true,
+        "section_color": "#28104b",
+        "title_color": "#28104b",
+        "content_color": "#28104b"
+      }
+    },
+    "contests_ijfhGM": {
+      "type": "contests",
+      "blocks": {
+        "section_padding_Udbdbi": {
+          "type": "section_padding",
+          "settings": {
+            "section_padding_top": 0,
+            "section_padding_bottom": 20,
+            "section_padding_top_md": 10,
+            "section_padding_bottom_md": 70,
+            "section_padding_top_xs": 10,
+            "section_padding_bottom_xs": 70
+          }
+        },
+        "section_margin_KAYRiD": {
+          "type": "section_margin",
+          "settings": {
+            "section_margin_top": 0,
+            "section_margin_bottom": 0,
+            "section_margin_top_md": 0,
+            "section_margin_bottom_md": 0,
+            "section_margin_top_xs": 0,
+            "section_margin_bottom_xs": 0
+          }
+        },
+        "winner_rgUnDD": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Untitled-1_6fd5327f-e261-450d-8022-030d1e9353e8.gif",
+            "icon_image_select": "first_medal",
+            "service_title": "Comet Showers Cake Pops",
+            "service_content": "<p>by @dream_colored_patissiere<\/p>"
+          }
+        },
+        "winner_7tbfea": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/2ndplace_Glimmering_Gardens_by_Klichtle_2.jpg",
+            "icon_image_select": "second_medal",
+            "service_title": "Glimmering Gardens Cake",
+            "service_content": "<p>by @klichtle<\/p>"
+          }
+        },
+        "winner_wnm6Td": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/3rdplace_LilyPad_KatrinaMcgrady2.jpg",
+            "icon_image_select": "third_medal",
+            "service_title": "Lilypad Cake",
+            "service_content": "<p>by @katrinamcgrady<\/p>"
+          }
+        },
+        "winner_m4Tpq4": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/birthoflife_Makaylahflournoy.png",
+            "icon_image_select": "honorable_medal",
+            "service_title": "The Birth of Life",
+            "service_content": "<p>by @makaylahflournoy<\/p>"
+          }
+        },
+        "winner_93r8F6": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Nocturnal_Kimmit79.jpg",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Nocturnal Cake",
+            "service_content": "<p>by @kimmit79<\/p>"
+          }
+        },
+        "winner_TceqEF": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Squirt_nielsvheckandbrother.png",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Squirt Cake",
+            "service_content": "<p>by @nielsvheckandbrother<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "section_padding_Udbdbi",
+        "section_margin_KAYRiD",
+        "winner_rgUnDD",
+        "winner_7tbfea",
+        "winner_wnm6Td",
+        "winner_m4Tpq4",
+        "winner_93r8F6",
+        "winner_TceqEF"
+      ],
+      "settings": {
+        "section_title": "Yum Yum contest 2023",
+        "image_border_radius": 20,
+        "section_color_enable": true,
+        "section_color": "#28104b",
+        "title_color": "#28104b",
+        "content_color": "#28104b"
+      }
+    },
+    "contests_fYafyL": {
+      "type": "contests",
+      "blocks": {
+        "section_padding_3MWtLk": {
+          "type": "section_padding",
+          "settings": {
+            "section_padding_top": 0,
+            "section_padding_bottom": 20,
+            "section_padding_top_md": 10,
+            "section_padding_bottom_md": 70,
+            "section_padding_top_xs": 10,
+            "section_padding_bottom_xs": 70
+          }
+        },
+        "section_margin_rtyVFV": {
+          "type": "section_margin",
+          "settings": {
+            "section_margin_top": 0,
+            "section_margin_bottom": 0,
+            "section_margin_top_md": 0,
+            "section_margin_bottom_md": 0,
+            "section_margin_top_xs": 0,
+            "section_margin_bottom_xs": 0
+          }
+        },
+        "winner_wzmGyk": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/SlightlyAbove.jpg",
+            "icon_image_select": "first_medal",
+            "service_title": "Apex Predator Cake",
+            "service_content": "<p>by Katrina McGrady<\/p>"
+          }
+        },
+        "winner_yEKbTg": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/CakePops_JordanCox_d2ba1af4-0ab3-4359-8abe-201bdcda34bc.jpg",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Doomlings Cake Pops",
+            "service_content": "<p>by Jordan Cox<\/p>"
+          }
+        },
+        "winner_qaqFcH": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Cookies_AshleyNicoleSauer_87cd4240-19cc-443d-a2fd-f95a03f5655f.jpg",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Doomlings Cookies",
+            "service_content": "<p>by Ashley Nicole Sauer<\/p>"
+          }
+        },
+        "winner_PUq7qR": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/Cookies_SabrinaEshbaugh.jpg",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Kidney Cookies",
+            "service_content": "<p>by Sabrina Eshbaugh<\/p>"
+          }
+        },
+        "winner_ey6MUw": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/PrepperPie_AshleyNicoleSauer.jpg",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Prepper Pie",
+            "service_content": "<p>by Ashley Nicole Sauer<\/p>"
+          }
+        },
+        "winner_BwjkX4": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/SwarmCard_JordanHoffman.jpg",
+            "icon_image_select": "honorable_medal",
+            "service_title": "Swarm Cake Pops",
+            "service_content": "<p>by Jordan Hoffman<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "section_padding_3MWtLk",
+        "section_margin_rtyVFV",
+        "winner_wzmGyk",
+        "winner_yEKbTg",
+        "winner_qaqFcH",
+        "winner_PUq7qR",
+        "winner_ey6MUw",
+        "winner_BwjkX4"
+      ],
+      "settings": {
+        "section_title": "Yum Yum contest 2022",
+        "image_border_radius": 20,
+        "section_color_enable": true,
+        "section_color": "#28104b",
+        "title_color": "#28104b",
+        "content_color": "#28104b"
+      }
+    },
+    "contests_kjfCB7": {
+      "type": "contests",
+      "blocks": {
+        "section_padding_QhUwVK": {
+          "type": "section_padding",
+          "settings": {
+            "section_padding_top": 0,
+            "section_padding_bottom": 20,
+            "section_padding_top_md": 10,
+            "section_padding_bottom_md": 70,
+            "section_padding_top_xs": 10,
+            "section_padding_bottom_xs": 70
+          }
+        },
+        "section_margin_K7JWBa": {
+          "type": "section_margin",
+          "settings": {
+            "section_margin_top": 0,
+            "section_margin_bottom": 0,
+            "section_margin_top_md": 0,
+            "section_margin_bottom_md": 0,
+            "section_margin_top_xs": 0,
+            "section_margin_bottom_xs": 0
+          }
+        },
+        "winner_9Fj9wr": {
+          "type": "winner",
+          "settings": {
+            "winner_image": "shopify:\/\/shop_images\/250373646_10161195959596978_7950298739719953230_n_a8bc0444-67e6-48b9-baca-cb03b3bfa007.jpg",
+            "icon_image_select": "first_medal",
+            "service_title": "Random Fertilization",
+            "service_content": "<p>by Claire Hack<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "section_padding_QhUwVK",
+        "section_margin_K7JWBa",
+        "winner_9Fj9wr"
+      ],
+      "settings": {
+        "section_title": "Costume Contest 2021",
+        "image_border_radius": 20,
+        "section_color_enable": true,
+        "section_color": "#28104b",
+        "title_color": "#28104b",
+        "content_color": "#28104b"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "plush_hero_kNYdTP",
+    "contests_CnptkK",
+    "contests_JcMdxm",
+    "contests_wJfgpC",
+    "contests_CJtxnV",
+    "contests_ijfhGM",
+    "contests_fYafyL",
+    "contests_kjfCB7"
+  ]
+}

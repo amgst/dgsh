@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "custom_css": [],
+      "settings": {
+        "enable_feature_header": false,
+        "grid": 4,
+        "grid_mobile": "2",
+        "pagination_limit": 48,
+        "show_total": true,
+        "show_vendor": false,
+        "show_filters": false,
+        "show_filter_prod_counts": true,
+        "show_sort_by": true,
+        "show_featured": false,
+        "show_product_icons": true,
+        "flex_direction": "row",
+        "icon_size_mobile": 40,
+        "icon_size": 70
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

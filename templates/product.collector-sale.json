@@ -1,0 +1,116 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title_and_price": {
+          "type": "title_and_price",
+          "settings": {
+            "show_tax_and_shipping": false
+          }
+        },
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "type": {
+          "type": "type",
+          "disabled": true,
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "size_chart_enabled": false,
+            "size_chart_option_name": "Size",
+            "size_chart_page_id": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "enable_payment_button": false,
+            "show_pickup_availability": true,
+            "show_backorder_text": false,
+            "show_inventory_notice": "never",
+            "show_inventory_count": "low",
+            "inventory_notice_threshold": 10
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "full_width": false,
+            "show_tabs": false,
+            "tab_2_title": "",
+            "tab_2_content": "",
+            "tab_2_page": "",
+            "tab_3_title": "",
+            "tab_3_content": "",
+            "tab_3_page": ""
+          }
+        },
+        "sharing": {
+          "type": "sharing",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title_and_price",
+        "vendor",
+        "type",
+        "variant_picker",
+        "buy_buttons",
+        "description",
+        "sharing"
+      ],
+      "disabled": true,
+      "settings": {
+        "enable_sticky_media": true,
+        "media_size": "small",
+        "media_layout": "thumbnails-below",
+        "enable_video_looping": false
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "title": "You may also like",
+        "grid": 4,
+        "show_vendor": false
+      }
+    },
+    "312e3157-ee1a-46f2-89bd-26d3e3bda050": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<!-- Yotpo Reviews Widget > template > product.liquid -->\n<div class=\"page-width\"><div class=\"yotpo yotpo-main-widget\"\nid=\"yotpoReviewsWidget\"\ndata-product-id=\"{{ product.id }}\"\ndata-name=\"{{ product.title | escape }}\"\ndata-url=\"{{ shop.url }}{{ product.url }}\"\ndata-image-url=\"{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&','%26'}}\"\ndata-price=\"{{ variant.price | money_without_currency }}\"\ndata-currency=“{{ shop.currency }}”\ndata-description=“{{ product.description | escape }}“>\n  <\/div><\/div>\n<!-- End of Yotpo -->"
+      }
+    },
+    "recent": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {
+        "show_recently_viewed": true,
+        "show_vendor": false
+      }
+    },
+    "custom_liquid_MWJqwM": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<center><br><br><br><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0554\/6190\/4593\/files\/Toasty_ProductPhoto_60f17b9c-0d63-4199-a2cf-c77318e34493.jpg?v=1729711705\" width=\"500\"><h4 style='margin-top: 0px; text-align:center;'><b>Toasty Special Edition Promo Card<br>(2024 - Limited Edition)<\/b><\/h4><p><b>Free with purchase. While supplies last. Valid from 11\/25\/24 6:00am to 12\/02\/24 11:59pm PST. Limit 1 Per Order.<b\/><\/p><\/center><Br><Br><Br><Br>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "recommendations",
+    "312e3157-ee1a-46f2-89bd-26d3e3bda050",
+    "recent",
+    "custom_liquid_MWJqwM"
+  ]
+}

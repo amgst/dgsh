@@ -1,0 +1,372 @@
+{% schema %} 
+{
+  "name": "Doomlings Promo",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "range",
+      "id": "container_max_width",
+      "min": 600,
+      "max": 1400,
+      "step": 50,
+      "unit": "px",
+      "label": "Container Max Width",
+      "default": 1000
+    },
+    {
+      "type": "header",
+      "content": "Content Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "profile_image",
+      "label": "Profile Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "character_image",
+      "label": "Character Image"
+    },
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL",
+      "info": "YouTube video URL"
+    },
+    {
+      "type": "header",
+      "content": "Quote Settings"
+    },
+    {
+      "type": "text",
+      "id": "quote",
+      "label": "Quote Text",
+      "default": "This game is the worst, I never win!"
+    },
+    {
+      "type": "range",
+      "id": "quote_font_size",
+      "min": 16,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Quote Font Size",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "quote_color",
+      "label": "Quote Text Color",
+      "default": "#312E81"
+    },
+    {
+      "type": "header",
+      "content": "Author Settings"
+    },
+    {
+      "type": "text",
+      "id": "author_name",
+      "label": "Author Name",
+      "default": "Joel McHale"
+    },
+    {
+      "type": "text",
+      "id": "author_credentials",
+      "label": "Author Credentials",
+      "default": "NBC's Community & FOX's Animal Control"
+    },
+    {
+      "type": "header",
+      "content": "Character Position Settings"
+    },
+    {
+      "type": "range",
+      "id": "character_bottom",
+      "min": -100,
+      "max": 0,
+      "step": 5,
+      "unit": "%",
+      "label": "Character Bottom Position",
+      "default": -40
+    },
+    {
+      "type": "range",
+      "id": "character_right",
+      "min": -100,
+      "max": 0,
+      "step": 5,
+      "unit": "px",
+      "label": "Character Right Position",
+      "default": -30
+    },
+    {
+      "type": "range",
+      "id": "character_size",
+      "min": 60,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Character Size",
+      "default": 120
+    },
+    {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "GET DOOMLINGS"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Doomlings Promo",  
+      "category": "Promotional"
+    }
+  ]
+}
+{% endschema %}
+ 
+<style>
+.doomlings-promo {
+  max-width: {{ section.settings.container_max_width }}px;
+  margin: 0 auto;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.doomlings-card {  
+  background-color: white;
+  border-radius: 1rem;
+  border: solid 2px #ced1dd;
+  padding: 1.5rem;
+  position: relative;
+  overflow: visible;
+  margin-bottom: 50px;
+  transition: transform 0.2s;
+}
+
+/*.doomlings-card:hover {
+  transform: scale(1.02);
+}
+*/
+.doomlings-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.profile-image-wrapper {
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.doomlings-promo .profile-image {
+  width: 12rem;
+  height: 12rem;
+  flex-shrink: 0;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  object-fit: cover;
+}
+
+.character-container {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.character-mobile {
+  display: none;
+  position: absolute;
+  bottom: -10%;
+  right: -18%;
+  width: 7rem;
+  height: 7rem;
+}
+
+.character-desktop {
+  display: none;
+  bottom: {{ section.settings.character_bottom }}%;
+  right: {{ section.settings.character_right }}px;
+  width: {{ section.settings.character_size }}px;
+  height: {{ section.settings.character_size }}px;
+}
+
+.doomlings-promo .character-image {
+  width: 100%;
+  height: 100%;
+}
+
+.character-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.doomlings-promo .text-content {
+  width: 100%;
+}
+
+.doomlings-promo .star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.doomlings-promo .star {
+  flex-shrink: 0;
+}
+
+.doomlings-promo .quote {
+  font-family: 'Lato', sans-serif;
+  font-size: {{ section.settings.quote_font_size }}px;
+  font-weight: 900;
+  color: {{ section.settings.quote_color }};
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.doomlings-promo .attribution {
+  color: #4B5563;
+  text-align: center;
+}
+
+.doomlings-promo .author-name {
+  font-weight: 600;
+  color: #1a0140;
+}
+
+.author-credentials {
+  font-style: italic;
+  color: #8875ad;
+}
+
+@media (max-width: 767px) {
+  .character-mobile {
+    display: block;
+  }
+  .doomlings-promo .author-name {
+    display: block;
+  }
+  .doomlings-promo .profile-image {
+    width: 14rem;
+    height: 14rem;
+  }
+  .profile-image-wrapper {
+    margin-bottom: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  .doomlings-content {
+    flex-direction: row;
+  }
+  
+  .doomlings-promo .star-rating {
+    justify-content: flex-start;
+  }
+  .doomlings-promo .quote,
+  .doomlings-promo .attribution {
+    text-align: left;
+  }
+  .character-desktop {
+    display: block;
+  }
+}
+</style>
+
+<div class="doomlings-promo" onclick="window.open('{{ section.settings.video_url }}', '_blank')">
+  <div class="doomlings-card">
+    <div class="doomlings-content">
+      <div class="profile-image-wrapper">
+        <div class="profile-image">
+          {%- if section.settings.profile_image -%}
+            {{ section.settings.profile_image | image_url: width: 400 | image_tag: loading: 'lazy' }}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+        <div class="character-container character-mobile">
+          <div class="character-image">
+            {%- if section.settings.character_image -%}
+              {{ section.settings.character_image | image_url: width: 400 | image_tag: loading: 'lazy' }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+
+      <div class="text-content">
+        <div class="star-rating">
+          {% for i in (1..5) %}
+            <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="star">
+              <defs>
+                <linearGradient id="yotpo_stars_gradient_{{ i }}">
+                  <stop offset="100%" stop-color="rgba(235,178,27,1)"></stop>
+                  <stop stop-opacity="1" offset="100%" stop-color="#FFFFFF"></stop>
+                </linearGradient>
+              </defs>
+              <path d="M9 14.118L14.562 17.475L13.086 11.148L18 6.891L11.529 6.342L9 0.375L6.471 6.342L0 6.891L4.914 11.148L3.438 17.475L9 14.118Z" 
+                stroke="rgba(235,178,27,1)" 
+                fill="url('#yotpo_stars_gradient_{{ i }}')">
+              </path>
+            </svg>
+          {% endfor %}
+        </div>
+
+        <div class="quote">
+          {{ section.settings.quote }}
+        </div>
+
+        <div class="attribution">
+          <span class="author-name">-{{ section.settings.author_name }}</span>
+          <span class="author-credentials">{{ section.settings.author_credentials }}</span>
+        </div>
+      </div>
+
+      <div class="character-container character-desktop">
+        <div class="character-image">
+          {%- if section.settings.character_image -%}
+            {{ section.settings.character_image | image_url: width: 400 | image_tag: loading: 'lazy' }}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center;">
+    <a href="{{ section.settings.button_link }}" class="btn-doomlings">
+      {{ section.settings.button_text }}
+    </a>
+  </div>
+</div>
+
+<script>
+document.querySelector('.btn-doomlings').addEventListener('click', function(e) {
+    e.stopPropagation();
+});
+</script>

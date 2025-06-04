@@ -1,0 +1,308 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [
+        ".container {margin: 0;}",
+        ".clearfix {margin: 0;}"
+      ],
+      "settings": {
+        "show_title": true,
+        "title_alignment": "left"
+      }
+    },
+    "857bac65-4eda-41a3-94c7-e2fa0b0e605d": {
+      "type": "slideshow",
+      "blocks": {
+        "template--15691595579601__857bac65-4eda-41a3-94c7-e2fa0b0e605d-16752177554a9657e1-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/PlushieLanding_New1.png",
+            "image_position": "center center",
+            "image_link": "",
+            "color_overlay_bg": "#ffffff",
+            "overlay_opacity": 80,
+            "color_overlay_text": "#333333",
+            "overlay_title": "",
+            "overlay_text": "",
+            "overlay_url_text_1": "",
+            "overlay_url_1": "",
+            "overlay_url_text_2": "",
+            "overlay_url_2": "",
+            "overlay_url_style": "button_1",
+            "enlarge_title": false,
+            "enlarge_text": false,
+            "overlay_position_x": 50,
+            "overlay_position_y": 80,
+            "color_label_background": "#ffffff",
+            "color_label_text": "#333333",
+            "show_chevron": true,
+            "product_id_1": "",
+            "chevron_position_1": "right",
+            "label_position_x_1": 20,
+            "label_position_y_1": 30,
+            "product_id_2": "",
+            "chevron_position_2": "right",
+            "label_position_x_2": 80,
+            "label_position_y_2": 50
+          }
+        },
+        "template--15691595579601__857bac65-4eda-41a3-94c7-e2fa0b0e605d-16752177554a9657e1-1": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image_position": "center center",
+            "image_link": "",
+            "color_overlay_bg": "#ffffff",
+            "overlay_opacity": 80,
+            "color_overlay_text": "#333333",
+            "overlay_title": "Slideshow",
+            "overlay_text": "Use this section to welcome customers to your store, show off your images or display a promotion",
+            "overlay_url_text_1": "",
+            "overlay_url_1": "",
+            "overlay_url_text_2": "",
+            "overlay_url_2": "",
+            "overlay_url_style": "button_1",
+            "enlarge_title": false,
+            "enlarge_text": false,
+            "overlay_position_x": 50,
+            "overlay_position_y": 80,
+            "color_label_background": "#ffffff",
+            "color_label_text": "#333333",
+            "show_chevron": true,
+            "product_id_1": "",
+            "chevron_position_1": "right",
+            "label_position_x_1": 20,
+            "label_position_y_1": 30,
+            "product_id_2": "",
+            "chevron_position_2": "right",
+            "label_position_x_2": 80,
+            "label_position_y_2": 50
+          }
+        }
+      },
+      "block_order": [
+        "template--15691595579601__857bac65-4eda-41a3-94c7-e2fa0b0e605d-16752177554a9657e1-0",
+        "template--15691595579601__857bac65-4eda-41a3-94c7-e2fa0b0e605d-16752177554a9657e1-1"
+      ],
+      "disabled": true,
+      "settings": {
+        "height": "adapt",
+        "height_desktop": 600,
+        "height_mobile": 500,
+        "mobile_text_below": true,
+        "slideshow_autoplay": true,
+        "slideshow_autoplay_speed": 6
+      }
+    },
+    "847c7195-f355-4f6c-b522-58f46d346ce8": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<div class=\"klaviyo-form-RQT3aw\"><\/div>"
+      }
+    },
+    "16752265844f77912c": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {}
+    },
+    "46db01c5-5d22-428d-b2fd-df6101d7b57a": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<div class=\"klaviyo-form-WJHY4M\"><\/div>"
+      }
+    },
+    "5da6008f-46bb-4272-9134-7d943f2fc6ea": {
+      "type": "rich-text",
+      "disabled": true,
+      "settings": {
+        "title": "Plushies are LIVE on Kickstarter!",
+        "text": "",
+        "button_label": "BACK NOW",
+        "button_link": "http:\/\/tinyurl.com\/OverlushKickstarter",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": false,
+        "full_width": false,
+        "color_bg": "#ffffff",
+        "color_title": "#333333",
+        "color_text": "#333333"
+      }
+    },
+    "0caba77f-ca97-4c06-acc0-2389acf807af": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "custom_css": [
+        "div #align-middle img {vertical-align: middle;}",
+        "#align-base img {vertical-align: bottom;}",
+        "#display img {display: block;}"
+      ],
+      "settings": {
+        "custom_liquid": "<div id=\"display\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0554\/6190\/4593\/files\/PlushieLanding_New_Bottom4.jpg?v=1676449043\" alt=\"\">\n<\/div>"
+      }
+    },
+    "02cdd876-1594-4233-a1c1-226d8d492622": {
+      "type": "plushie-profiles",
+      "blocks": {
+        "d54050b0-1b2c-482f-a19b-bcb53c24749b": {
+          "type": "Card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/11_RainbowScutes_B_shadow.png",
+            "name": "Rainbow Scutes",
+            "description": "Scutes is a friendly, fast-flying Doomling whose shell is a portal to the fourth dimension—but they don't know that yet! Until they do, they'll keep exploring and delivering messages across Enderas.",
+            "card_link": "https:\/\/doomlings.com\/products\/rainbow-scutes-plushie-ships-fall-2023",
+            "link_txt": "GET SCUTES"
+          }
+        },
+        "4f566331-7e45-4162-8542-b569cca61b21": {
+          "type": "Card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fawn-plush-shad.png",
+            "name": "Fawn",
+            "description": "Fawn may be sweet and petite, but they're the fiercest athletic competitor in Enderas. One day, Fawn wants to win the Enderathon! Their only weakness is that they're very, very shy.",
+            "card_link": "https:\/\/doomlings.com\/products\/fawn-plushie-ships-fall-2023",
+            "link_txt": "GET FAWN"
+          }
+        },
+        "24f6c17f-a974-40c7-94f3-f31325120c15": {
+          "type": "Card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/talia-plush-shad.png",
+            "name": "Talia",
+            "description": "Talia is one of the five Spirit Bears and a muse for all of Enderas. Talia often carries a colorful pinwheel to remind Doomlings that inspiration is like the wind. (Pro tip: do not critique their art.)",
+            "card_link": "https:\/\/doomlings.com\/collections\/plushies\/products\/talia-plushie",
+            "link_txt": "GET TALIA"
+          }
+        },
+        "c7208d13-f172-47cc-aa6d-00d2ea555ca0": {
+          "type": "Card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/calysta-plush-shad.png",
+            "name": "Calysta",
+            "description": "Calysta is clever, creative and an absolute contrarian. When Calysta's not protesting, they're at home writing poetry to challenge the status quo—or baking the best obloaf in Enderas.",
+            "card_link": "https:\/\/doomlings.com\/products\/calysta-plushie-ships-fall-2023",
+            "link_txt": "GET CALYSTA"
+          }
+        },
+        "b819fef6-5ebb-4abe-a5ac-2c8a5eaa0c02": {
+          "type": "Card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/trixie-plush-shad.png",
+            "name": "Trixie",
+            "description": "Trixie moved from Glimmering Gardens to Crackletown to make it big as a comedian and trickster. Trixie’s always wearing sunglasses and always leaving their signature “X” at the scene of a prank.",
+            "card_link": "https:\/\/doomlings.com\/collections\/plushies\/products\/clever-plushie",
+            "link_txt": "GET TRIXIE"
+          }
+        },
+        "a1945117-65f2-40aa-86a5-b7889a21936e": {
+          "type": "Card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lucky-plush-shad.png",
+            "name": "Lucky",
+            "description": "Wherever Lucky goes, good fortune follows. By far the luckiest Doomling, they love to go spelunking and storm chasing with friends. Fun fact: they've yet to pick a clover with less than four leaves!",
+            "card_link": "https:\/\/doomlings.com\/products\/lucky-plushie-ships-fall-2023",
+            "link_txt": "GET LUCKY"
+          }
+        },
+        "dc3ca3f1-072c-41ac-8f74-0e21c7a8481e": {
+          "type": "Card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/nat-plush-shad.png",
+            "name": "Nat",
+            "description": "Nat loves two things: peace and quiet. One day, they'll open a tea shop to bring calm to all of Enderas, but until then, you can find Nat on a nighttime stroll—if you can find them at all.",
+            "card_link": "https:\/\/doomlings.com\/products\/nat-plushie-ships-fall-2023",
+            "link_txt": "GET NAT"
+          }
+        },
+        "0527ba02-1d8a-42c0-a4f4-2c0493aa36a4": {
+          "type": "Card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/allistair-plush-shad.png",
+            "name": "Alistair",
+            "description": "Born in the Forgotten City, this Spirit Bear is fascinated by history and loves to learn from from elder Doomlings. You can often find Alistair in the Swamplands, searching for lost artifacts.",
+            "card_link": "https:\/\/doomlings.com\/products\/alistair-plushie-ships-fall-2023",
+            "link_txt": "GET ALISTAIR"
+          }
+        },
+        "30e44e5f-0ae2-46dc-8e86-84841d1f2741": {
+          "type": "Card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/lyric-plus-shad.png",
+            "name": "Lyric",
+            "description": "Lyric is one of the oldest known Doomlings. They always know when someone needs help, thanks to their incredible hearing. When Lyric isn’t sharing advice, they're rebuilding their hometown, Oterra.",
+            "card_link": "https:\/\/doomlings.com\/products\/lyric-plushie-ships-fall-2023",
+            "link_txt": "GET LYRIC"
+          }
+        },
+        "6fb0446e-b8d1-466c-a4c0-b809ff3e4a64": {
+          "type": "Card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/shteve-plush-shad.png",
+            "name": "Shteve",
+            "description": "Shteve is determined to be Supreme Overlord of Enderas. Thanks to their suspiciously inept sidekick, Eugene, Shteve uses evil gadgets and disguises to take over the world—unsuccessfully.",
+            "card_link": "https:\/\/doomlings.com\/products\/shteve-plushie-ships-fall-2023",
+            "link_txt": "GET SHTEVE"
+          }
+        },
+        "af9fd235-0a1b-43f3-987e-70b408ecd920": {
+          "type": "Card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/willis-plush-shad.png",
+            "name": "Willis",
+            "description": "Willis is without a doubt the smartest Doomling in Enderas. They believe it's their duty to stop the evil Shteve and their schemes. Their plan? Save Shteve's lackey Eugene by becoming friends.",
+            "card_link": "https:\/\/doomlings.com\/products\/willis-plushie-ships-fall-2023",
+            "link_txt": "GET WILLIS"
+          }
+        },
+        "c588c403-ebf8-4506-967d-11fdd7e024f2": {
+          "type": "Card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/squirt-plush-shad.png",
+            "name": "Squirt",
+            "description": "Brand new to Enderas, Squirt is pure positivity. They love everyone and want to learn everything. Squirt’s dream is to find a thing that only they are good at and then use it to help other Doomlings.",
+            "card_link": "https:\/\/doomlings.com\/collections\/plushies\/products\/squirt-plushie",
+            "link_txt": "GET SQUIRT"
+          }
+        },
+        "76f61cc7-6675-40fa-9cd0-53acdbfa23c1": {
+          "type": "Card",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/eugene-plush-shad.png",
+            "name": "Eugene",
+            "description": "Eugene is a gentle giant at heart. They’re also an incredible inventor who designs gadgets and disguises for Enderas’ most incompetent evil genius, Shteve. (Don’t worry; they’re designed to fail!)",
+            "card_link": "https:\/\/doomlings.com\/collections\/plushies\/products\/eugene-plushie",
+            "link_txt": "GET EUGENE"
+          }
+        }
+      },
+      "block_order": [
+        "d54050b0-1b2c-482f-a19b-bcb53c24749b",
+        "4f566331-7e45-4162-8542-b569cca61b21",
+        "24f6c17f-a974-40c7-94f3-f31325120c15",
+        "c7208d13-f172-47cc-aa6d-00d2ea555ca0",
+        "b819fef6-5ebb-4abe-a5ac-2c8a5eaa0c02",
+        "a1945117-65f2-40aa-86a5-b7889a21936e",
+        "dc3ca3f1-072c-41ac-8f74-0e21c7a8481e",
+        "0527ba02-1d8a-42c0-a4f4-2c0493aa36a4",
+        "30e44e5f-0ae2-46dc-8e86-84841d1f2741",
+        "6fb0446e-b8d1-466c-a4c0-b809ff3e4a64",
+        "af9fd235-0a1b-43f3-987e-70b408ecd920",
+        "c588c403-ebf8-4506-967d-11fdd7e024f2",
+        "76f61cc7-6675-40fa-9cd0-53acdbfa23c1"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "857bac65-4eda-41a3-94c7-e2fa0b0e605d",
+    "847c7195-f355-4f6c-b522-58f46d346ce8",
+    "16752265844f77912c",
+    "46db01c5-5d22-428d-b2fd-df6101d7b57a",
+    "5da6008f-46bb-4272-9134-7d943f2fc6ea",
+    "0caba77f-ca97-4c06-acc0-2389acf807af",
+    "02cdd876-1594-4233-a1c1-226d8d492622"
+  ]
+}

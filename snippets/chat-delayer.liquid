@@ -1,0 +1,24 @@
+<script>
+  function whenExists(element, callback) {
+        var interval = setInterval(function () {
+            if (document.querySelectorAll(element).length) {
+                callback();
+                clearInterval(interval);
+            }
+        }, 100);
+    }
+    whenExists('#envolve-chat > div > div.envolve-sc-launcher', function () {
+        var targetElement = document.querySelector('#envolve-chat > div > div.envolve-sc-launcher');
+        targetElement.classList.add('no-display');
+        setTimeout(() => {
+            if (targetElement) {
+                targetElement.classList.remove('no-display');
+            }
+        }, 15000);
+    });
+</script>
+<style>
+  #envolve-chat > div > div.envolve-sc-launcher.no-display{
+    display: none !important;
+  }
+</style>

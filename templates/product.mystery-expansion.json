@@ -1,0 +1,196 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "richtext_nrVgGq": {
+          "type": "richtext",
+          "disabled": true,
+          "settings": {
+            "richtext": "<h6><strong>Buy 5 or more pins & get 20% OFF!<\/strong><\/h6>"
+          }
+        },
+        "bold_discounts_the_sales_app_sale_clock_dfUfHy": {
+          "type": "shopify:\/\/apps\/bold-discounts-the-sales-app\/blocks\/sale-clock\/22ca27ee-084f-4527-b863-69a3cd4c8b2c",
+          "settings": {
+            "is_preview_enabled": true,
+            "templates": "template_1",
+            "text_align": "center",
+            "font_size": 14,
+            "font_color": "#bf0209",
+            "margin_size": 0,
+            "padding_size": 0,
+            "border_color": "#000000",
+            "border_size": 0,
+            "background_color": "rgba(0,0,0,0)",
+            "custom_css": "#shappify_count_down {}"
+          }
+        },
+        "title_and_price": {
+          "type": "title_and_price",
+          "settings": {
+            "show_tax_and_shipping": false
+          }
+        },
+        "yotpo_product_reviews_ugc_star_rating_QVRcwW": {
+          "type": "shopify:\/\/apps\/yotpo-product-reviews\/blocks\/star-rating\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "vendor": {
+          "type": "vendor",
+          "disabled": true,
+          "settings": {}
+        },
+        "type": {
+          "type": "type",
+          "disabled": true,
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "size_chart_enabled": false,
+            "size_chart_option_name": "Size",
+            "size_chart_page_id": ""
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "enable_payment_button": false,
+            "show_pickup_availability": true,
+            "show_backorder_text": false,
+            "show_inventory_notice": "never",
+            "show_inventory_count": "low",
+            "inventory_notice_threshold": 10
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "full_width": false,
+            "show_tabs": false,
+            "tab_2_title": "",
+            "tab_2_content": "",
+            "tab_2_page": "",
+            "tab_3_title": "",
+            "tab_3_content": "",
+            "tab_3_page": ""
+          }
+        },
+        "sharing": {
+          "type": "sharing",
+          "settings": {}
+        },
+        "product_icons_Lab8RY": {
+          "type": "product_icons",
+          "settings": {
+            "show_product_icons": true,
+            "icon_position": "top-left",
+            "icon_size": 80,
+            "icon_size_mobile": 30,
+            "flex_direction": "column"
+          }
+        }
+      },
+      "block_order": [
+        "richtext_nrVgGq",
+        "bold_discounts_the_sales_app_sale_clock_dfUfHy",
+        "title_and_price",
+        "yotpo_product_reviews_ugc_star_rating_QVRcwW",
+        "vendor",
+        "type",
+        "variant_picker",
+        "buy_buttons",
+        "description",
+        "sharing",
+        "product_icons_Lab8RY"
+      ],
+      "settings": {
+        "enable_sticky_media": true,
+        "media_size": "small",
+        "media_layout": "thumbnails-below",
+        "enable_video_looping": false
+      }
+    },
+    "image_with_text_efBaJH": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/LifestyleAd_OverlushMysteryExpansion_1_Square_d243ccea-10cd-4471-89cd-0469add82149.jpg",
+        "image_link": "shopify:\/\/products\/mystery-expansion",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "Brand New Mystery Expansion!",
+        "text": "<p>Add 60 new cards to your Doomlings game with the Mystery Expansion.<\/p>",
+        "button_label": "BUY NOW",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#e0d9ea",
+        "color_text": "#50248f"
+      }
+    },
+    "recent": {
+      "type": "recently-viewed",
+      "disabled": true,
+      "settings": {
+        "show_recently_viewed": true,
+        "show_vendor": false
+      }
+    },
+    "1715807764413a9b63": {
+      "type": "apps",
+      "blocks": {
+        "yotpo_product_reviews_ugc_reviews_UVPbJr": {
+          "type": "shopify:\/\/apps\/yotpo-product-reviews\/blocks\/reviews\/eb7dfd7d-db44-4334-bc49-c893b51b36cf",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
+        "reviews_from_amazon_amazon_reviews_Fzr3yk": {
+          "type": "shopify:\/\/apps\/reviews-from-amazon\/blocks\/Amazon reviews\/d2a0c9ad-3f97-43c4-9e0c-bc1a4007a201",
+          "settings": {
+            "heading": "Amazon reviews"
+          }
+        }
+      },
+      "block_order": [
+        "yotpo_product_reviews_ugc_reviews_UVPbJr",
+        "reviews_from_amazon_amazon_reviews_Fzr3yk"
+      ],
+      "settings": {
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "title": "You may also like",
+        "grid": 4,
+        "show_vendor": false
+      }
+    },
+    "custom_liquid_TKwNRk": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script>\n  window.addEventListener('load', function() {\n  var _learnq = window._learnq || [];\n  function addedToCart() {\n   fetch(`${window.location.origin}\/cart.js`)\n   .then(res => res.clone().json().then(data => {\n    var cart = {\n      total_price: data.total_price\/100,\n      $value: data.total_price\/100,\n      total_discount: data.total_discount,\n      original_total_price: data.original_total_price\/100,\n      items: data.items\n    }\n    if (item !== 'undefined') {\n      cart = Object.assign(cart, item)\n    }\n    if (klAjax) {\n       _learnq.push(['track', 'Added to Cart', cart]);\n       klAjax = false;\n      }\n   }))\n  };\n  (function (ns, fetch) {\n    ns.fetch = function() {\n      const response = fetch.apply(this, arguments);\n      response.then(res => {\n        if (`${window.location.origin}\/cart\/add.js`\n          .includes(res.url) && res.url !== '') {\n              addedToCart()\n        }\n      });\n      return response\n     }\n  }(window, window.fetch));\n  var klAjax = true;\n  var atcButtons = document.querySelectorAll(\"form[action*='\/cart\/add'] button[type='submit']\");\n  for (var i = 0; i < atcButtons.length; i++) { \n    atcButtons[i].addEventListener(\"click\", function() {\n      if (klAjax) {\n        _learnq.push(['track', 'Added to Cart', item]);\n        klAjax = false;\n      }\n    })\n  }\n  });\n<\/script>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_efBaJH",
+    "recent",
+    "1715807764413a9b63",
+    "recommendations",
+    "custom_liquid_TKwNRk"
+  ]
+}

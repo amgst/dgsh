@@ -1,0 +1,26 @@
+
+/* Lato Font Faces */
+@font-face {
+  font-family: 'Lato';
+  src: url('https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Lato-Regular.woff2?v=1714158285') format('woff2'),
+       url('https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Lato-Regular.woff?v=1714158286') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Lato-Bold.woff2?v=1714158286') format('woff2'),
+       url('https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Lato-Bold.woff?v=1714158286') format('woff');
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Lato-Black.woff2?v=1714158286') format('woff2'),
+       url('https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Lato-Black.woff?v=1714158286') format('woff');
+  font-weight: 900; /* Black */
+  font-style: normal;
+}
+ 

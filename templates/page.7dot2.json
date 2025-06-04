@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_title": true,
+        "title_alignment": "left"
+      }
+    },
+    "7dot2_wpGT9d": {
+      "type": "7dot2",
+      "settings": {
+        "lantern_link_url": "shopify:\/\/blogs\/captain-marins-journey-ie-1",
+        "background_color": "#000000",
+        "background_music_url": "https:\/\/cdn.shopify.com\/s\/files\/1\/0554\/6190\/4593\/files\/Tamuz_Dekel_-_Quiet_Pull.mp3"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "7dot2_wpGT9d"
+  ]
+}

@@ -1,0 +1,166 @@
+{% schema %}
+{
+  "name": "7 Dot 2",
+  "settings": [
+    {
+      "type": "url",
+      "id": "lantern_link_url",
+      "label": "Lantern Link URL"
+    },    
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "background_music_url",
+      "label": "Background Music URL",
+      "default": "https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Tamuz_Dekel_-_Quiet_Pull.mp3"
+    }
+  ],
+  "presets": [
+    {
+      "category": "section",
+      "name": "7 Dot 2"
+    }
+  ]
+}
+{% endschema %}
+
+{% style %}
+/* This CSS centers the image and sets the background color dynamically */
+.section-7-dot-2 {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: auto; /* Adjust as necessary */
+  height: 100vh;
+ background-color: {{ section.settings.background_color }};
+  overflow: hidden;
+}
+
+#containerA img { cursor:pointer; } 
+.image-container { position: relative;}
+/*.image-container img { max-width: 100%;}*/
+.image-container img {max-width: 624px; max-height: 600px;transition: opacity .1s ease;  }
+.lantern-link {
+    position: absolute; 
+    top: 42%;
+    left: 25%;
+    width: 100px;
+    height: 80px; 
+}
+/* Adjusts the image for mobile devices */
+@media (max-width: 767px) {
+  .section-7-dot-2 img { width: 100%;}
+  .lantern-link { position: absolute; top: 43%;left: 24%; width: 70px;height: 50px; }
+}
+
+
+.music-controls {position: absolute;bottom: 20px;right: 20px;}
+.music-controls img {cursor: pointer;width: 50px;  margin: 0 5px;}
+.music-controls img {visibility: visible; }
+.music-controls img.hidden { visibility: hidden;}
+
+
+
+.hidden {visibility: hidden;opacity: 0;}
+.fade-in {visibility:  visible;opacity: 1;}
+
+
+.fade-out {
+  animation: fadeOutAnimation 0.1s forwards; /* Adjust the timing to match your fade-out duration */
+}
+
+.fade-in {
+  animation: fadeInAnimation 0.1s forwards; /* Adjust the timing to match your fade-in duration */
+}
+
+@keyframes fadeOutAnimation {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+    visibility: visible;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+
+{% endstyle %}
+
+
+<div class="section-7-dot-2">
+  <div class="image-container" id="containerA">
+    <img src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Everything_must_go_7dot2_A.gif" alt="Initial Image" class="desktop-image" id="gifA">
+  </div>
+  <div class="image-container hidden" id="containerB">
+    <img src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Everything_must_go_7dot2_B.gif" alt="Second Image" class="desktop-image" id="gifB">
+      <a href="{{ section.settings.lantern_link_url }}" class="lantern-link"></a>
+  </div>
+
+
+  {% if section.settings.background_music_url != blank %}
+    <div class="background-music-container" style="display:none;">
+      <audio id="backgroundMusic" loop>
+        <source src="{{ section.settings.background_music_url }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  {% endif %}
+ 
+{% if section.settings.show_music_controls %}
+<!--   <div class="music-controls">
+    <img src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Play.png?v=1711126861" alt="Play" id="playButton">
+    <img src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Stop.png?v=1711126861" alt="Stop" id="stopButton" style="display:none;">
+  </div> -->
+{% endif %}
+
+</div>
+
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+  var backgroundMusic = document.getElementById('backgroundMusic');
+  var containerA = document.getElementById('containerA');
+  var containerB = document.getElementById('containerB');
+  var gifA = document.getElementById('gifA');
+  var hasClicked = false; // Track if the gif has been clicked
+
+  gifA.addEventListener('click', function() {
+    if (!hasClicked) {
+      playMusicAndTransition();
+      hasClicked = true; // Prevent further clicks from re-triggering the actions
+    }
+  });
+
+
+function playMusicAndTransition() {
+  // Play the music
+  backgroundMusic.play();
+
+  // Apply fade-out to the first container
+  containerA.classList.add('fade-out');
+  
+  // After fade-out, hide the first container, remove the fade-out class, and then fade in the second container
+  setTimeout(function() {
+    containerA.classList.add('hidden');
+    containerA.classList.remove('fade-out'); // Clean up to allow for reverse transition if needed
+    
+    containerB.classList.remove('hidden');
+    containerB.classList.add('fade-in'); // Apply fade-in to the second container
+  }, 100); // This duration should match the fade-out animation time
+}
+
+});
+</script>

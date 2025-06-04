@@ -1,0 +1,129 @@
+<details class="cc-filter cc-filter--category" data-index="0">
+    <summary class="cc-filter__toggle">
+        <span class="cc-category-label md-down-hidden">Category</span>
+        <span class="cc-category-selected md-down-hidden">All</span>
+    </summary>
+    <div class="cc-filter__panel">
+        <div class="cc-filter__header md-up-hidden">
+            <div class="cc-filter-heading">Category</div>
+            <button type="button" class="cc-filter-close-btn feather-icon js-close-filters" aria-label="Close">
+              <svg aria-hidden="true" focusable="false" role="presentation" class="icon feather-x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+            </button>
+        </div>
+
+       <div class="cc-filter__content">
+            <ul>
+                <li>
+                    <input type="radio" class="radio" id="category-1" value="all-products" checked="" data-gtm-form-interact-field-id="0">
+                    <label for="category-1">All</label>
+                </li>
+                <li>
+                    <input type="radio" class="radio" id="category-2" value="games" data-gtm-form-interact-field-id="1">
+                    <label for="category-2">Games & Expansions</label>
+                </li>
+                <li>
+                    <input type="radio" class="radio" id="category-3" value="playmats-sleeves-storage" data-gtm-form-interact-field-id="2">
+                    <label for="category-3">Playmats & Storage</label>
+                </li>
+                <li>
+                    <input type="radio" class="radio" id="category-4"  value="collectibles" data-gtm-form-interact-field-id="4">
+                    <label for="category-4">Collectibles</label>
+                </li>
+                <li>
+                    <input type="radio" class="radio" id="category-5" value="plushies" data-gtm-form-interact-field-id="5">
+                    <label for="category-5">Plushies</label>
+                </li>
+                <li>
+                    <input type="radio" class="radio" id="category-6" value="apparel" data-gtm-form-interact-field-id="6">
+                    <label for="category-6">Apparel</label>
+                </li>
+                <li>
+                    <input type="radio" class="radio" id="category-7" value="posters" data-gtm-form-interact-field-id="7">
+                    <label for="category-7">Posters</label>
+                </li>
+            </ul>
+        </div>
+
+        <div class="cc-filter__footer md-up-hidden">
+            <button type="button" class="btn js-close-filters">Apply</button>
+        </div>
+    </div>
+</details>
+<script>
+(() => {
+    // DETECT CURRENT CATEGORY SETTING AND SET CHECKBOX
+    const categories = document.querySelectorAll('.cc-filter--category input');
+    categories.forEach((el, i) => {
+        el.checked = false;
+    });
+
+    const selectedCat = location.pathname.substring(location.pathname.indexOf('/', 1) + 1);
+    const catInFilters = document.querySelector(`.cc-filter--category input[value="${selectedCat}"]`);
+    if ( catInFilters ) {
+      const defaultLabel = catInFilters.nextElementSibling.innerHTML;
+      catInFilters.checked = true;
+      document.querySelector('.cc-category-selected').innerHTML = defaultLabel;
+    } else {
+      document.querySelector('.cc-category-selected').innerHTML = '';
+    }
+
+    // CATEGORY SELECT
+    document.addEventListener('click', (e) => {
+        if ( !e.target.matches('.cc-filter--category input') ) return;
+
+        // SET NEW URL
+        const category = e.target.getAttribute('value');
+        const newURL = `${location.origin}/collections/${category}${location.search}`;
+        history.replaceState({category: category}, '', newURL);
+
+        // UNCHECK OTHER OPTIONS ON CATEGORY SELECT
+        const categories = document.querySelectorAll('.cc-filter--category input');
+        categories.forEach((el, i) => {
+            if ( el !== e.target ) el.checked = false;
+        });
+
+        // SET LABEL
+        const label = e.target.nextElementSibling.innerHTML;
+        document.querySelector('.cc-category-selected').innerHTML = label;
+
+        // FETCH NEW CATEGORY PAGE AND SET COLLECTIONS TITLE AND DESCRIPTION
+        fetch(location.origin + location.pathname)
+            .then(res => {
+                if ( !res.ok ) {
+                    throw Error('Category URL does not exist.');
+                }
+                return res;
+            })
+            .then(res => res.text())
+            .then(text => {
+                const strToHTML = htmlString => {
+                    var div = document.createElement('div');
+                    div.innerHTML = htmlString.trim();
+                  
+                    return div; 
+                };
+                const htmlDoc = strToHTML(text);
+                const title = htmlDoc.querySelector('.collection-header h1').innerHTML;
+                const desc = htmlDoc.querySelector('.collection-header h1 + div').innerHTML;
+                
+                document.querySelector('.collection-header h1').innerHTML = title;
+                document.querySelector('.collection-header h1 + div').innerHTML = desc;
+
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    });
+})();
+</script>
+<style>
+  .cc-filter__panel {
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+  }
+  
+  @media (min-width: 768px) {
+      .cc-filter__content {
+          max-height: initial;
+      }
+  }
+</style>

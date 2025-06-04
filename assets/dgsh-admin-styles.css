@@ -1,0 +1,433 @@
+/**
+ * Doomlings GenCon Scavenger Hunt - Admin Dashboard Styles
+ * File path: assets/dgsh-admin-styles.css
+ */
+
+/* Base Admin Container */
+.dgsh-admin-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  color: #333;
+  margin: 0 auto;
+  padding: 20px 0;
+  max-width: 1200px;
+}
+
+/* Admin Typography */
+.dgsh-admin-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #222;
+  text-align: center;
+}
+
+.dgsh-admin-description {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  font-size: 16px;
+  color: #666;
+  text-align: center;
+}
+
+.dgsh-admin-section-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 30px 0 15px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #eaeaea;
+}
+
+/* Utility Classes */
+.dgsh-hidden {
+  display: none !important;
+}
+
+.dgsh-admin-loading {
+  text-align: center;
+  padding: 30px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Admin Header */
+.dgsh-admin-header {
+  margin-bottom: 30px;
+}
+
+.dgsh-admin-dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eaeaea; padding: 20px;
+}
+
+.dgsh-admin-header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.dgsh-admin-last-refresh {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+/* Admin Buttons */
+.dgsh-admin-refresh-btn,
+.dgsh-admin-export-btn,
+.dgsh-admin-login-btn,
+.dgsh-admin-generate-test-btn,
+.dgsh-admin-update-staff-pw-btn,
+.dgsh-admin-update-pw-btn,
+.dgsh-admin-reset-btn,
+.dgsh-admin-clear-cache-btn {
+  display: inline-block;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.dgsh-admin-refresh-btn,
+.dgsh-admin-export-btn {
+  background-color: #f8f9fa;
+  color: #212529;
+  border: 1px solid #dee2e6;
+}
+
+.dgsh-admin-refresh-btn:hover,
+.dgsh-admin-export-btn:hover {
+  background-color: #e9ecef;
+  transform: translateY(-1px);
+}
+
+.dgsh-admin-login-btn,
+.dgsh-admin-generate-test-btn,
+.dgsh-admin-update-staff-pw-btn,
+.dgsh-admin-update-pw-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.dgsh-admin-login-btn:hover,
+.dgsh-admin-generate-test-btn:hover,
+.dgsh-admin-update-staff-pw-btn:hover,
+.dgsh-admin-update-pw-btn:hover {
+  background-color: #0069d9;
+  transform: translateY(-1px);
+}
+
+.dgsh-admin-reset-btn,
+.dgsh-admin-clear-cache-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.dgsh-admin-reset-btn:hover,
+.dgsh-admin-clear-cache-btn:hover {
+  background-color: #c82333;
+  transform: translateY(-1px);
+}
+
+/* Authentication Form */
+.dgsh-admin-auth-form {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.dgsh-admin-auth-description {
+  margin-bottom: 20px;
+  color: #6c757d;
+}
+
+.dgsh-admin-form-group {
+  margin-bottom: 20px;
+}
+
+.dgsh-admin-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.dgsh-admin-password,
+.dgsh-admin-staff-password,
+.dgsh-admin-new-password,
+.dgsh-admin-test-code-number {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+}
+
+.dgsh-admin-password:focus,
+.dgsh-admin-staff-password:focus,
+.dgsh-admin-new-password:focus,
+.dgsh-admin-test-code-number:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.25);
+}
+
+.dgsh-admin-auth-error {
+  margin-bottom: 15px;
+  padding: 10px;
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+}
+
+/* Statistics Section */
+.dgsh-admin-summary-stats,
+.dgsh-admin-scan-distribution,
+.dgsh-admin-card-stats,
+.dgsh-admin-first-scan-stats {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.dgsh-admin-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.dgsh-admin-stat-item {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.dgsh-admin-stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.dgsh-admin-stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.dgsh-admin-stat-label {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+/* Tables */
+.dgsh-admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.dgsh-admin-table th,
+.dgsh-admin-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.dgsh-admin-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+}
+
+.dgsh-admin-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Charts */
+.dgsh-admin-chart-container {
+  width: 100%;
+  height: 300px;
+  margin-top: 20px;
+}
+
+/* Test Code Generator */
+.dgsh-admin-test-code-generator {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.dgsh-admin-test-code-form {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.dgsh-admin-test-code-result {
+  margin-top: 20px;
+}
+
+.dgsh-admin-test-code-display {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.dgsh-admin-test-code-qr {
+  margin-bottom: 15px;
+}
+
+.dgsh-admin-test-code-value {
+  font-family: monospace;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.dgsh-admin-test-code-url {
+  font-size: 14px;
+  color: #6c757d;
+  word-break: break-all;
+}
+
+
+
+
+/* Redemption Statistics */
+.dgsh-admin-redemption-stats {
+  margin-top: 30px;
+}
+
+/* Results - Success, Errors, Warnings */
+.dgsh-admin-success {
+  color: #28a745;
+  padding: 10px;
+  background-color: #d4edda;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  border: 1px solid #c3e6cb;
+}
+
+.dgsh-admin-error {
+  color: #dc3545;
+  padding: 10px;
+  background-color: #f8d7da;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  border: 1px solid #f5c6cb;
+}
+
+.dgsh-admin-warning {
+  color: #856404;
+  padding: 10px;
+  background-color: #fff3cd;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  border: 1px solid #ffeeba;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .dgsh-admin-stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .dgsh-admin-dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .dgsh-admin-last-refresh {
+    margin-top: 10px;
+  }
+  
+  .dgsh-admin-password-field {
+    flex-direction: column;
+  }
+  
+  .dgsh-admin-test-actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .dgsh-admin-stat-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dgsh-admin-table {
+    font-size: 14px;
+  }
+  
+  .dgsh-admin-table th,
+  .dgsh-admin-table td {
+    padding: 8px 10px;
+  }
+}
+
+
+
+
+/* Ajax QR Code Validation Styles */
+.dgsh-qr-preview {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border: 1px solid #e9ecef;
+}
+
+.dgsh-qr-validation-status {
+  margin-top: 8px;
+}
+
+.dgsh-validation-loading {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.dgsh-validation-success {
+  color: #28a745;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.dgsh-validation-error {
+  color: #dc3545;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.dgsh-admin-qr-custom-code {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
+.dgsh-admin-qr-custom-code:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.25);
+}

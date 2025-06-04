@@ -1,0 +1,282 @@
+<!-- Remember to include jQuery :) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+<!-- jQuery Modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+<section id="section-id-{{ section.id }}" class="large-row container container--no-mobile-padding section-{{ section.id }}" data-section-id="{{ section.id }}"  data-section-type="video">
+  <div class="page-width relative">
+    {% if section.settings.title != blank %}
+        <h3 class="write-review-title">
+            {{section.settings.title}}
+        </h3>
+    {% endif %}
+    <div class="write-review-section">
+        {% if section.settings.walmart_image != blank %}
+            <div class="write-review-item walmart">
+                <a href="{{section.settings.walmart_link}}" >
+                    <div class="split-image split-image--square rimage-background fade-in lazyload"
+                        data-bgset="{% render 'bgset', image: section.settings.walmart_image %}"
+                        data-sizes="auto"
+                        data-parent-fit="cover">
+                        <noscript>
+                            <img src="{{ section.settings.walmart_image  | img_url: '200x200' }}" alt="{{ section.settings.walmart_image.alt | escape }}" class="rimage-background__image">
+                        </noscript>
+                    </div>
+                </a>
+            </div>
+        {% endif %}
+        {% if section.settings.target_image != blank %}
+            <div class="write-review-item target">
+                <a href="{{section.settings.target_link}}">
+                    <div class="split-image split-image--square rimage-background fade-in lazyload"
+                        data-bgset="{% render 'bgset', image: section.settings.target_image %}"
+                        data-sizes="auto"
+                        data-parent-fit="cover">
+                        <noscript>
+                            <img src="{{ section.settings.target_image  | img_url: '200x200' }}" alt="{{ section.settings.walmart_image.alt | escape }}" class="rimage-background__image">
+                        </noscript>
+                    </div>
+                </a>
+            </div>
+        {% endif %}
+        {% if section.settings.amazon_image != blank %}
+            <div class="write-review-item amazon">
+                <a href="{{section.settings.amazon_link}}" >
+                    <div class="split-image split-image--square rimage-background fade-in lazyload"
+                        data-bgset="{% render 'bgset', image: section.settings.amazon_image %}"
+                        data-sizes="auto"
+                        data-parent-fit="cover">
+                        <noscript>
+                            <img src="{{ section.settings.amazon_image  | img_url: '200x200' }}" alt="{{ section.settings.walmart_image.alt | escape }}" class="rimage-background__image">
+                        </noscript>
+                    </div>
+                </a>
+            
+            </div>
+        {% endif %}
+        {% if section.settings.doomlings_image != blank %}
+            <div class="write-review-item doom">
+                <a href="{{section.settings.doom_link}}">
+                    <div class="split-image split-image--square rimage-background fade-in lazyload"
+                        data-bgset="{% render 'bgset', image: section.settings.doomlings_image %}"
+                        data-sizes="auto"
+                        data-parent-fit="cover">
+                        <noscript>
+                            <img src="{{ section.settings.doomlings_image  | img_url: '200x200' }}" alt="{{ section.settings.walmart_image.alt | escape }}" class="rimage-background__image">
+                        </noscript>
+                    </div>
+                </a>
+            </div>
+        {% endif %}
+    </div>
+     
+  </div>
+  <div id="walmart_modal" class="modal">
+     <h3 class="text-center">Choose a Product Review</h3>
+     <div class="review_modal">
+        {% for product in collections['all'].products %}
+            {% assign product_link = product.product.metafields.custom.walmart_button_link %}
+            {% if product_link == '' %}
+            {% assign product_link = product.url %}
+            {% endif %}
+            {% assign productTags = product.tags | join: ', ' %}
+            {% if productTags contains 'review' %}
+                <div class="review_product">
+                    <a href="{{product.url}}">
+                        {% render 'responsive-image', image: product.featured_media.preview_image %}
+                        <div class="review_product_title">
+                            {{ product.title }}
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+           
+        {% endfor %}
+     </div>
+  </div>
+  <div id="target_modal" class="modal">
+    <h3 class="text-center">Choose a Product Review</h3>
+    <div class="review_modal">
+        {% for product in collections['all'].products %}
+            {% assign product_link = product.metafields.custom.target_button_link %}
+            {% if product_link == '' %}
+            {% assign product_link = product.url %}
+            {% endif %}
+            {% assign productTags = product.tags | join: ', ' %}
+            {% if productTags contains 'review' %}
+                <div class="review_product">
+                    <a href="{{product_link}}">
+                        {% render 'responsive-image', image: product.featured_media.preview_image %}
+                        <div class="review_product_title">
+                            {{ product.title }}
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+  </div>
+  <div id="doom_modal" class="modal">
+    <h3 class="text-center">Choose a Product Review</h3>
+    <div class="review_modal">
+        {% for block  in section.blocks %}
+            {% assign product = block.settings.product%}
+            {% assign product_link = product.url | append :'#yotpoReviewsWidget' %}
+            <div class="review_product">
+                <a href="{{product_link}}">
+                    {% render 'responsive-image', image: product.featured_media.preview_image %}
+                    <div class="review_product_title">
+                        {{ product.title }}
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+.review_modal {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+.review_product {
+    border: 4px solid #DADADA;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 13px;
+    text-align: center;
+}
+.review_product a {
+    text-decoration: none;
+}
+.review_product:hover {
+    border: 4px solid #50248F;
+}
+.blocker {
+    background-color: rgba(0,0,0,0.15);
+    z-index: 9997;
+}
+.modal {
+    max-width: 1204px;
+    padding: 60px;
+}
+.write-review-title {
+    text-align:center;
+}
+.write-review-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+    padding-bottom: 100px;
+}
+.write-review-item {
+    width: 160px;
+    height: 160px;
+    border: 4px solid #DADADA;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 13px;
+}
+.write-review-item:hover {
+    border: 4px solid #50248F;
+}
+@media(max-width: 767px){
+    .write-review-section {
+        padding-bottom: 0px;
+    }
+    .modal {
+        padding: 30px 10px;
+        width: 100%;
+    }
+    .review_modal {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 20px;
+    }
+}
+
+
+</style>
+{% schema %}
+  {
+    "name": "Write Review",
+    "class": "write-review",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Where did you get your product?"
+        },
+      
+        {
+            "id": "walmart_image",
+            "type": "image_picker",
+            "label": "Walmart Image"
+        },
+        {
+            "type": "url",
+            "id": "walmart_link",
+            "label": "Walmart Review Link"
+        },
+        {
+            "id": "target_image",
+            "type": "image_picker",
+            "label": "Target Image"
+        },
+         {
+            "type": "url",
+            "id": "target_link",
+            "label": "Target Review Link"
+        },
+        {
+            "id": "amazon_image",
+            "type": "image_picker",
+            "label": "Amazon Image"
+        },
+        {
+            "type": "url",
+            "id": "amazon_link",
+            "label": "Amazon Review Link"
+        },
+        {
+            "type": "url",
+            "id": "doom_link",
+            "label": "Doomlings Review Link"
+        },
+        {
+            "id": "doomlings_image",
+            "type": "image_picker",
+            "label": "Doomlings Image"
+        }
+    ],
+    "blocks": [
+        {
+        "type": "doomlings",
+        "name": "Doomlings Product",
+        "settings": [
+          {
+             "type": "product",
+             "id": "product",
+             "label": "Product"
+          }
+         
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Write Review",
+        "category": "text"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,60 @@
+{% comment %}
+  Hunt How It Works Section
+  File: sections/dgsh-how-it-works.liquid
+{% endcomment %}
+
+<section class="dgsh-instructions-container">
+  <div class="dgsh-container">
+  <h2 class="dgsh-section-title">{{ section.settings.section_title }}</h2>
+  <ol class="dgsh-instructions-list">
+    {% for block in section.blocks %}
+      <li class="dgsh-instruction-item" {{ block.shopify_attributes }}>
+        <span class="dgsh-instruction-number">{{ forloop.index }}</span>
+        <div class="dgsh-instruction-content">
+          <h3>{{ block.settings.step_title }}</h3>
+          <p>{{ block.settings.step_description }}</p>
+        </div>
+      </li>
+    {% endfor %}
+  </ol>
+</div>
+</section>
+
+{% schema %}
+{
+  "name": "How It Works",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "How It Works"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "instruction_step",
+      "name": "Instruction Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "step_title",
+          "label": "Step Title",
+          "default": "Step Title"
+        },
+        {
+          "type": "textarea",
+          "id": "step_description",
+          "label": "Step Description",
+          "default": "Step description goes here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "DGSH How It Works"
+    }
+  ]
+}
+{% endschema %}

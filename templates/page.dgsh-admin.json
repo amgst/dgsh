@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "dashboard": {
+      "type": "dgsh-admin-dashboard",
+      "settings": {
+        "show_auth_form": true,
+        "show_statistics": true,
+        "show_card_stats": true
+      }
+    }
+  },
+  "order": [
+    "dashboard"
+  ]
+}

@@ -1,0 +1,316 @@
+{% schema %}
+{
+  "name": "Card Styles",
+  "settings": [
+    {
+      "type": "range",
+      "id": "h2_font_size",
+      "label": "H2 Font Size",
+      "default": 44,
+      "min": 30,
+      "max": 60,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "h2_font_size_m",
+      "label": "H2 Font Size Mobile", 
+      "default": 28,
+      "min": 16,
+      "max": 42,
+      "step": 1,
+      "unit": "px"
+    },   
+    {
+      "type": "range",
+      "id": "h3_font_size",
+      "label": "H3 Font Size",
+      "default": 26,
+      "min": 18,
+      "max": 30,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "h3_font_size_m",
+      "label": "H3 Font Size Mobile",
+      "default": 26,
+      "min": 14,
+      "max": 30,
+      "step": 1,
+      "unit": "px"
+    },      
+    {
+      "type": "range",
+      "id": "p_font_size",
+      "label": "Paragraph Font Size",
+      "default": 22,
+      "min": 18,
+      "max": 36,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "p_font_size_m",
+      "label": "Paragraph Font Size Mobile",
+      "default": 19,
+      "min": 16,
+      "max": 24,
+      "step": 1,
+      "unit": "px"
+    },    
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button Font Size",
+      "default": 28,
+      "min": 16,
+      "max": 40,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "img_animation",
+      "label": "Image Animation Speed",
+      "default": 800,
+      "min": 400,
+      "max": 1400,
+      "step": 20,
+      "info": "lower number will increase the speed"
+    },    
+    {
+      "type": "color",
+      "id": "main_color",
+      "label": "Main Color",
+      "default": "#3e117c"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Title Background Image"
+    }    
+
+  ],
+  "presets": [
+    {
+      "name": "Card Styles",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+ 
+<style>
+  @font-face {
+      font-family: 'Poppins';
+      src: url('https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Poppins-Bold.ttf?v=1718437881') format('truetype');
+      font-weight: 700;
+  }
+
+  @font-face {
+      font-family: 'Poppins';
+      src: url('https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Poppins-Regular.ttf?v=1718437881') format('truetype');
+      font-weight: 400; 
+  }
+
+
+  @media screen and (min-width: 750px) {
+    .intro-outer {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+  }
+  .card-container{ max-width: 1400px; margin: 0 auto;}
+  @media (max-width: 1400px) {
+    .card-container{ max-width: 1300px;}
+  }
+  .section-title-image h2 {font-size: {{ section.settings.h2_font_size }}px; }
+  .btn-linked, .btn-blue { font-size: {{ section.settings.button_font_size }}px;}
+  .section-title-image h2,
+  .what-contetns h2,
+  .sub_section_title h3,
+  .main-contetns p,
+  .card-item-text h3,
+  .card-item-text p
+   { color:{{ section.settings.main_color }} }
+  .btn-blue { background-color:{{ section.settings.main_color }} }
+  .card-wrapper .card-content { color:{{ section.settings.main_color }} }
+
+  .card-wrapper .card-content p { font-size:{{section.settings.p_font_size}}px; max-width:400px;font-family: "Lato", sans-serif; line-height: 1.2;}
+  .main-contetns p{ font-size:{{section.settings.p_font_size}}px;  }  
+  @media (max-width: 768px) {     
+    .card-wrapper .card-content p { font-size:{{section.settings.p_font_size_m}}px; line-height: 1.2; margin-top: 5px;}   
+    .whats-wrapper {margin-top: 25px;}
+    .btn-linked, .btn-blue { font-size: 20px; padding:12px 30px;  }
+    .section-title-image h2 {font-size: {{ section.settings.h2_font_size_m }}px; margin-bottom: 20px; padding:0 34px; }
+  }
+
+  .card-image-wrap {
+      position: relative;
+      width: 100%;
+      height: 100%;
+  }
+
+  @keyframes placeholderAnimation {
+    0% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+  }
+
+  .card-placeholder {
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      animation: placeholderAnimation 1.5s infinite ease-in-out;
+  }
+  img.lazyload.card-swiper-lazy {opacity: 0;transition: opacity 0.3s ease;}
+  img.lazyload.card-swiper-lazy.lazyloaded {opacity: 1;}
+
+  .breadcrumbs-container{ display:none; }
+  .lazyload {
+    filter: blur(20px);
+    transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0;
+  }
+  .lazyloaded { filter: blur(0);opacity: 1;}
+  .lazyload {opacity: 0;transition: opacity 0.5s ease-in-out;}
+  .lazyloaded {opacity: 1;}
+
+  .intro-inner {display: flex;gap: 0; justify-content: center;align-items: flex-start; max-width: 1150px; margin: 0 auto;}
+  
+  @media (max-width: 768px) {
+    .intro-wrapper {
+      padding-top: 30px;
+      padding-bottom: 10px;
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+  }
+
+  {% if page.handle == 'legends-of-enderas' %}
+      .intro-outer { padding-top: 195px;  }
+      .section-title-rainbow {
+        background-image: url('{{ section.settings.background_image | img_url: 'master' }}');
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+      }
+      .section-title-rainbow {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        margin: 0 auto;
+      }  
+      .section-title-rainbow h2 { margin:0; }
+    @media (max-width: 768px) { 
+      .section-title-rainbow{
+        padding-top: 27px;
+        padding-bottom: 27px; 
+      }
+    }      
+  {% else %}
+    .intro-outer { padding-top: 155px;  }
+      {% if section.settings.background_image %}
+        .section-title-rainbow {
+          background-image: url('{{ section.settings.background_image | img_url: 'master' }}');
+          background-size: 100% 100%;
+          background-position: center bottom;
+          background-repeat: no-repeat;
+        }
+    {% endif %}
+    .section-title-rainbow {
+      padding-top: 85px;
+      padding-bottom: 15px;
+      margin: 0 auto;
+    }  
+
+  @media (max-width: 768px) {
+    .section-title-rainbow{
+      padding-top: 27px;
+      padding-bottom: 4px;
+    }
+  }
+ 
+
+  {% endif %}
+
+
+
+.card-box-title{
+    max-width: 200px;
+    margin-top: 0;
+    display: flex;
+    height: 70px;
+}
+.card-box-title,
+.sub_section_title h3 { 
+    color: {{ section.settings.main_color }};
+    font-size: {{ section.settings.h3_font_size }}px;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    line-height: 1.2;
+    align-items: center; 
+  }
+  .sub_section_title { 
+    align-items: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 20px; }
+  @media (max-width: 768px) {
+      .sub_section_title {padding-top: 20px; }
+    .card-box-title,
+    .sub_section_title h3 {
+      font-size: {{ section.settings.h3_font_size_m }}px;
+      padding: 20px;
+    }
+  }
+html {
+    scroll-behavior: smooth;
+}
+.reviews-container{ text-align:center; }
+
+
+.btn-legends {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    display: inline-block;
+    padding: 18px 30px;
+    text-align: center;
+    text-decoration: none; 
+    border-radius: 50px;
+    font-size: 26px;
+    text-transform: uppercase;
+    transition: all 0.3s ease; 
+    background-color:#ff7901;    
+    color: #fff; 
+}
+.btn-legends:hover {     
+    transform: translateY(-3px);      
+    color: #fff;    
+} 
+@media screen and (max-width: 750px) {
+    .btn-legends {
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-size: 20px;
+    }
+}
+</style>

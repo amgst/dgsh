@@ -1,0 +1,40 @@
+
+  {% if section.settings.image_visibility %}
+  <style>
+    .teaser-wrapper {position: absolute; right: 0; top: -126px; z-index:2; }
+   
+    div.page-footer__inner { position: relative; }
+
+  .teaser-image {
+margin-bottom: -7px;
+      width: {{ section.settings.image_width }}px; 
+      transition: transform 0.3s ease;
+  }
+
+  {% if section.settings.hover_animation %}
+  .teaser-image:hover {
+      transform: scale(1.05); /* Example hover effect */
+  }
+  {% endif %}  
+  @media (max-width: 767px) {
+     .as-footer .as-btn {margin-bottom: 60px;}
+    .teaser-wrapper{top: -86px;}
+    .teaser-image { right: -20px;}    
+    .teaser-image { width: {{ section.settings.image_width_mobile }}px; }
+
+}
+  </style>
+
+  {% if section.settings.br_image %}
+  <div class="teaser-wrapper">
+      {% if section.settings.image_link != blank %}
+          <a href="{{ section.settings.image_link }}" {% if section.settings.link_new_window %}target="_blank"{% endif %} >
+              <img src="{{ section.settings.br_image | img_url: '300x' }}" alt="Teaser Image" class="teaser-image">
+          </a>
+      {% else %}
+          <img src="{{ section.settings.br_image | img_url: '300x' }}" alt="Teaser Image" class="teaser-image">
+      {% endif %}
+  {% endif %}
+  </div>
+  {% endif %}
+

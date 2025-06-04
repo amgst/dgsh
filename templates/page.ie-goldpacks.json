@@ -1,0 +1,138 @@
+{
+  "sections": {
+    "plush_hero_qYMMMn": {
+      "type": "plush-hero",
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/Cards_Email_767c2ea8-8d60-4402-b332-1be316771d42.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/Cards_EMail_M_c5996ff4-4811-4cd1-92d0-f1edadf11445.jpg",
+        "desk-hero-alt": "Coming Soon! Collect every Holofoil from the new collection, including alt arts and rare easter egg cards with Imaginary Ends Gold Packs. Image of three gold packs",
+        "button_link": ""
+      }
+    },
+    "custom_liquid_dQLtTe": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br><br>"
+      }
+    },
+    "cards_last_section_Mf9RHW": {
+      "type": "cards-last-section",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "image-mobile": "shopify:\/\/shop_images\/IE_Stygian-ezgif.com-resize.gif",
+        "image-desktop": "shopify:\/\/shop_images\/IE_Stygian-ezgif.com-resize.gif",
+        "contents": "",
+        "section_title": "",
+        "btn_enable": true,
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_title": true,
+        "title_alignment": "left"
+      }
+    },
+    "custom_liquid_FMUx9J": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br>"
+      }
+    },
+    "image_gallery_bNxmEk": {
+      "type": "image-gallery",
+      "blocks": {
+        "image_xycFCq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IE_Ethereal-ezgif.com-resize.gif",
+            "alignment": "center center",
+            "enlarge_image": false,
+            "link": "",
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "overlay_position": "center-center"
+          }
+        },
+        "image_9wQmar": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IE_Stygian-ezgif.com-resize.gif",
+            "alignment": "center center",
+            "enlarge_image": false,
+            "link": "",
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "overlay_position": "center-center"
+          }
+        },
+        "image_NMxw3f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IE_Rainbow-ezgif.com-resize.gif",
+            "alignment": "center center",
+            "enlarge_image": false,
+            "link": "",
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "overlay_position": "center-center"
+          }
+        }
+      },
+      "block_order": [
+        "image_xycFCq",
+        "image_9wQmar",
+        "image_NMxw3f"
+      ],
+      "settings": {
+        "grid": 3,
+        "image_height": 300,
+        "image_height_mobile": 300,
+        "enable_margin": true,
+        "enable_carousel": true,
+        "overlay_style": "no_background",
+        "color_overlay_bg": "#ffffff",
+        "overlay_opacity": 0,
+        "color_overlay_text": "#50248f",
+        "overlay_url_style": "button_1"
+      }
+    },
+    "custom_liquid_AVX9Hm": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br><br>"
+      }
+    },
+    "cards_multi_section_min_6kRxRm": {
+      "type": "cards-multi-section-min",
+      "disabled": true,
+      "settings": {
+        "card_id": "gif",
+        "image_1": "shopify:\/\/shop_images\/IE_Ethereal-ezgif.com-resize.gif",
+        "image_2": "shopify:\/\/shop_images\/IE_Stygian-ezgif.com-resize.gif",
+        "image_3": "shopify:\/\/shop_images\/IE_Rainbow-ezgif.com-resize.gif",
+        "full_width": true,
+        "btn_enable": false,
+        "button_text": "Get Doomlings",
+        "button_link": ""
+      }
+    }
+  },
+  "order": [
+    "plush_hero_qYMMMn",
+    "custom_liquid_dQLtTe",
+    "cards_last_section_Mf9RHW",
+    "main",
+    "custom_liquid_FMUx9J",
+    "image_gallery_bNxmEk",
+    "custom_liquid_AVX9Hm",
+    "cards_multi_section_min_6kRxRm"
+  ]
+}

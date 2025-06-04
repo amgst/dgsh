@@ -1,0 +1,254 @@
+{% schema %}
+{
+  "name": "Cards Multi Section Min",
+  "max_blocks": 30,
+  "settings": [
+    {
+      "type": "text",
+      "id": "card_id",
+      "label": "Section ID"
+    },  
+    {
+      "type": "select",
+      "id": "page_style",
+      "label": "Page Style",
+      "options": [
+        {
+          "value": "doomlings",
+          "label": "Doomlings Style"
+        },
+        {
+          "value": "legends",
+          "label": "Legends Style"
+        }
+      ],
+      "default": "doomlings",
+      "info": "Controls the styling of various elements including buttons"
+    },    
+    {
+      "type": "header",
+      "content": "GIF Images"
+    },        
+    {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Image one"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Image two"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_3",
+        "label": "Image three"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_4",
+        "label": "Image Four",
+        "info": "Mobile Only"
+    },    
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full Width",
+      "default": true
+    },    
+    {
+    "type": "checkbox",
+    "id": "btn_enable",
+    "label": "Show Button",
+    "default": true
+    },    
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Get Doomlings"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }  
+
+  ],
+  "blocks": [
+    {
+      "type": "cards",
+      "name": "Cards",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image"
+        },
+        {
+          "type": "html",
+          "id": "card_description",
+          "label": "Card Description",
+          "default": "Card Description"
+        }        
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "section",
+      "name": "Cards Multi Section Min"
+    }
+  ]
+}
+
+{% endschema %}
+ 
+
+<div id="section-{{ section.id }}" class="section-{{ section.id }}-padding" style="overflow: hidden;">
+  <div class="intro-outer-min">
+    <div class="card-container-min">
+      <div class="intro-wrapper">
+        <div class="intro-inner-min">
+         {% if section.settings.image_4 %}
+            <div class="intro-img intro-img-four mobile-only"> <img src="{{ section.settings.image_4 | img_url: 'master' }}" alt="Image 4" data-aos="fade-right" data-aos-delay="400" data-aos-once="false"></div>
+          {% else %}
+            <div class="intro-img intro-img-one mobile-only"><img src="{{ section.settings.image_1 | img_url: 'master' }}" alt="Image 1" data-aos="fade-right" data-aos-delay="800" data-aos-once="false"></div>          
+          {% endif %}
+          <div class="intro-img intro-img-one desktop-only"><img src="{{ section.settings.image_1 | img_url: 'master' }}" alt="Image 1" data-aos="fade-right" data-aos-delay="800" data-aos-once="false"></div> 
+          <div class="intro-img intro-img-two desktop-only"> <img src="{{ section.settings.image_2 | img_url: 'master' }}" alt="Image 2" data-aos="fade-right" data-aos-delay="600" data-aos-once="false"></div>
+          <div class="intro-img intro-img-three desktop-only"> <img src="{{ section.settings.image_3 | img_url: 'master' }}" alt="Image 3" data-aos="fade-right" data-aos-delay="400" data-aos-once="false"></div>           
+        </div>
+      </div> 
+    </div> 
+  </div> <!-- intro-outer -->
+
+  <div class="card-container"><br>
+
+    {% for block in section.blocks %}      
+      <div class="card-wrapper" >
+        <div class="card-image slide-top" data-aos="fade-right" data-aos-delay="{{ forloop.index0 | times: 200 }}" >
+          {% if block.settings.card_image %}
+          <img
+            alt="{{ block.settings.card_image.alt | escape }}"
+            width="390"
+            class="lazyload blur-up "
+            data-src="{{ block.settings.card_image | img_url: 'master' }}"
+            src="{{ block.settings.card_image | img_url: 'master' }}"  
+            >
+          {% else %}
+            <img
+            alt="Blank Image"
+            width="390"
+            class="lazyload blur-up "
+            data-src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/blank-img.png?v=1717846437"
+            src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/blank-img.png?v=1717846437"  
+            >
+          {% endif %}
+        </div>
+        <div class="card-content">
+        <p>{{ block.settings.card_description}}</p>
+        </div>
+      </div>
+    {% endfor %}
+
+    {% if section.settings.page_style == 'legends' %}
+      {% if section.settings.btn_enable %}
+        <div class="section-footer">
+          <a class="btn-legends" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+        </div>      
+      {% endif %}
+    {% else %}
+      {% if section.settings.btn_enable %}
+        <div class="section-footer">
+          <a class="btn-linked" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+        </div>      
+      {% endif %} 
+    {% endif %}
+    
+  </div>
+</div>
+
+{% style %}
+
+  #shopify-section-{{section.id}} .card-wrapper { display:flex;align-items: center; justify-content: center; padding: 14px 0;flex-direction: column;}
+  #shopify-section-{{section.id}} .card-wrapper .card-content { padding:20px 50px; max-width: 600px; }
+  #shopify-section-{{section.id}} .as-footer .as-btn {
+    margin-bottom: 25px;
+    color: #fff;
+    z-index: 99;
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #ff0071;
+    background-image: linear-gradient(-180deg, rgba(207, 0, 91, 0.5) 0%, rgba(254, 0, 114, 0.5) 100%); 
+  }
+  .as-footer .as-btn:hover {background-image: linear-gradient(-180deg, rgba(254, 0, 114, 0.5) 0%, rgba(207, 0, 91, 0.5) 100%); color: #fff;}
+  #shopify-section-{{section.id}} .intro-inner-min {display: flex;justify-content: space-between;}
+  #shopify-section-{{section.id}} .intro-img,
+  #shopify-section-{{section.id}} .intro-img img { width:100%; } 
+  @media (max-width:768px){
+    #shopify-section-{{section.id}} .card-wrapper{ padding:0 30px; }
+    #shopify-section-{{section.id}} .card-wrapper .card-content {text-align: center; padding: 0 20px;}
+    #shopify-section-{{section.id}} .section_title {padding-top: 35px;padding-bottom: 120px;  min-height: 180px;}
+    #shopify-section-{{section.id}} h2 strong { display:block; }
+    #shopify-section-{{section.id}} .intro-inner-min{  flex-direction: column; }
+    #shopify-section-{{section.id}} .intro-wrapper { padding:0; }
+  }
+  @media (min-width:768px){
+    #shopify-section-{{section.id}} .card-wrapper{ flex-direction: row; }
+    #shopify-section-{{section.id}} .btn-cards{ padding:30px 70px;border-radius: 50px;
+      font-size: 38px; }
+  }
+  @media (min-width:1000px){
+    #shopify-section-{{section.id}} .as-footer .as-btn {font-size: 28px;padding: 16px 40px;}
+  }
+  #shopify-section-{{section.id}} .section-image { width:100%; }
+  #shopify-section-{{section.id}} .section-footer { display:flex;padding: 40px 0; justify-content: center; }
+  @media (max-width:768px){
+    #shopify-section-{{section.id}} .section-footer { padding: 20px 0; }
+  }
+  #shopify-section-{{section.id}} .btn-cards {font-family: Lato, sans-serif;
+    font-weight: 900;
+    display: inline-block;
+    padding:18px 40px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: all .3s ease;
+    background-color: #cf0059;
+    color: #fff;}
+  .btn-cards:hover { color: #fff;}
+
+  #shopify-section-{{section.id}} .section-contents{ margin-top:-80px; }
+
+  {% if section.settings.back_desk %}
+    @media (min-width: 769px) {
+      #shopify-section-{{section.id}} .intro-outer {
+        background-image: url('{{ section.settings.back_desk | img_url: "master" }}');
+      }
+    }
+  {% endif %}
+  {% if section.settings.back_mob %}
+    @media (max-width: 768px) { 
+      #shopify-section-{{section.id}} .intro-outer {
+        background-image: url('{{ section.settings.back_mob | img_url: "master" }}');
+      }
+    }
+  {% endif %}
+
+  {% if section.settings.back_desk or section.settings.back_mob %}
+    .intro-outer{background-size: cover;background-position: top center; background-attachment:local;  min-height: 610px;padding-top: 155px;}
+     @media (min-width: 1800px){
+        .intro-outer{ min-height: 640px;}
+      }
+      @media (max-width: 768px) {
+      .intro-outer { min-height: 300px;padding-top: 99px; }
+      }s
+  {% endif %} 
+{% endstyle %}
+
+
+
+

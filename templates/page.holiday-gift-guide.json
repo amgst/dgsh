@@ -1,0 +1,429 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_title": true,
+        "title_alignment": "left"
+      }
+    },
+    "hero_section_YTeKQR": {
+      "type": "hero-section",
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/GiftGuide_hero_desktop_6c72616c-80ba-4fb8-8cb5-86204629d2a5.jpg",
+        "desk-hero-alt": "holiday gift guide - image of lots of doomlings products with bows and festive setting",
+        "mob-hero": "shopify:\/\/shop_images\/GiftGuide_hero_mobile_599cdac2-4329-4a66-ac8f-35c97e9e0dfc.jpg",
+        "mob-hero-alt": "holiday gift guide - image of lots of doomlings products with bows and festive setting",
+        "show_button": false,
+        "button_position_from_bottom": 82,
+        "button_position_from_bottom_mobile": 40,
+        "button_start_color": "#5d68bf",
+        "button_end_color": "#cd201a",
+        "button_font_color": "#ffffff",
+        "button_text": "Button",
+        "button_link": "#section16330658513105"
+      }
+    },
+    "content_section_Aygza8": {
+      "type": "content-section",
+      "settings": {
+        "heading": "",
+        "heading_color": "#000000",
+        "paragraph": "Shopping for the holidays doesn’t have to be a catastrophe. Here are a few recommendations for the board game fans on your Christmas list!",
+        "paragraph_color": "#000000",
+        "background_color": "rgba(0,0,0,0)"
+      }
+    },
+    "gift_grids_r8Ajxn": {
+      "type": "gift-grids",
+      "blocks": {
+        "gift_item_BTG8Fw": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": false,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_Classic.jpg",
+            "heading": "Doomlings Classic",
+            "description": "Our base game is an <i>end<\/i> of this world experience that’s fun for the whole family.",
+            "enable_custom_width": true,
+            "desc_max_width": 260,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/products\/classic-doomlings-game"
+          }
+        },
+        "gift_item_rjVTkG": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": false,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_Deluxe_3fd6cf35-4bd4-4d60-b9e5-4586f187019c.jpg",
+            "heading": "Doomlings Deluxe",
+            "description": "Includes the base game, 5 expansions, and a playmat. Plus, with our holiday deal, you get a FREE Overlush expansion too!",
+            "enable_custom_width": false,
+            "desc_max_width": 200,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/products\/doomlings-deluxe-bundle-holiday-special"
+          }
+        },
+        "gift_item_z9DAj9": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": false,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_Plushies.jpg",
+            "heading": "Adorable Plushies",
+            "description": "Squeezable friends for bedtime or lounging around the house. Who doesn't need a new plushie to hug?",
+            "enable_custom_width": true,
+            "desc_max_width": 260,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/collections\/plushies"
+          }
+        }
+      },
+      "block_order": [
+        "gift_item_BTG8Fw",
+        "gift_item_rjVTkG",
+        "gift_item_z9DAj9"
+      ],
+      "settings": {
+        "pre_title": "GIFTS For",
+        "title": "FRIENDS & Family",
+        "section_color": "#e3394c",
+        "autoplay": false,
+        "autoplay_speed": 4500,
+        "divider": "divider-1",
+        "items_per_row": "4",
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0
+      }
+    },
+    "gift_grids_k8TBcf": {
+      "type": "gift-grids",
+      "blocks": {
+        "gift_item_QNUWUQ": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": false,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_ImaginaryEnds.jpg",
+            "heading": "Imaginary Ends",
+            "description": "A variety pack containing our 5 newest expansions that change the way Doomlings is played!",
+            "enable_custom_width": false,
+            "desc_max_width": 200,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/products\/imaginary-ends"
+          }
+        },
+        "gift_item_jjn7HB": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": false,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_CollectorBox.jpg",
+            "heading": "Wooden Collector’s Box",
+            "description": "Made of oak and painted in gold, it’s the perfect storage solution for cards, playmats, pins, and medallions.",
+            "enable_custom_width": false,
+            "desc_max_width": 200,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/products\/wooden-collectors-box"
+          }
+        },
+        "gift_item_MYXxWR": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": false,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_Playmats_80599d59-81f9-435e-a033-c8a68738e4fa.jpg",
+            "heading": "4 Pack of Playmats",
+            "description": "Nothing says “I take the apocalypse seriously” like playmats. Liven up your game with these colorful art pieces!",
+            "enable_custom_width": false,
+            "desc_max_width": 200,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/products\/4-pack-playmats"
+          }
+        },
+        "gift_item_xcTtQT": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": false,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_UltimateBundle_233040d1-fb65-4d9e-ab4a-ca0eed26346f.jpg",
+            "heading": "Ultimate Bundle",
+            "description": "The base game! All expansions! Playmats! Wooden Collector’s Box! Basically, everything but the kitchen sink.",
+            "enable_custom_width": false,
+            "desc_max_width": 200,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/products\/ultimate-bundle"
+          }
+        },
+        "gift_item_k6bwLt": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": false,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_SupremeBundle_acee7a28-536a-4ee2-9c52-56b53d8eb894.jpg",
+            "heading": "Supreme Bundle",
+            "description": "Want <i>it all<\/i> but don't have the space for the Collector's Box? Check out our NEW Holiday Deal: the Supreme Bundle!",
+            "enable_custom_width": false,
+            "desc_max_width": 220,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/products\/doomlings-supreme-bundle"
+          }
+        },
+        "gift_item_QhdMww": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": true,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_CardTee.jpg",
+            "heading": "Card-tastrophe Tee",
+            "description": "For the person in your life who wears their <i>cards<\/i> on their sleeve. Plus, its lightweight and comfortable for any occassion!",
+            "enable_custom_width": false,
+            "desc_max_width": 200,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/products\/doomlings-card-tastrophe-hawaiian-tee"
+          }
+        }
+      },
+      "block_order": [
+        "gift_item_QNUWUQ",
+        "gift_item_jjn7HB",
+        "gift_item_MYXxWR",
+        "gift_item_xcTtQT",
+        "gift_item_k6bwLt",
+        "gift_item_QhdMww"
+      ],
+      "settings": {
+        "pre_title": "GIFTS For",
+        "title": "BOARD GAME ENTHUSIASTS",
+        "section_color": "#e7b800",
+        "autoplay": false,
+        "autoplay_speed": 3000,
+        "divider": "divider-2",
+        "items_per_row": "3",
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0
+      }
+    },
+    "gift_grids_8EEUjT": {
+      "type": "gift-grids",
+      "blocks": {
+        "gift_item_RdaDPn": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": false,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_Classic2.jpg",
+            "heading": "Doomlings Classic",
+            "description": "An easy-to-learn game with funny jokes and cute characters.",
+            "enable_custom_width": false,
+            "desc_max_width": 200,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/products\/classic-doomlings-game"
+          }
+        },
+        "gift_item_MTKRkY": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": false,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_Minis.jpg",
+            "heading": "Mini-Plushies",
+            "description": "Sized perfectly for a backpack, keychain, or small hands to squeeze.",
+            "enable_custom_width": false,
+            "desc_max_width": 200,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/collections\/plushies"
+          }
+        },
+        "gift_item_EN4WLR": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": true,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_KidsApparel2.jpg",
+            "heading": "Kids Apparel",
+            "description": "Comfortable, breathable, colorful, and 100% adorable.",
+            "enable_custom_width": false,
+            "desc_max_width": 200,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/collections\/apparel"
+          }
+        }
+      },
+      "block_order": [
+        "gift_item_RdaDPn",
+        "gift_item_MTKRkY",
+        "gift_item_EN4WLR"
+      ],
+      "settings": {
+        "pre_title": "GIFTS For",
+        "title": "young kIDS",
+        "section_color": "#53ab30",
+        "autoplay": false,
+        "autoplay_speed": 3000,
+        "divider": "divider-3",
+        "items_per_row": "4",
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0
+      }
+    },
+    "gift_grids_mpQ7jm": {
+      "type": "gift-grids",
+      "blocks": {
+        "gift_item_wVcWiV": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": false,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_IEGoldPack_326d7c99-f364-429d-a7d7-c328c2ba695d.jpg",
+            "heading": "Imaginary Ends Gold Packs",
+            "description": "Our newest packs containing ALL HOLOFOILS! Your shot at the latest alt art, and rarest prototype cards.",
+            "enable_custom_width": false,
+            "desc_max_width": 200,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/products\/imaginary-ends-gold-pack"
+          }
+        },
+        "gift_item_E4kLXz": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": false,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_GoldBundle.jpg",
+            "heading": "Overlush Gold Rush Bundle",
+            "description": "Our BRAND NEW Holiday Deal! You can get 8 Overlush ALL HOLOFOIL Gold Packs for <i>only<\/i> $99 <s>$159.92<\/s>!",
+            "enable_custom_width": false,
+            "desc_max_width": 200,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/products\/gold-rush-holofoil-bundle-8-packs"
+          }
+        },
+        "gift_item_9fKHJd": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": false,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_Pins_0d265085-5761-44d9-aaf2-cbbc96833091.jpg",
+            "heading": "Pins",
+            "description": "Gift the traits they’re *enameled* with while they’re still in pin form!",
+            "enable_custom_width": true,
+            "desc_max_width": 200,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/collections\/pins"
+          }
+        },
+        "gift_item_C4faPR": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": false,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_Coins.jpg",
+            "heading": "1st Player Medallions",
+            "description": "Pass it around the table to keep track of the first player. Collect all six before they sell out!",
+            "enable_custom_width": false,
+            "desc_max_width": 200,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/collections\/collectibles"
+          }
+        }
+      },
+      "block_order": [
+        "gift_item_wVcWiV",
+        "gift_item_E4kLXz",
+        "gift_item_9fKHJd",
+        "gift_item_C4faPR"
+      ],
+      "settings": {
+        "pre_title": "GIFTS For",
+        "title": "COLLECTORS",
+        "section_color": "#3274e2",
+        "autoplay": false,
+        "autoplay_speed": 3000,
+        "divider": "divider-4",
+        "items_per_row": "4",
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 0,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0
+      }
+    },
+    "gift_grids_NRp8DR": {
+      "type": "gift-grids",
+      "blocks": {
+        "gift_item_jgJMj4": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": false,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_Minis.jpg",
+            "heading": "Mini-Plushies",
+            "description": "Sized perfectly for a backpack, keychain, or small hands to squeeze.",
+            "enable_custom_width": false,
+            "desc_max_width": 200,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/collections\/plushies"
+          }
+        },
+        "gift_item_a4RAFE": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": false,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_Classic3_ea7d39f2-1060-4049-818a-044dc2c5e2a8.jpg",
+            "heading": "Doomlings Classic",
+            "description": "Give the gift of a quick, and easy-to-learn game for all ages!",
+            "enable_custom_width": false,
+            "desc_max_width": 200,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/products\/classic-doomlings-game"
+          }
+        },
+        "gift_item_trXMYV": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": false,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_Holofoils.jpg",
+            "heading": "Gold Packs of Holofoils",
+            "description": "Filled with sparkly holofoils, a Gold Pack is the perfect gift for any Doomlings fan!",
+            "enable_custom_width": false,
+            "desc_max_width": 200,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/collections\/collectibles"
+          }
+        },
+        "gift_item_UpUAPh": {
+          "type": "gift_item",
+          "settings": {
+            "us_only": true,
+            "image": "shopify:\/\/shop_images\/GiftGuide_Images_Tee_71b7cd9b-f342-4dd5-9c77-0bc2dad7e645.jpg",
+            "heading": "‘Everything is Fine’ Tee",
+            "description": "Relatable. You’ll have them saying, “You know me too well.”",
+            "enable_custom_width": false,
+            "desc_max_width": 200,
+            "button_label": "SHOP NOW",
+            "button_link": "shopify:\/\/products\/everything-is-fine-tee"
+          }
+        }
+      },
+      "block_order": [
+        "gift_item_jgJMj4",
+        "gift_item_a4RAFE",
+        "gift_item_trXMYV",
+        "gift_item_UpUAPh"
+      ],
+      "settings": {
+        "pre_title": "STOCKING",
+        "title": "STUFFERS",
+        "section_color": "#7748bc",
+        "autoplay": false,
+        "autoplay_speed": 3000,
+        "divider": "divider-1",
+        "items_per_row": "4",
+        "desktop_top_padding": 0,
+        "desktop_bottom_padding": 80,
+        "mobile_top_padding": 0,
+        "mobile_bottom_padding": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_section_YTeKQR",
+    "content_section_Aygza8",
+    "gift_grids_r8Ajxn",
+    "gift_grids_k8TBcf",
+    "gift_grids_8EEUjT",
+    "gift_grids_mpQ7jm",
+    "gift_grids_NRp8DR"
+  ]
+}

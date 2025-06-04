@@ -1,0 +1,106 @@
+<div class="section_container">
+  {% if section.settings.title != blank %}
+    <div class="section_header">
+      <div class="title">{{ section.settings.title }}</div>
+    </div>
+  {% endif %}
+
+  <div class="search">
+    <div class="search_wrapper page-width">
+      <div class="rows_num">
+        Show: 
+        <select calss="rows_num" data-rows-num>
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+      <div class="search_box">
+        {% comment %}
+        <div class="search_title">
+          <span>Search By</span>
+          <span class="key active" data-key="id">BACKER #</span>
+          <span class="key" data-key="name">NAME</span>
+        </div>
+        {% endcomment %}
+        <input type="text" placeholder="TYPE TO SEARCH..." data-backer-search />
+      </div>
+      <div class="sort">
+        <div class="title">SORT BY</div>
+        <div class="search_title">
+          <span class="key" data-key="id">BACKER #</span>
+          <span class="key" data-key="name">NAME</span>
+        </div>
+        <div class="button_wrapper">
+          <button class="sort_inc active" data-sort-btn>
+            <svg xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 48 48" fill="none">
+              <rect width="48" height="48" fill="white" fill-opacity="0.01"/>
+              <path d="M24 6L24 42" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 18L24 6L36 18" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="sort_dec" data-sort-btn>
+            <svg xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 48 48" fill="none">
+              <rect width="48" height="48" fill="white" fill-opacity="0.01"/>
+              <path d="M24 42L24 6" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M36 30L24 42L12 30" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main_content page-width backers-grid col-{{ 5 }}" data-backer-container>
+  </div>
+
+  <div class="btn_wrapper" data-btn-wrapper data--hidden>
+    <button class="btn btn--secondary" data-load-more>{{ section.settings.btn_label }}</button>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Page main",
+  "class": "page-backers",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "header",
+      "content": "Grid settings"
+    },
+    {
+      "type": "range",
+      "min": 3,
+      "max": 5,
+      "default": 5,
+      "id": "items_per_row",
+      "label": "Items per row"
+    },
+    {
+      "type": "range",
+      "min": 3,
+      "max": 5,
+      "default": 3,
+      "id": "rows_per_page",
+      "label": "Rows per page"
+    },
+    {
+      "type": "header",
+      "content": "Load more button"
+    },
+    {
+      "type": "text",
+      "id": "btn_label",
+      "label": "Button label",
+      "default": "LOAD MORE"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,2373 @@
+{% comment %}
+  Doomlings GenCon Scavenger Hunt - Admin Dashboard
+{% endcomment %}
+{{ 'dgsh-scheduler.js' | asset_url | script_tag }}
+
+
+<div class="page-width">
+  <div class="dgsh-admin-container">
+    <!-- Authentication Form -->
+
+    
+    <!-- Main Dashboard (Initially Hidden) -->
+    <div class="dgsh-admin-dashboard-container ">
+
+      <div class="dgsh-admin-dashboard-header">
+        <div class="dgsh-admin-header-actions">
+          <button class="dgsh-admin-refresh-btn">Refresh Data</button>
+          <button class="dgsh-admin-export-btn">Export CSV</button>
+        </div>
+        <div class="dgsh-admin-last-refresh">Last updated: Never</div>
+      </div>
+      
+      <!-- Reward Tier Management -->
+      <section class="dgsh-admin-tier-management">
+        <h2 class="dgsh-admin-section-title">Reward Tier Management</h2>
+        <div class="dgsh-admin-tier-description">
+          <p>Customize reward tiers and thresholds using the controls below. Changes will affect all participants in real-time.</p>
+        </div>
+        <div class="dgsh-admin-tier-controls">
+          <button class="dgsh-admin-add-tier-btn">Add New Tier</button>
+          <button class="dgsh-admin-refresh-tiers-btn">Refresh Tiers</button>
+        </div>
+<div class="dgsh-admin-wide-table">
+  <div class="dgsh-admin-tier-list">
+    <div class="dgsh-admin-loading">Loading tier configuration...</div>
+  </div>
+</div>
+        <div class="dgsh-admin-tier-edit-container" style="display:none;">
+          <h3 class="dgsh-admin-tier-edit-title">Edit Tier</h3>
+          <form class="dgsh-admin-tier-form">
+            <div class="dgsh-admin-form-group">
+              <label for="tier-id" class="dgsh-admin-label">Tier ID</label>
+              <input type="text" id="tier-id" class="dgsh-admin-tier-id" required pattern="^tier[0-9]+$" placeholder="tier1, tier5, etc.">
+              <small class="dgsh-admin-form-help">Format: tier followed by a number (e.g., tier1, tier5)</small>
+            </div>
+            <div class="dgsh-admin-form-group">
+              <label for="tier-codes" class="dgsh-admin-label">Required Codes</label>
+              <input type="number" id="tier-codes" class="dgsh-admin-tier-codes" required min="1" step="1">
+            </div>
+            <div class="dgsh-admin-form-group">
+              <label for="tier-name" class="dgsh-admin-label">Tier Name</label>
+              <input type="text" id="tier-name" class="dgsh-admin-tier-name" required>
+            </div>
+            <div class="dgsh-admin-form-group">
+              <label for="tier-description" class="dgsh-admin-label">Description</label>
+              <textarea id="tier-description" class="dgsh-admin-tier-description" rows="2"></textarea>
+            </div>
+            <div class="dgsh-admin-form-group">
+              <label for="tier-image" class="dgsh-admin-label">Image URL</label>
+              <input type="url" id="tier-image" class="dgsh-admin-tier-image" required>
+            </div>
+            <div class="dgsh-admin-tier-form-actions">
+              <button type="submit" class="dgsh-admin-save-tier-btn">Save Tier</button>
+              <button type="button" class="dgsh-admin-cancel-edit-btn">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      
+      <!-- Summary Statistics -->
+      <section class="dgsh-admin-summary-stats">
+        <h2 class="dgsh-admin-section-title">Summary Statistics</h2>
+        <div class="dgsh-admin-loading">Loading statistics...</div>
+      </section>
+      
+      <!-- Scan Distribution -->
+      <section class="dgsh-admin-scan-distribution">
+        <h2 class="dgsh-admin-section-title">Scan Distribution</h2>
+        <div class="dgsh-admin-loading">Loading scan distribution...</div>
+      </section>
+      
+      <!-- Card Statistics -->
+      <section class="dgsh-admin-card-stats">
+        <h2 class="dgsh-admin-section-title">Card Statistics</h2>
+        <div class="dgsh-admin-loading">Loading card statistics...</div>
+      </section>
+      
+      <!-- First Scan Statistics -->
+      <section class="dgsh-admin-first-scan-stats">
+        <h2 class="dgsh-admin-section-title">First Scan Statistics</h2>
+        <div class="dgsh-admin-loading">Loading first scan statistics...</div>
+      </section>
+      
+
+
+
+      
+<!-- Enhanced Grand Prize Drawing Export Section -->
+<section class="dgsh-admin-drawing-export">
+  <h2 class="dgsh-admin-section-title">Grand Prize Drawing Entries</h2>
+  <div class="dgsh-admin-drawing-description">
+    <p>Export drawing entries for the daily $250 gift card giveaway. Each scan = 1 entry, plus bonus entries for reward redemptions.</p>
+  </div>
+  
+  <!-- Enhanced Stats Display -->
+  <div class="dgsh-admin-drawing-stats">
+    <div class="dgsh-admin-drawing-summary">
+      <div class="dgsh-admin-stat-item">
+        <div class="dgsh-admin-stat-value" id="total-drawing-entries">0</div>
+        <div class="dgsh-admin-stat-label">Total Entries</div>
+      </div>
+      <div class="dgsh-admin-stat-item">
+        <div class="dgsh-admin-stat-value" id="total-participants">0</div>
+        <div class="dgsh-admin-stat-label">Participants</div>
+      </div>
+      <div class="dgsh-admin-stat-item">
+        <div class="dgsh-admin-stat-value" id="avg-entries-per-user">0</div>
+        <div class="dgsh-admin-stat-label">Avg Entries/Person</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Enhanced Action Buttons -->
+  <div class="dgsh-admin-drawing-controls">
+    <button class="dgsh-admin-export-drawing-btn">Export All Entries (CSV)</button>
+    <button class="dgsh-admin-refresh-drawing-btn">Refresh Stats</button>
+  </div>
+  
+  <!-- Enhanced Preview Section -->
+  <div class="dgsh-admin-drawing-preview">
+    <h3>Preview (First 10 Entries)</h3>
+<div class="dgsh-admin-table-container">
+  <div class="dgsh-admin-drawing-list">
+    <div class="dgsh-admin-loading">Loading drawing entries...</div>
+  </div>
+</div>
+  </div>
+</section>
+      
+
+
+
+
+<!-- Schedule Management Section -->
+<section class="dgsh-admin-schedule-management">
+  <h2 class="dgsh-admin-section-title">Hunt Schedule Management</h2>
+  <div class="dgsh-admin-schedule-description">
+    <p>Set when the scavenger hunt should be active. Users won't be able to scan codes outside of the scheduled time window.</p>
+  </div>
+  
+  <div class="dgsh-admin-schedule-status">
+    <div class="dgsh-admin-schedule-current-status">
+      <h3>Current Status</h3>
+      <div id="schedule-status-display" class="dgsh-admin-status-display">
+        <div class="dgsh-admin-loading">Loading schedule status...</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="dgsh-admin-schedule-controls">
+    <div class="dgsh-admin-schedule-toggle">
+      <label class="dgsh-admin-label">
+        <input type="checkbox" id="schedule-enabled" class="dgsh-admin-checkbox">
+        Enable Hunt Scheduling
+      </label>
+    </div>
+    
+    <div class="dgsh-admin-schedule-times" id="schedule-times-container" style="display:none;">
+      <div class="dgsh-admin-form-group">
+        <label for="schedule-start-date" class="dgsh-admin-label">Start Date & Time</label>
+        <input type="datetime-local" id="schedule-start-date" class="dgsh-admin-datetime">
+      </div>
+      
+      <div class="dgsh-admin-form-group">
+        <label for="schedule-end-date" class="dgsh-admin-label">End Date & Time</label>
+        <input type="datetime-local" id="schedule-end-date" class="dgsh-admin-datetime">
+      </div>
+      
+      <div class="dgsh-admin-timezone-info">
+        <small>Times are in your local timezone: <span id="user-timezone"></span></small>
+      </div>
+    </div>
+    
+    <div class="dgsh-admin-schedule-actions">
+      <button id="save-schedule-btn" class="dgsh-admin-save-schedule-btn">Save Schedule</button>
+      <button id="clear-schedule-btn" class="dgsh-admin-clear-schedule-btn">Clear Schedule</button>
+    </div>
+  </div>
+</section>
+
+
+    </div>
+  </div>
+</div>
+
+<!-- Add styles for the tier management section -->
+<style type="text/css">
+  /* Responsive Table Fixes for dgsh-admin-dashboard.liquid */
+/* Add this CSS to the existing <style> section in dgsh-admin-dashboard.liquid */
+
+/* Base table responsiveness */
+.dgsh-admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+}
+
+.dgsh-admin-table thead,
+.dgsh-admin-table tbody,
+.dgsh-admin-table tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.dgsh-admin-table th,
+.dgsh-admin-table td {
+  padding: 12px 8px;
+  text-align: left;
+  border-bottom: 1px solid #e9ecef;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Table container for horizontal scroll */
+.dgsh-admin-table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 20px;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .dgsh-admin-table {
+    font-size: 14px;
+    white-space: normal;
+  }
+  
+  .dgsh-admin-table th,
+  .dgsh-admin-table td {
+    padding: 8px 6px;
+    min-width: 80px;
+  }
+  
+  /* Specific column adjustments for different tables */
+  .dgsh-admin-table th:first-child,
+  .dgsh-admin-table td:first-child {
+    min-width: 100px;
+  }
+  
+  .dgsh-admin-table th:last-child,
+  .dgsh-admin-table td:last-child {
+    min-width: 120px;
+  }
+  
+  /* Code cells need more space */
+  .dgsh-admin-table .code-value,
+  .dgsh-admin-table code {
+    font-size: 11px;
+    word-break: break-all;
+  }
+  
+  /* Button groups in action columns */
+  .dgsh-admin-table td button {
+    display: block;
+    width: 100%;
+    margin-bottom: 4px;
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+  
+  .dgsh-admin-table td button:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .dgsh-admin-table {
+    font-size: 12px;
+  }
+  
+  .dgsh-admin-table th,
+  .dgsh-admin-table td {
+    padding: 6px 4px;
+    min-width: 70px;
+  }
+  
+  /* Stack action buttons vertically on very small screens */
+  .dgsh-admin-edit-tier-btn,
+  .dgsh-admin-delete-tier-btn,
+  .dgsh-admin-edit-qr-btn,
+  .dgsh-admin-delete-qr-btn,
+  .dgsh-admin-view-qr-btn {
+    display: block;
+    width: 100%;
+    margin: 2px 0;
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+  
+  /* Truncate long text on very small screens */
+  .dgsh-admin-table td {
+    max-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .dgsh-admin-table td:hover {
+    overflow: visible;
+    white-space: normal;
+    max-width: none;
+  }
+}
+
+/* Scrollable table wrapper for very wide tables */
+.dgsh-admin-wide-table {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.dgsh-admin-wide-table .dgsh-admin-table {
+  border: none;
+  margin: 0;
+  min-width: 600px; /* Minimum width for readability */
+}
+
+/* Status badges responsive */
+.dgsh-admin-table .status-active,
+.dgsh-admin-table .status-inactive,
+.dgsh-admin-table .qr-status-active,
+.dgsh-admin-table .qr-status-inactive {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* Loading and error states responsive */
+.dgsh-admin-loading,
+.dgsh-admin-error,
+.dgsh-admin-empty {
+  padding: 20px 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (max-width: 480px) {
+  .dgsh-admin-loading,
+  .dgsh-admin-error,
+  .dgsh-admin-empty {
+    padding: 15px 8px;
+    font-size: 12px;
+  }
+}
+
+/* Form responsiveness improvements */
+@media (max-width: 768px) {
+  .dgsh-admin-tier-form,
+  .dgsh-admin-qr-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .dgsh-admin-form-group:nth-child(3),
+  .dgsh-admin-form-group:nth-child(4),
+  .dgsh-admin-form-group:nth-child(5),
+  .dgsh-admin-tier-form-actions,
+  .dgsh-admin-qr-form-actions {
+    grid-column: 1;
+  }
+  
+  .dgsh-admin-tier-form-actions,
+  .dgsh-admin-qr-form-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .dgsh-admin-save-tier-btn,
+  .dgsh-admin-cancel-edit-btn,
+  .dgsh-admin-save-qr-btn,
+  .dgsh-admin-cancel-qr-edit-btn {
+    width: 100%;
+  }
+}
+
+/* Controls and button groups responsive */
+@media (max-width: 768px) {
+  .dgsh-admin-tier-controls,
+  .dgsh-admin-qr-controls,
+  .dgsh-admin-drawing-controls {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .dgsh-admin-tier-controls button,
+  .dgsh-admin-qr-controls button,
+  .dgsh-admin-drawing-controls button {
+    width: 100%;
+  }
+}
+
+/* Statistics grid responsive */
+@media (max-width: 768px) {
+  .dgsh-admin-stat-grid,
+  .dgsh-admin-drawing-summary {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dgsh-admin-stat-grid,
+  .dgsh-admin-drawing-summary {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+  .dgsh-admin-tier-management {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .dgsh-admin-tier-description {
+    margin-bottom: 20px;
+    color: #6c757d;
+  }
+
+  .dgsh-admin-tier-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .dgsh-admin-add-tier-btn,
+  .dgsh-admin-refresh-tiers-btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+
+  .dgsh-admin-add-tier-btn {
+    background-color: #28a745;
+    color: white;
+  }
+
+  .dgsh-admin-refresh-tiers-btn {
+    background-color: #6c757d;
+    color: white;
+  }
+
+  .dgsh-admin-tier-info {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+
+  .dgsh-admin-tier-info p {
+    margin: 5px 0;
+    font-weight: 500;
+  }
+
+  .dgsh-admin-tier-table th:last-child,
+  .dgsh-admin-tier-table td:last-child {
+    text-align: right;
+  }
+
+  .dgsh-admin-edit-tier-btn,
+  .dgsh-admin-delete-tier-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    margin-left: 5px;
+    font-size: 12px;
+    cursor: pointer; min-width: auto; margin-bottom: 2px;
+  }
+
+  .dgsh-admin-edit-tier-btn {
+    background-color: #007bff;
+    color: white;
+  }
+
+  .dgsh-admin-delete-tier-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+
+  .dgsh-admin-tier-edit-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+  }
+
+  .dgsh-admin-tier-edit-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .dgsh-admin-tier-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .dgsh-admin-form-group {
+    margin-bottom: 15px;
+  }
+
+  .dgsh-admin-form-group:nth-child(3),
+  .dgsh-admin-form-group:nth-child(4),
+  .dgsh-admin-form-group:nth-child(5),
+  .dgsh-admin-tier-form-actions {
+    grid-column: 1 / span 2;
+  }
+
+  .dgsh-admin-tier-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .dgsh-admin-form-help {
+    font-size: 12px;
+    color: #6c757d;
+    margin-top: 4px;
+    display: block;
+  }
+
+  .dgsh-loading-spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .dgsh-loading-spinner .spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    margin-bottom: 20px;
+  }
+
+  .dgsh-loading-spinner p {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Added styles for advanced settings */
+
+
+  @media (max-width: 768px) {
+
+    .dgsh-admin-tier-form {
+      grid-template-columns: 1fr;
+    }
+    
+    .dgsh-admin-form-group:nth-child(3),
+    .dgsh-admin-form-group:nth-child(4),
+    .dgsh-admin-form-group:nth-child(5),
+    .dgsh-admin-tier-form-actions {
+      grid-column: 1;
+    }
+    .scavenger-hunt-container { padding:0 20px; }
+  }
+</style>
+
+<!-- First load the Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-auth-compat.js"></script>
+
+<!-- Then initialize Firebase -->
+<script>
+  // Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAedFZVW9mSR61cuI4RxMHY-VmfmYdsm2U",
+  authDomain: "doomlings-hunt-new.firebaseapp.com",
+  projectId: "doomlings-hunt-new",
+  storageBucket: "doomlings-hunt-new.firebasestorage.app",
+  messagingSenderId: "913963611565",
+  appId: "1:913963611565:web:2f4d813b70c4268cf01d24"
+};
+  
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<!-- Then load the rest of your scripts -->
+{{ 'dgsh-styles.css' | asset_url | stylesheet_tag }} 
+{{ 'dgsh-admin-styles.css' | asset_url | stylesheet_tag }}
+{{ 'dgsh-config.js' | asset_url | script_tag }}
+{{ 'dgsh-storage.js' | asset_url | script_tag }}
+{{ 'dgsh-auth.js' | asset_url | script_tag }}
+{{ 'dgsh-sync.js' | asset_url | script_tag }}
+{{ 'dgsh-firebase.js' | asset_url | script_tag }}
+{{ 'dgsh-rewards.js' | asset_url | script_tag }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+{{ 'dgsh-qr.js' | asset_url | script_tag }}
+{{ 'dgsh-leaderboard.js' | asset_url | script_tag }}
+{{ 'dgsh-ui.js' | asset_url | script_tag }}
+
+{{ 'dgsh-admin.js' | asset_url | script_tag }}
+{{ 'dgsh-core.js' | asset_url | script_tag }}
+
+<!-- Admin Dashboard Initialization -->
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("Setting up content management buttons...");
+
+  // Customer-centric export function (Version 2 format)
+  async function exportCustomerData() {
+    try {
+      console.log("Starting customer export...");
+      
+      // Show loading state
+      const button = document.querySelector('.dgsh-admin-export-btn');
+      if (button) {
+        button.textContent = 'Exporting...';
+        button.disabled = true;
+      }
+      
+      // Check Firebase connection
+      if (!firebase || !firebase.firestore) {
+        throw new Error('Firebase not initialized');
+      }
+      
+      const db = firebase.firestore();
+      
+      // Get users first (this is the main data)
+      console.log('Fetching users...');
+      const usersSnapshot = await db.collection('users').get();
+      
+      if (usersSnapshot.empty) {
+        alert('No participants found to export.');
+        return;
+      }
+      
+      console.log(`Found ${usersSnapshot.size} users`);
+      
+      // Get QR codes (optional - don't fail if none found)
+      let qrCodes = [];
+      try {
+        const qrSnapshot = await db.collection('valid_codes').get();
+        qrSnapshot.forEach(doc => {
+          qrCodes.push({
+            code: doc.id,
+            locationNumber: doc.data().locationNumber || 0
+          });
+        });
+        qrCodes.sort((a, b) => a.locationNumber - b.locationNumber);
+        console.log(`Found ${qrCodes.length} QR codes`);
+      } catch (qrError) {
+        console.warn('Could not fetch QR codes:', qrError);
+        // Continue without QR code details
+      }
+      
+      // Get tiers (optional - use defaults if not found)
+      let tiers = [];
+      try {
+        const settingsDoc = await db.collection('config').doc('huntSettings').get();
+        if (settingsDoc.exists) {
+          const data = settingsDoc.data();
+          if (data.tierSchema && data.tierSchema.tiers) {
+            tiers = data.tierSchema.tiers.sort((a, b) => a.codesRequired - b.codesRequired);
+          }
+        }
+      } catch (tierError) {
+        console.warn('Could not fetch tiers:', tierError);
+      }
+      
+      // Default tiers if none found
+      if (tiers.length === 0) {
+        tiers = [
+          { id: "tier1", codesRequired: 1, name: "Card Pack" },
+          { id: "tier3", codesRequired: 3, name: "Promo Cards" },
+          { id: "tier6", codesRequired: 6, name: "Mini Expansion" },
+          { id: "tier12", codesRequired: 12, name: "Collector's Box" }
+        ];
+      }
+      
+      console.log(`Using ${tiers.length} tiers`);
+      
+      // Process users
+      const csvData = [];
+      let processedCount = 0;
+      
+      usersSnapshot.forEach(doc => {
+        const userData = doc.data();
+        const scannedCodes = userData.scannedCodes || [];
+        const redemptionStatus = userData.redemptionStatus || {};
+        
+        // Parse name
+        const displayName = userData.displayName || '';
+        let firstName = '', lastName = '';
+        if (displayName.includes(' ')) {
+          const nameParts = displayName.split(' ');
+          firstName = nameParts[0];
+          lastName = nameParts.slice(1).join(' ');
+        } else {
+          firstName = displayName;
+        }
+        
+        // Find first scan info
+        let firstCardScanned = '';
+        let firstCardDate = '';
+        if (scannedCodes.length > 0) {
+          const sortedScans = [...scannedCodes].sort((a, b) => a.timestamp - b.timestamp);
+          const firstScan = sortedScans[0];
+          firstCardScanned = firstScan.code;
+          firstCardDate = new Date(firstScan.timestamp).toLocaleString();
+        }
+        
+        // Build row
+        const row = {
+          'FIRST NAME': firstName,
+          'LAST NAME': lastName,
+          'EMAIL': userData.email || '',
+          'PHONE NUMBER': userData.phoneNumber || '',
+          'SHOPIFY CUSTOMER ID': userData.shopifyCustomerId || '',
+          'TOTAL CARDS SCANNED': scannedCodes.length,
+          'FIRST CARD SCANNED': firstCardScanned,
+          'FIRST CARD SCANNED DATE': firstCardDate,
+          'ACCOUNT CREATED': userData.createdAt ? userData.createdAt.toDate().toLocaleString() : '',
+          'DRAWING ENTRIES': (userData.drawingEntries || 0) + (userData.drawingBonusEntries || 0)
+        };
+        
+        // Add QR code columns (if we have QR code data)
+        if (qrCodes.length > 0) {
+          for (let i = 1; i <= Math.max(12, qrCodes.length); i++) {
+            const qrCode = qrCodes.find(qr => qr.locationNumber === i);
+            if (qrCode) {
+              const hasScanned = scannedCodes.some(scan => scan.code === qrCode.code);
+              row[`CARD ${i} SCANNED?`] = hasScanned ? 'Y' : 'N';
+            } else {
+              row[`CARD ${i} SCANNED?`] = 'N';
+            }
+          }
+        }
+        
+        // Add prize columns
+        let totalRewards = 0;
+        let totalRedemptions = 0;
+        
+        tiers.forEach((tier, index) => {
+          const prizeNum = index + 1;
+          const hasUnlocked = scannedCodes.length >= tier.codesRequired;
+          const isRedeemed = redemptionStatus[tier.id] && redemptionStatus[tier.id].redeemed;
+          
+          if (hasUnlocked) totalRewards++;
+          if (isRedeemed) totalRedemptions++;
+          
+          row[`PRIZE ${prizeNum} CODE?`] = hasUnlocked ? 'Y' : 'N';
+          row[`PRIZE ${prizeNum} NAME`] = tier.name;
+          row[`PRIZE ${prizeNum} REDEEMED?`] = isRedeemed ? 'Y' : 'N';
+        });
+        
+        row['TOTAL REWARD CODES'] = totalRewards;
+        row['TOTAL REDEMPTIONS'] = totalRedemptions;
+        
+        csvData.push(row);
+        processedCount++;
+      });
+      
+      console.log(`Processed ${processedCount} users`);
+      
+      // Create CSV
+      if (csvData.length === 0) {
+        alert('No data to export.');
+        return;
+      }
+      
+      const headers = Object.keys(csvData[0]);
+      const csvContent = [
+        headers.join(','),
+        ...csvData.map(row => 
+          headers.map(header => `"${String(row[header] || '').replace(/"/g, '""')}"`).join(',')
+        )
+      ].join('\n');
+      
+      // Download
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+      const fileName = `scavenger-hunt-participants-${new Date().toISOString().split('T')[0]}.csv`;
+      
+      link.setAttribute('href', url);
+      link.setAttribute('download', fileName);
+      link.style.visibility = 'hidden';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      alert(`Successfully exported ${csvData.length} participant records!\n\nFile: ${fileName}`);
+      console.log(`Export completed: ${fileName}`);
+      
+    } catch (error) {
+      console.error('Export error:', error);
+      alert(`Export failed: ${error.message}`);
+    } finally {
+      // Reset button
+      const button = document.querySelector('.dgsh-admin-export-btn');
+      if (button) {
+        button.textContent = 'Export CSV';
+        button.disabled = false;
+      }
+    }
+  }
+
+  async function loadDrawingStats() {
+    const totalEntriesEl = document.getElementById('total-drawing-entries');
+    const totalParticipantsEl = document.getElementById('total-participants');
+    const avgEntriesEl = document.getElementById('avg-entries-per-user');
+    const drawingListEl = document.querySelector('.dgsh-admin-drawing-list');
+    
+    if (!totalEntriesEl) return; // Not on admin page
+    
+    drawingListEl.innerHTML = '<div class="dgsh-admin-loading">Loading drawing entries...</div>';
+    
+    try {
+      const db = firebase.firestore();
+      const usersSnapshot = await db.collection('users').get();
+      
+      let totalEntries = 0;
+      let totalParticipants = 0;
+      const previewEntries = [];
+      
+      usersSnapshot.forEach(doc => {
+        const userData = doc.data();
+        const scanEntries = userData.drawingEntries || 0;
+        const bonusEntries = userData.drawingBonusEntries || 0;
+        const userTotalEntries = scanEntries + bonusEntries;
+        
+        if (userTotalEntries > 0) {
+          totalParticipants++;
+          totalEntries += userTotalEntries;
+          
+          // Add to preview (first 10)
+          if (previewEntries.length < 10) {
+            for (let i = 0; i < userTotalEntries; i++) {
+              previewEntries.push({
+                name: userData.displayName || 'Anonymous',
+                email: userData.email || 'No email',
+                phone: userData.phoneNumber || 'No phone',
+                entryNumber: previewEntries.length + 1
+              });
+            }
+          }
+        }
+      });
+      
+      // Update stats
+      totalEntriesEl.textContent = totalEntries;
+      totalParticipantsEl.textContent = totalParticipants;
+      avgEntriesEl.textContent = totalParticipants > 0 ? Math.round(totalEntries / totalParticipants) : 0;
+      
+      // Update preview with responsive wrapper
+      if (previewEntries.length === 0) {
+        drawingListEl.innerHTML = '<div class="dgsh-admin-warning">No drawing entries yet.</div>';
+      } else {
+        let html = `
+          <div class="dgsh-admin-table-container">
+            <table class="dgsh-admin-table">
+              <thead>
+                <tr><th>Entry #</th><th>Name</th><th>Email</th><th>Phone</th></tr>
+              </thead>
+              <tbody>
+        `;
+        
+        previewEntries.forEach(entry => {
+          html += `
+            <tr>
+              <td>${entry.entryNumber}</td>
+              <td>${entry.name}</td>
+              <td>${entry.email}</td>
+              <td>${entry.phone}</td>
+            </tr>
+          `;
+        });
+        
+        html += `
+              </tbody>
+            </table>
+          </div>
+        `;
+        drawingListEl.innerHTML = html;
+      }
+      
+    } catch (error) {
+      console.error('Error loading drawing stats:', error);
+      drawingListEl.innerHTML = '<div class="dgsh-admin-error">Error loading drawing entries.</div>';
+    }
+  }
+
+  // Export drawing entries as CSV
+  async function exportDrawingEntries() {
+    try {
+      const db = firebase.firestore();
+      const usersSnapshot = await db.collection('users').get();
+      
+      const entries = [];
+      let entryNumber = 1;
+      
+      usersSnapshot.forEach(doc => {
+        const userData = doc.data();
+        const scanEntries = userData.drawingEntries || 0;
+        const bonusEntries = userData.drawingBonusEntries || 0;
+        const userTotalEntries = scanEntries + bonusEntries;
+        
+        // Create one row per entry
+        for (let i = 0; i < userTotalEntries; i++) {
+          entries.push({
+            entryNumber: entryNumber++,
+            name: userData.displayName || 'Anonymous',
+            email: userData.email || '',
+            phone: userData.phoneNumber || '',
+            shopifyId: userData.shopifyCustomerId || '',
+            scanEntries: scanEntries,
+            bonusEntries: bonusEntries,
+            totalEntries: userTotalEntries
+          });
+        }
+      });
+      
+      // Create CSV
+      const csvHeader = 'Entry Number,Name,Email,Phone,Shopify ID,Scan Entries,Bonus Entries,Total Entries\n';
+      const csvContent = entries.map(entry => 
+        `${entry.entryNumber},"${entry.name}","${entry.email}","${entry.phone}","${entry.shopifyId}",${entry.scanEntries},${entry.bonusEntries},${entry.totalEntries}`
+      ).join('\n');
+      
+      // Download CSV
+      const blob = new Blob([csvHeader + csvContent], { type: 'text/csv' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `drawing-entries-${new Date().toISOString().split('T')[0]}.csv`;
+      link.click();
+      URL.revokeObjectURL(url);
+      
+      alert(`Exported ${entries.length} drawing entries to CSV file.`);
+      
+    } catch (error) {
+      console.error('Error exporting drawing entries:', error);
+      alert('Error exporting drawing entries: ' + error.message);
+    }
+  }
+
+  // Make functions available to buttons
+  window.exportCustomerData = exportCustomerData;
+  window.loadDrawingStats = loadDrawingStats;
+  window.exportDrawingEntries = exportDrawingEntries;
+
+  // Auto-load drawing stats
+  setTimeout(loadDrawingStats, 1000);
+
+  // Set up export button
+  const exportBtn = document.querySelector('.dgsh-admin-export-btn');
+  if (exportBtn) {
+    exportBtn.addEventListener('click', exportCustomerData);
+  }
+
+  // Set up drawing export button
+  const exportDrawingBtn = document.querySelector('.dgsh-admin-export-drawing-btn');
+  if (exportDrawingBtn) {
+    exportDrawingBtn.addEventListener('click', exportDrawingEntries);
+  }
+
+  // Set up drawing refresh button
+  const refreshDrawingBtn = document.querySelector('.dgsh-admin-refresh-drawing-btn');
+  if (refreshDrawingBtn) {
+    refreshDrawingBtn.addEventListener('click', loadDrawingStats);
+  }
+});
+
+// Add this script to fix the loading issues in all statistics sections
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("Initializing dashboard statistics fix...");
+  
+  // Find the statistic sections
+  const summaryStat = document.querySelector('.dgsh-admin-summary-stats');
+  const scanDistribution = document.querySelector('.dgsh-admin-scan-distribution');
+  const cardStats = document.querySelector('.dgsh-admin-card-stats');
+  const firstScanStats = document.querySelector('.dgsh-admin-first-scan-stats');
+  const refreshBtn = document.querySelector('.dgsh-admin-refresh-btn');
+  const lastRefreshElement = document.querySelector('.dgsh-admin-last-refresh');
+  
+  // Track all the statistics sections
+  const statSections = [
+    { element: summaryStat, name: 'Summary', loadFunc: loadSummaryStats },
+    { element: scanDistribution, name: 'Scan Distribution', loadFunc: loadScanDistribution },
+    { element: cardStats, name: 'Card Stats', loadFunc: loadCardStats },
+    { element: firstScanStats, name: 'First Scan Stats', loadFunc: loadFirstScanStats }
+  ];
+  
+  // Check if any sections were found
+  const foundSections = statSections.filter(section => section.element !== null);
+  if (foundSections.length === 0) {
+    console.log("No statistics sections found on page");
+    return;
+  }
+  
+  console.log(`Found ${foundSections.length} statistics sections`);
+  
+  // Update last refresh text
+  const updateLastRefresh = function() {
+    if (lastRefreshElement) {
+      const now = new Date();
+      lastRefreshElement.textContent = `Last updated: ${now.toLocaleTimeString()}`;
+    }
+  };
+  
+  // Add event listener to refresh button if it exists
+  if (refreshBtn) {
+    refreshBtn.addEventListener('click', function() {
+      loadAllStats();
+    });
+  }
+  
+  // Add retry button to section
+  const addRetryButton = function(section) {
+    const retryBtn = document.createElement('button');
+    retryBtn.textContent = 'Retry Loading';
+    retryBtn.className = 'dgsh-admin-retry-btn';
+    retryBtn.style.marginTop = '10px';
+    retryBtn.addEventListener('click', function() {
+      if (section && section.loadFunc) {
+        section.loadFunc();
+      }
+    });
+    return retryBtn;
+  };
+  
+  // Get Firebase instance
+  const getFirebaseDb = async function() {
+    // Check Firebase availability
+    if (!window.firebase) {
+      throw new Error("Firebase not available");
+    }
+    
+    // Ensure we're authenticated
+    if (!firebase.auth().currentUser) {
+      try {
+        console.log("Not authenticated, signing in anonymously...");
+        await firebase.auth().signInAnonymously();
+        console.log("Successfully signed in to Firebase");
+      } catch (authError) {
+        throw new Error(`Firebase authentication failed: ${authError.message}`);
+      }
+    }
+    
+    return firebase.firestore();
+  };
+  
+  // Summary Statistics (total scans, users, completion rate)
+  async function loadSummaryStats() {
+    if (!summaryStat) return;
+    
+    summaryStat.innerHTML = '<div class="dgsh-admin-loading">Loading summary statistics...</div>';
+    
+    try {
+      const db = await getFirebaseDb();
+      
+      // Query for total users and scan counts
+      const userSnapshot = await db.collection('users').get();
+      
+      if (userSnapshot.empty) {
+        summaryStat.innerHTML = `
+          <div class="dgsh-admin-warning">
+            <p>No user data found in the database.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      // Process user data
+      let totalUsers = 0;
+      let totalScans = 0;
+      let completedUsers = 0;
+      let activeUsers = 0;
+      
+      // Get the total codes required from hunt settings
+      let totalCodesRequired = 12; // Default fallback
+      try {
+        const settingsDoc = await db.collection('config').doc('huntSettings').get();
+        if (settingsDoc.exists) {
+          const data = settingsDoc.data();
+          if (data.tierSchema && data.tierSchema.tiers && data.tierSchema.tiers.length > 0) {
+            const tiers = data.tierSchema.tiers;
+            totalCodesRequired = Math.max(...tiers.map(tier => tier.codesRequired));
+          } else if (data.totalCodes) {
+            totalCodesRequired = data.totalCodes;
+          } else if (data.rewardTiers && data.rewardTiers.length > 0) {
+            totalCodesRequired = Math.max(...data.rewardTiers.map(tier => tier.codesRequired));
+          }
+        }
+      } catch (settingsError) {
+        console.warn("Error fetching hunt settings:", settingsError);
+      }
+      
+      // Process user data
+      userSnapshot.forEach(doc => {
+        const userData = doc.data();
+        totalUsers++;
+        
+        // Check for scanned codes
+        if (userData.scannedCodes && Array.isArray(userData.scannedCodes)) {
+          const scanCount = userData.scannedCodes.length;
+          totalScans += scanCount;
+          
+          // Check if user has completed the hunt
+          if (scanCount >= totalCodesRequired) {
+            completedUsers++;
+          }
+          
+          // Check if user is active (has at least 1 scan)
+          if (scanCount > 0) {
+            activeUsers++;
+          }
+        }
+      });
+      
+      // Calculate percentages
+      const completionRate = totalUsers > 0 ? ((completedUsers / totalUsers) * 100).toFixed(1) : 0;
+      const activeRate = totalUsers > 0 ? ((activeUsers / totalUsers) * 100).toFixed(1) : 0;
+      const avgScansPerUser = activeUsers > 0 ? (totalScans / activeUsers).toFixed(1) : 0;
+      
+      // Generate HTML with responsive wrapper
+      let html = `
+        <h2 class="dgsh-admin-section-title">Summary Statistics</h2>
+        <div class="dgsh-admin-stat-grid">
+          <div class="dgsh-admin-stat-item">
+            <div class="dgsh-admin-stat-value">${totalUsers}</div>
+            <div class="dgsh-admin-stat-label">Total Users</div>
+          </div>
+          <div class="dgsh-admin-stat-item">
+            <div class="dgsh-admin-stat-value">${activeUsers}</div>
+            <div class="dgsh-admin-stat-label">Active Users</div>
+          </div>
+          <div class="dgsh-admin-stat-item">
+            <div class="dgsh-admin-stat-value">${totalScans}</div>
+            <div class="dgsh-admin-stat-label">Total Scans</div>
+          </div>
+          <div class="dgsh-admin-stat-item">
+            <div class="dgsh-admin-stat-value">${avgScansPerUser}</div>
+            <div class="dgsh-admin-stat-label">Avg. Scans/User</div>
+          </div>
+          <div class="dgsh-admin-stat-item">
+            <div class="dgsh-admin-stat-value">${completedUsers}</div>
+            <div class="dgsh-admin-stat-label">Completed Users</div>
+          </div>
+          <div class="dgsh-admin-stat-item">
+            <div class="dgsh-admin-stat-value">${completionRate}%</div>
+            <div class="dgsh-admin-stat-label">Completion Rate</div>
+          </div>
+        </div>
+      `;
+      
+      summaryStat.innerHTML = html;
+      
+    } catch (error) {
+      console.error("Error loading summary statistics:", error);
+      summaryStat.innerHTML = `
+        <div class="dgsh-admin-error">
+          <p>Error loading summary statistics: ${error.message}</p>
+        </div>
+      `;
+      summaryStat.appendChild(addRetryButton(statSections[0]));
+    }
+  }
+  
+  // Scan Distribution (how many users have scanned 1, 2, 3... codes)
+  async function loadScanDistribution() {
+    if (!scanDistribution) return;
+    
+    scanDistribution.innerHTML = '<div class="dgsh-admin-loading">Loading scan distribution...</div>';
+    
+    try {
+      const db = await getFirebaseDb();
+      
+      // Query for all users
+      const userSnapshot = await db.collection('users').get();
+      
+      if (userSnapshot.empty) {
+        scanDistribution.innerHTML = `
+          <div class="dgsh-admin-warning">
+            <p>No user data found in the database.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      // Get total required codes
+      let totalCodesRequired = 12; // Default
+      try {
+        const settingsDoc = await db.collection('config').doc('huntSettings').get();
+        if (settingsDoc.exists) {
+          const data = settingsDoc.data();
+          if (data.tierSchema && data.tierSchema.tiers && data.tierSchema.tiers.length > 0) {
+            totalCodesRequired = Math.max(...data.tierSchema.tiers.map(tier => tier.codesRequired));
+          } else if (data.totalCodes) {
+            totalCodesRequired = data.totalCodes;
+          } else if (data.rewardTiers && data.rewardTiers.length > 0) {
+            totalCodesRequired = Math.max(...data.rewardTiers.map(tier => tier.codesRequired));
+          }
+        }
+      } catch (error) {
+        console.warn("Error getting total codes:", error);
+      }
+      
+      // Initialize distribution array
+      const distribution = Array(totalCodesRequired + 1).fill(0); // 0 to totalCodesRequired
+      
+      // Count users by scan count
+      userSnapshot.forEach(doc => {
+        const userData = doc.data();
+        const scannedCount = userData.scannedCodes ? userData.scannedCodes.length : 0;
+        
+        // Add to distribution
+        if (scannedCount <= totalCodesRequired) {
+          distribution[scannedCount]++;
+        } else {
+          // For any users with more than the total (shouldn't happen but just in case)
+          distribution[totalCodesRequired]++;
+        }
+      });
+      
+      // Generate HTML with responsive wrapper
+      let html = `
+        <h2 class="dgsh-admin-section-title">Scan Distribution</h2>
+        <div class="dgsh-admin-table-container">
+          <table class="dgsh-admin-table">
+            <thead>
+              <tr>
+                <th>Scans</th>
+                <th>Users</th>
+                <th>Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+      `;
+      
+      // Add rows for each scan count
+      for (let i = 0; i <= totalCodesRequired; i++) {
+        const count = distribution[i];
+        const percentage = (count / userSnapshot.size * 100).toFixed(1);
+        
+        html += `
+          <tr>
+            <td>${i}</td>
+            <td>${count}</td>
+            <td>${percentage}%</td>
+          </tr>
+        `;
+      }
+      
+      html += `
+            </tbody>
+          </table>
+        </div>
+      `;
+      
+      scanDistribution.innerHTML = html;
+      
+    } catch (error) {
+      console.error("Error loading scan distribution:", error);
+      scanDistribution.innerHTML = `
+        <div class="dgsh-admin-error">
+          <p>Error loading scan distribution: ${error.message}</p>
+        </div>
+      `;
+      scanDistribution.appendChild(addRetryButton(statSections[1]));
+    }
+  }
+  
+  // Card Statistics (most/least scanned QR codes)
+  async function loadCardStats() {
+    if (!cardStats) return;
+    
+    cardStats.innerHTML = '<div class="dgsh-admin-loading">Loading card statistics...</div>';
+    
+    try {
+      const db = await getFirebaseDb();
+      
+      // Query for all users
+      const userSnapshot = await db.collection('users').get();
+      
+      if (userSnapshot.empty) {
+        cardStats.innerHTML = `
+          <div class="dgsh-admin-warning">
+            <p>No user data found in the database.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      // Query for all valid QR codes
+      let validCodes = [];
+      try {
+        const codesSnapshot = await db.collection('valid_codes').get();
+        validCodes = codesSnapshot.docs.map(doc => doc.id);
+      } catch (error) {
+        console.warn("Error fetching valid codes:", error);
+      }
+      
+      // Count scans for each code
+      const codeScans = {};
+      
+      // Process all user scan records
+      userSnapshot.forEach(doc => {
+        const userData = doc.data();
+        
+        if (userData.scannedCodes && Array.isArray(userData.scannedCodes)) {
+          userData.scannedCodes.forEach(scan => {
+            const code = scan.code;
+            if (!codeScans[code]) {
+              codeScans[code] = 0;
+            }
+            codeScans[code]++;
+          });
+        }
+      });
+      
+      // Convert to array for sorting
+      const codeStats = Object.entries(codeScans).map(([code, count]) => ({
+        code,
+        count,
+        isValid: validCodes.includes(code)
+      }));
+      
+      // Sort by scan count (descending)
+      codeStats.sort((a, b) => b.count - a.count);
+      
+      // Generate HTML with responsive wrapper
+      let html = `
+        <h2 class="dgsh-admin-section-title">Card Statistics</h2>
+        <div class="dgsh-admin-table-container">
+          <table class="dgsh-admin-table">
+            <thead>
+              <tr>
+                <th>QR Code</th>
+                <th>Scans</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+      `;
+      
+      // Add rows for each code
+      codeStats.forEach(stat => {
+        html += `
+          <tr>
+            <td><code class="code-value">${stat.code}</code></td>
+            <td>${stat.count}</td>
+            <td><span class="${stat.isValid ? 'status-active' : 'status-inactive'}">${stat.isValid ? 'Valid' : 'Invalid'}</span></td>
+          </tr>
+        `;
+      });
+      
+      html += `
+            </tbody>
+          </table>
+        </div>
+      `;
+      
+      cardStats.innerHTML = html;
+      
+    } catch (error) {
+      console.error("Error loading card statistics:", error);
+      cardStats.innerHTML = `
+        <div class="dgsh-admin-error">
+          <p>Error loading card statistics: ${error.message}</p>
+        </div>
+      `;
+      cardStats.appendChild(addRetryButton(statSections[2]));
+    }
+  }
+  
+  // First Scan Statistics (when users started the hunt)
+  async function loadFirstScanStats() {
+    if (!firstScanStats) return;
+    
+    firstScanStats.innerHTML = '<div class="dgsh-admin-loading">Loading first scan statistics...</div>';
+    
+    try {
+      const db = await getFirebaseDb();
+      
+      // Query for all users
+      const userSnapshot = await db.collection('users').get();
+      
+      if (userSnapshot.empty) {
+        firstScanStats.innerHTML = `
+          <div class="dgsh-admin-warning">
+            <p>No user data found in the database.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      // Get users with first scan times
+      const userFirstScans = [];
+      
+      // Extract first scan timestamps
+      userSnapshot.forEach(doc => {
+        const userData = doc.data();
+        
+        // Check if user has first scan data
+        if (userData.firstScanTime) {
+          userFirstScans.push({
+            userId: doc.id,
+            firstScanTime: userData.firstScanTime,
+            displayName: userData.displayName || 'Anonymous'
+          });
+        } else if (userData.scannedCodes && userData.scannedCodes.length > 0) {
+          // Calculate from scanned codes if firstScanTime not directly available
+          const timestamps = userData.scannedCodes.map(scan => scan.timestamp).filter(Boolean);
+          if (timestamps.length > 0) {
+            const firstScanTime = Math.min(...timestamps);
+            userFirstScans.push({
+              userId: doc.id,
+              firstScanTime: firstScanTime,
+              displayName: userData.displayName || 'Anonymous'
+            });
+          }
+        }
+      });
+      
+      if (userFirstScans.length === 0) {
+        firstScanStats.innerHTML = `
+          <div class="dgsh-admin-warning">
+            <p>No first scan data available yet.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      // Sort by first scan time (oldest first)
+      userFirstScans.sort((a, b) => a.firstScanTime - b.firstScanTime);
+      
+      // Group by day
+      const dayGroups = {};
+      
+      userFirstScans.forEach(user => {
+        const date = new Date(user.firstScanTime);
+        const day = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
+        
+        if (!dayGroups[day]) {
+          dayGroups[day] = [];
+        }
+        
+        dayGroups[day].push(user);
+      });
+      
+      // Generate HTML with responsive wrapper
+      let html = `
+        <h2 class="dgsh-admin-section-title">First Scan Statistics</h2>
+        <div class="dgsh-admin-first-scans-summary">
+          <p>Total users with scan data: ${userFirstScans.length}</p>
+          <p>First user scanned: ${new Date(userFirstScans[0].firstScanTime).toLocaleString()}</p>
+          <p>Most recent first scan: ${new Date(userFirstScans[userFirstScans.length - 1].firstScanTime).toLocaleString()}</p>
+        </div>
+        <h3>First Scans by Day</h3>
+        <div class="dgsh-admin-table-container">
+          <table class="dgsh-admin-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>New Users</th>
+              </tr>
+            </thead>
+            <tbody>
+      `;
+      
+      // Add rows for each day
+      Object.entries(dayGroups).sort().forEach(([day, users]) => {
+        const formattedDate = new Date(day).toLocaleDateString();
+        html += `
+          <tr>
+            <td>${formattedDate}</td>
+            <td>${users.length}</td>
+          </tr>
+        `;
+      });
+      
+      html += `
+            </tbody>
+          </table>
+        </div>
+      `;
+      
+      firstScanStats.innerHTML = html;
+      
+    } catch (error) {
+      console.error("Error loading first scan statistics:", error);
+      firstScanStats.innerHTML = `
+        <div class="dgsh-admin-error">
+          <p>Error loading first scan statistics: ${error.message}</p>
+        </div>
+      `;
+      firstScanStats.appendChild(addRetryButton(statSections[3]));
+    }
+  }
+  
+  // Load all statistics sections
+  function loadAllStats() {
+    // Update refresh timestamp
+    updateLastRefresh();
+    
+    // Load each section if it exists
+    foundSections.forEach(section => {
+      if (section.element && section.loadFunc) {
+        section.loadFunc();
+      }
+    });
+  }
+  
+  // Initialize by loading all stats
+  console.log("Starting to load all dashboard statistics...");
+  loadAllStats();
+});
+
+// Schedule Management Functions
+function initScheduleManagement() {
+  const scheduleEnabled = document.getElementById('schedule-enabled');
+  const scheduleTimesContainer = document.getElementById('schedule-times-container');
+  const saveScheduleBtn = document.getElementById('save-schedule-btn');
+  const clearScheduleBtn = document.getElementById('clear-schedule-btn');
+  const userTimezoneSpan = document.getElementById('user-timezone');
+  
+  if (!scheduleEnabled) return;
+  
+  // Display user's timezone
+  if (userTimezoneSpan) {
+    userTimezoneSpan.textContent = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  }
+  
+  // Load current schedule settings
+  loadCurrentScheduleSettings();
+  
+  // Toggle schedule times visibility
+  scheduleEnabled.addEventListener('change', function() {
+    scheduleTimesContainer.style.display = this.checked ? 'block' : 'none';
+  });
+  
+  // Save schedule button
+  if (saveScheduleBtn) {
+    saveScheduleBtn.addEventListener('click', saveScheduleSettings);
+  }
+  
+  // Clear schedule button
+  if (clearScheduleBtn) {
+    clearScheduleBtn.addEventListener('click', clearScheduleSettings);
+  }
+  
+  // Update status display periodically
+  setInterval(updateScheduleStatusDisplay, 30000); // Every 30 seconds
+  updateScheduleStatusDisplay(); // Initial load
+}
+
+async function loadCurrentScheduleSettings() {
+  try {
+    if (!window.DGSHScheduler) return;
+    
+    const settings = DGSHScheduler.getScheduleSettings();
+    
+    if (settings) {
+      const scheduleEnabledEl = document.getElementById('schedule-enabled');
+      const scheduleTimesContainer = document.getElementById('schedule-times-container');
+      const startDateEl = document.getElementById('schedule-start-date');
+      const endDateEl = document.getElementById('schedule-end-date');
+      
+      if (scheduleEnabledEl) {
+        scheduleEnabledEl.checked = settings.enabled;
+      }
+      
+      if (scheduleTimesContainer) {
+        scheduleTimesContainer.style.display = settings.enabled ? 'block' : 'none';
+      }
+      
+      if (settings.startDate && startDateEl) {
+        startDateEl.value = new Date(settings.startDate).toISOString().slice(0, 16);
+      }
+      
+      if (settings.endDate && endDateEl) {
+        endDateEl.value = new Date(settings.endDate).toISOString().slice(0, 16);
+      }
+    }
+  } catch (error) {
+    console.error('Error loading schedule settings:', error);
+  }
+}
+
+async function saveScheduleSettings() {
+  try {
+    if (!window.DGSHScheduler) {
+      alert('Scheduler not available');
+      return;
+    }
+    
+    const enabled = document.getElementById('schedule-enabled').checked;
+    const startDate = document.getElementById('schedule-start-date').value;
+    const endDate = document.getElementById('schedule-end-date').value;
+    
+    if (enabled && (!startDate || !endDate)) {
+      alert('Please set both start and end dates when scheduling is enabled.');
+      return;
+    }
+    
+    if (enabled && new Date(startDate) >= new Date(endDate)) {
+      alert('End date must be after start date.');
+      return;
+    }
+    
+    const settings = {
+      enabled: enabled,
+      startDate: enabled ? startDate : null,
+      endDate: enabled ? endDate : null,
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+    };
+    
+    const success = await DGSHScheduler.updateScheduleSettings(settings);
+    
+    if (success) {
+      alert('Schedule settings saved successfully!');
+      updateScheduleStatusDisplay();
+    } else {
+      alert('Error saving schedule settings.');
+    }
+  } catch (error) {
+    console.error('Error saving schedule:', error);
+    alert('Error saving schedule settings.');
+  }
+}
+
+async function clearScheduleSettings() {
+  if (!confirm('Are you sure you want to disable hunt scheduling? This will make the hunt always active.')) {
+    return;
+  }
+  
+  try {
+    if (!window.DGSHScheduler) {
+      alert('Scheduler not available');
+      return;
+    }
+    
+    const success = await DGSHScheduler.disableScheduling();
+    
+    if (success) {
+      document.getElementById('schedule-enabled').checked = false;
+      document.getElementById('schedule-times-container').style.display = 'none';
+      document.getElementById('schedule-start-date').value = '';
+      document.getElementById('schedule-end-date').value = '';
+      
+      alert('Schedule cleared. Hunt is now always active.');
+      updateScheduleStatusDisplay();
+    } else {
+      alert('Error clearing schedule.');
+    }
+  } catch (error) {
+    console.error('Error clearing schedule:', error);
+    alert('Error clearing schedule.');
+  }
+}
+
+function updateScheduleStatusDisplay() {
+  const statusDisplay = document.getElementById('schedule-status-display');
+  if (!statusDisplay || !window.DGSHScheduler) return;
+  
+  try {
+    const status = DGSHScheduler.getScheduleStatus();
+    
+    let statusClass = 'dgsh-admin-status-';
+    let statusIcon = '';
+    
+    switch (status.status) {
+      case 'always_active':
+        statusClass += 'active';
+        statusIcon = '✅';
+        break;
+      case 'active':
+        statusClass += 'active';
+        statusIcon = '🟢';
+        break;
+      case 'not_started':
+        statusClass += 'pending';
+        statusIcon = '🟡';
+        break;
+      case 'ended':
+        statusClass += 'ended';
+        statusIcon = '🔴';
+        break;
+    }
+    
+    statusDisplay.innerHTML = `
+      <div class="${statusClass}">
+        <span class="dgsh-admin-status-icon">${statusIcon}</span>
+        <span class="dgsh-admin-status-message">${status.message}</span>
+      </div>
+    `;
+  } catch (error) {
+    statusDisplay.innerHTML = '<div class="dgsh-admin-error">Error loading status</div>';
+  }
+}
+
+// Content Management Functions
+function initEnhancedContentManagement() {
+  const editHowItWorksBtn = document.querySelector('.dgsh-admin-edit-how-it-works');
+  const editInstructionsBtn = document.querySelector('.dgsh-admin-edit-instructions');
+  
+  if (editHowItWorksBtn) {
+    editHowItWorksBtn.addEventListener('click', () => {
+      loadContentForEditing('how_it_works');
+    });
+  }
+  
+  if (editInstructionsBtn) {
+    editInstructionsBtn.addEventListener('click', () => {
+      loadContentForEditing('hunt_instructions');
+    });
+  }
+  
+  const addItemBtn = document.getElementById('add-content-item');
+  const saveContentBtn = document.querySelector('.dgsh-admin-save-content-btn');
+  const cancelContentBtn = document.querySelector('.dgsh-admin-cancel-content-btn');
+  
+  if (addItemBtn) {
+    addItemBtn.addEventListener('click', () => addContentItem());
+  }
+  
+  if (saveContentBtn) {
+    saveContentBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      saveContentData();
+    });
+  }
+  
+  if (cancelContentBtn) {
+    cancelContentBtn.addEventListener('click', () => {
+      document.querySelector('.dgsh-admin-content-editor-container').style.display = 'none';
+    });
+  }
+}
+
+// Enhanced QR Management
+function initEnhancedQRManagement() {
+  console.log("Initializing enhanced QR code management...");
+  
+  if (window.DGSHQR && typeof DGSHQR.initAdmin === 'function') {
+    DGSHQR.initAdmin();
+    DGSHQR.fetchAndDisplayQRCodes();
+  }
+}
+
+// Initialize all management functions
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize schedule management
+  if (window.DGSHScheduler) {
+    DGSHScheduler.init();
+    initScheduleManagement();
+  }
+  
+  // Initialize content management
+  initEnhancedContentManagement();
+  
+  // Initialize QR management
+  initEnhancedQRManagement();
+});// Add this script to fix the loading issues in all statistics sections
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("Initializing dashboard statistics fix...");
+  
+  // Find the statistic sections
+  const summaryStat = document.querySelector('.dgsh-admin-summary-stats');
+  const scanDistribution = document.querySelector('.dgsh-admin-scan-distribution');
+  const cardStats = document.querySelector('.dgsh-admin-card-stats');
+  const firstScanStats = document.querySelector('.dgsh-admin-first-scan-stats');
+  const refreshBtn = document.querySelector('.dgsh-admin-refresh-btn');
+  const lastRefreshElement = document.querySelector('.dgsh-admin-last-refresh');
+  
+  // Track all the statistics sections
+  const statSections = [
+    { element: summaryStat, name: 'Summary', loadFunc: loadSummaryStats },
+    { element: scanDistribution, name: 'Scan Distribution', loadFunc: loadScanDistribution },
+    { element: cardStats, name: 'Card Stats', loadFunc: loadCardStats },
+    { element: firstScanStats, name: 'First Scan Stats', loadFunc: loadFirstScanStats }
+  ];
+  
+  // Check if any sections were found
+  const foundSections = statSections.filter(section => section.element !== null);
+  if (foundSections.length === 0) {
+    console.log("No statistics sections found on page");
+    return;
+  }
+  
+  console.log(`Found ${foundSections.length} statistics sections`);
+  
+  // Update last refresh text
+  const updateLastRefresh = function() {
+    if (lastRefreshElement) {
+      const now = new Date();
+      lastRefreshElement.textContent = `Last updated: ${now.toLocaleTimeString()}`;
+    }
+  };
+  
+  // Add event listener to refresh button if it exists
+  if (refreshBtn) {
+    refreshBtn.addEventListener('click', function() {
+      loadAllStats();
+    });
+  }
+  
+  // Add retry button to section
+  const addRetryButton = function(section) {
+    const retryBtn = document.createElement('button');
+    retryBtn.textContent = 'Retry Loading';
+    retryBtn.className = 'dgsh-admin-retry-btn';
+    retryBtn.style.marginTop = '10px';
+    retryBtn.addEventListener('click', function() {
+      if (section && section.loadFunc) {
+        section.loadFunc();
+      }
+    });
+    return retryBtn;
+  };
+  
+  // Get Firebase instance
+  const getFirebaseDb = async function() {
+    // Check Firebase availability
+    if (!window.firebase) {
+      throw new Error("Firebase not available");
+    }
+    
+    // Ensure we're authenticated
+    if (!firebase.auth().currentUser) {
+      try {
+        console.log("Not authenticated, signing in anonymously...");
+        await firebase.auth().signInAnonymously();
+        console.log("Successfully signed in to Firebase");
+      } catch (authError) {
+        throw new Error(`Firebase authentication failed: ${authError.message}`);
+      }
+    }
+    
+    return firebase.firestore();
+  };
+  
+  // Summary Statistics (total scans, users, completion rate)
+  async function loadSummaryStats() {
+    if (!summaryStat) return;
+    
+    summaryStat.innerHTML = '<div class="dgsh-admin-loading">Loading summary statistics...</div>';
+    
+    try {
+      const db = await getFirebaseDb();
+      
+      // Query for total users and scan counts
+      const userSnapshot = await db.collection('users').get();
+      
+      if (userSnapshot.empty) {
+        summaryStat.innerHTML = `
+          <div class="dgsh-admin-warning">
+            <p>No user data found in the database.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      // Process user data
+      let totalUsers = 0;
+      let totalScans = 0;
+      let completedUsers = 0;
+      let activeUsers = 0;
+      
+      // Get the total codes required from hunt settings
+      let totalCodesRequired = 12; // Default fallback
+      try {
+        const settingsDoc = await db.collection('config').doc('huntSettings').get();
+        if (settingsDoc.exists) {
+          const data = settingsDoc.data();
+          if (data.tierSchema && data.tierSchema.tiers && data.tierSchema.tiers.length > 0) {
+            const tiers = data.tierSchema.tiers;
+            totalCodesRequired = Math.max(...tiers.map(tier => tier.codesRequired));
+          } else if (data.totalCodes) {
+            totalCodesRequired = data.totalCodes;
+          } else if (data.rewardTiers && data.rewardTiers.length > 0) {
+            totalCodesRequired = Math.max(...data.rewardTiers.map(tier => tier.codesRequired));
+          }
+        }
+      } catch (settingsError) {
+        console.warn("Error fetching hunt settings:", settingsError);
+      }
+      
+      // Process user data
+      userSnapshot.forEach(doc => {
+        const userData = doc.data();
+        totalUsers++;
+        
+        // Check for scanned codes
+        if (userData.scannedCodes && Array.isArray(userData.scannedCodes)) {
+          const scanCount = userData.scannedCodes.length;
+          totalScans += scanCount;
+          
+          // Check if user has completed the hunt
+          if (scanCount >= totalCodesRequired) {
+            completedUsers++;
+          }
+          
+          // Check if user is active (has at least 1 scan)
+          if (scanCount > 0) {
+            activeUsers++;
+          }
+        }
+      });
+      
+      // Calculate percentages
+      const completionRate = totalUsers > 0 ? ((completedUsers / totalUsers) * 100).toFixed(1) : 0;
+      const activeRate = totalUsers > 0 ? ((activeUsers / totalUsers) * 100).toFixed(1) : 0;
+      const avgScansPerUser = activeUsers > 0 ? (totalScans / activeUsers).toFixed(1) : 0;
+      
+      // Generate HTML with responsive wrapper
+      let html = `
+        <h2 class="dgsh-admin-section-title">Summary Statistics</h2>
+        <div class="dgsh-admin-stat-grid">
+          <div class="dgsh-admin-stat-item">
+            <div class="dgsh-admin-stat-value">${totalUsers}</div>
+            <div class="dgsh-admin-stat-label">Total Users</div>
+          </div>
+          <div class="dgsh-admin-stat-item">
+            <div class="dgsh-admin-stat-value">${activeUsers}</div>
+            <div class="dgsh-admin-stat-label">Active Users</div>
+          </div>
+          <div class="dgsh-admin-stat-item">
+            <div class="dgsh-admin-stat-value">${totalScans}</div>
+            <div class="dgsh-admin-stat-label">Total Scans</div>
+          </div>
+          <div class="dgsh-admin-stat-item">
+            <div class="dgsh-admin-stat-value">${avgScansPerUser}</div>
+            <div class="dgsh-admin-stat-label">Avg. Scans/User</div>
+          </div>
+          <div class="dgsh-admin-stat-item">
+            <div class="dgsh-admin-stat-value">${completedUsers}</div>
+            <div class="dgsh-admin-stat-label">Completed Users</div>
+          </div>
+          <div class="dgsh-admin-stat-item">
+            <div class="dgsh-admin-stat-value">${completionRate}%</div>
+            <div class="dgsh-admin-stat-label">Completion Rate</div>
+          </div>
+        </div>
+      `;
+      
+      summaryStat.innerHTML = html;
+      
+    } catch (error) {
+      console.error("Error loading summary statistics:", error);
+      summaryStat.innerHTML = `
+        <div class="dgsh-admin-error">
+          <p>Error loading summary statistics: ${error.message}</p>
+        </div>
+      `;
+      summaryStat.appendChild(addRetryButton(statSections[0]));
+    }
+  }
+  
+  // Scan Distribution (how many users have scanned 1, 2, 3... codes)
+  async function loadScanDistribution() {
+    if (!scanDistribution) return;
+    
+    scanDistribution.innerHTML = '<div class="dgsh-admin-loading">Loading scan distribution...</div>';
+    
+    try {
+      const db = await getFirebaseDb();
+      
+      // Query for all users
+      const userSnapshot = await db.collection('users').get();
+      
+      if (userSnapshot.empty) {
+        scanDistribution.innerHTML = `
+          <div class="dgsh-admin-warning">
+            <p>No user data found in the database.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      // Get total required codes
+      let totalCodesRequired = 12; // Default
+      try {
+        const settingsDoc = await db.collection('config').doc('huntSettings').get();
+        if (settingsDoc.exists) {
+          const data = settingsDoc.data();
+          if (data.tierSchema && data.tierSchema.tiers && data.tierSchema.tiers.length > 0) {
+            totalCodesRequired = Math.max(...data.tierSchema.tiers.map(tier => tier.codesRequired));
+          } else if (data.totalCodes) {
+            totalCodesRequired = data.totalCodes;
+          } else if (data.rewardTiers && data.rewardTiers.length > 0) {
+            totalCodesRequired = Math.max(...data.rewardTiers.map(tier => tier.codesRequired));
+          }
+        }
+      } catch (error) {
+        console.warn("Error getting total codes:", error);
+      }
+      
+      // Initialize distribution array
+      const distribution = Array(totalCodesRequired + 1).fill(0); // 0 to totalCodesRequired
+      
+      // Count users by scan count
+      userSnapshot.forEach(doc => {
+        const userData = doc.data();
+        const scannedCount = userData.scannedCodes ? userData.scannedCodes.length : 0;
+        
+        // Add to distribution
+        if (scannedCount <= totalCodesRequired) {
+          distribution[scannedCount]++;
+        } else {
+          // For any users with more than the total (shouldn't happen but just in case)
+          distribution[totalCodesRequired]++;
+        }
+      });
+      
+      // Generate HTML with responsive wrapper
+      let html = `
+        <h2 class="dgsh-admin-section-title">Scan Distribution</h2>
+        <div class="dgsh-admin-table-container">
+          <table class="dgsh-admin-table">
+            <thead>
+              <tr>
+                <th>Scans</th>
+                <th>Users</th>
+                <th>Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+      `;
+      
+      // Add rows for each scan count
+      for (let i = 0; i <= totalCodesRequired; i++) {
+        const count = distribution[i];
+        const percentage = (count / userSnapshot.size * 100).toFixed(1);
+        
+        html += `
+          <tr>
+            <td>${i}</td>
+            <td>${count}</td>
+            <td>${percentage}%</td>
+          </tr>
+        `;
+      }
+      
+      html += `
+            </tbody>
+          </table>
+        </div>
+      `;
+      
+      scanDistribution.innerHTML = html;
+      
+    } catch (error) {
+      console.error("Error loading scan distribution:", error);
+      scanDistribution.innerHTML = `
+        <div class="dgsh-admin-error">
+          <p>Error loading scan distribution: ${error.message}</p>
+        </div>
+      `;
+      scanDistribution.appendChild(addRetryButton(statSections[1]));
+    }
+  }
+  
+  // Card Statistics (most/least scanned QR codes)
+  async function loadCardStats() {
+    if (!cardStats) return;
+    
+    cardStats.innerHTML = '<div class="dgsh-admin-loading">Loading card statistics...</div>';
+    
+    try {
+      const db = await getFirebaseDb();
+      
+      // Query for all users
+      const userSnapshot = await db.collection('users').get();
+      
+      if (userSnapshot.empty) {
+        cardStats.innerHTML = `
+          <div class="dgsh-admin-warning">
+            <p>No user data found in the database.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      // Query for all valid QR codes
+      let validCodes = [];
+      try {
+        const codesSnapshot = await db.collection('valid_codes').get();
+        validCodes = codesSnapshot.docs.map(doc => doc.id);
+      } catch (error) {
+        console.warn("Error fetching valid codes:", error);
+      }
+      
+      // Count scans for each code
+      const codeScans = {};
+      
+      // Process all user scan records
+      userSnapshot.forEach(doc => {
+        const userData = doc.data();
+        
+        if (userData.scannedCodes && Array.isArray(userData.scannedCodes)) {
+          userData.scannedCodes.forEach(scan => {
+            const code = scan.code;
+            if (!codeScans[code]) {
+              codeScans[code] = 0;
+            }
+            codeScans[code]++;
+          });
+        }
+      });
+      
+      // Convert to array for sorting
+      const codeStats = Object.entries(codeScans).map(([code, count]) => ({
+        code,
+        count,
+        isValid: validCodes.includes(code)
+      }));
+      
+      // Sort by scan count (descending)
+      codeStats.sort((a, b) => b.count - a.count);
+      
+      // Generate HTML with responsive wrapper
+      let html = `
+        <h2 class="dgsh-admin-section-title">Card Statistics</h2>
+        <div class="dgsh-admin-table-container">
+          <table class="dgsh-admin-table">
+            <thead>
+              <tr>
+                <th>QR Code</th>
+                <th>Scans</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+      `;
+      
+      // Add rows for each code
+      codeStats.forEach(stat => {
+        html += `
+          <tr>
+            <td><code class="code-value">${stat.code}</code></td>
+            <td>${stat.count}</td>
+            <td><span class="${stat.isValid ? 'status-active' : 'status-inactive'}">${stat.isValid ? 'Valid' : 'Invalid'}</span></td>
+          </tr>
+        `;
+      });
+      
+      html += `
+            </tbody>
+          </table>
+        </div>
+      `;
+      
+      cardStats.innerHTML = html;
+      
+    } catch (error) {
+      console.error("Error loading card statistics:", error);
+      cardStats.innerHTML = `
+        <div class="dgsh-admin-error">
+          <p>Error loading card statistics: ${error.message}</p>
+        </div>
+      `;
+      cardStats.appendChild(addRetryButton(statSections[2]));
+    }
+  }
+  
+  // First Scan Statistics (when users started the hunt)
+  async function loadFirstScanStats() {
+    if (!firstScanStats) return;
+    
+    firstScanStats.innerHTML = '<div class="dgsh-admin-loading">Loading first scan statistics...</div>';
+    
+    try {
+      const db = await getFirebaseDb();
+      
+      // Query for all users
+      const userSnapshot = await db.collection('users').get();
+      
+      if (userSnapshot.empty) {
+        firstScanStats.innerHTML = `
+          <div class="dgsh-admin-warning">
+            <p>No user data found in the database.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      // Get users with first scan times
+      const userFirstScans = [];
+      
+      // Extract first scan timestamps
+      userSnapshot.forEach(doc => {
+        const userData = doc.data();
+        
+        // Check if user has first scan data
+        if (userData.firstScanTime) {
+          userFirstScans.push({
+            userId: doc.id,
+            firstScanTime: userData.firstScanTime,
+            displayName: userData.displayName || 'Anonymous'
+          });
+        } else if (userData.scannedCodes && userData.scannedCodes.length > 0) {
+          // Calculate from scanned codes if firstScanTime not directly available
+          const timestamps = userData.scannedCodes.map(scan => scan.timestamp).filter(Boolean);
+          if (timestamps.length > 0) {
+            const firstScanTime = Math.min(...timestamps);
+            userFirstScans.push({
+              userId: doc.id,
+              firstScanTime: firstScanTime,
+              displayName: userData.displayName || 'Anonymous'
+            });
+          }
+        }
+      });
+      
+      if (userFirstScans.length === 0) {
+        firstScanStats.innerHTML = `
+          <div class="dgsh-admin-warning">
+            <p>No first scan data available yet.</p>
+          </div>
+        `;
+        return;
+      }
+      
+      // Sort by first scan time (oldest first)
+      userFirstScans.sort((a, b) => a.firstScanTime - b.firstScanTime);
+      
+      // Group by day
+      const dayGroups = {};
+      
+      userFirstScans.forEach(user => {
+        const date = new Date(user.firstScanTime);
+        const day = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
+        
+        if (!dayGroups[day]) {
+          dayGroups[day] = [];
+        }
+        
+        dayGroups[day].push(user);
+      });
+      
+      // Generate HTML with responsive wrapper
+      let html = `
+        <h2 class="dgsh-admin-section-title">First Scan Statistics</h2>
+        <div class="dgsh-admin-first-scans-summary">
+          <p>Total users with scan data: ${userFirstScans.length}</p>
+          <p>First user scanned: ${new Date(userFirstScans[0].firstScanTime).toLocaleString()}</p>
+          <p>Most recent first scan: ${new Date(userFirstScans[userFirstScans.length - 1].firstScanTime).toLocaleString()}</p>
+        </div>
+        <h3>First Scans by Day</h3>
+        <div class="dgsh-admin-table-container">
+          <table class="dgsh-admin-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>New Users</th>
+              </tr>
+            </thead>
+            <tbody>
+      `;
+      
+      // Add rows for each day
+      Object.entries(dayGroups).sort().forEach(([day, users]) => {
+        const formattedDate = new Date(day).toLocaleDateString();
+        html += `
+          <tr>
+            <td>${formattedDate}</td>
+            <td>${users.length}</td>
+          </tr>
+        `;
+      });
+      
+      html += `
+            </tbody>
+          </table>
+        </div>
+      `;
+      
+      firstScanStats.innerHTML = html;
+      
+    } catch (error) {
+      console.error("Error loading first scan statistics:", error);
+      firstScanStats.innerHTML = `
+        <div class="dgsh-admin-error">
+          <p>Error loading first scan statistics: ${error.message}</p>
+        </div>
+      `;
+      firstScanStats.appendChild(addRetryButton(statSections[3]));
+    }
+  }
+  
+  // Load all statistics sections
+  function loadAllStats() {
+    // Update refresh timestamp
+    updateLastRefresh();
+    
+    // Load each section if it exists
+    foundSections.forEach(section => {
+      if (section.element && section.loadFunc) {
+        section.loadFunc();
+      }
+    });
+  }
+  
+  // Initialize by loading all stats
+  console.log("Starting to load all dashboard statistics...");
+  loadAllStats();
+});
+</script>
+
+{% schema %}
+{
+  "name": "Admin Dashboard",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_auth_form",
+      "label": "Show Authentication Form",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_statistics",
+      "label": "Show Statistics Sections",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_card_stats",
+      "label": "Show Card Statistics",
+      "default": true
+    }
+  ]
+}
+{% endschema %}
+
+

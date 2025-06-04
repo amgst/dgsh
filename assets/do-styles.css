@@ -1,0 +1,307 @@
+ 
+:root {
+    --buttons-radius-outset: 30px;
+}
+
+.do-container{ max-width: 1400px; margin: 0 auto;}
+.btn-doomlings {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    display: inline-block;
+    padding: 18px 40px;
+    text-align: center;
+    text-decoration: none;  
+    border-radius: 50px;
+    font-size: 26px;
+    text-transform: uppercase;
+    transition: all 0.3s ease; 
+    background-image: linear-gradient(to right, #18C94B, #01b234);    
+    color: #fff; 
+}
+.btn-doomlings:hover, a.btn-doomlings:hover  {     
+    background-image: linear-gradient(to right, #01b234, #18C94B);      
+    color: #fff;
+} 
+.do-btn {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+    display: inline-block;
+    padding: 12px 30px;
+    text-align: center;
+    text-decoration: none; 
+    border-radius: 50px;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: all 0.3s ease; 
+    background-image: linear-gradient(to right, #18C94B, #01b234);    
+    color: #fff; 
+}
+.do-btn:hover {     
+    background-image: linear-gradient(to right, #01b234, #18C94B);      
+    color: #fff;
+} 
+@media screen and (max-width: 750px) {
+   .section_title h2 { letter-spacing:1px; }
+    .do-btn {
+        padding: 12px 30px;
+        border-radius: 50px;
+        font-size: 20px;
+    }
+}
+
+.da-hero-links{ text-align:center; } 
+
+@media screen and (min-width: 750px) {
+   .section_title h2 {font-size: 60px;}
+}
+@media screen and (max-width: 750px) {
+    .qty-wrapper {display: flex;justify-content: center;}
+    .shoppay-description { margin-bottom:-30px; }
+} 
+
+.shoppay-description {margin-bottom: -20px;} 
+
+
+/*https://doomlings.com/pages/imaginary-ends*/
+.btn-linked, .btn-blue, .btn-coming {
+    display: inline-block;
+    font-family: "Lato", sans-serif; 
+    font-weight: 900;
+    text-transform: uppercase;   
+    color: #fff;      
+    line-height: 1.2;
+    text-align: center;
+    padding: 15px 30px;
+    text-decoration: none; 
+    border-radius: 50px;
+    transition: background 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-linked {
+    background: linear-gradient(to right, #ff3d86, #d82a6f);
+}
+.btn-coming {background: linear-gradient(to right, #de7a04, #ff9b25);}
+.btn-coming:hover {background: linear-gradient(to right, #ff9b25, #de7a04);}
+
+.btn-linked:hover,.btn-blue:hover {color: white;}
+.btn-linked:hover {
+    background: linear-gradient(to right, #d82a6f, #ff3d86);
+}
+
+
+.desktop-only {
+    display: none;
+}
+
+.mobile-only {
+    display: block;
+}
+
+@media (min-width: 769px) {
+    .desktop-only {
+        display: block;
+    }
+
+    .mobile-only {
+        display: none;
+    }
+}
+
+.section-title-image h2 {    
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center; 
+    margin-bottom: 40px; 
+}
+
+@media (max-width:768px){
+.section-title-image h2 { 
+    font-size:32px;
+    margin-bottom: 20px; 
+ }
+}
+
+
+/*holiday-gift-guide for navbar*/
+.nav.mobile-site-nav li.mobile-site-nav__item:nth-child(5) {  }
+.small-dropdown__item { background-image:none; }
+.imaginary-ends-nav, .holiday-gift-guide-nav {
+    background-image: url('https://cdn.shopify.com/s/files/1/0554/6190/4593/files/nav-swirlies.png?v=1741349685'); background-size: 109%;
+    background-repeat: no-repeat;
+    background-position: top center;}
+    
+.mobile-site-nav__menu li { background-image:none !important; }    
+@media (max-width:768px){
+ .nav.mobile-site-nav li.mobile-site-nav__item:nth-child(5) {background-size: 54%;
+    background-repeat: no-repeat;
+    background-position: -10px;}
+}
+@media only screen and (max-width: 939.98px) {
+    .header-navigation .navigation__container { background-color:#3f117d; background-image:none; }
+} 
+/*/Rainbow background for navbar*/
+
+
+.hide-content {
+  display: none;
+}
+
+
+/*https://doomlings.com/pages/kickstarter-backer-early-access*/
+#password-prompt {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 0;
+}
+
+main { z-index: unset !important;}
+
+/*Target button styles*/
+.target-button-wrapper  {
+   background-color: #cc0027;              
+   padding: 12px 20px;
+   border-radius: 30px;
+   border: none;
+   display: flex;
+   cursor: pointer;
+   min-width: 340px;
+    width:100%;
+   justify-content: center;
+   align-items: center;
+   text-transform: uppercase;
+}
+.target-button-wrapper .target-button{ display:flex; color: white;font-family: Lato, sans-serif;
+   font-size: 24px;
+   font-weight: bold;
+   text-decoration: none;}
+.target-button-wrapper:hover {
+  background-color: #990000;
+}
+.target-button-wrapper a.target-button img { height: 24px;}
+.target-button-wrapper .target-button img { margin-left: 8px;} 
+
+
+@media screen and (max-width: 767px) {
+    form#filters {
+        position: relative;z-index: 1001;
+    }
+}
+.header-content { z-index: 1009; }  
+
+/*Custom icon: Product page icons*/
+.product-icons-container {position: absolute;z-index: 1;display: flex;gap: 5px; flex-wrap:wrap; max-height: 400px; top: 15px; left: 15px;}
+.product-icons-column {flex-direction: column;}
+.product-icons-row {flex-direction: row;}  
+.product-icons-top-left {top: 10px;left: 10px;}
+.product-icons-top-right {top: 10px;right: 10px;}
+.product-icons-container .product-icon {height: auto;}
+@media ( max-width:768px){
+    .product-icons-container {top: 10px; left: 0;}
+    .product-icons-top-left {top: 36px;left: 29px;}
+    .product-icons-top-right {top: 36px;right: 29px;}
+}
+
+/*Gift packages border style on home page*/
+a.product-image{
+min-height: 267px;display: block; text-align: center;
+}
+  
+/* Common styles for both headings */
+.section_title h2,
+#insta-feed h2 {
+  text-align: center;
+  font-family: Anton, Regular;
+  text-transform: uppercase;
+  font-size: 42px;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  color: #230a51;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/*@media ( min-width:768px){
+    .section_title h2, #insta-feed h2 { font-size: 34px;} 
+}*/
+@media screen and (min-width: 750px) {
+    .section_title h2, #insta-feed h2 {
+        font-size: 60px;
+    }
+}
+
+
+
+/* Apple/Safari specific fix for default view */
+@supports (-webkit-text-size-adjust: none) and (not (-ms-ime-align: auto)) and (not (-moz-appearance: none)) {
+  .section_title h2,
+  #insta-feed h2 {
+    letter-spacing: 1.5px;
+  }
+}
+
+/* Media query for larger screens (Instagram feed) */
+@media screen and (min-width: 750px) {
+  #insta-feed h2 {
+    font-size: 60px;
+    letter-spacing: 1px;
+  }
+
+  /* Apple/Safari specific fix for desktop */
+  @supports (-webkit-text-size-adjust: none) and (not (-ms-ime-align: auto)) and (not (-moz-appearance: none)) {
+    #insta-feed h2 {
+      letter-spacing: 0.75px;
+    }
+  }
+}
+
+/* Media query for smaller screens (section title) */
+@media screen and (max-width: 750px) {
+  .section_title h2 {
+    letter-spacing: 1px;
+  }
+  
+  /* Apple/Safari specific fix for mobile */
+  @supports (-webkit-text-size-adjust: none) and (not (-ms-ime-align: auto)) and (not (-moz-appearance: none)) {
+    .section_title h2 {
+      letter-spacing: 0.75px;
+    }
+  }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .very-large-row-under{ margin-bottom:0; }
+}
+
+.yotpo-base-layout { width:100% !important; }  
+.yotpo-bold-layout .yotpo-head { min-height:45px !important }
+.yotpo-review-bold-title  { font-size:24px !important; }
+.yotpo-display-s .yotpo-head { margin-top:0 !important; }
+.yotpo-display-s .yotpo-head .yotpo-headline { margin-top:0 !important; }
+@media (max-width: 767px) {
+.div.prod-desc-mob-da { margin:0 !important }
+}
+
+
+div.cbb-also-bought-container{ max-width:1400px; }
+
+
+iframe[src*="doubleclick.net"],
+#cboxOverlay,
+#colorbox,
+#cboxWrapper {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+
+
+{% if template.name == "loe-gold-packs" %}
+    .section-title-rainbow {
+        background-size: cover !important;
+        background-position: center top !important;
+    } 
+{% endif %}
+
+

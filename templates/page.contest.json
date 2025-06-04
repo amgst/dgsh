@@ -1,0 +1,420 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_title": true,
+        "title_alignment": "left"
+      }
+    },
+    "plush_hero_eXMEqH": {
+      "type": "plush-hero",
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/OverlushFlashSale_Banner_Desktop.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/OverlushFlashSale_Banner_Mobile.jpg",
+        "desk-hero-alt": "Describe the background image",
+        "button_link": ""
+      }
+    },
+    "packages_NGmRi8": {
+      "type": "packages",
+      "settings": {
+        "section_title": "PUMPKIN CONTEST 2023",
+        "padding_top": 52,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_qaWTaJ": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Adrenalized_JOHNATHONAO_O.png",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "1st Place",
+        "text": "<p>Adrenalized by @johnathanonao<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    },
+    "image_with_text_JXBDwf": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/4_horseman_wallflower_by_lys.png",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "2nd Place",
+        "text": "<p>The Four Horseman by @wallflower_by_lys<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    },
+    "image_with_text_LzzxFF": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Binary_by_Castis_Kunststoffschmiede.png",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "3rd Place",
+        "text": "<p>Binary by @castis_kunststoffschmiede<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    },
+    "image_with_text_AmVP8t": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Eyestalks_by_LizardJudd.png",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "Honorable Mention",
+        "text": "<p>Eyestalks by @lizardjudd<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    },
+    "image_with_text_4pY4YC": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Nocturnal_by_jessie_lykins97.png",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "Honorable Mention",
+        "text": "<p>Nocturnal by @jessie_lykins97<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    },
+    "packages_i9A6c8": {
+      "type": "packages",
+      "settings": {
+        "section_title": "YUM YUM CONTEST 2023",
+        "padding_top": 52,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_b3J7MK": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Untitled-1_6fd5327f-e261-450d-8022-030d1e9353e8.gif",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "1st Place",
+        "text": "<p>Comet Showers Cake Pops by Dream Colored Patissiere<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    },
+    "image_with_text_Af4kaB": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/2ndplace_Glimmering_Gardens_by_Klichtle_2_d9d85d73-6e8c-4409-8dde-2ab4bf3993ec.jpg",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "2nd Place",
+        "text": "<p>Glimmering Gardens Cake by Klitchtle<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    },
+    "image_with_text_RQTDNX": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/3rdplace_LilyPad_KatrinaMcgrady2.jpg",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "3rd Place",
+        "text": "<p>Lilypad Cake by Katrina McGrady<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    },
+    "image_with_text_RfDFME": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/birthoflife_Makaylahflournoy.png",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "Honorable Mention",
+        "text": "<p>The Birth of Life Cake by Makaylah Flournoy<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    },
+    "image_with_text_YfeqBC": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Nocturnal_Kimmit79.jpg",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "Honorable Mention",
+        "text": "<p>Nocturnal Cake by Kimmit79<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    },
+    "image_with_text_hBw7aw": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Squirt_nielsvheckandbrother.png",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "Honorable Mention",
+        "text": "<p>Squirt Cake by Nielsvheck and Brother<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    },
+    "packages_7R48PY": {
+      "type": "packages",
+      "settings": {
+        "section_title": "YUM YUM CONTEST 2022",
+        "padding_top": 52,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_Gj6VEH": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/SlightlyAbove.jpg",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "1st Place",
+        "text": "<p>Apex Predator Cake by Katrina McGrady<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    },
+    "image_with_text_jKkFJp": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/CakePops_JordanCox_d2ba1af4-0ab3-4359-8abe-201bdcda34bc.jpg",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "Honorable Mention",
+        "text": "<p>Tentacles, Antlers, Symbiosis, and Effgial Cake Pops by Jordan Cox<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    },
+    "image_with_text_X8iqtH": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Cookies_AshleyNicoleSauer_87cd4240-19cc-443d-a2fd-f95a03f5655f.jpg",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "Honorable Mention",
+        "text": "<p>Flatulence & Viral Cookies by Ashley Nicole Sauer<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    },
+    "image_with_text_nrFQp9": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Cookies_SabrinaEshbaugh.jpg",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "Honorable Mention",
+        "text": "<p>Kidney Cookies by Sabrina Eshbaugh<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    },
+    "image_with_text_PkacX9": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/PrepperPie_AshleyNicoleSauer.jpg",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "Honorable Mention",
+        "text": "<p>Prepper Pie by Ashley Nicole Sauer<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    },
+    "image_with_text_dmynVp": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/SwarmCard_JordanHoffman.jpg",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "Honorable Mention",
+        "text": "<p>Swarm Dessert by Jordan Hoffman<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    },
+    "packages_TDHPdp": {
+      "type": "packages",
+      "settings": {
+        "section_title": "COSTUME CONTEST 2021",
+        "padding_top": 52,
+        "padding_bottom": 0
+      }
+    },
+    "image_with_text_jVnUJD": {
+      "type": "image-with-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/250373646_10161195959596978_7950298739719953230_n_a8bc0444-67e6-48b9-baca-cb03b3bfa007.jpg",
+        "image_link": "",
+        "image_size": "0",
+        "image_position": "left",
+        "title": "1st Place",
+        "text": "<p>Claire Hack as Random Fertilization<\/p>",
+        "button_label": "",
+        "button_link": "",
+        "url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": true,
+        "text_alignment": "center",
+        "color_bg": "#50248f",
+        "color_text": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "plush_hero_eXMEqH",
+    "packages_NGmRi8",
+    "image_with_text_qaWTaJ",
+    "image_with_text_JXBDwf",
+    "image_with_text_LzzxFF",
+    "image_with_text_AmVP8t",
+    "image_with_text_4pY4YC",
+    "packages_i9A6c8",
+    "image_with_text_b3J7MK",
+    "image_with_text_Af4kaB",
+    "image_with_text_RQTDNX",
+    "image_with_text_RfDFME",
+    "image_with_text_YfeqBC",
+    "image_with_text_hBw7aw",
+    "packages_7R48PY",
+    "image_with_text_Gj6VEH",
+    "image_with_text_jKkFJp",
+    "image_with_text_X8iqtH",
+    "image_with_text_nrFQp9",
+    "image_with_text_PkacX9",
+    "image_with_text_dmynVp",
+    "packages_TDHPdp",
+    "image_with_text_jVnUJD"
+  ]
+}

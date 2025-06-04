@@ -1,0 +1,413 @@
+
+
+{%- render 'section-style' -%}
+
+	<div class="container" id="section-{{ section.id }}">
+	  <div class="do-container">
+	  	   {%- if section.settings.section_title != '' -%}
+				  	<h2 class="section-title">{{ section.settings.section_title }}</h2>
+				  {%- endif -%}
+	    <div class="row custom-flex-row">
+	            {%- for block in section.blocks -%}
+	            {%- case block.type -%}
+	            {%- when 'winner' -%}
+	            <div {{ block.shopify_attributes }} class="custom-flex-item">
+	              <div class="feature-item">                
+	            	<div class="feature-image" style="{%- if block.settings.winner_image -%}background-image: url('{{ block.settings.winner_image | img_url: 'master' }}');{%- else -%}background-image: url('https://via.placeholder.com/386x386');{% endif -%}"></div>                
+	                <div class="feature-icon">
+	                  {%- case block.settings.icon_image_select -%}
+	                  {%- when 'first_medal' -%}
+	                  <img src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/First_Medal.png?v=1712168499"  alt="First Medal">
+	                  {%- when 'second_medal' -%}
+	                  <img src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Second_Medal.png?v=1712168499"  alt="Second Medal">
+	                  {%- when 'third_medal' -%}
+	                  <img src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Third_Medal.png?v=1712168499"  alt="Third Medal">
+	                  {%- when 'honorable_medal' -%}
+	                  <img src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Honorable_Medal.png?v=1712168499"  alt="Honorable Medal">
+	                  {%- endcase -%}
+	                </div>
+
+	                <div class="feature-info">
+	                  {%- if block.settings.service_title != '' -%}
+	                  <h4>{{ block.settings.service_title }}</h4>
+	                  {%- endif -%}
+	                  {%- if block.settings.service_content != '' -%}
+	                  {{ block.settings.service_content }}
+	                  {%- endif -%}
+	                </div>
+	              </div>
+	            </div>
+	            {%- endcase -%}
+	            {%- endfor -%}                  
+	      </div>
+	    </div>
+	  </div>
+
+
+{% style %}	
+	{%- if section.settings.section_color_enable -%}
+	  #section-{{ section.id }} h2.section-title {color: {{ section.settings.section_color }};}	
+	  #section-{{ section.id }} .feature-info h4 { color: {{ section.settings.title_color }};}
+	  #section-{{ section.id }} .feature-info p {color: {{ section.settings.content_color }};}
+	{%- endif -%}
+
+	{% if  template contains 'contests2' %}
+		.breadcrumbs-container { display:none; }
+	{% endif %}
+
+	#section-{{ section.id }} h2.section-title {text-transform: uppercase; text-align: center; margin-top: 20px; margin-bottom: 40px;letter-spacing: 2px;}
+	#section-{{ section.id }} .feature-image {
+	  width: 100%;
+	  padding-top: 100%; 
+	  background-size: cover; 
+	  background-position: center;
+	  background-repeat: no-repeat; 
+	  border-radius: {{ section.settings.image_border_radius }}px; 
+	  overflow: hidden;
+	}
+/*	#section-{{ section.id }} { margin-bottom:100px; }*/
+	#section-{{ section.id }} h2{font-family: Anton, Regular; font-size: 32px;font-weight: 900; margin-bottom: 40px;}
+	#section-{{ section.id }} h4{ font-family: Lato, sans-serif;font-weight: 900; font-size:22px; margin-top:4px; }
+	#section-{{ section.id }} p{ font-family: Lato, sans-serif;font-weight: 500; font-size:22px; }
+	#section-{{ section.id }} .custom-flex-row {
+	  display: flex;
+	  justify-content:center;
+	  flex-wrap: wrap;
+	  margin-right: -15px;
+	  margin-left: -15px;
+	}
+
+	#section-{{ section.id }} .custom-flex-item {
+	  flex: 0 0 100%; 
+	  max-width: 100%; 
+	  padding-right: 15px;
+	  padding-left: 15px;
+	  box-sizing: border-box;
+	}
+
+	#section-{{ section.id }} .feature-icon {position: absolute;top: -23px;left: -15px;}
+	#section-{{ section.id }} .feature-icon img { width:100px; }
+	#section-{{ section.id }} .feature-item {position: relative; margin-bottom: 50px;}
+	#section-{{ section.id }} .feature-info { text-align:center; margin-top:10px; }
+	#section-{{ section.id }} .feature-info p { margin:0; }
+
+	/* Tablet and up */
+	@media (min-width: 768px) {
+	  #section-{{ section.id }} .custom-flex-item {flex: 0 0 50%; max-width: 50%; }
+		#section-{{ section.id }} .feature-icon {position: absolute;top: -23px;left: -23px;}
+		#section-{{ section.id }} .feature-icon img { width:120px; }  
+	}
+
+	/* Desktop and up */
+	@media (min-width: 992px) {
+	  #section-{{ section.id }} .custom-flex-item {flex: 0 0 33.33333%;  max-width: 33.33333%; }
+	  #section-{{ section.id }} h2{font-size: 52px;}
+	}
+
+{% endstyle %}
+
+
+ 
+{% schema %}
+  { 
+    "name": "Contests",
+    "disabled_on": {
+      "groups": ["header"]
+    },
+    "settings": [
+    {
+		  "type": "header",
+          "content": "Section Heading"
+        },
+		{
+          "type": "textarea",
+          "id": "section_title",
+          "label": "Section Title",
+          "default": "Pumpkin Contest 2023"
+      	},
+			{
+			  "type": "range",
+			  "id": "image_border_radius",
+			  "min": 0,
+			  "max": 100,
+			  "step": 2,
+			  "label": "Image Border Radius",
+			  "unit": "px",
+			  "default": 20
+			},      	      	
+        {
+          "type": "header",
+          "content": "Color"
+        }, 
+        {
+          "type": "checkbox",
+          "id": "section_color_enable",
+          "label": "Color Enable",
+          "default": true,
+          "info": "Enable the field for color customization"
+        },
+        {
+          "type": "color",
+          "id": "section_color",
+          "label": "Section Heading Color",
+          "default": "#28104b"
+        },        
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color",
+          "default": "#28104b"
+        },
+        {
+          "type": "color",
+          "id": "content_color",
+          "label": "Content Color",
+          "default": "#28104b"
+        }
+	],
+	"blocks":[
+          {
+            "type": "winner",
+            "name": "Winner",
+			"limit": 50,
+            "settings": [
+              {  
+                "type": "header",
+                "content": "Featured Image"
+              },
+              {
+                "type": "image_picker",
+                "id": "winner_image",
+                "label": "Image"
+              },
+              {
+                "type": "select",
+                "id": "icon_image_select",
+                "label": "Select Medal",
+                "options":[
+                      {
+                          "label": "First Medal",
+                          "value": "first_medal"
+                      },
+                      {
+                          "label": "Second Medal",
+                          "value": "second_medal"
+                      },
+                      {
+                          "label": "Third Medal",
+                          "value": "third_medal"
+                      },
+                      {
+                          "label": "Honorable Medal",
+                          "value": "honorable_medal"
+                      }
+                  ],
+                  "default": "first_medal",
+                  "info": "Medal icon"
+              },
+              {
+                "type": "header",
+                "content": "Content"
+              },
+              {
+                "type": "text",
+                "id": "service_title",
+                "label": "Title",
+                "default": "Adrenalized"
+              },
+              {
+                "type": "richtext",
+                "id": "service_content",
+                "label": "Content",
+                "default": "<p>by @jonathonao_o</p>"
+              }
+            ]
+         },
+	   {
+          "type": "section_padding",
+          "name": "Section Padding",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_padding_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Padding Bottom",
+			  "unit": "px",
+			  "default": 0
+			}
+          ]
+       },
+	   {
+          "type": "section_margin",
+          "name": "Section Margin",
+		  "limit": 1,
+          "settings": [
+            {
+			  "type": "header",
+			  "content": "Large/Desktop Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Tablet Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_md",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "header",
+			  "content": "Mobile Device"
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_top_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Top",
+			  "unit": "px",
+			  "default": 0
+			},
+			{
+			  "type": "range",
+			  "id": "section_margin_bottom_xs",
+			  "min": 0,
+			  "max": 150,
+			  "step": 5,
+			  "label": "Margin Bottom",
+			  "unit": "px",
+			  "default": 0
+			} 
+          ]
+       }
+	],
+	"presets": [
+		{
+		  "name": "Contests",
+		  "category": "Contests",
+		  "blocks":[
+				{
+					"type": "winner"
+				},
+				{
+					"type": "winner"
+				},
+				{
+					"type": "winner"
+				},
+				{
+					"type": "winner"
+				},
+				{
+					"type": "winner"
+				},
+				{
+					"type": "winner"
+				}
+			]
+		}
+	]
+  }
+{% endschema %}
+

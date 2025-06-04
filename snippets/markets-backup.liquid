@@ -1,0 +1,75 @@
+
+                   <!-- Markets script , that we used for the Target Walmart buttons this file is onlyl a backup we used this code in the main-product.liquid -->
+
+                  <!-- Geolocation Script using a free IP geolocation service -->    
+                  <script>
+                    fetch('https://ipapi.co/json/')
+                      .then(response => response.json())
+                      .then(data => {
+                        if(data.country_code === "US") {
+                          // If the visitor is in the US, display the content
+                          document.getElementById('geo-conditional-content').style.display = 'block';
+                        }
+                      })
+                      .catch(error => console.log('Error:', error));
+                  </script>
+                  <!-- Conditional Content Wrapper, hidden by default --> 
+                  <div id="geo-conditional-content" style="display:none;">  
+
+              <!--  {% if product.handle == 'doomlings-deluxe-bundle' %}
+                    {{ 'markets.css' | asset_url | stylesheet_tag }}                   
+                      {% assign display_product = all_products['a-value'] %}
+                      <div class="markets-wrapper">
+                        <div class="btn-amazon-wrapper">
+                          <a href="https://www.amazon.com/Doomlings-Gold-Card-Bundle-Suitable/dp/B0BDSST2VN" class="btn btn-amazon" target="_blank">
+                            <span class="before">Buy at</span> 
+                            <img src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Amazon_W.png?v=1708703203"> 
+                            <span class="after">{{ display_product.price | money_without_trailing_zeros }}</span>
+                          </a> 
+                        </div>
+                        </div>
+                      {% endif %} -->
+                      {% if product.handle == 'classic-doomlings-game' %}
+                      {{ 'markets-classic.css' | asset_url | stylesheet_tag }} 
+                      <div class="markets-wrapper">
+                        <div class="btn-amazon-wrapper markets-wrapper-wallmart">  
+                          <a href="https://www.walmart.com/ip/Doomlings-Classic-Card-Game-Lightning-Edition-with-1-Mystery-Holofoil/447465712" class="btn btn-walmart" target="_blank">
+                            <span class="before">Buy at</span> 
+                            <img src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Market-Walmart-White.png?v=1709142771">                           
+                          </a>
+                        </div>
+                        <div class="btn-amazon-wrapper markets-wrapper-target">
+                          <a href="https://www.target.com/p/doomlings-card-game/-/A-85008809" class="btn btn-target" target="_blank">
+                            <span class="before">Buy at</span> 
+                            <img src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Market-Target-White.png?v=1709142771">                           
+                          </a>
+                        </div>                      
+                      </div>  
+                       
+                      {% endif %}     
+
+                      {% if product.handle == 'doomlings-deluxe-upgrade-pack' %} 
+                      {{ 'markets.css' | asset_url | stylesheet_tag }}
+                      <div class="markets-wrapper markets-wrapper-target2">                  
+                        <div class="btn-amazon-wrapper">
+                          <a href="https://www.target.com/p/doomlings-upgrade-box-game/-/A-87869075" class="btn btn-target" target="_blank">
+                            <span class="before">Buy at</span> 
+                            <img src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Market-Target-White.png?v=1709142771"> 
+                          </a>
+                        </div>
+                        </div>
+                      {% endif %}       
+
+                      {% if product.handle == 'doomlings-overlush-mystery-expansion-4-pack' %}  
+                      {{ 'markets.css' | asset_url | stylesheet_tag }}
+                      <div class="markets-wrapper markets-wrapper-pack">                 
+                        <div class="btn-amazon-wrapper">
+                          <a href="https://www.target.com/p/doomlings-overlush-mystery-expansion-game/-/A-87869074" class="btn btn-target" target="_blank">
+                            <span class="before">Buy at</span> 
+                            <img src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/Market-Target-White.png?v=1709142771"> 
+                          </a>
+                        </div>
+                        </div>
+                      {% endif %}  
+                    </div>                  
+                     <!-- /Markets -->  

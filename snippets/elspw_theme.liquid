@@ -1,0 +1,44 @@
+<script>
+if(typeof Elspw !== 'undefined'){
+  Elspw.onConfigLoaded = function(config){
+    config.set('checkout', '#rebuy-cart .rebuy-cart__checkout-button');
+    $('body').on('click','.rebuy-cart__flyout-item-quantity-widget-button, .rebuy-cart__flyout-item-remove, .rebuy-product-actions .rebuy-button, .rebuy-cart__flyout-discount-form .rebuy-button', function(){
+      setTimeout(function(){
+        if(typeof Elspw !== 'undefined' && typeof Elspw.app !== 'undefined' && typeof Elspw.app.updateCart === 'function'){
+          $.get('/cart?view=elspw-json',function(data){
+
+            function parseInfoByPageHtml(id, data){
+              var html = document.createElement('div');
+              html.innerHTML = data;
+              var dataScript = html.querySelector(id);
+              return dataScript ? JSON.parse(dataScript.innerHTML) : null
+            }
+            var cart = parseInfoByPageHtml('#elspw-cart', data);
+            cart.line_items = cart.items;
+            Elspw.app.updateCart(cart);
+          });
+        }
+      },500);
+    });
+  }
+  Elspw.filterAllowedAlerts = function(allowedAlerts, product){
+    return allowedAlerts.filter(function(alert){
+      return false;
+    });
+  }  
+  Elspw.filterAllowedCartAlerts = function(allowedAlerts){
+    const currentCurrency = {{cart.currency.iso_code | json}};
+    return allowedAlerts.filter(function(alert){
+      const alertShortCode = alert.get('name').slice(alert.get('name').indexOf('[')+1,alert.get('name').indexOf(']'));
+      let check = true;
+      if(alertShortCode){
+        const alertCurrency = alertShortCode.split('=')[0];
+        const alertTotal = +alertShortCode.split('=')[1];
+        console.log(alertCurrency.toLowerCase(),currentCurrency.toLowerCase(), alertCurrency.toLowerCase() === currentCurrency.toLowerCase() && (Elspw.app.cart.c.total_price / 100) > alertTotal, alertTotal, (Elspw.app.cart.c.total_price / 100));
+        check = alertCurrency.toLowerCase() === currentCurrency.toLowerCase() && (Elspw.app.cart.c.total_price / 100) > alertTotal;
+      }
+      return check;
+    });
+  }
+}
+</script>

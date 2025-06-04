@@ -1,0 +1,205 @@
+<!-- Newsletter signup form for VIP redemption page with completely unique identifiers -->
+<div class="overlush_vip_2023_subscribe_container">
+  <!-- Hidden iframe with unique ID -->
+  <iframe name="overlush_vip_2023_submit_frame" id="overlush_vip_2023_submit_frame" style="display:none;"></iframe>
+  
+  <!-- Form with unique ID -->
+  <form id="overlush_vip_2023_subscribe_form" class="overlush_vip_2023_subscribe__form" action="/contact#contact_form" method="post" target="overlush_vip_2023_submit_frame">
+    <input type="hidden" name="form_type" value="customer">
+    <input type="hidden" name="utf8" value="✓">
+    <input type="hidden" name="contact[tags]" value="prospect,newsletter">
+    
+    <div class="overlush_vip_2023_subscribe__error_wrapper" style="display: none;">
+      <p class="overlush_vip_2023_subscribe__error_text">Please enter a valid email address</p>
+    </div>
+    
+    <div class="overlush_vip_2023_subscribe__success_message" style="display: none;">
+      <h4>Thank you for subscribing!</h4>
+    </div>
+    
+    <div class="overlush_vip_2023_subscribe__form_row">
+      <div class="overlush_vip_2023_subscribe__input_cell">
+        <label class="overlush_vip_2023_subscribe__hidden_label" for="overlush_vip_2023_email_field">
+          Email address
+        </label>
+        <input 
+          type="email" 
+          required 
+          class="overlush_vip_2023_subscribe__email_field" 
+          value="" 
+          id="overlush_vip_2023_email_field" 
+          name="contact[email]"
+          placeholder="Your email address"
+        >
+      </div>
+      <button class="overlush_vip_2023_subscribe__submit_btn" type="submit">
+        Subscribe
+      </button>
+    </div>
+  </form>
+</div>
+
+<style>
+  /* Isolated styles with unique class names */
+  .overlush_vip_2023_subscribe_container {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .overlush_vip_2023_subscribe__form_row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .overlush_vip_2023_subscribe__input_cell {
+    flex-grow: 1;
+    position: relative;
+  }
+
+  .overlush_vip_2023_subscribe__hidden_label {
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+ 
+  .overlush_vip_2023_subscribe__email_field {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    border: 3px solid #6a0dad;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-align: left;
+    background: #e8ddf7;
+    color: #3e117c;
+  }
+
+  .overlush_vip_2023_subscribe__submit_btn {
+    background-color: #6a0dad;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold; box-shadow: none; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+  }
+
+  .overlush_vip_2023_subscribe__submit_btn:hover {
+    background-color: #50248f;
+    color: white;
+  }
+  
+  .overlush_vip_2023_subscribe__submit_btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .overlush_vip_2023_subscribe__error_wrapper {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #fff0f0;
+    color: #ff3b30;
+  }
+
+  .overlush_vip_2023_subscribe__success_message {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #f0fff0;
+    color: #00c853;
+  }
+
+  .overlush_vip_2023_subscribe__success_message h4 {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .overlush_vip_2023_subscribe__error_text {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  @media screen and (max-width: 749px) {
+    .overlush_vip_2023_subscribe__form_row {
+      flex-direction: column;
+    }
+    
+    .overlush_vip_2023_subscribe__submit_btn {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+</style>
+
+<script>
+/* Self-contained script with unique variable names and scoped functionality */
+(function() {
+  // Wait for DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', function() {
+    // Use unique variable names prefixed with overlushVip2023
+    const overlushVip2023Form = document.getElementById('overlush_vip_2023_subscribe_form');
+    const overlushVip2023EmailInput = document.getElementById('overlush_vip_2023_email_field');
+    const overlushVip2023SubmitButton = overlushVip2023Form.querySelector('.overlush_vip_2023_subscribe__submit_btn');
+    const overlushVip2023ErrorWrapper = overlushVip2023Form.querySelector('.overlush_vip_2023_subscribe__error_wrapper');
+    const overlushVip2023SuccessMessage = overlushVip2023Form.querySelector('.overlush_vip_2023_subscribe__success_message');
+    const overlushVip2023Iframe = document.getElementById('overlush_vip_2023_submit_frame');
+    
+    // Only add event listeners if all elements exist to prevent errors
+    if (overlushVip2023Form && overlushVip2023EmailInput && overlushVip2023SubmitButton && 
+        overlushVip2023ErrorWrapper && overlushVip2023SuccessMessage && overlushVip2023Iframe) {
+      
+      // Client-side validation
+      overlushVip2023Form.addEventListener('submit', function(e) {
+        // Basic validation
+        const email = overlushVip2023EmailInput.value.trim();
+        if (!email || !overlushVip2023IsValidEmail(email)) {
+          e.preventDefault(); // Stop form submission
+          overlushVip2023ErrorWrapper.style.display = 'block';
+          return false;
+        }
+        
+        // If valid, disable the button and show processing state
+        overlushVip2023SubmitButton.disabled = true;
+        overlushVip2023SubmitButton.textContent = 'Subscribing...';
+        
+        // Hide error if previously shown
+        overlushVip2023ErrorWrapper.style.display = 'none';
+        
+        // Let the form submit to the iframe
+        return true;
+      });
+      
+      // Handle iframe load event (form submission completed)
+      overlushVip2023Iframe.addEventListener('load', function() {
+        // Only respond if the form has been submitted (button is disabled)
+        if (overlushVip2023SubmitButton.disabled) {
+          // Show success message and hide form
+          overlushVip2023SuccessMessage.style.display = 'block';
+          overlushVip2023Form.querySelector('.overlush_vip_2023_subscribe__form_row').style.display = 'none';
+          
+          // Reset form
+          overlushVip2023EmailInput.value = '';
+          overlushVip2023SubmitButton.disabled = false;
+          overlushVip2023SubmitButton.textContent = 'Subscribe';
+        }
+      });
+    }
+    
+    // Helper function with unique name
+    function overlushVip2023IsValidEmail(email) {
+      const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+  });
+})(); // Immediately-invoked function expression (IIFE) to create a scope
+</script>

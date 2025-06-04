@@ -1,0 +1,770 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_title": true,
+        "title_alignment": "left"
+      }
+    },
+    "card_styles_JAqxaG": {
+      "type": "card-styles",
+      "settings": {
+        "h2_font_size": 48,
+        "h2_font_size_m": 25,
+        "h3_font_size": 26,
+        "h3_font_size_m": 19,
+        "p_font_size": 22,
+        "p_font_size_m": 20,
+        "button_font_size": 28,
+        "img_animation": 1120,
+        "main_color": "#230051",
+        "background_image": "shopify:\/\/shop_images\/swirlies_d44a3e47-f0d8-44c5-ba2e-2619f06d02c1.png"
+      }
+    },
+    "plush_hero_e4RaWd": {
+      "type": "plush-hero",
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/LOE_Hero_ComingSoon_Desktop_27c6e8ff-9f92-401d-8957-17c1606e57f1.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/LOE_Hero_ComingSoon_Mobile_0ba95d2f-7342-4699-ba8a-fde5a4a5f40d.jpg",
+        "desk-hero-alt": "doomlings legends of enderas - images of characters and the box - button: coming april 11",
+        "button_link": "shopify:\/\/products\/imaginary-ends"
+      }
+    },
+    "cards_title_Y3Hqke": {
+      "type": "cards-title",
+      "settings": {
+        "section_title": "<h2>\n<strong>BRAND NEW<\/strong> EXPANSION<\/h2>"
+      }
+    },
+    "plush_hero_Xta837": {
+      "type": "plush-hero",
+      "custom_css": [],
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/LOE_Discover_Desktop_74732c4a-8902-4b0b-8672-69b55279c84b.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/LOE_Discover_Mobile_52ba0ebe-6b3e-4486-af9f-9be0e87388be.jpg",
+        "desk-hero-alt": "Discover the Legends of Enderas",
+        "button_link": "shopify:\/\/products\/imaginary-ends"
+      }
+    },
+    "cards_carousel_XWCPw4": {
+      "type": "cards-carousel",
+      "blocks": {
+        "cards_kaeHqE": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/HollowBones.png"
+          }
+        },
+        "cards_7DDJVX": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Slumbering.png"
+          }
+        },
+        "cards_W9TN7X": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Gentle.png"
+          }
+        },
+        "cards_7zX6e6": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Sorcerer.png"
+          }
+        },
+        "cards_CT6hTF": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/SteamPowered.png"
+          }
+        },
+        "cards_aKfFPg": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/ThousandYearSlumber.png"
+          }
+        },
+        "cards_Y9R7Qd": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Incantor.png"
+          }
+        },
+        "cards_6xfcAb": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Animatronic.png"
+          }
+        },
+        "cards_U9FBxp": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Coda.png"
+          }
+        },
+        "cards_J9gQTB": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Kidney11.png"
+          }
+        },
+        "cards_j4gTa7": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/TitansCall.png"
+          }
+        },
+        "cards_9pJHJc": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Herbivore.png"
+          }
+        },
+        "cards_g9grAA": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/TheMaliforms.png"
+          }
+        },
+        "cards_UXUnqR": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Swarm8.png"
+          }
+        },
+        "cards_eY6nmM": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Modular.png"
+          }
+        },
+        "cards_EJqXxe": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Cursed.png"
+          }
+        },
+        "cards_qmxfyJ": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/ReturnoftheAncients.png"
+          }
+        },
+        "cards_NQnXmk": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Translator_235c193e-f5d5-4b02-97f2-a1299a8b88ad.png"
+          }
+        },
+        "cards_hHReDW": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Majestic.png"
+          }
+        },
+        "cards_HpYgTg": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Plastron.png"
+          }
+        },
+        "cards_7B3VaT": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/AgeofStability.png"
+          }
+        },
+        "cards_YU6g88": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Technomagik.png"
+          }
+        }
+      },
+      "block_order": [
+        "cards_kaeHqE",
+        "cards_7DDJVX",
+        "cards_W9TN7X",
+        "cards_7zX6e6",
+        "cards_CT6hTF",
+        "cards_aKfFPg",
+        "cards_Y9R7Qd",
+        "cards_6xfcAb",
+        "cards_U9FBxp",
+        "cards_J9gQTB",
+        "cards_j4gTa7",
+        "cards_9pJHJc",
+        "cards_g9grAA",
+        "cards_UXUnqR",
+        "cards_eY6nmM",
+        "cards_EJqXxe",
+        "cards_qmxfyJ",
+        "cards_NQnXmk",
+        "cards_hHReDW",
+        "cards_HpYgTg",
+        "cards_7B3VaT",
+        "cards_YU6g88"
+      ],
+      "custom_css": [
+        ".section-title-image h2 {margin-bottom: 10px;}"
+      ],
+      "settings": {
+        "padding_top": 80,
+        "padding_bottom": 8,
+        "page_style": "doomlings",
+        "section_title": "<h2>120 <strong>NEW<\/strong> CARDS<\/h2>",
+        "button_text": "See All New Cards",
+        "button_link": "shopify:\/\/pages\/compendium",
+        "btn_enable": true,
+        "button_style": "do-btn",
+        "arrow_color": "#230051",
+        "background_image": "shopify:\/\/shop_images\/swirlies2_9e81947d-c374-41a1-8e9c-8f88c60a123d.png"
+      }
+    },
+    "cards_multi_columns_6k8DDV": {
+      "type": "cards-multi-columns",
+      "blocks": {
+        "boxes_L38JE7": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/Carousel_Name_Mythlings_6456037f-48cb-41b6-a846-7f75c2e04220.png",
+            "box_title": "",
+            "box_link": "#mythlings",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_WjT8cy": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/Carousel_Name_Dinolings_34c079b3-7e73-401a-90a9-daa3a95f28a9.png",
+            "box_title": "",
+            "box_link": "#dinolings",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_NBwbFk": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/Carousel_Name_Techlings_8f832a19-cf4c-4bb2-bdc8-273b192e08d1.png",
+            "box_title": "",
+            "box_link": "#techlings",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_LCkWkr": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/Carousel_Name_Fuzelings_48e4cf14-3de8-4b9d-9d09-cd7927772e82.png",
+            "box_title": "",
+            "box_link": "#fuzelings",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_gknXPA": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/Carousel_Name_Treasures_930d7e6c-cbac-4ae3-9375-f5181b12c38a.png",
+            "box_title": "",
+            "box_link": "#treasures",
+            "open_in_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "boxes_L38JE7",
+        "boxes_WjT8cy",
+        "boxes_NBwbFk",
+        "boxes_LCkWkr",
+        "boxes_gknXPA"
+      ],
+      "settings": {
+        "padding_top": 12,
+        "padding_bottom": 28,
+        "section_title": "<h2>\n<strong>5 NEW<\/strong> DOOMLINGS SETS TO PLAY WITH<\/h2>",
+        "background_image": "shopify:\/\/shop_images\/bg-copy.jpg",
+        "img_size": 266,
+        "enable_hover_effect": false,
+        "hover_scale": 105,
+        "arrow_style": "custom",
+        "arrow_next": "shopify:\/\/shop_images\/arrow-r_ae854d19-afb5-489a-851b-f0ecf1789cb8.png",
+        "arrow_prev": "shopify:\/\/shop_images\/arrow-l_087f04ad-18e2-43cf-aa83-6cf8c33dbc7b.png",
+        "arrow_width": 23,
+        "arrow_height": 46,
+        "mobile_autoplay": true
+      }
+    },
+    "custom_liquid_pBnh4k": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br><br>"
+      }
+    },
+    "cards_multi_section_neRUgj": {
+      "type": "cards-multi-section",
+      "blocks": {
+        "cards_iB3cEp": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Treasures_Point1_66b33719-f6cb-465a-9504-e39ec9e02455.png",
+            "card_description": "The Treasures expansion adds a new level of strategy to Doomlings. Each round, draw a treasure card that gives you a <b>special ability.<\/b>"
+          }
+        },
+        "cards_ifK3MD": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Treasures_Point2_74070bf2-59dc-4e07-8ab7-c75a53f92130.png",
+            "card_description": "<b>Rush To Battle:<\/b> Play a card before your turn even starts."
+          }
+        },
+        "cards_4f7nGk": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Treasures_Point3_d6d50d7f-9260-462c-97b5-f1a70dc63cbc.png",
+            "card_description": "<b>Gene Mutation:<\/b> Upgrade a trait with a card in your hand."
+          }
+        },
+        "cards_Xp43rf": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Treasures_Point4_98ea96e8-da3f-4e2b-9a26-4d541f45279c.png",
+            "card_description": "<b>Echo Your Plays:<\/b> Unlock new combos you've always dreamed of. Play multiple cards for ultimate chaining!"
+          }
+        },
+        "cards_ezHW4Y": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Treasures_Point5_ff8349a0-9e43-4cbc-97bc-bfc9425087b4.png",
+            "card_description": "<b>Adapt To Action:<\/b> Swap one trait’s action for another."
+          }
+        },
+        "cards_8fXRqp": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Treasures_Point6_af3c8411-fb46-4a2a-9704-5bbb1e84cc57.png",
+            "card_description": "<b>Cloak From Danger:<\/b>  Defend your Doomlings from unwanted effects."
+          }
+        }
+      },
+      "block_order": [
+        "cards_iB3cEp",
+        "cards_ifK3MD",
+        "cards_4f7nGk",
+        "cards_Xp43rf",
+        "cards_ezHW4Y",
+        "cards_8fXRqp"
+      ],
+      "custom_css": [],
+      "settings": {
+        "card_id": "treasures",
+        "page_style": "legends",
+        "section_title": "",
+        "sub_section_title": "AWAKEN YOUR DOOMLINGS' TRUE POTENTIAL",
+        "intro_height": true,
+        "intro_height_custom": "600",
+        "back_desk": "shopify:\/\/shop_images\/Titles_Desktop_Treasures2_d6f5529a-5f3c-4b36-9c3f-296075bae658.jpg",
+        "back_mob": "shopify:\/\/shop_images\/Titles_Mobile_Treasures2.jpg",
+        "back_color": "",
+        "image_1": "shopify:\/\/shop_images\/Treasures_1_f6e15f43-aa5d-473a-91e2-0ea34e371e7d.png",
+        "image_2": "shopify:\/\/shop_images\/Treasures_2_1454f57a-cd4c-4720-a4db-9397903aa643.png",
+        "image_3": "shopify:\/\/shop_images\/Treasures_3_eb910504-e356-4c50-8ba2-ea50ff853c25.png",
+        "full_width": true,
+        "btn_enable": true,
+        "button_custom": false,
+        "button_custom_color": "#5d68bf",
+        "button_custom_back_color": "",
+        "button_custom_hover_color": "",
+        "button_text": "GET LEGENDS OF ENDERAS",
+        "button_link": "shopify:\/\/products\/imaginary-ends"
+      }
+    },
+    "video_two_K9TH94": {
+      "type": "video-two",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "tiktok": false,
+        "tiktok_id": "7133647168761597227",
+        "video_width": 800,
+        "section_title": "",
+        "video_url": "https:\/\/youtu.be\/pUb6-KryCNY?si=cov9N1dzxpzOW-hD",
+        "overlay_opacity": 10,
+        "button_text": "",
+        "button_link": "",
+        "image_position": "center center",
+        "mobile_play_mode": "popup",
+        "overlay_style": "full",
+        "color_overlay_bg": "#000000",
+        "content_overlay_opacity": 10,
+        "modal_overlay_opacity": 95,
+        "title": "Watch our video",
+        "text": "",
+        "text_color": "#ffffff",
+        "overlay_position": "center-center"
+      }
+    },
+    "cards_multi_section_4ht8LG": {
+      "type": "cards-multi-section",
+      "blocks": {
+        "cards_iN6q7B": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Mythlings_Points1_73a22049-1e3f-4708-9d5a-784b1830118f.png",
+            "card_description": "Mythlings are a collection of Doomlings known for their <b>mischievous tricks!<\/b>"
+          }
+        },
+        "cards_JjJnkM": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Mythlings_Points2.png",
+            "card_description": "New Mechanic Alert! Watch out for spells that cast <b>enchanting effects<\/b> when discarded."
+          }
+        }
+      },
+      "block_order": [
+        "cards_iN6q7B",
+        "cards_JjJnkM"
+      ],
+      "custom_css": [],
+      "settings": {
+        "card_id": "mythlings",
+        "page_style": "legends",
+        "section_title": "",
+        "sub_section_title": "A MAGICAL GATHERING FOR THE AGES",
+        "intro_height": true,
+        "intro_height_custom": "600",
+        "back_desk": "shopify:\/\/shop_images\/Titles_Desktop_Mythlings_a4ffde90-c26e-401e-8432-b60e9e12759b.jpg",
+        "back_mob": "shopify:\/\/shop_images\/Titles_Mobile-MYTH.jpg",
+        "back_color": "",
+        "image_1": "shopify:\/\/shop_images\/Myth_Main1_dac3d57e-cbe9-4edc-b72b-f1c12681636d.png",
+        "image_2": "shopify:\/\/shop_images\/Myth_Main2_b7cd85c4-b623-45b4-83d2-8a887d8aa97a.png",
+        "image_3": "shopify:\/\/shop_images\/Myth_Main3_36baab3e-75f1-4aba-8413-b9faecab65ac.png",
+        "full_width": true,
+        "btn_enable": true,
+        "button_custom": false,
+        "button_custom_color": "",
+        "button_custom_back_color": "",
+        "button_custom_hover_color": "",
+        "button_text": "GET LEGENDS OF ENDERAS",
+        "button_link": "shopify:\/\/products\/imaginary-ends"
+      }
+    },
+    "cards_multi_section_pPzajp": {
+      "type": "cards-multi-section",
+      "blocks": {
+        "cards_VhjYdW": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Techlings_Point1_78b36a0c-b22f-4fa0-99b7-2dbc5f095bca.png",
+            "card_description": "Techlings are from a bygone era, known for their <b>helpful innovations.<\/b>"
+          }
+        },
+        "cards_jLrfWm": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Techlings_Point2_69609808-0924-4985-8901-44c85c13d43c.png",
+            "card_description": "Many of these ancient technological beings utilize the long-lost <b>attachment ability.<\/b>"
+          }
+        },
+        "cards_Gp7FwD": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Techlings_Point3_47509bc8-31aa-4a15-9d2a-8236f3443e7b.png",
+            "card_description": "Techlings thrive on support, enhancing and <b>strengthening other Doomlings.<\/b>"
+          }
+        }
+      },
+      "block_order": [
+        "cards_VhjYdW",
+        "cards_jLrfWm",
+        "cards_Gp7FwD"
+      ],
+      "custom_css": [],
+      "settings": {
+        "card_id": "techlings",
+        "page_style": "legends",
+        "section_title": "",
+        "sub_section_title": "THE WONDERS OF SCIENCE & ENGINEERING",
+        "intro_height": true,
+        "intro_height_custom": "600",
+        "back_desk": "shopify:\/\/shop_images\/Titles_Desktop_Techlings_b69cbbb9-4746-44ed-8370-971e3a62f987.jpg",
+        "back_mob": "shopify:\/\/shop_images\/Titles_Mobile-TECH.jpg",
+        "back_color": "",
+        "image_1": "shopify:\/\/shop_images\/Tech_Main1_4cd2ab7d-23d0-4a43-9bfe-1df8ed432e7c.png",
+        "image_2": "shopify:\/\/shop_images\/Tech_Main2_c20c6777-7fd8-4b75-b56d-b114b77b33e9.png",
+        "image_3": "shopify:\/\/shop_images\/Tech_Main3_aaeec0af-dccb-49c6-8318-eda022eb0d4b.png",
+        "full_width": true,
+        "btn_enable": true,
+        "button_custom": false,
+        "button_custom_color": "",
+        "button_custom_back_color": "",
+        "button_custom_hover_color": "",
+        "button_text": "GET LEGENDS OF ENDERAS",
+        "button_link": "shopify:\/\/products\/imaginary-ends"
+      }
+    },
+    "cards_multi_section_LyqwCB": {
+      "type": "cards-multi-section",
+      "blocks": {
+        "cards_PVJcA3": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Dinolings_Point.png",
+            "card_description": "Dinolings blast through the past with mechanics that <b>dig through the discard pile.<\/b>"
+          }
+        },
+        "cards_c6N9VV": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Dinolings_Point2.png",
+            "card_description": "These giants can help you <b>score big points<\/b>, but they might also go extinct from your trait pile."
+          }
+        }
+      },
+      "block_order": [
+        "cards_PVJcA3",
+        "cards_c6N9VV"
+      ],
+      "custom_css": [],
+      "settings": {
+        "card_id": "dinolings",
+        "page_style": "legends",
+        "section_title": "",
+        "sub_section_title": "BIG POINTS WITH THE RISK OF EXTINCTION",
+        "intro_height": true,
+        "intro_height_custom": "600",
+        "back_desk": "shopify:\/\/shop_images\/Titles_Desktop_Dino2.jpg",
+        "back_mob": "shopify:\/\/shop_images\/Titles_Mobile_Dino2.jpg",
+        "back_color": "",
+        "image_1": "shopify:\/\/shop_images\/Dino_Main3_8ee54651-9641-4b40-be54-c5a156e13a95.png",
+        "image_2": "shopify:\/\/shop_images\/Dino_Main2_cc382e8d-7cfc-4d8c-8a2d-2998eeaa8da6.png",
+        "image_3": "shopify:\/\/shop_images\/Dino_Main1_eeb23866-44a0-4944-a0ec-9a373f030566.png",
+        "full_width": true,
+        "btn_enable": true,
+        "button_custom": false,
+        "button_custom_color": "",
+        "button_custom_back_color": "",
+        "button_custom_hover_color": "",
+        "button_text": "GET LEGENDS OF ENDERAS",
+        "button_link": "shopify:\/\/products\/imaginary-ends"
+      }
+    },
+    "cards_multi_section_WxpWf7": {
+      "type": "cards-multi-section",
+      "blocks": {
+        "cards_r6ybMQ": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Fuzelings_Point_579930dd-6ab6-48dd-9679-20452b788ff7.png",
+            "card_description": "Fuzelings are the <b>hybrid multi-color<\/b> Doomlings that occasionally blend different colors, which allow you to rack up <b>more bonuses<\/b> at the end of the game!"
+          }
+        },
+        "cards_KarXxq": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Fuzelings_PointEmail.png",
+            "card_description": "They also <b>blend different clades<\/b>, giving you the best of both worlds… A Dinoling that can attach? Hello!"
+          }
+        }
+      },
+      "block_order": [
+        "cards_r6ybMQ",
+        "cards_KarXxq"
+      ],
+      "custom_css": [],
+      "settings": {
+        "card_id": "fuzelings",
+        "page_style": "legends",
+        "section_title": "",
+        "sub_section_title": "BEST OF ALL WORLDS",
+        "intro_height": true,
+        "intro_height_custom": "600",
+        "back_desk": "shopify:\/\/shop_images\/Titles_Desktop_Fuze2.jpg",
+        "back_mob": "shopify:\/\/shop_images\/Titles_Mobile-FUZE.jpg",
+        "back_color": "",
+        "image_1": "shopify:\/\/shop_images\/Fuze_Main1_5a80ee28-da41-42d8-acb9-20024910e9b5.png",
+        "image_2": "shopify:\/\/shop_images\/Fuze_Main2_c6b6a973-7c75-4c77-9e1f-fc590d34fb68.png",
+        "image_3": "shopify:\/\/shop_images\/Fuze_Main3_73e9193d-c755-42b7-953e-8edea1a75658.png",
+        "full_width": true,
+        "btn_enable": true,
+        "button_custom": false,
+        "button_custom_color": "",
+        "button_custom_back_color": "",
+        "button_custom_hover_color": "",
+        "button_text": "GET LEGENDS OF ENDERAS",
+        "button_link": "shopify:\/\/products\/imaginary-ends"
+      }
+    },
+    "cards_what_inside_hJT3Gg": {
+      "type": "cards-what-inside",
+      "blocks": {
+        "inside_X8zfVt": {
+          "type": "inside",
+          "settings": {
+            "point": "Mythlings",
+            "point_explain": "24 new traits, 2 new ages, 1 new catastrophe",
+            "icon": "shopify:\/\/shop_images\/icons-myth_08ee4619-95d4-494f-8d1b-29ee93317984.png"
+          }
+        },
+        "inside_F6HUAx": {
+          "type": "inside",
+          "settings": {
+            "point": "Techlings",
+            "point_explain": "24 new traits, 2 new ages, 1 new catastrophe",
+            "icon": "shopify:\/\/shop_images\/icons-tech_bd793ed2-6e0f-483d-815d-9db11c5c396b.png"
+          }
+        },
+        "inside_QxUqDH": {
+          "type": "inside",
+          "settings": {
+            "point": "Dinolings",
+            "point_explain": "24 new traits, 2 new ages, 1 new catastrophe",
+            "icon": "shopify:\/\/shop_images\/icons-dino_bc841087-df70-4106-973f-70248a93dcdb.png"
+          }
+        },
+        "inside_7kPYwR": {
+          "type": "inside",
+          "settings": {
+            "point": "Fuzelings",
+            "point_explain": "10 new traits, 2 new ages, 1 new catastrophe",
+            "icon": "shopify:\/\/shop_images\/icons-fuze_e6117dfe-742e-4b9a-bd6d-8c204983a5c0.png"
+          }
+        },
+        "inside_nL787h": {
+          "type": "inside",
+          "settings": {
+            "point": "Treasures",
+            "point_explain": "26 new treasure cards",
+            "icon": "shopify:\/\/shop_images\/icons-treasure_7d4705d5-8601-4d51-9f5d-885d9c866d8f.png"
+          }
+        },
+        "inside_iYAGQ7": {
+          "type": "inside",
+          "settings": {
+            "point": "MYSTERY HOLOFOIL",
+            "point_explain": "1 Mystery Holofoil from Legends of Enderas®",
+            "icon": "shopify:\/\/shop_images\/icon-question.png"
+          }
+        }
+      },
+      "block_order": [
+        "inside_X8zfVt",
+        "inside_F6HUAx",
+        "inside_QxUqDH",
+        "inside_7kPYwR",
+        "inside_nL787h",
+        "inside_iYAGQ7"
+      ],
+      "custom_css": [],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "margin_top": 24,
+        "margin_bottom": 24,
+        "page_style": "legends",
+        "section_title": "WHAT’S IN THE BOX?",
+        "section_sub_title": "",
+        "desk-hero": "shopify:\/\/shop_images\/bg3_6e13bd92-4302-46a4-be2a-2afcaee25c4d.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/bg4_66d960a4-d574-46f5-9367-10d80337a379.jpg",
+        "character": "shopify:\/\/shop_images\/box_desktop_dd33b4ff-c254-4799-b59e-ebb701dc1761.png",
+        "character_mobile": "shopify:\/\/shop_images\/box_mobile_7cc8cc45-329c-4258-a162-774e5e2f8dfb.png",
+        "desk-hero-alt": "Describe the background image",
+        "btn_enable": true,
+        "button_text": "GET LEGENDS OF ENDERAS",
+        "button_link": "shopify:\/\/products\/imaginary-ends",
+        "heading_color": "#ffffff",
+        "text_color": "#ffffff",
+        "card_title_color": "#ffffff",
+        "card_text_color": "#ffffff",
+        "enable_text_shadow": true,
+        "text_shadow_opacity": 35,
+        "text_shadow_color": "dark"
+      }
+    },
+    "cards_multi_section_min_8GWgt9": {
+      "type": "cards-multi-section-min",
+      "blocks": {
+        "cards_9R3CNi": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Star_9c113bdd-f2af-4910-9d1c-a2b88ef0ff47.png",
+            "card_description": "Every First Edition Legends of Enderas expansion contains a Mystery Holofoil bearing the <b>First Edition star<\/b>. Get 'em before they go extinct!"
+          }
+        }
+      },
+      "block_order": [
+        "cards_9R3CNi"
+      ],
+      "settings": {
+        "card_id": "",
+        "page_style": "legends",
+        "image_1": "shopify:\/\/shop_images\/Doomlings_LegendsofEnderas_4_Holo.gif",
+        "image_2": "shopify:\/\/shop_images\/Doomlings_LegendsofEnderas_4_Holo.gif",
+        "image_3": "shopify:\/\/shop_images\/Doomlings_LegendsofEnderas_4_Holo.gif",
+        "image_4": "shopify:\/\/shop_images\/Doomlings_LegendsofEnderas_4_Holo.gif",
+        "full_width": true,
+        "btn_enable": true,
+        "button_text": "Get LEGENDS OF ENDERAS",
+        "button_link": ""
+      }
+    },
+    "coming_soon_NreNFD": {
+      "type": "coming-soon",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 48,
+        "margin_top": 24,
+        "margin_bottom": 32,
+        "section_title": "LEGENDS OF ENDERAS GOLD PACKS",
+        "sub_title": "AVAILABLE NOW!",
+        "contents": "Collect every holofoil from the new collection, including alt arts, rare easter egg cards, and more surprises with Legends of Enderas Gold Packs!",
+        "desk-hero": "shopify:\/\/shop_images\/goldpackbgd2_a3c8d71d-e7cf-40f8-8174-7dfb2c4dfe9d.png",
+        "mob-hero": "shopify:\/\/shop_images\/goldpackbgm_0c8c7c97-d50f-4c9f-8cf1-ca1705b2d4b3.jpg",
+        "character": "shopify:\/\/shop_images\/goldpacks_f695828a-7f1d-456e-9b5c-093b9129748c.png",
+        "character_mobile": "shopify:\/\/shop_images\/goldpacks_f695828a-7f1d-456e-9b5c-093b9129748c.png",
+        "desk-hero-alt": "pretty space background",
+        "btn_enable": true,
+        "button_text": "GET YOUR GOLD PACKS",
+        "button_link": ""
+      }
+    },
+    "plush_hero_RHDGEr": {
+      "type": "plush-hero",
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/LOE_GoldPacks_Rarity_Desktop_683b3f6f-4e73-4002-a41a-ae52a0f1af30.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/LOE_GoldPacks_Rarity_Mobile_f5cca83b-2906-41c8-82a0-76107070e59d.jpg",
+        "desk-hero-alt": "rarity tier icons - common, unusual, scarce, endangered, legendary, relic. 41% chance to be common, 32% chance to be unusual, 14% chance to be scarce, 8% chance to be endangered, 3% chance to be legendary, 2% chance to be relic\/other. *each card has a 25% chance to be alt art.",
+        "button_link": ""
+      }
+    },
+    "custom_liquid_YLyNH8": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br><br><br><br><br>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "card_styles_JAqxaG",
+    "plush_hero_e4RaWd",
+    "cards_title_Y3Hqke",
+    "plush_hero_Xta837",
+    "cards_carousel_XWCPw4",
+    "cards_multi_columns_6k8DDV",
+    "custom_liquid_pBnh4k",
+    "cards_multi_section_neRUgj",
+    "video_two_K9TH94",
+    "cards_multi_section_4ht8LG",
+    "cards_multi_section_pPzajp",
+    "cards_multi_section_LyqwCB",
+    "cards_multi_section_WxpWf7",
+    "cards_what_inside_hJT3Gg",
+    "cards_multi_section_min_8GWgt9",
+    "coming_soon_NreNFD",
+    "plush_hero_RHDGEr",
+    "custom_liquid_YLyNH8"
+  ]
+}

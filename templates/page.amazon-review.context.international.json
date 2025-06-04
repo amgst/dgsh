@@ -1,0 +1,22 @@
+{
+  "parent": "page.amazon-review.json",
+  "context": {
+    "market": "international"
+  },
+  "sections": {
+    "amazon_review_aRtA3J": {
+      "settings": {},
+      "blocks": {
+        "amazon_BMxQzx": {
+          "settings": {
+            "product_url": "https:\/\/amazon.com",
+            "product_custom": false,
+            "product_title_custom": "Product title",
+            "product_image": "shopify:\/\/shop_images\/Target_872c3ca0-1c60-487f-8aac-f09796cd143b.png",
+            "product_url_custom": "https:\/\/amazon.com"
+          }
+        }
+      }
+    }
+  }
+}

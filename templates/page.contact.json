@@ -1,0 +1,41 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-contact",
+      "blocks": {
+        "name": {
+          "type": "name_input",
+          "settings": {}
+        },
+        "email": {
+          "type": "email_input",
+          "settings": {}
+        },
+        "0a74e371-237a-4158-8c79-086d13af75cd": {
+          "type": "phone_input",
+          "settings": {
+            "required": false
+          }
+        },
+        "message": {
+          "type": "message_input",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "name",
+        "email",
+        "0a74e371-237a-4158-8c79-086d13af75cd",
+        "message"
+      ],
+      "settings": {
+        "show_title": true,
+        "title_alignment": "left",
+        "use_columns": true
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

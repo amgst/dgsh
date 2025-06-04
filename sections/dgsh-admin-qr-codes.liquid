@@ -1,0 +1,86 @@
+{% comment %} File: sections/dgsh-admin-qr-codes.liquid {% endcomment %}
+<div class="dgsh-admin-panel">
+  <h2>QR Code Manager</h2>
+  <button onclick="dgshAddQRCode()">➕ Add QR Code</button>
+  <button onclick="dgshExportQRCodes()">⬇️ Export CSV</button>
+  <div id="dgsh-qr-list" style="margin-top: 1rem"></div>
+</div>
+
+<script>
+  const qrDB = firebase.firestore().collection('qrCodes');
+
+  async function loadQRCodes() {
+    const container = document.getElementById('dgsh-qr-list');
+    container.innerHTML = 'Loading...';
+    const snap = await qrDB.orderBy('index').get();
+
+    const rows = snap.docs.map(doc => {
+      const data = doc.data();
+      return `
+        <div class="dgsh-qr-row">
+          <input value="${data.index}" disabled>
+          <input value="${data.code}" data-id="${doc.id}" data-field="code">
+          <input value="${data.label || ''}" data-id="${doc.id}" data-field="label">
+          <button onclick="dgshDeleteQRCode('${doc.id}')">🗑️</button>
+        </div>
+      `;
+    }).join('');
+
+    container.innerHTML = rows;
+    container.querySelectorAll('input[data-id]').forEach(input => {
+      input.addEventListener('change', async () => {
+        const id = input.dataset.id;
+        const field = input.dataset.field;
+        const value = input.value;
+        await qrDB.doc(id).update({ [field]: value });
+        console.log(`[DGSH] Updated QR ${id} field ${field}`);
+      });
+    });
+  }
+
+  async function dgshAddQRCode() {
+    const existing = await qrDB.get();
+    const index = existing.size + 1;
+    const id = `QR${index}`;
+    await qrDB.doc(id).set({ index, code: id, label: '' });
+    loadQRCodes();
+  }
+
+  async function dgshDeleteQRCode(id) {
+    if (!confirm('Delete this QR code?')) return;
+    await qrDB.doc(id).delete();
+    loadQRCodes();
+  }
+
+  async function dgshExportQRCodes() {
+    const snap = await qrDB.orderBy('index').get();
+    const csv = [['Index', 'Code', 'Label']];
+    snap.forEach(doc => {
+      const d = doc.data();
+      csv.push([d.index, d.code, d.label || '']);
+    });
+
+    const blob = new Blob([csv.map(r => r.join(',')).join('\n')], { type: 'text/csv' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'qr-codes.csv';
+    link.click();
+  }
+
+  document.addEventListener('DOMContentLoaded', loadQRCodes);
+</script>
+
+<style>
+  .dgsh-qr-row {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .dgsh-qr-row input {
+    padding: 0.4rem;
+    flex: 1;
+  }
+  .dgsh-qr-row input[disabled] {
+    background: #eee;
+  }
+</style>

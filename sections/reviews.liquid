@@ -1,0 +1,77 @@
+{% schema %}
+{
+  "name": "Reviews",
+  "max_blocks": 10,
+  "settings": [
+      {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    },        
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title"
+    }
+  ],
+  "blocks": [
+
+  ],
+  "presets": [
+    {
+      "category": "section",
+      "name": "Reviews"
+    }
+  ]
+} 
+ 
+
+{% endschema %}  
+<div class="container large-section section-{{ section.id }}-padding do-reviews section-{{ section.id }} "> 
+  <div class="page-width">
+	{% if section.settings.section_title %}
+		<div class="section_title ">
+			<h2>{{ section.settings.section_title }}</h2>
+		</div>
+	{% endif %}
+
+	<div class="yotpo yotpo-reviews-carousel" data-background-color="transparent" data-mode="manual" data-type="both" data-review-ids="329019389,336676866,338426779,332816360,338397119,377522274,338398632" data-show-bottomline="1" data-autoplay-enabled="1" data-autoplay-speed="4000" data-show-navigation="1"> </div>
+ </div>
+</div>
+
+{% style %}
+.section-{{ section.id }}-padding {
+  padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+  padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+}
+
+@media screen and (min-width: 750px) {
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+}
+.section-{{ section.id }} .section_title  {margin-top: 20px;
+    margin-bottom: -47px;}
+.da-hero-reviews { margin-top:60px; }
+.prod-link-review { text-align:center; }	
+.do-reviews { overflow:hidden; }
+@media screen and (min-width: 750px) {
+	.da-hero-reviews { margin-top:30px; }
+}
+{% endstyle %}

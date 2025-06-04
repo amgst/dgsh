@@ -1,0 +1,54 @@
+{
+  "sections": {
+    "main": {
+      "type": "dgsh-scavenger-hunt",
+      "settings": {}
+    },
+    "how_it_works": {
+      "type": "dgsh-how-it-works",
+      "blocks": {
+        "instruction_step_tcKfk6": {
+          "type": "instruction_step",
+          "settings": {
+            "step_title": "Find QR Codes",
+            "step_description": "Look for QR codes placed around the convention."
+          }
+        },
+        "instruction_step_HH7UX9": {
+          "type": "instruction_step",
+          "settings": {
+            "step_title": "Scan with Phone",
+            "step_description": "Use your phone's camera to scan the QR codes."
+          }
+        },
+        "instruction_step_UhhaVn": {
+          "type": "instruction_step",
+          "settings": {
+            "step_title": "Unlock Rewards",
+            "step_description": "Earn prizes at 1, 3, 6, and 12 scans."
+          }
+        },
+        "instruction_step_EgfbHh": {
+          "type": "instruction_step",
+          "settings": {
+            "step_title": "Redeem at Booth",
+            "step_description": "Visit the Doomlings booth to claim your rewards."
+          }
+        }
+      },
+      "block_order": [
+        "instruction_step_tcKfk6",
+        "instruction_step_HH7UX9",
+        "instruction_step_UhhaVn",
+        "instruction_step_EgfbHh"
+      ],
+      "settings": {
+        "section_title": "How It Works"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "how_it_works"
+  ]
+}

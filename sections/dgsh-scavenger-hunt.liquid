@@ -1,0 +1,286 @@
+<div class="scavenger-hunt-container" id="dgsh-container">
+  <div class="dgsh-discord-banner">
+    <div class="page-width">
+      <p>Join our <a href="https://discord.com/invite/doomlings" target="_blank" class="dgsh-discord-link">Discord</a> to chat with other hunters in the Gen Con 2025 channel!</p>
+    </div>
+  </div>
+
+  <div class="page-width">
+    <div class="dgsh-container">
+      <div class="dgsh-user-info">
+        {% if customer %}
+          <div class="dgsh-user-welcome">
+            <span class="dgsh-username">Welcome, {{ customer.first_name }}!</span>
+            <span class="dgsh-login-status">✓ Secure Account</span>
+          </div>
+          <div class="dgsh-phone-section">
+            <label for="dgsh-phone-input" class="dgsh-phone-label">Phone Number (for prize notifications):</label>
+            <div class="dgsh-phone-input-group">
+              <input type="tel" id="dgsh-phone-input" class="dgsh-phone-input" placeholder="(555) 123-4567" value="{{ customer.phone | default: '' }}">
+              <button class="dgsh-phone-save-btn">Save</button>
+            </div>
+            <div class="dgsh-phone-status"></div>
+          </div>
+        {% else %}
+          <div class="dgsh-anonymous-user-section">
+            <div class="dgsh-user-welcome">
+              <span class="dgsh-username" id="dgsh-anonymous-name">Anonymous Hunter</span>
+              <span class="dgsh-login-status dgsh-anonymous-status">🎯 Hunting in Progress</span>
+            </div>
+            
+            <div class="dgsh-quick-auth" id="dgsh-quick-auth">
+              <span class="dgsh-auth-prompt">Want to save progress?</span>
+              <div class="dgsh-auth-buttons">
+                <a href="/account/login?return_to={{ request.path | url_encode }}" class="dgsh-login-btn">Login</a>
+                <a href="/account/register?return_to={{ request.path | url_encode }}" class="dgsh-register-btn">Create Account</a>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      <header class="dgsh-header">
+        <h1 class="dgsh-title">{{ page.title }}</h1>
+        <div class="dgsh-description">{{ page.content }}</div>
+      </header>
+      
+      <section class="dgsh-progress-container">
+        <h2 class="dgsh-section-title">Your Progress</h2>
+        <div class="dgsh-progress-bar">
+          <div class="dgsh-progress-fill" style="width: 0%"></div>
+        </div>
+        <div class="dgsh-progress-stats">
+          <span class="dgsh-progress-text">0% Complete</span>
+          <span class="dgsh-progress-count">0 of 12</span>
+        </div>
+      </section>
+      
+      <section class="dgsh-rewards-container">
+        <h2 class="dgsh-section-title">Rewards</h2>
+        <div class="dgsh-rewards-list"></div>
+      </section>
+      
+      <section class="dgsh-redemption-section">
+        <h3 class="dgsh-redemption-title">Your Unlocked Rewards</h3>
+        <p class="dgsh-no-rewards">No rewards unlocked yet. Scan QR codes to unlock rewards!</p>
+        <div class="dgsh-unlocked-rewards"></div>
+        {% if customer %}
+        <p class="dgsh-redemption-instructions dgsh-hidden">Visit the Doomlings booth to redeem your prizes. A staff member will verify your rewards.</p>
+        {% endif %}
+      </section>
+      
+      <section class="dgsh-leaderboard-container">
+        <h2 class="dgsh-section-title">Leaderboard</h2>
+        <div class="dgsh-leaderboard-header">
+          <button class="dgsh-leaderboard-refresh">Refresh</button>
+        </div>
+        <div class="dgsh-leaderboard-list">
+          <div class="dgsh-leaderboard-loading">
+            <div class="dgsh-loading-spinner"></div>
+            <p>Loading leaderboard...</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="dgsh-modal-container">
+    <div class="dgsh-modal-wrapper">
+      <div class="dgsh-modal-content"></div>
+      <button class="dgsh-modal-close">&times;</button>
+    </div>
+  </div>
+</div>
+
+<div class="dgsh-toast-container" style="position: fixed; top: 20px; right: 20px; z-index: 10000;"></div>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.19.1/firebase-auth-compat.js"></script>
+
+<!-- Firebase Configuration -->
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyAedFZVW9mSR61cuI4RxMHY-VmfmYdsm2U",
+  authDomain: "doomlings-hunt-new.firebaseapp.com",
+  projectId: "doomlings-hunt-new",
+  storageBucket: "doomlings-hunt-new.firebasestorage.app",
+  messagingSenderId: "913963611565",
+  appId: "1:913963611565:web:2f4d813b70c4268cf01d24"
+};
+
+firebase.initializeApp(firebaseConfig);
+</script>
+
+<!-- Load Core Scripts -->
+{{ 'dgsh-styles.css' | asset_url | stylesheet_tag }}
+{{ 'dgsh-config.js' | asset_url | script_tag }}
+{{ 'dgsh-storage.js' | asset_url | script_tag }}
+{{ 'dgsh-auth.js' | asset_url | script_tag }}
+{{ 'dgsh-firebase.js' | asset_url | script_tag }}
+{{ 'dgsh-rewards.js' | asset_url | script_tag }}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+{{ 'dgsh-qr.js' | asset_url | script_tag }}
+{{ 'dgsh-leaderboard.js' | asset_url | script_tag }}
+{{ 'dgsh-ui.js' | asset_url | script_tag }}
+{{ 'dgsh-core.js' | asset_url | script_tag }}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Scavenger Hunt page loading...');
+  
+  // Phone number save functionality
+  const phoneInput = document.getElementById('dgsh-phone-input');
+  const phoneSaveBtn = document.querySelector('.dgsh-phone-save-btn');
+  const phoneStatus = document.querySelector('.dgsh-phone-status');
+  
+  // Simple initialization - NO QR processing here
+  function initializeHunt() {
+    try {
+      // Initialize core system
+      if (window.DGSHCore) {
+        DGSHCore.init();
+      }
+      
+      // Setup Firebase for authenticated users only
+      {% if customer %}
+      if (window.DGSHFirebase) {
+        DGSHFirebase.init();
+        DGSHFirebase.authenticateWithShopify({
+          id: '{{ customer.id }}',
+          email: '{{ customer.email }}',
+          firstName: '{{ customer.first_name }}',
+          lastName: '{{ customer.last_name }}',
+          phone: '{{ customer.phone }}'
+        });
+      }
+      {% endif %}
+      
+      console.log('Hunt initialized successfully');
+    } catch (error) {
+      console.error('Hunt initialization error:', error);
+    }
+  }
+  
+  // Phone number save function
+  async function savePhoneNumber() {
+    if (!phoneInput || !phoneSaveBtn || !phoneStatus) return;
+    
+    const phone = phoneInput.value.trim();
+    if (!phone) {
+      showPhoneStatus('Please enter a phone number', 'error');
+      return;
+    }
+    
+    // Basic phone validation
+    const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+    if (!phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''))) {
+      showPhoneStatus('Please enter a valid phone number', 'error');
+      return;
+    }
+    
+    phoneSaveBtn.disabled = true;
+    phoneSaveBtn.textContent = 'Saving...';
+    
+    try {
+      let success = false;
+      
+      if (window.DGSHFirebase && window.DGSHFirebase.savePhoneNumber) {
+        success = await DGSHFirebase.savePhoneNumber(phone);
+      }
+      
+      if (success) {
+        showPhoneStatus('Phone number saved successfully!', 'success');
+      } else {
+        showPhoneStatus('Error saving phone number', 'error');
+      }
+    } catch (error) {
+      console.error('Phone save error:', error);
+      showPhoneStatus('Error saving phone number', 'error');
+    } finally {
+      phoneSaveBtn.disabled = false;
+      phoneSaveBtn.textContent = 'Save';
+    }
+  }
+  
+  // Show phone status message
+  function showPhoneStatus(message, type) {
+    if (!phoneStatus) return;
+    
+    phoneStatus.textContent = message;
+    phoneStatus.className = `dgsh-phone-status ${type}`;
+    phoneStatus.style.display = 'block';
+    
+    const hideDelay = type === 'success' ? 3000 : 5000;
+    setTimeout(() => {
+      phoneStatus.style.display = 'none';
+      phoneStatus.className = 'dgsh-phone-status';
+    }, hideDelay);
+  }
+  
+  // Clean URL parameters (remove any QR codes or auth params)
+  function cleanURL() {
+    try {
+      const url = new URL(window.location);
+      const paramsToRemove = ['code', 'customer_posted', 'checkout_url', 'analytics_trace_id'];
+      
+      let hasParams = false;
+      paramsToRemove.forEach(param => {
+        if (url.searchParams.has(param)) {
+          url.searchParams.delete(param);
+          hasParams = true;
+        }
+      });
+      
+      if (hasParams && window.history && window.history.replaceState) {
+        window.history.replaceState({}, document.title, url.pathname);
+      }
+    } catch (error) {
+      console.warn('Could not clean URL:', error);
+    }
+  }
+  
+  // Setup event listeners
+  if (phoneSaveBtn) {
+    phoneSaveBtn.addEventListener('click', savePhoneNumber);
+  }
+  
+  if (phoneInput) {
+    phoneInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        savePhoneNumber();
+      }
+    });
+  }
+  
+  // Initialize everything
+  cleanURL();
+  initializeHunt();
+});
+
+// Simple helper functions for anonymous users
+{% unless customer %}
+function updateAnonymousUserName(name) {
+  const nameEl = document.getElementById('dgsh-anonymous-name');
+  if (nameEl && name) {
+    nameEl.textContent = name;
+  }
+}
+
+// Make function available globally
+window.updateAnonymousUserName = updateAnonymousUserName;
+{% endunless %}
+</script>
+
+{% schema %}
+{
+  "name": "DGSH Scavenger Hunt",
+  "settings": [],
+  "presets": [
+    {
+      "name": "DGSH Scavenger Hunt"
+    }
+  ]
+}
+{% endschema %}s

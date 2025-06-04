@@ -1,0 +1,585 @@
+
+<div id="product-bundle-wrapper">
+<h2 id="pack-size-title">
+    <span class="pack-size-one">
+        <span class="size-label">Size: </span>
+        <span class="size-value"></span>
+    </span>
+    <span class="pack-size-one" id="savings-container">
+    <span class="savings-text">You Save </span>
+    <span class="savings-amount">
+        <span class="currency">{{ cart.currency.symbol }}</span>
+        <span class="dynamic-savings">0.00</span>!
+    </span>
+</span>
+</h2>
+ 
+
+  <div class="product-bundle"> 
+{% assign item_counts = "1,3,5,10" | split: ',' %}
+{% assign product_ids = "product_1,product_2,product_3,product_4" | split: ',' %}
+{% for product_id in product_ids %}
+  {% assign index = forloop.index0 %}
+{% assign item_count = item_counts[index] | plus: 0 %}
+  
+  {% assign product_key = 'product_' | append: forloop.index %}
+  {% assign quantity_key = 'quantity_' | append: forloop.index %}
+  
+  {% if block.settings[product_key] != blank %}
+    {% assign product_variant = block.settings[product_key].selected_or_first_available_variant %}
+
+{% assign product_price = product_variant.price | divided_by: 100.0 %}
+{% assign regular_price = item_count | times: product_price %}
+{% assign per_pack_price = product_price | divided_by: item_count %}
+{% assign holofoils_value = item_count | times: 7 %}
+    {% assign currency_symbol = cart.currency.symbol %}
+       
+<div class="product-bundle-box" 
+     data-variant-id="{{ product_variant.id }}"
+     data-quantity="{{ item_count }}"
+     data-price="{{ product_price }}"
+     data-regular-price="{{ regular_price }}"
+     data-per-pack-price="{{ per_pack_price }}"
+     data-currency="{{ cart.currency.symbol }}"
+     data-product-id="{{ block.settings[product_key].id }}"
+     {% if default_selection == item_count %}data-default="true"{% endif %}>
+          
+        <div class="bundle-box-content">
+            <div class="bundle-box-head">
+                <h3>{{ item_count }} Gold Pack{% if item_count > 1 %}s{% endif %}</h3>
+                <p>{{ holofoils_value }} HOLOFOILS</p>
+            </div>
+            <div class="bundle-box-body">
+                <div class="price-container">
+                    <div class="price">
+                        <span class="price-currency">{{ currency_symbol }}</span>
+                        <span class="price-main">{{ product_price | split: '.' | first }}</span>
+                        <span class="price-decimal">.{{ product_price | split: '.' | last }}</span>
+                    </div>
+                    <div class="price-per-pack">
+                        <span class="price-currency">{{ currency_symbol }}</span>
+                        <span class="price-main">{{ per_pack_price | split: '.' | first }}</span>
+                        <span class="price-decimal">
+                            .{{ per_pack_price | split: '.' | last | slice: 0, 2 }}
+                        </span>
+                        <span class="per-pack-text">/ PACK</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  {% endif %}
+{% endfor %}
+
+
+  </div>
+  
+  <div class="button-group payment-buttons">
+    <button id="add-to-cart" class="btn btn--subtle-hover">Add to Cart</button>
+    <button id="buy-now" class="btn btn--subtle-hover add-to-cart-and-checkout-btn">Quick Buy</button>
+  </div>
+</div>
+
+
+{% style %}
+
+#product-bundle-wrapper .price-container {
+    text-align: center;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+/* Hover effect */
+#product-bundle-wrapper .product-bundle-box:hover {
+    background-color: #1a0040;
+    border-color: #1a0040;
+}
+
+/* Selected state */
+#product-bundle-wrapper .product-bundle-box.selected {
+    background-color: #1a0040;
+    border-color: #1a0040;
+}
+
+/* Making text white for better contrast in selected state */
+#product-bundle-wrapper .product-bundle-box.selected .bundle-box-head h3,
+#product-bundle-wrapper .product-bundle-box.selected .bundle-box-head p,
+#product-bundle-wrapper .product-bundle-box:hover h3,
+#product-bundle-wrapper .product-bundle-box:hover p {
+    color: white;
+}
+/*.pack-size-one .savings-text,
+.pack-size-one .savings-amount{ display:none; }*/
+/* Bundle box content styling */
+#product-bundle-wrapper .bundle-box-head {
+    padding: 6px 0px 8px 0;
+    text-align: center;
+}
+
+#product-bundle-wrapper .bundle-box-body {
+    padding: 4px;
+    background-color: #fff;
+    border-radius: 0 0px 9px 9px;
+}
+
+#product-bundle-wrapper .bundle-box-head h3 {
+    font-size: 13px; font-weight: 900;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+#product-bundle-wrapper .bundle-box-head p {
+    font-size: 9px;
+    line-height: 9px;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Price styling */
+#product-bundle-wrapper .price {
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: start;
+    line-height: 1;
+}
+
+#product-bundle-wrapper .price .price-currency {
+    font-size: 17px;
+    line-height: 26px;
+}
+
+#product-bundle-wrapper .price .price-main {
+    font-size: 34px;
+    line-height: 34px;
+    font-weight: 900;
+}
+
+#product-bundle-wrapper .price .price-decimal {
+    font-size: 17px;
+    line-height: 22px;
+    margin-top: 2px;
+}
+
+/* Price per pack styling */
+#product-bundle-wrapper .price-per-pack {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10px;
+}
+
+#product-bundle-wrapper .price-per-pack .price-per-pack-inner {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+#product-bundle-wrapper .price-per-pack span {
+    display: block;
+}
+
+#product-bundle-wrapper .price-per-pack .price-currency {
+    font-size: 10px;
+    line-height: 10px;
+}
+
+#product-bundle-wrapper .price-per-pack .price-main {
+    font-size: 14px;
+    line-height: 14px;
+}
+
+#product-bundle-wrapper .price-per-pack .price-decimal {
+    font-size: 10px;
+    line-height: 10px;
+}
+
+#product-bundle-wrapper .price-per-pack .per-pack-text {
+    font-size: 14px;
+    line-height: 12px;
+    margin-left: 4px;
+}
+
+/* Title styling */
+#pack-size-title {
+    font-size: 18px;
+    margin-top: 20px;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 15px;
+    display: flex;flex-direction: row;justify-content:flex-start;
+}
+
+#pack-size-title .size-label {
+    font-weight: normal;
+    color: #1a0040;
+    font-size: 21px;
+}
+
+#pack-size-title .size-value {
+    font-weight: 900;
+    font-size: 21px;
+    color: #1a0040;
+}
+
+#pack-size-title .savings-text {
+    margin-left: 4px;
+}
+#pack-size-title .savings-text,
+#pack-size-title .savings-amount {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 14px;
+    color: #19af2d;
+}
+#pack-size-title .savings-amount {
+    margin-left: 2px;
+}
+
+#pack-size-title .savings-amount .currency {
+    margin-right: 1px;
+}
+
+#product-bundle-wrapper span.dynamic-savings {
+    margin-left: -3px;
+}
+
+/* Button styling */
+#product-bundle-wrapper .add-to-cart-and-checkout-btn, .btn-notify {
+    background-color: #50248f;
+    background-image: none !important;
+    margin-top: 15px;
+}
+
+#product-bundle-wrapper .add-to-cart-and-checkout-btn:hover, .btn-notify:hover {
+    background-color: #230051 !important;
+    background-image: none !important;
+}
+
+#product-bundle-wrapper .button-outer {
+    margin-top: 25px;
+    margin-bottom: -4px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#product-bundle-wrapper .btn-notify {
+    border: 0;
+    box-shadow: none;
+    font-family: Lato, sans-serif;
+    font-weight: 900;
+    display: inline-block;
+    padding: 12px 30px;
+    text-align: center;
+    border: 0;
+    outline: none;
+    box-shadow: none !important;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: all .3s ease;
+    background-image: linear-gradient(to right, #18c94b, #01b234);
+    color: #fff !important;
+}
+#product-bundle-wrapper .product-bundle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding-top: 10px;
+    padding-bottom: 30px; 
+}
+
+#product-bundle-wrapper .product-bundle-box {
+    background-color: #dbd1ec;
+    border-radius: 10px;    
+    margin-right: 4px;
+    border: solid 2px #dbd1ec;
+    cursor: pointer;margin-bottom: 10px;
+    transition: all 0.3s ease;    
+}
+
+
+@media (max-width: 1200px) {
+   #product-bundle-wrapper  .product-bundle {flex-wrap: wrap;} 
+
+}
+
+@media (min-width: 900px) {
+    #product-bundle-wrapper .product-bundle-box {  min-width: 110px; max-width: 150px;  }
+    
+}
+/* Mobile layout */
+@media (max-width: 1100px) {
+    #pack-size-title {flex-direction: column;justify-content:center;}
+    #product-bundle-wrapper .product-bundle {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    #product-bundle-wrapper .product-detail__title { text-align:center; }    
+    #product-bundle-wrapper .product-bundle-box {
+        width: calc(50% - 4px);
+        margin-right: 0;
+        margin-bottom: 0; max-width: 160px;
+    }
+    
+    /* Handle odd number of boxes */
+    #product-bundle-wrapper .product-bundle-box:last-child:nth-child(odd) {
+        width: 100%;
+    }
+    
+    /* Mobile text adjustments */
+    #product-bundle-wrapper .bundle-box-head h3 {
+        font-size: 13px;
+    }
+    
+    #product-bundle-wrapper .bundle-box-head p {
+        font-size: 10px;
+    }
+    
+    #product-bundle-wrapper .price .price-main {
+        font-size: 32px;
+        line-height: 32px;
+    }
+    
+    #product-bundle-wrapper .price .price-currency,
+    #product-bundle-wrapper .price .price-decimal {
+        font-size: 15px;
+    }
+    
+    #product-bundle-wrapper .price-per-pack {
+        padding-top: 6px;
+    }
+    
+    #product-bundle-wrapper .price-per-pack .price-main {
+        font-size: 12px;
+        line-height: 12px;
+    }
+    
+    #pack-size-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    #pack-size-title .size-label { margin-right:4px; }
+    #pack-size-title .size-label,
+    #pack-size-title .size-value {
+        font-size: 19px;
+    }
+    
+    #pack-size-title .savings-text {
+        margin-left: 8px;
+    }
+    .pack-size-one{ display:flex; justify-content: center;}
+    #pack-size-title { margin-bottom:10px; }
+}
+{% endstyle %}
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const bundleBoxes = document.querySelectorAll('.product-bundle-box');
+    const addToCartButton = document.getElementById('add-to-cart');
+    const buyNowButton = document.getElementById('buy-now');
+    const sizeValueElement = document.querySelector('#pack-size-title .size-value');
+    const savingsElement = document.querySelector('#pack-size-title .dynamic-savings');
+    const savingsContainer = document.getElementById('savings-container');
+
+    if (!sizeValueElement || !savingsElement) {
+        return;
+    }
+
+    function calculateSavings(selectedBox) {
+        // Get the first bundle (single pack) price
+        const singlePackBox = document.querySelector('.product-bundle-box');
+        if (!singlePackBox) return 0;
+        
+        const singlePackPrice = parseFloat(singlePackBox.dataset.price) || 0;
+        const quantity = parseInt(selectedBox.dataset.quantity) || 1;
+        const bundlePrice = parseFloat(selectedBox.dataset.price) || 0;
+        
+        // Calculate what it would cost to buy the same quantity individually
+        const regularPrice = quantity * singlePackPrice;
+        const savings = regularPrice - bundlePrice;
+        return Math.max(0, savings);
+    }
+
+        function updateTitleAndSavings(selectedBox) {
+            const quantity = parseInt(selectedBox.dataset.quantity) || 1;
+            const savings = calculateSavings(selectedBox);
+            const currencySymbol = selectedBox.dataset.currency || '$';
+            
+            sizeValueElement.textContent = `${quantity} Gold Pack${quantity > 1 ? 's' : ''}`;
+            
+            // Update currency symbol everywhere it appears
+            document.querySelectorAll('.currency').forEach(el => {
+                el.textContent = currencySymbol;
+            });
+            
+            savingsElement.textContent = savings.toFixed(2);
+            
+            if (savings <= 0 || quantity === 1) {
+                savingsContainer.style.display = 'none';
+            } else {
+                savingsContainer.style.display = 'flex';
+            } 
+        }
+
+    async function handleDirectCheckout() {
+        const selectedBox = document.querySelector('.product-bundle-box.selected');
+        if (!selectedBox) {
+            alert('Please select a bundle first');
+            return;
+        }
+
+        const variantId = selectedBox.dataset.variantId;
+
+        try {
+            // First clear the cart
+            await fetch('/cart/clear.js', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            // Then add the item
+            const response = await fetch('/cart/add.js', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    items: [{
+                        id: variantId,
+                        quantity: 1
+                    }]
+                })
+            });
+
+            if (response.ok) {
+                // Redirect to checkout
+                window.location.href = '/checkout';
+            } else {
+                throw new Error('Failed to add item to cart');
+            }
+        } catch (error) {
+            console.error('Checkout error:', error);
+            alert('There was an error processing your checkout. Please try again.');
+        }
+    }
+
+    async function handleAddToCart() {
+        const selectedBox = document.querySelector('.product-bundle-box.selected');
+        if (!selectedBox) {
+            showMessage('Please select a bundle first', 'error');
+            return;
+        }
+
+        const bundleData = {
+            variantId: selectedBox.dataset.variantId,
+        };
+
+        addToCartButton.disabled = true;
+
+        try {
+            const response = await fetch('/cart/add.js', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    items: [{
+                        id: bundleData.variantId,
+                        quantity: 1
+                    }]
+                })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                showMessage('Bundle added to cart successfully');
+            } else {
+                throw new Error(data.description || 'Error adding to cart');
+            }
+        } catch (error) {
+            showMessage(error.message, 'error');
+        } finally {
+            addToCartButton.disabled = false;
+        }
+    }
+
+    function showMessage(message, type = 'success') {
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `bundle-message ${type}`;
+        messageDiv.textContent = message;
+        document.body.appendChild(messageDiv);
+        setTimeout(() => messageDiv.remove(), 3000);
+    }
+
+    // Set default selected bundle
+    const defaultBundle = document.querySelector('.product-bundle-box[data-default="true"]') || bundleBoxes[0];
+    if (defaultBundle) {
+        defaultBundle.classList.add('selected');
+        updateTitleAndSavings(defaultBundle);
+    } else {
+        console.error('No default bundle found');
+    }
+
+    // Add click handlers to bundle boxes
+    bundleBoxes.forEach(box => {
+        box.addEventListener('click', function() {
+            bundleBoxes.forEach(b => b.classList.remove('selected'));
+            this.classList.add('selected');
+            updateTitleAndSavings(this);
+        });
+    });
+
+    // Add click handlers to buttons
+    if (addToCartButton) {
+        addToCartButton.addEventListener('click', handleAddToCart);
+    }
+
+    if (buyNowButton) {
+        buyNowButton.addEventListener('click', handleDirectCheckout);
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

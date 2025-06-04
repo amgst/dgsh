@@ -1,0 +1,107 @@
+{
+  "sections": {
+    "plush_hero_qYMMMn": {
+      "type": "plush-hero",
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/MarrinsJourney_fb94abf9-3c97-4b3c-bc76-a30fabf8f855.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/MarrinsJourney_725a8545-ab79-4604-a003-da0cf0ee07f1.jpg",
+        "desk-hero-alt": "CAPTAIN MARIN'S JOURNEY",
+        "button_link": ""
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_title": true,
+        "title_alignment": "left"
+      }
+    },
+    "image_gallery_HaN4kW": {
+      "type": "image-gallery",
+      "blocks": {
+        "image_xGUP7t": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Cover.IE.5_copy.jpg",
+            "alignment": "center center",
+            "enlarge_image": false,
+            "link": "https:\/\/doomlings.com\/blogs\/captain-marins-journey-ie-1",
+            "title": "",
+            "text": "",
+            "button_label": "Transmission IE.1",
+            "overlay_position": "center-center"
+          }
+        },
+        "image_8r7EDe": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/LOE_Transmission_1A_Cover.jpg",
+            "alignment": "center center",
+            "enlarge_image": false,
+            "link": "https:\/\/doomlings.com\/blogs\/captain-marins-journey-loe-2",
+            "title": "",
+            "text": "",
+            "button_label": "Transmission LOE.2",
+            "overlay_position": "center-center"
+          }
+        }
+      },
+      "block_order": [
+        "image_xGUP7t",
+        "image_8r7EDe"
+      ],
+      "custom_css": [
+        ".btn--small {font-size: 20px; font-weight: bold; background-color: #110d32; color: #ffffff; padding-left: 30px; padding-right: 30px; outline-color: #110d32;}"
+      ],
+      "settings": {
+        "grid": 2,
+        "image_height": 500,
+        "image_height_mobile": 300,
+        "enable_margin": true,
+        "enable_carousel": false,
+        "overlay_style": "box",
+        "color_overlay_bg": "#ffffff",
+        "overlay_opacity": 80,
+        "color_overlay_text": "#ffffff",
+        "overlay_url_style": "button_2"
+      }
+    },
+    "custom_liquid_4UrhmC": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br>"
+      }
+    },
+    "newsletter_yGEyMX": {
+      "type": "newsletter",
+      "settings": {
+        "title": "Want to learn more?",
+        "section_subtitle": "<p>Sign up to get transmissions from Captain Marin sent straight to your email.<\/p>",
+        "section_background_colour": "#110d32",
+        "section_text_colour": "#ffffff",
+        "button_style": "button_2",
+        "enlarge_title": false,
+        "enlarge_text": false,
+        "custom_button": true,
+        "custom_button_color": "#230051",
+        "custom_button_bk_color": "#ffffff",
+        "custom_button_color_hover": "#110d32",
+        "custom_button_bk_color_hover": "#24aeff"
+      }
+    },
+    "custom_liquid_Yeqe3x": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br><br>"
+      }
+    }
+  },
+  "order": [
+    "plush_hero_qYMMMn",
+    "main",
+    "image_gallery_HaN4kW",
+    "custom_liquid_4UrhmC",
+    "newsletter_yGEyMX",
+    "custom_liquid_Yeqe3x"
+  ]
+}

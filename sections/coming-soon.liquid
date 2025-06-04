@@ -1,0 +1,246 @@
+{% schema %}
+  {
+    "name": "Coming Soon",
+    "settings": [
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Padding Top",
+          "default": 36
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Padding Bottom",
+          "default": 36
+        },  
+        {
+          "type": "range",
+          "id": "margin_top",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Top",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 4,
+          "unit": "px",
+          "label": "Margin Bottom",
+          "default": 0
+        },            
+        {
+            "type": "text", 
+            "id": "section_title",
+            "label": "Title"
+        },       
+        {
+            "type": "text", 
+            "id": "sub_title",
+            "label": "Sub Title"
+        },   
+        {
+            "type": "textarea", 
+            "id": "contents",
+            "label": "Contents"
+        },                   
+        {
+            "type": "image_picker", 
+            "id": "desk-hero",
+            "label": "Desktop Background"
+        },
+        {
+            "type": "image_picker",
+            "id": "mob-hero",
+            "label": "Mobile Background"
+        },  
+        {
+            "type": "image_picker",
+            "id": "character",
+            "label": "Character"
+        },     
+        {
+            "type": "image_picker",
+            "id": "character_mobile",
+            "label": "Character Mobile"
+        },              
+        {
+            "type": "text",
+            "id": "desk-hero-alt",
+            "label": "Accessibility Alt Text",
+            "default": "Describe the background image"
+        },   
+        {
+            "type": "checkbox",
+            "id": "btn_enable",
+            "label": "Show Button",
+            "default": true
+        },                    
+        {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text"
+        }, 
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+        }
+    ],  
+    "presets": [
+      {
+        "category": "section",
+        "name": "Coming Soon"
+      }
+    ]
+  }
+{% endschema %}
+
+<div class="coming-contents-outer section-{{ section.id }}-margin"> 
+  <div class="do-container section-{{ section.id }}-padding"  >
+    <h2>{{ section.settings.section_title }}</h2>
+    <h3>{{ section.settings.sub_title }}</h3>
+    <div class="coming-contents-wrapper">
+      <div class="coming-contents">        
+        <p>{{ section.settings.contents }}</p>
+        {% if template contains 'page' and page.handle == 'legends-of-enderas' %}
+            {% if section.settings.btn_enable %}
+              <div class="coming-btn-wrapper">
+              <a class="btn-legends" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a></div>
+            {% endif %}  
+         {% else %}
+            {% if section.settings.btn_enable %}
+              <div class="coming-btn-wrapper">
+              <a class="do-btn btn-coming" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a></div>
+            {% endif %}  
+        {% endif %}        
+      </div> 
+      <div class="coming-media">
+        <img
+          class="character-desktop"
+          alt="{{ section.settings.character.alt | escape }}"
+          src="{{ section.settings.character | img_url: 'master' }}">
+        <img
+          class="character-mobile"
+          alt="{{ section.settings.character_mobile.alt | escape }}"
+          src="{{ section.settings.character_mobile | img_url: 'master' }}">
+      </div>      
+    </div>           
+  </div>
+</div>
+ 
+
+<style>
+  .section-{{ section.id }}-margin {
+    margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
+    margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-margin {
+      margin-top: {{ section.settings.margin_top }}px;
+      margin-bottom: {{ section.settings.margin_bottom }}px;      
+    }
+  } 
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;    
+    }
+  }   
+  .coming-contents-outer {  
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+    @media (max-width: 768px) {
+    .coming-contents-outer {
+            {% if section.settings.mob-hero %}
+                background-image: url('{{ section.settings.mob-hero | img_url: 'master' }}');
+            {% endif %}
+        }
+    }
+    @media (min-width: 769px) {
+        .coming-contents-outer {
+            {% if section.settings.desk-hero %}
+                background-image: url('{{ section.settings.desk-hero | img_url: 'master' }}');
+            {% endif %}
+        }         
+    }
+    .coming-contents-outer h2 {font-family: "Poppins", sans-serif;font-weight: 700; font-size: 50px; font-style: normal;  margin-bottom:0; }
+    .coming-contents-outer h3 {font-family: "Poppins", sans-serif;font-weight: 500; font-size: 28px; font-style: normal;  margin-bottom:0; }  
+    .coming-contents-outer p {font-family: Lato, sans-serif;font-size: 23px; font-weight: bold;text-align: center; margin-bottom: 20px;max-width: 400px;line-height: 30px;}
+    .coming-media img { max-width: 520px;margin-top: 20px;margin-right:20px;margin-bottom: -7px; }  
+    .coming-contents-outer .do-btn{font-family: Lato, sans-serif;}
+    .coming-contents-outer { background-color:#000; overflow: hidden;}
+    .coming-contents-outer h2,
+    .coming-contents-outer h3 { text-transform:uppercase; text-align:center; }    
+    .coming-contents-outer h2,
+    .coming-contents-outer h3,
+    .coming-contents-outer p { color:white; }
+    .coming-contents-wrapper {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0 10px;
+        flex-direction: row-reverse;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+        .coming-contents-wrapper { flex-direction: column; }
+        .coming-contents-outer { background-size: cover;}
+        .coming-contents-outer .do-btn {font-weight: 700;max-width: 80%;}
+    }    
+  .coming-btn-wrapper{ text-align:center;  }
+  .coming-btn-wrapper a{ width: 100%;}
+
+
+    @media (max-width: 768px) {
+        #shopify-section-{{section.id}} h2 {font-size: 36px;line-height: 42px; margin-bottom: 10px; padding: 0 10px;}
+        #shopify-section-{{section.id}} h3 {font-size: 30px; line-height: 32px;padding: 0 44px;}
+        .coming-contents-outer p {font-size: 18px; line-height: 24px;}
+        #shopify-section-{{section.id}} .coming-contents-outer { padding-top:0; }
+    }
+
+  /* Hide the mobile image by default */ 
+  .character-mobile {
+    display: none;
+  }
+
+  /* Show the mobile image and hide the desktop image on smaller screens */
+  @media only screen and (max-width: 767px) {
+    .character-desktop {
+      display: none;
+    }
+    .character-mobile {
+      display: block;
+    }
+  }
+{% if template contains 'page' and page.handle == 'legends-of-enderas' %}
+    @media (max-width: 768px) {
+        .coming-media img { width:100%; margin-bottom:0; margin-left:-200; }
+    }  
+ {% else %}
+    @media (max-width: 768px) {
+        .coming-media img { width:100%; margin-bottom:0; margin-left:-20px; }
+    } 
+{% endif %}
+
+</style>

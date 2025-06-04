@@ -1,0 +1,212 @@
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Desktop Hero Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "desk-hero",
+      "label": "Desktop Background",
+      "info": "Recommended size: 1920x800 pixels"
+    },
+    {
+      "type": "text",
+      "id": "desk-hero-alt",
+      "label": "Desktop Image Alt Text",
+      "default": "Describe the desktop background image",
+      "info": "Improves accessibility and SEO"
+    },
+    {
+      "type": "header",
+      "content": "Mobile Hero Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mob-hero",
+      "label": "Mobile Background",
+      "info": "Recommended size: 768x1024 pixels"
+    },
+    {
+      "type": "text",
+      "id": "mob-hero-alt",
+      "label": "Mobile Image Alt Text",
+      "default": "Describe the mobile background image",
+      "info": "Improves accessibility and SEO"
+    },
+    {
+      "type": "header",
+      "content": "Button Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show Button",
+      "default": true,
+      "info": "Toggle button visibility"
+    },
+    {
+      "type": "range",
+      "id": "button_position_from_bottom",
+      "label": "Desktop: Button Position from Bottom",
+      "min": 20,
+      "max": 140,
+      "step": 2,
+      "default": 20,
+      "unit": "px",
+      "info": "Adjusts button position on desktop view"
+    },
+    {
+      "type": "range",
+      "id": "button_position_from_bottom_mobile",
+      "label": "Mobile: Button Position from Top",
+      "min": 40,
+      "max": 240,
+      "step": 2,
+      "default": 60,
+      "unit": "px",
+      "info": "Adjusts button position on mobile view"
+    },
+    {
+      "type": "header",
+      "content": "Button Colors"
+    },
+    {
+      "type": "color",
+      "id": "button_start_color",
+      "label": "Button Start Color",
+      "default": "#18C94B",
+      "info": "Starting color for button gradient"
+    },
+    {
+      "type": "color",
+      "id": "button_end_color",
+      "label": "Button End Color",
+      "default": "#01b234",
+      "info": "Ending color for button gradient"
+    },
+    {
+      "type": "color",
+      "id": "button_font_color",
+      "label": "Button Font Color",
+      "default": "#ffffff",
+      "info": "Color of the button text"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Shop Now",
+      "info": "Text to display on the button"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link",
+      "info": "Where the button leads when clicked"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Hero",
+      "name": "Hero Section"
+    }
+  ]
+}
+{% endschema %}
+
+
+<div id="do-hero">
+    <a class="da-hero-test" href="{{ section.settings.button_link }}">
+        <picture>
+            {% if section.settings.mob-hero %}
+            <source media="(max-width: 768px)" srcset="{{ section.settings.mob-hero | img_url: 'master' }}">
+            {% endif %}
+            {% if section.settings.desk-hero %}
+            <source media="(min-width: 769px)" srcset="{{ section.settings.desk-hero | img_url: 'master' }}">
+            <img src="{{ section.settings.desk-hero | img_url: 'master' }}" alt="{{ section.settings.desk-hero-alt }}" style="{% unless section.settings.desk-hero %}display:none;{% endunless %}">
+            {% else %}
+            <img src="#" alt="Placeholder image" style="display:none;">
+            {% endif %}
+        </picture>
+    </a>
+    {% if section.settings.show_button %}
+      <div class="da-hero-links">
+        <div>
+          <a class="do-btn" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+        </div>
+      </div>
+    {% endif %}
+</div>
+ 
+ 
+<style>
+    #fw-hero{display: none !important;}
+    #shopify-section-{{section.id}} { margin-top:0 !important; }
+    #do-hero{
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+    .breadcrumbs-container{ display:none; }
+    #do-hero > div.da-hero-test,
+    #do-hero > div.da-hero-test > picture > img{
+        width: 100%;
+    }
+
+    #do-hero > div.da-hero-links > div> a{
+        background-image: linear-gradient(to right, {{ section.settings.button_start_color }}, {{ section.settings.button_end_color }});    
+        color: {{ section.settings.button_font_color }};  
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #do-hero > div.da-hero-links > div> a:hover{   
+    background-image: linear-gradient(to right, {{ section.settings.button_end_color }}, {{ section.settings.button_start_color }});  
+    }
+
+    #shopify-section-banner{
+      margin-top: 0;
+    }
+    @media screen and (min-width: 768px){
+        #do-hero > div.da-hero-links > div> a{
+            bottom: {{ section.settings.button_position_from_bottom }}px;
+        }
+    }
+    @media screen and (max-width: 768px){
+        #do-hero > div.da-hero-links > div> a{
+            top: {{ section.settings.button_position_from_bottom_mobile }}px;
+        }
+    }
+    @media screen and (max-width: 350px){
+        #do-hero > div.da-hero-links > div> a{
+            font-size: 3.5vw;
+        }
+    }
+</style>
+
+<script type="text/javascript">
+    document.querySelectorAll('a[href^="#section"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        
+        if (target) {
+          const offset = 220; // Adjust this value based on your header height
+          const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+</script>

@@ -1,0 +1,23 @@
+<div class="container row">
+  <div class="reading-width center large-row large-section" style="display: none">
+    <h1 class="giant-title">{{ 'general.404.title' | t }}</h1>
+    <p>{{ 'general.404.subtext' | t }}</p>
+    <div class="large-row">
+      <a href="{{ routes.root_url }}" class="btn btn--primary">{{ 'general.404.link' | t }}</a>
+    </div>
+  </div>
+  <div id="four-zero-four">
+    <a href="{{ routes.root_url }}">
+        <div class="hero-404">
+            <picture>
+                <source media="(max-width: 768px)" srcset="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/doom-404-mob.png?v=1685987132">
+                <source media="(min-width: 769px)" srcset="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/doom-404-page.png?v=1685987132">
+                <img src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/doom-404-page.png?v=1685987132" alt="Doomling running from explosion - click here to go to home page">
+            </picture>
+        </div>
+    </a>
+  </div>
+  <style>
+    #four-zero-four{ max-width: 1180px; margin: auto; } div.container.row{ padding: 0; margin-bottom: 0; }
+  </style>
+</div>

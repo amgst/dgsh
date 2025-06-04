@@ -1,0 +1,241 @@
+{
+  "sections": {
+    "card_styles_qMW4CU": {
+      "type": "card-styles",
+      "settings": {
+        "h2_font_size": 48,
+        "h2_font_size_m": 32,
+        "h3_font_size": 26,
+        "h3_font_size_m": 23,
+        "p_font_size": 22,
+        "p_font_size_m": 18,
+        "button_font_size": 28,
+        "img_animation": 800,
+        "main_color": "#230051",
+        "background_image": "shopify:\/\/shop_images\/swirlies_d44a3e47-f0d8-44c5-ba2e-2619f06d02c1.png"
+      }
+    },
+    "cards_multi_section_6YLKnd": {
+      "type": "cards-multi-section",
+      "blocks": {
+        "cards_3ArDAa": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/LOE_GoldPacks1_8a37b24b-215f-4441-8292-f8965ee7ab3c.png",
+            "card_description": "Each Legends of Enderas Gold Pack Comes with <b>7 guaranteed holofoils<\/b> from the Legends of Enderas expansion."
+          }
+        },
+        "cards_DXWMVV": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/LOE_GoldPacks2.png",
+            "card_description": "Introducing new <b>Rarity Gems<\/b>, which denote the rarity, from Common to Relic. (See scarcity chart below!)"
+          }
+        },
+        "cards_Fw4ALn": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/LOE_GoldPacks3.png",
+            "card_description": "All the Doomlings from the Legends of Enderas Expansion can be found as holofoils. But the rare <b>Relic Doomlings<\/b> can only be found in holofoil form."
+          }
+        },
+        "cards_Wa6FGg": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/LOE_GoldPacks4_1ab34ff9-75e5-428d-9204-5dec720ff12e.png",
+            "card_description": "There are also rare alt art cards you can find as holofoils, as well as some <b>additional surprises...<\/b>"
+          }
+        }
+      },
+      "block_order": [
+        "cards_3ArDAa",
+        "cards_DXWMVV",
+        "cards_Fw4ALn",
+        "cards_Wa6FGg"
+      ],
+      "custom_css": [
+        ".intro-img-three {z-index: 3;}",
+        ".intro-img-two {z-index: 2;}",
+        ".intro-img-one {margin-top: 3%; margin-left: -25%;}",
+        ".intro-img-two {margin-top: -1%; margin-right: 0%; margin-left: -25%;}",
+        ".intro-img-three {margin-right: -20%; margin-left: -12%;}",
+        "@media (max-width: 768px) {.intro-inner {position: relative; } .intro-img-one {position: absolute; max-width: 280px; left: -15px; top: -40px; } .intro-img-two {position: absolute; max-width: 190px; left: 180px; top: -25px; } .intro-img-three {position: absolute; max-width: 240px; right: -20px; top: -50px; }}"
+      ],
+      "settings": {
+        "card_id": "deeplings",
+        "section_title": "<br>",
+        "sub_section_title": "WHAT'S IN THE GOLD PACK?",
+        "intro_height": false,
+        "intro_height_custom": "",
+        "back_desk": "shopify:\/\/shop_images\/LOEBG_Desktop_3c019ca7-a549-49e1-b635-d20274e2ded1.jpg",
+        "back_mob": "shopify:\/\/shop_images\/LOEBG_Mobile_4a6c1ec2-cb33-4563-a593-d3445acd9f20.jpg",
+        "back_color": "",
+        "image_1": "shopify:\/\/shop_images\/sorcerer_31c26e6f-a6bb-458e-b2ca-27b788ee864b.png",
+        "image_2": "shopify:\/\/shop_images\/goldpacks_0b3c1507-88ff-4c73-a2f8-db2d91eaffde.png",
+        "image_3": "shopify:\/\/shop_images\/floatin_e47297f2-9308-4401-b2e4-c30ac1e91450.png",
+        "full_width": true,
+        "btn_enable": true,
+        "button_custom": true,
+        "button_custom_color": "#ffffff",
+        "button_custom_back_color": "#ff7900",
+        "button_custom_hover_color": "#ff7900",
+        "button_text": "GET GOLD PACKS",
+        "button_link": ""
+      }
+    },
+    "cards_multi_columns_6k8DDV": {
+      "type": "cards-multi-columns",
+      "blocks": {
+        "boxes_L38JE7": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/common_7dc8501c-4066-4e52-86e2-100d6238f4fa.png",
+            "box_title": "",
+            "box_link": "#glitterlings",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_NBwbFk": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/unusual_313e3a12-a936-4743-93aa-440b41a5a828.png",
+            "box_title": "",
+            "box_link": "#fuzelings",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_WjT8cy": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/scarce_ab033d57-7ad7-4d6a-8627-f7b376afbf6a.png",
+            "box_title": "",
+            "box_link": "#moonlings",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_CXeh9B": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/endangered.png",
+            "box_title": "",
+            "box_link": "",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_NGwgDC": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/legendary.png",
+            "box_title": "",
+            "box_link": "",
+            "open_in_new_tab": false
+          }
+        },
+        "boxes_LCkWkr": {
+          "type": "boxes",
+          "settings": {
+            "box_image": "shopify:\/\/shop_images\/relic.png",
+            "box_title": "",
+            "box_link": "#deeplings",
+            "open_in_new_tab": false
+          }
+        }
+      },
+      "block_order": [
+        "boxes_L38JE7",
+        "boxes_NBwbFk",
+        "boxes_WjT8cy",
+        "boxes_CXeh9B",
+        "boxes_NGwgDC",
+        "boxes_LCkWkr"
+      ],
+      "disabled": true,
+      "settings": {
+        "padding_top": 8,
+        "padding_bottom": 24,
+        "section_title": "<h2>DISCOVER\n<strong>6 RARITY TIERS<\/strong> <\/h2>",
+        "background_image": "shopify:\/\/shop_images\/ImaginaryEnds_sparkle2_copy.jpg",
+        "img_size": 260,
+        "enable_hover_effect": false,
+        "hover_scale": 105,
+        "arrow_style": "default",
+        "arrow_width": 23,
+        "arrow_height": 46,
+        "mobile_autoplay": true
+      }
+    },
+    "cards_title_BdYUhK": {
+      "type": "cards-title",
+      "settings": {
+        "section_title": "<h2>\n<strong>6 RARITY TIERS<\/strong> TO DISCOVER<\/h2>"
+      }
+    },
+    "plush_hero_arTrBT": {
+      "type": "plush-hero",
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/LOE_GoldPacks_Rarity_Desktop_683b3f6f-4e73-4002-a41a-ae52a0f1af30.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/LOE_GoldPacks_Rarity_Mobile_f5cca83b-2906-41c8-82a0-76107070e59d.jpg",
+        "desk-hero-alt": "rarity tier icons - common, unusual, scarce, endangered, legendary, relic. 41% chance to be common, 32% chance to be unusual, 14% chance to be scarce, 8% chance to be endangered, 3% chance to be legendary, 2% chance to be relic\/other. *each card has a 25% chance to be alt art.",
+        "button_link": ""
+      }
+    },
+    "custom_liquid_aDyi6N": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br><br>"
+      }
+    },
+    "cards_multi_section_min_TCwQgY": {
+      "type": "cards-multi-section-min",
+      "blocks": {
+        "cards_BYQFQU": {
+          "type": "cards",
+          "settings": {
+            "card_image": "shopify:\/\/shop_images\/Star_9c113bdd-f2af-4910-9d1c-a2b88ef0ff47.png",
+            "card_description": "Every holofoil in the First Edition Legends of Enderas Gold Packs contains a <b>First Edition star<\/b>. Get 'em before they go extinct!"
+          }
+        }
+      },
+      "block_order": [
+        "cards_BYQFQU"
+      ],
+      "settings": {
+        "card_id": "",
+        "image_1": "shopify:\/\/shop_images\/Doomlings_LegendsofEnderas_4_Holo.gif",
+        "image_2": "shopify:\/\/shop_images\/Doomlings_LegendsofEnderas_4_Holo.gif",
+        "image_3": "shopify:\/\/shop_images\/Doomlings_LegendsofEnderas_4_Holo.gif",
+        "image_4": "shopify:\/\/shop_images\/Doomlings_LegendsofEnderas_4_Holo.gif",
+        "full_width": true,
+        "btn_enable": false,
+        "button_text": "GET YOUR GOLD PACKS!",
+        "button_link": ""
+      }
+    },
+    "custom_liquid_LECXhA": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br>"
+      }
+    },
+    "plush_hero_hXnxwN": {
+      "type": "plush-hero",
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/LOE_JustCards_D_f0e29b26-cea7-484b-a01a-6c0b4a6d76c5.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/LOE_JustCards_M_537523b3-4748-4119-af3e-b9aa3ff415ad.jpg",
+        "desk-hero-alt": "just want the game cards? No problem! Get the Legends of Enderas expansion, ready to play now.",
+        "button_link": ""
+      }
+    }
+  },
+  "order": [
+    "card_styles_qMW4CU",
+    "cards_multi_section_6YLKnd",
+    "cards_multi_columns_6k8DDV",
+    "cards_title_BdYUhK",
+    "plush_hero_arTrBT",
+    "custom_liquid_aDyi6N",
+    "cards_multi_section_min_TCwQgY",
+    "custom_liquid_LECXhA",
+    "plush_hero_hXnxwN"
+  ]
+}

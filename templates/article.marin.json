@@ -1,0 +1,45 @@
+{
+  "sections": {
+    "main": {
+      "type": "marin-article",
+      "settings": {
+        "split_layout": false,
+        "article_show_author": false,
+        "article_show_date": false,
+        "article_show_tags": false,
+        "article_show_share_buttons": true,
+        "required_fields": true,
+        "privacy_link": "",
+        "show_featured_products": true
+      }
+    },
+    "newsletter_JWyf6g": {
+      "type": "newsletter",
+      "settings": {
+        "title": "Want to learn more?",
+        "section_subtitle": "<p>Sign up to get transmissions from Captain Marin sent straight to your email.<\/p>",
+        "section_background_colour": "#110d32",
+        "section_text_colour": "#ffffff",
+        "button_style": "button_2",
+        "enlarge_title": false,
+        "enlarge_text": false,
+        "custom_button": true,
+        "custom_button_color": "#230051",
+        "custom_button_bk_color": "#FFFFFF",
+        "custom_button_color_hover": "#110D32",
+        "custom_button_bk_color_hover": "#24AEFF"
+      }
+    },
+    "custom_liquid_rfdDqj": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br><br>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "newsletter_JWyf6g",
+    "custom_liquid_rfdDqj"
+  ]
+}

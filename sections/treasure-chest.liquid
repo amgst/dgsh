@@ -1,0 +1,687 @@
+{%- style -%}
+  .treasure-chest {
+    position: relative;
+    cursor: pointer;
+    max-width: 800px;
+    margin: 10px auto;
+    transition: transform 0.3s ease;
+    /* Improve tap target size on mobile */
+    padding: 5px;
+  }
+
+  .treasure-chest__image {
+    width: 100%; 
+    height: auto;
+    display: block;
+  }
+
+  .treasure-chest__hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .treasure-chest:hover .treasure-chest__hover {
+    opacity: 1;
+  }
+
+  .treasure-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .treasure-modal.active {
+    display: flex;
+    -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
+  }
+
+  .treasure-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+    width: 100%;
+    /*height: calc(100% - 4rem);    
+    max-height: 80vh; */
+  }
+
+  .treasure-slot {
+    aspect-ratio: 1;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    background-color: transparent;
+    border: 4px solid rgba(255, 255, 255, 0.95); 
+    border-radius: 24px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5), 0 0 2px rgba(255, 255, 255, 1), 0 0 10px rgba(0, 162, 255, 0.8), 0 0 20px rgba(0, 162, 255, 0.6), 0 0 30px rgba(0, 162, 255, 0.4), 0 0 40px rgba(0, 162, 255, 0.2);
+    
+    /* Add these properties to center content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.treasure-slot img {
+    /* Ensure the image itself is responsive and centered */
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+}
+  .treasure-slot::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 24px;
+    background: rgba(0, 162, 255, 0.1);
+    z-index: -1;
+  }
+
+  .treasure-slot:hover {
+    transform: scale(1.05);
+    box-shadow: 
+      /* Stronger inner white glow */
+      inset 0 0 15px rgba(255, 255, 255, 0.7),
+      /* Stronger outer white edge */
+      0 0 3px rgba(255, 255, 255, 1),
+      /* Enhanced blue glow layers */
+      0 0 15px rgba(0, 162, 255, 0.8),
+      0 0 25px rgba(0, 162, 255, 0.6),
+      0 0 35px rgba(0, 162, 255, 0.4),
+      0 0 45px rgba(0, 162, 255, 0.3);
+  }
+
+  .treasure-slot:hover {
+    transform: scale(1.05);
+    border-color: rgba(0, 162, 255, 1);
+    box-shadow: 0 0 15px rgba(0, 162, 255, 0.4),
+                0 0 30px rgba(0, 162, 255, 0.2);
+  }
+
+  .treasure-slot:hover::before {
+    opacity: 0.2;
+  }
+
+/*  .treasure-slot img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }*/
+
+  .treasure-details {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+    padding: 1rem;
+     margin: 1rem;
+    border-radius: 24px;
+    max-width: 500px;
+    overflow: auto;
+    z-index: 20000;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0, 162, 255, 0.3),
+                0 0 40px rgba(0, 162, 255, 0.2),
+                0 0 60px rgba(0, 162, 255, 0.1);
+    color: white;
+    background-color: rgba(0, 84, 168, 0.95); 
+  }
+  
+  .treasure-details img {
+    max-width: 100%;
+    display: block;
+    max-height: 80vh;
+  }
+
+  .treasure-modal__close {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    background: url('{{ "chest-x.png" | asset_url }}') no-repeat center;
+    background-size: contain;
+    border: none;
+    padding: 0;
+    transition: transform 0.3s ease;
+    z-index: 10100;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    background: url('{{ "chest-x.png" | asset_url }}') no-repeat center;
+    background-size: contain;
+    border: none;
+    padding: 0;
+    transition: transform 0.3s ease;
+    z-index: 20100; 
+  }
+  
+  .treasure-modal__close:hover,
+  .close-modal:hover {
+    transform: scale(1.1);
+  }
+
+  .treasure-modal__content {
+    background: radial-gradient(
+      circle at center,
+      rgba(0, 84, 168, 1) 0%,
+      rgba(24, 26, 89, 1) 50%,
+      rgba(20, 20, 58, 1) 100%
+    );
+  border-radius: 24px;
+  width: 90%; 
+  max-width: 900px; 
+  position: relative;
+  padding: 33px 52px 40px 26px;
+  box-shadow: 0 0 50px 10px rgb(0 162 255 / 40%), 0 0 30px rgba(0, 162, 255, 0.2), 0 0 60px rgba(0, 162, 255, 0.1), 0 0 90px rgba(0, 162, 255, 0.05);
+  max-height: 90vh; 
+  overflow-y: auto;
+  margin: 0 auto; 
+
+
+  }
+
+  /* Responsive styles for all devices */
+  @media screen and (max-width: 1024px) {
+    .treasure-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .treasure-modal__content {
+      width: 95%;
+      max-width: 600px; 
+      padding: 40px 20px;
+      margin: 10px;
+    }
+    
+    .treasure-grid {
+      padding: 1rem 0.75rem;
+    }
+  }
+
+  /* Specific fixes for smaller devices including iPhone */
+  @media screen and (max-width: 480px) {
+/*    .treasure-details { top:35%; }*/
+
+    .treasure-modal__content {
+      padding: 30px 15px 15px 15px;
+      width: 92%;
+      border-radius: 20px;
+    }
+    
+    .treasure-grid {
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 0.8rem;
+      padding: 0.8rem 0.6rem;
+    }
+    
+    .treasure-slot {
+      border-width: 3px; 
+      border-radius: 16px; 
+    }
+    
+    .treasure-slot::before {
+      border-radius: 16px;
+    }
+    
+    .treasure-modal__close {
+      top: 10px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+    }
+    .close-modal {
+    width: 30px;
+    height: 30px;}
+    /* Enhance tap targets for mobile */
+    .treasure-slot, 
+    
+    .close-modal {
+      min-width: 30px;
+      min-height: 30px;
+    }
+    
+    /* Fix detail modal for small screens */
+    .treasure-details {
+      width: 85%; 
+      max-width: 90%;
+      padding: 1.5rem;
+      border-radius: 20px;
+    }
+  }
+
+  /* Fix for iOS scrolling issues */
+  @supports (-webkit-touch-callout: none) {
+    .treasure-grid,
+    .treasure-modal__content {
+      /* Fix for iOS momentum scrolling */
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Prevent content from being cut off under the notch/home indicator */
+    .treasure-modal.active {
+      padding-top: env(safe-area-inset-top);
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    
+    /* Increase tap target sizes specifically for iOS */
+    .treasure-slot {
+      margin: 2px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="treasure-chest" data-treasure-chest>
+  <img 
+    src="{{ section.settings.chest_image | img_url: 'master' }}" 
+    alt="Treasure Chest" 
+    class="treasure-chest__image"
+  >
+  {% if section.settings.chest_hover_image != blank %}
+    <img 
+      src="{{ section.settings.chest_hover_image | img_url: 'master' }}" 
+      alt="Treasure Chest Hover" 
+      class="treasure-chest__hover"
+    >
+  {% endif %}
+</div>
+
+<div class="treasure-modal" data-treasure-modal>
+  <div class="treasure-modal__content">
+    <div class="treasure-modal__close" data-close-modal></div>
+    <div class="treasure-grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'treasure_slot' %}
+          <div class="treasure-slot" data-treasure="{{ block.id }}">
+            {% if block.settings.treasure_image != blank %}
+              <img 
+                src="{{ block.settings.treasure_image | img_url: 'master' }}" 
+                alt="{{ block.settings.treasure_title | default: 'Treasure Item' }}"
+              >
+            {% endif %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% for block in section.blocks %}
+  {% if block.type == 'treasure_slot' %}
+    <div class="treasure-details" data-treasure-details="{{ block.id }}">
+      <div class="close-modal" data-close-details></div>
+      {% if block.settings.treasure_detail_image != blank %}
+        <img 
+          src="{{ block.settings.treasure_detail_image | img_url: 'master' }}" 
+          alt="{{ block.settings.treasure_title | default: 'Treasure Details' }}"
+        >
+      {% else %}
+        <img 
+          src="{{ 'card-coming-soon.png' | asset_url }}" 
+          alt="Coming Soon"
+        >
+      {% endif %}
+    </div>
+  {% endif %}
+{% endfor %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Main elements
+  const chest = document.querySelector('[data-treasure-chest]');
+  const modal = document.querySelector('[data-treasure-modal]');
+  const closeModalBtn = document.querySelector('[data-close-modal]');
+  const treasureSlots = document.querySelectorAll('.treasure-slot');
+  const closeDetailsBtns = document.querySelectorAll('[data-close-details]');
+  const body = document.body;
+  
+  // Debug mode - set to true to enable console logs
+  const debug = true;
+  
+  // Configuration options
+  const config = {
+    closeOnOutsideClick: true // Set to false to disable closing on outside click
+  };
+  
+  // Track modal states
+  let isDetailModalOpen = false;
+  let currentDetailModal = null;
+  
+  // Track touch events to differentiate between taps and scrolls
+  let touchStartY = 0;
+  let touchMoved = false;
+  
+  // Check if device is iOS
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  
+  // Debug logging function
+  function log(...args) {
+    if (debug) console.log(...args);
+  }
+
+  log('Device detection - iOS:', isIOS);
+  log('Chest element:', chest);
+  log('Main modal:', modal);
+  log('Treasure slots:', treasureSlots.length);
+  log('Detail close buttons:', closeDetailsBtns.length);
+  log('Configuration:', config);
+  
+  // List all slot IDs and their corresponding detail IDs
+  treasureSlots.forEach((slot, index) => {
+    const detailId = slot.dataset.treasure;
+    const detailElement = document.querySelector(`[data-treasure-details="${detailId}"]`);
+    log(`Slot ${index + 1}: ID=${detailId}, has matching detail:`, !!detailElement);
+  });
+
+  // Close all detail modals
+  function closeAllDetailModals() {
+    const detailsModals = document.querySelectorAll('.treasure-details');
+    detailsModals.forEach(details => {
+      details.style.display = 'none';
+    });
+    isDetailModalOpen = false;
+    currentDetailModal = null;
+    log('All detail modals closed');
+  }
+
+  // Function to lock body scroll
+  function lockBodyScroll() {
+    // Save current scroll position
+    const scrollY = window.scrollY;
+    // Add styles to lock the body in place
+    body.style.position = 'fixed';
+    body.style.width = '100%';
+    body.style.top = `-${scrollY}px`;
+    body.dataset.scrollPosition = scrollY;
+    log('Body scroll locked');
+  }
+  
+  // Function to unlock body scroll
+  function unlockBodyScroll() {
+    // Restore scroll position
+    const scrollY = body.dataset.scrollPosition || '0';
+    body.style.position = '';
+    body.style.width = '';
+    body.style.top = '';
+    window.scrollTo(0, parseInt(scrollY));
+    log('Body scroll unlocked');
+  }
+
+  // Close the main modal
+  function closeMainModal() {
+    if (!isDetailModalOpen) {
+      modal.classList.remove('active');
+      unlockBodyScroll();
+      log('Main modal closed');
+    }
+  }
+
+  // For iOS, use touchstart/touchend with movement detection to prevent scroll triggering
+  if (isIOS) {
+    chest.addEventListener('touchstart', function(e) {
+      touchStartY = e.touches[0].clientY;
+      touchMoved = false;
+      log('Touch start on chest at Y:', touchStartY);
+    }, { passive: true });
+    
+    chest.addEventListener('touchmove', function(e) {
+      const touchY = e.touches[0].clientY;
+      // If moved more than 10px, consider it a scroll not a tap
+      if (Math.abs(touchY - touchStartY) > 10) {
+        touchMoved = true;
+        log('Touch moved, flagging as scroll');
+      }
+    }, { passive: true });
+    
+    chest.addEventListener('touchend', function(e) {
+      log('Touch end on chest, moved:', touchMoved);
+      if (!touchMoved) {
+        e.preventDefault();
+        modal.classList.add('active');
+        closeAllDetailModals();
+        lockBodyScroll();
+        log('Main modal opened (iOS tap)');
+      }
+    });
+  } else {
+    // Regular click for non-iOS devices
+    chest.addEventListener('click', function(e) {
+      modal.classList.add('active');
+      closeAllDetailModals();
+      lockBodyScroll();
+      log('Main modal opened (click)');
+    });
+  }
+
+  // Close main modal via X button (only if no detail is open)
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      log('Close button clicked, isDetailModalOpen:', isDetailModalOpen);
+      closeMainModal();
+    });
+  }
+
+  // Close main modal when clicking outside the content
+  if (config.closeOnOutsideClick) {
+    modal.addEventListener('click', function(e) {
+      // Only if the click is directly on the modal background (not on any child elements)
+      if (e.target === modal) {
+        log('Click detected outside modal content');
+        closeMainModal();
+      }
+    });
+  }
+
+  // Handle treasure slot clicks with the same touch detection pattern
+  treasureSlots.forEach(slot => {
+    if (isIOS) {
+      slot.addEventListener('touchstart', function(e) {
+        touchStartY = e.touches[0].clientY;
+        touchMoved = false;
+      }, { passive: true });
+      
+      slot.addEventListener('touchmove', function(e) {
+        const touchY = e.touches[0].clientY;
+        if (Math.abs(touchY - touchStartY) > 10) {
+          touchMoved = true;
+        }
+      }, { passive: true });
+      
+      slot.addEventListener('touchend', function(e) {
+        if (!touchMoved) {
+          e.stopPropagation();
+          handleSlotSelection(this);
+        }
+      });
+    } else {
+      slot.addEventListener('click', function(e) {
+        e.stopPropagation();
+        handleSlotSelection(this);
+      });
+    }
+  });
+  
+  function handleSlotSelection(slot) {
+    const treasureId = slot.dataset.treasure;
+    log('Treasure slot selected, ID:', treasureId);
+    
+    const details = document.querySelector(`[data-treasure-details="${treasureId}"]`);
+    log('Found details element:', details);
+    
+    if (details) {
+      // Close any open detail modal first
+      closeAllDetailModals();
+      
+      // Show this detail modal
+      details.style.display = 'block';
+      isDetailModalOpen = true;
+      currentDetailModal = details;
+      log('Detail modal opened:', treasureId);
+    } else {
+      log('ERROR: No matching detail found for ID:', treasureId);
+    }
+  }
+
+  // Close detail modal via X button with same touch detection
+  closeDetailsBtns.forEach(button => {
+    if (isIOS) {
+      button.addEventListener('touchstart', function(e) {
+        touchStartY = e.touches[0].clientY;
+        touchMoved = false;
+      }, { passive: true });
+      
+      button.addEventListener('touchmove', function(e) {
+        const touchY = e.touches[0].clientY;
+        if (Math.abs(touchY - touchStartY) > 10) {
+          touchMoved = true;
+        }
+      }, { passive: true });
+      
+      button.addEventListener('touchend', function(e) {
+        if (!touchMoved) {
+          e.stopPropagation();
+          closeDetailModal(this);
+        }
+      });
+    } else {
+      button.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeDetailModal(this);
+      });
+    }
+  });
+  
+  function closeDetailModal(button) {
+    log('Detail close button clicked');
+    const details = button.closest('.treasure-details');
+    if (details) {
+      details.style.display = 'none';
+      isDetailModalOpen = false;
+      currentDetailModal = null;
+      log('Detail modal closed via X button');
+    }
+  }
+
+  // IMPORTANT: Prevent clicks/touches on detail modals from bubbling up
+  document.querySelectorAll('.treasure-details').forEach(detailModal => {
+    detailModal.addEventListener('click', function(e) {
+      e.stopPropagation();
+      log('Click intercepted on detail modal');
+    });
+    
+    if (isIOS) {
+      detailModal.addEventListener('touchend', function(e) {
+        e.stopPropagation();
+        log('Touch intercepted on detail modal');
+      });
+    }
+  });
+  
+  // Prevent accidental opening when touching modal background
+  modal.querySelector('.treasure-modal__content').addEventListener('click', function(e) {
+    e.stopPropagation();
+    log('Click on modal content intercepted');
+  });
+  
+  if (isIOS) {
+    // Prevent modal from opening on scroll by catching document touches
+    document.addEventListener('touchmove', function(e) {
+      // If we're in scroll mode and modal isn't deliberately opened
+      if (!modal.classList.contains('active')) {
+        touchMoved = true; // Mark as a scroll action
+      }
+    }, { passive: true });
+    
+    // Additional safety to prevent modal opening during scroll momentum
+    window.addEventListener('scroll', function() {
+      if (!modal.classList.contains('active')) {
+        touchMoved = true; // Consider any scroll as a move, not a tap
+      }
+    }, { passive: true });
+  }
+  
+  // Ensure all details start hidden
+  closeAllDetailModals();
+  
+  // Make sure body scroll is unlocked when page loads
+  unlockBodyScroll();
+  
+  log('Treasure chest interaction initialized with iOS scroll prevention');
+});
+</script>
+
+{% schema %}
+{
+  "name": "Treasure Chest",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "chest_image",
+      "label": "Treasure Chest Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "chest_hover_image",
+      "label": "Treasure Chest Hover Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "treasure_slot",
+      "name": "Treasure",
+      "limit": 12,
+      "settings": [ 
+        {
+          "type": "image_picker",
+          "id": "treasure_image",
+          "label": "Treasure Icon"
+        },
+        {
+          "type": "image_picker",
+          "id": "treasure_detail_image",
+          "label": "Treasure Detail Image"
+        },
+        {
+          "type": "text",
+          "id": "treasure_title",
+          "label": "Treasure Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Treasure Chest",
+      "category": "Interactive"
+    }
+  ]
+}
+{% endschema %}

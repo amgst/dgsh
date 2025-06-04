@@ -1,0 +1,343 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_title": true,
+        "title_alignment": "left"
+      }
+    },
+    "b993e373-dae8-466d-9e4b-29232e9ec97d": {
+      "type": "image-with-text-overlay",
+      "disabled": true,
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Doomlings-Landing-Page-background.jpg",
+        "image_link": "",
+        "image_position": "center center",
+        "height": "adapt",
+        "height_desktop": 600,
+        "height_mobile": 500,
+        "color_overlay_bg": "#ffffff",
+        "overlay_opacity": 0,
+        "color_overlay_text": "#50248d",
+        "overlay_title": "Plushies are coming!",
+        "overlay_text": "Sign up here for first access to EXCLUSIVE plushie news and content",
+        "overlay_url_text_1": "",
+        "overlay_url_1": "",
+        "overlay_url_text_2": "",
+        "overlay_url_2": "",
+        "overlay_url_style": "button_1",
+        "enlarge_title": false,
+        "enlarge_text": false,
+        "overlay_position_x": 47,
+        "overlay_position_y": 35,
+        "mobile_text_below": false,
+        "color_label_background": "#ffffff",
+        "color_label_text": "#333333",
+        "show_chevron": false,
+        "product_id_1": "",
+        "chevron_position_1": "right",
+        "label_position_x_1": 20,
+        "label_position_y_1": 30,
+        "product_id_2": "",
+        "chevron_position_2": "right",
+        "label_position_x_2": 80,
+        "label_position_y_2": 50
+      }
+    },
+    "amazon_review_aRtA3J": {
+      "type": "amazon-review",
+      "blocks": {
+        "amazon_BMxQzx": {
+          "type": "amazon",
+          "settings": {
+            "product": "classic-doomlings-game",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Classic-Card-Lightning-Suitable\/dp\/B0B8L1CGDR",
+            "product_custom": false,
+            "product_title_custom": "",
+            "product_url_custom": ""
+          }
+        },
+        "amazon_cwbRaw": {
+          "type": "amazon",
+          "settings": {
+            "product": "doomlings-deluxe-bundle",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Deluxe-Card-Bundle-Suitable\/dp\/B0BDSST2VN",
+            "product_custom": false,
+            "product_title_custom": "",
+            "product_url_custom": ""
+          }
+        },
+        "amazon_f8zEq7": {
+          "type": "amazon",
+          "settings": {
+            "product": "doomlings-overlush-mystery-expansion-4-pack",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Overlush-Mystery-Expansion-Included\/dp\/B0CRBHXW1P",
+            "product_custom": false,
+            "product_title_custom": "",
+            "product_url_custom": ""
+          }
+        },
+        "amazon_bjaEYT": {
+          "type": "amazon",
+          "settings": {
+            "product": "doomlings-deluxe-upgrade-pack",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Upgrade-Pack-Classic-Game\/dp\/B0BJZCZ9J8",
+            "product_custom": false,
+            "product_title_custom": "",
+            "product_url_custom": ""
+          }
+        },
+        "amazon_KjEE39": {
+          "type": "amazon",
+          "settings": {
+            "product": "community-playmat",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Birth-Hero-Community-Playmat\/dp\/B0BYPL26F5",
+            "product_custom": false,
+            "product_title_custom": "",
+            "product_url_custom": ""
+          }
+        },
+        "amazon_Pb3frz": {
+          "type": "amazon",
+          "settings": {
+            "product": "4-pack-playmats",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Playmat-Cards-Unique-Designs\/dp\/B0BDT42MMR",
+            "product_custom": false,
+            "product_title_custom": "",
+            "product_url_custom": ""
+          }
+        },
+        "amazon_jNkMTV": {
+          "type": "amazon",
+          "settings": {
+            "product": "6-pack-playmats",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Playmat-Cards-Unique-Designs\/dp\/B0BDT7RJNN",
+            "product_custom": false,
+            "product_title_custom": "",
+            "product_url_custom": ""
+          }
+        },
+        "amazon_WKz8n3": {
+          "type": "amazon",
+          "settings": {
+            "product": "300-doomsleeves",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Doomsleeves-Designed-Sleeves-Protectors\/dp\/B09RD4D1PK",
+            "product_custom": false,
+            "product_title_custom": "",
+            "product_url_custom": ""
+          }
+        },
+        "amazon_bfF7VE": {
+          "type": "amazon",
+          "settings": {
+            "product": "playermat-bag",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Playmat-Carrying-Waterproof-Tabletop\/dp\/B09RD2YM8L",
+            "product_custom": false,
+            "product_title_custom": "",
+            "product_url_custom": ""
+          }
+        },
+        "amazon_89NGtp": {
+          "type": "amazon",
+          "settings": {
+            "product": "",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Upgrade-Pack-Classic-Card\/dp\/B0CPTJ5TWK",
+            "product_custom": true,
+            "product_title_custom": "Upgrade Pack & Doomsleeves Bundle",
+            "product_image": "shopify:\/\/shop_images\/71grPH3cR8L._AC_SX679.jpg",
+            "product_url_custom": "https:\/\/www.amazon.com\/Doomlings-Upgrade-Pack-Classic-Card\/dp\/B0CPTJ5TWK"
+          }
+        },
+        "amazon_ydYpJG": {
+          "type": "amazon",
+          "settings": {
+            "product": "",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Upgrade-Pack-Classic-Card\/dp\/B0CPTHYV4G",
+            "product_custom": true,
+            "product_title_custom": "Upgrade & Community Playmat Bundle",
+            "product_image": "shopify:\/\/shop_images\/718xzosQZtL._AC_SX679.jpg",
+            "product_url_custom": "https:\/\/www.amazon.com\/Doomlings-Upgrade-Pack-Classic-Card\/dp\/B0CPTHYV4G"
+          }
+        },
+        "amazon_JcpT9c": {
+          "type": "amazon",
+          "settings": {
+            "product": "",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Playmat-Carrying-Waterproof-Community\/dp\/B0CPFSSDZT",
+            "product_custom": true,
+            "product_title_custom": "Community Playmat & Playmat Bag Bundle",
+            "product_image": "shopify:\/\/shop_images\/71kF3F-zIZL.__AC_SX300_SY300_QL70_FMwebp.webp",
+            "product_url_custom": "https:\/\/www.amazon.com\/Doomlings-Playmat-Carrying-Waterproof-Community\/dp\/B0CPFSSDZT"
+          }
+        },
+        "amazon_7CjzHr": {
+          "type": "amazon",
+          "settings": {
+            "product": "",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Playmat-Carrying-Waterproof-Tabletop\/dp\/B0C1HK9JC5",
+            "product_custom": true,
+            "product_title_custom": "4 Playmats & Carrying Bag Bundle",
+            "product_image": "shopify:\/\/shop_images\/71pHe-b3AgL._AC_SX679.jpg",
+            "product_url_custom": "https:\/\/www.amazon.com\/Doomlings-Playmat-Carrying-Waterproof-Tabletop\/dp\/B0C1HK9JC5"
+          }
+        },
+        "amazon_NcF74P": {
+          "type": "amazon",
+          "settings": {
+            "product": "",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Playmat-Carrying-Waterproof-Tabletop\/dp\/B0BGQYYWWF",
+            "product_custom": true,
+            "product_title_custom": "6 Playmats & Carrying Bag Bundle",
+            "product_image": "shopify:\/\/shop_images\/71opUZ_qrLL._AC_SX679.jpg",
+            "product_url_custom": "https:\/\/www.amazon.com\/Doomlings-Playmat-Carrying-Waterproof-Tabletop\/dp\/B0BGQYYWWF"
+          }
+        },
+        "amazon_UVEdaa": {
+          "type": "amazon",
+          "settings": {
+            "product": "",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Doomsleeves-Protective-Carrying-Individual\/dp\/B0CPTJZJ2H",
+            "product_custom": true,
+            "product_title_custom": "Doomsleeves, Playmat Bag & Playmats Bundle",
+            "product_image": "shopify:\/\/shop_images\/71b2TgT3qiL._AC_SX679.jpg",
+            "product_url_custom": "https:\/\/www.amazon.com\/Doomlings-Doomsleeves-Protective-Carrying-Individual\/dp\/B0CPTJZJ2H"
+          }
+        },
+        "amazon_KAU4XB": {
+          "type": "amazon",
+          "settings": {
+            "product": "",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Community-Expansions-Holofoils-Doomsleeves\/dp\/B0BM4VPVKP",
+            "product_custom": true,
+            "product_title_custom": "Deluxe Bundle & Doomsleeves",
+            "product_image": "shopify:\/\/shop_images\/71tUP3lFuiL._AC_SX679.jpg",
+            "product_url_custom": "https:\/\/www.amazon.com\/Doomlings-Community-Expansions-Holofoils-Doomsleeves\/dp\/B0BM4VPVKP"
+          }
+        },
+        "amazon_FNjd6V": {
+          "type": "amazon",
+          "settings": {
+            "product": "",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Expansions-Holofoils-Individual-Playmats\/dp\/B0CPTHVRL2",
+            "product_custom": true,
+            "product_title_custom": "Deluxe Bundle & 4 Playmats",
+            "product_image": "shopify:\/\/shop_images\/71sln4i63gL._AC_SX679.jpg",
+            "product_url_custom": "https:\/\/www.amazon.com\/Doomlings-Expansions-Holofoils-Individual-Playmats\/dp\/B0CPTHVRL2"
+          }
+        },
+        "amazon_p6q9KG": {
+          "type": "amazon",
+          "settings": {
+            "product": "",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Community-Expansions-Holofoils-Doomsleeves\/dp\/B0BSP473GG",
+            "product_custom": true,
+            "product_title_custom": "Deluxe Bundle, Playmat Bag, & Doomsleeves",
+            "product_image": "shopify:\/\/shop_images\/71gLdVN2lvL._AC_SX679.jpg",
+            "product_url_custom": "https:\/\/www.amazon.com\/Doomlings-Community-Expansions-Holofoils-Doomsleeves\/dp\/B0BSP473GG"
+          }
+        },
+        "amazon_6Kycq6": {
+          "type": "amazon",
+          "settings": {
+            "product": "",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Community-Expansions-Holofoils-Doomsleeves\/dp\/B0C1HKCSCQ",
+            "product_custom": true,
+            "product_title_custom": "Deluxe Bundle, Playmats & Doomsleeves",
+            "product_image": "shopify:\/\/shop_images\/81dij_O7JL._AC_SX679.jpg",
+            "product_url_custom": "https:\/\/www.amazon.com\/Doomlings-Community-Expansions-Holofoils-Doomsleeves\/dp\/B0C1HKCSCQ"
+          }
+        },
+        "amazon_wjtpGK": {
+          "type": "amazon",
+          "settings": {
+            "product": "",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Classic-Lightning-Suitable-Holofoil\/dp\/B0CPFWCV8C",
+            "product_custom": true,
+            "product_title_custom": "Classic Game & Playmat Bundle",
+            "product_image": "shopify:\/\/shop_images\/71XYGzRQtfL._AC_SX679.jpg",
+            "product_url_custom": "https:\/\/www.amazon.com\/Doomlings-Classic-Lightning-Suitable-Holofoil\/dp\/B0CPFWCV8C"
+          }
+        },
+        "amazon_W7bMNx": {
+          "type": "amazon",
+          "settings": {
+            "product": "",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Classic-Lightning-Suitable-Expansions\/dp\/B0BPMY3MVC",
+            "product_custom": true,
+            "product_title_custom": "Base Game & Upgrade Pack Bundle",
+            "product_image": "shopify:\/\/shop_images\/710mxZbQSZL.__AC_SX300_SY300_QL70_FMwebp_3e6881c1-4fc0-4562-8b26-e3b81377f579.webp",
+            "product_url_custom": "https:\/\/www.amazon.com\/Doomlings-Classic-Lightning-Suitable-Expansions\/dp\/B0BPMY3MVC"
+          }
+        },
+        "amazon_QWjNii": {
+          "type": "amazon",
+          "settings": {
+            "product": "",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Classic-Lightning-Suitable-Doomsleeves\/dp\/B0BPMYB2XD",
+            "product_custom": true,
+            "product_title_custom": "Base Game, Upgrade Pack & Doomsleeves Bundle",
+            "product_image": "shopify:\/\/shop_images\/71B_z4xuIAL._AC_SX679.jpg",
+            "product_url_custom": "https:\/\/www.amazon.com\/Doomlings-Classic-Lightning-Suitable-Doomsleeves\/dp\/B0BPMYB2XD"
+          }
+        },
+        "amazon_zgE8Xi": {
+          "type": "amazon",
+          "settings": {
+            "product": "",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Classic-Lightning-Suitable-Playmats\/dp\/B0BMB5T78J",
+            "product_custom": true,
+            "product_title_custom": "Base Game, Upgrade Pack, & Playmat Bundle",
+            "product_image": "shopify:\/\/shop_images\/71mmt8bCKrL.__AC_SX300_SY300_QL70_FMwebp.webp",
+            "product_url_custom": "https:\/\/www.amazon.com\/Doomlings-Classic-Lightning-Suitable-Playmats\/dp\/B0BMB5T78J"
+          }
+        },
+        "amazon_CeDLad": {
+          "type": "amazon",
+          "settings": {
+            "product": "",
+            "product_url": "https:\/\/www.amazon.com\/Doomlings-Classic-Lightning-Suitable-Doomsleeves\/dp\/B0BM4XGY5K",
+            "product_custom": true,
+            "product_title_custom": "Base Game & Doomsleeves Bundle",
+            "product_image": "shopify:\/\/shop_images\/71aBfGXKTqL.__AC_SX300_SY300_QL70_FMwebp.webp",
+            "product_url_custom": "https:\/\/www.amazon.com\/Doomlings-Classic-Lightning-Suitable-Doomsleeves\/dp\/B0BM4XGY5K"
+          }
+        }
+      },
+      "block_order": [
+        "amazon_BMxQzx",
+        "amazon_cwbRaw",
+        "amazon_f8zEq7",
+        "amazon_bjaEYT",
+        "amazon_KjEE39",
+        "amazon_Pb3frz",
+        "amazon_jNkMTV",
+        "amazon_WKz8n3",
+        "amazon_bfF7VE",
+        "amazon_89NGtp",
+        "amazon_ydYpJG",
+        "amazon_JcpT9c",
+        "amazon_7CjzHr",
+        "amazon_NcF74P",
+        "amazon_UVEdaa",
+        "amazon_KAU4XB",
+        "amazon_FNjd6V",
+        "amazon_p6q9KG",
+        "amazon_6Kycq6",
+        "amazon_wjtpGK",
+        "amazon_W7bMNx",
+        "amazon_QWjNii",
+        "amazon_zgE8Xi",
+        "amazon_CeDLad"
+      ],
+      "settings": {
+        "title": "Choose a Product Review"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "b993e373-dae8-466d-9e4b-29232e9ec97d",
+    "amazon_review_aRtA3J"
+  ]
+}

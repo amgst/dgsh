@@ -1,0 +1,406 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_title": true,
+        "title_alignment": "left"
+      }
+    },
+    "plush_hero_XimPfj": {
+      "type": "plush-hero",
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/DiscoveryLog_LOE_Hero_Desktop.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/DiscoveryLog_LOE_Hero_Mobile.jpg",
+        "desk-hero-alt": "DOOMLINGS DISCOVERY LOG REFLECTING GLASS",
+        "button_link": ""
+      }
+    },
+    "treasure_chest_Ue9NKU": {
+      "type": "treasure-chest",
+      "blocks": {
+        "treasure_slot_3BwQD4": {
+          "type": "treasure_slot",
+          "settings": {
+            "treasure_image": "shopify:\/\/shop_images\/T_Cataclyte.png",
+            "treasure_detail_image": "shopify:\/\/shop_images\/Cataclyte.png",
+            "treasure_title": "Cataclyte"
+          }
+        },
+        "treasure_slot_TgXd3B": {
+          "type": "treasure_slot",
+          "settings": {
+            "treasure_image": "shopify:\/\/shop_images\/T_TheFriendsWeMadeAlongtheWay.png",
+            "treasure_detail_image": "shopify:\/\/shop_images\/TheFriendsWeMadeAlongtheWay.png",
+            "treasure_title": "The Friends We Made Along The Way"
+          }
+        },
+        "treasure_slot_PNJWDh": {
+          "type": "treasure_slot",
+          "settings": {
+            "treasure_image": "shopify:\/\/shop_images\/T_Summit_03f5b8de-a555-45b1-a709-89af8894b904.png",
+            "treasure_detail_image": "shopify:\/\/shop_images\/Summit.png",
+            "treasure_title": "Summit"
+          }
+        },
+        "treasure_slot_Wg9nL3": {
+          "type": "treasure_slot",
+          "settings": {
+            "treasure_image": "shopify:\/\/shop_images\/T_Soulweaver_75503abb-50e8-4c26-96d0-73afd518d652.png",
+            "treasure_detail_image": "shopify:\/\/shop_images\/Soulweaver.png",
+            "treasure_title": "Soulweaver"
+          }
+        },
+        "treasure_slot_VmVDJM": {
+          "type": "treasure_slot",
+          "settings": {
+            "treasure_image": "shopify:\/\/shop_images\/T_Vanity_32887481-7bc2-445d-947b-25933c5fd1e7.png",
+            "treasure_detail_image": "shopify:\/\/shop_images\/Vanity.png",
+            "treasure_title": "Vanity"
+          }
+        },
+        "treasure_slot_xtfHb9": {
+          "type": "treasure_slot",
+          "settings": {
+            "treasure_image": "shopify:\/\/shop_images\/T_Translator.png",
+            "treasure_detail_image": "shopify:\/\/shop_images\/Translator.png",
+            "treasure_title": "Translator"
+          }
+        },
+        "treasure_slot_VgWemp": {
+          "type": "treasure_slot",
+          "settings": {
+            "treasure_image": "shopify:\/\/shop_images\/T_ZeroPointModule.png",
+            "treasure_detail_image": "shopify:\/\/shop_images\/ZeroPointModule.png",
+            "treasure_title": "Zero-Point Module"
+          }
+        },
+        "treasure_slot_QF6hg4": {
+          "type": "treasure_slot",
+          "settings": {
+            "treasure_image": "shopify:\/\/shop_images\/T_Fwip_3cd867c4-eb91-4cd1-9290-07535d421d1b.png",
+            "treasure_detail_image": "shopify:\/\/shop_images\/Fwip.png",
+            "treasure_title": "Fwip"
+          }
+        },
+        "treasure_slot_zzLEQF": {
+          "type": "treasure_slot",
+          "settings": {
+            "treasure_image": "shopify:\/\/shop_images\/T_DragonScales.png",
+            "treasure_detail_image": "shopify:\/\/shop_images\/DragonScales.png",
+            "treasure_title": "Dragon Scales"
+          }
+        },
+        "treasure_slot_UWf6Ff": {
+          "type": "treasure_slot",
+          "settings": {
+            "treasure_image": "shopify:\/\/shop_images\/T_BrokenPromises.png",
+            "treasure_detail_image": "shopify:\/\/shop_images\/BrokenPromises.png",
+            "treasure_title": "Broken Promises"
+          }
+        },
+        "treasure_slot_WmeyQx": {
+          "type": "treasure_slot",
+          "settings": {
+            "treasure_image": "shopify:\/\/shop_images\/T_FortuneAndGlory.png",
+            "treasure_detail_image": "shopify:\/\/shop_images\/FortuneAndGlory.png",
+            "treasure_title": "Fortune & Glory"
+          }
+        },
+        "treasure_slot_Lfwd4p": {
+          "type": "treasure_slot",
+          "settings": {
+            "treasure_image": "shopify:\/\/shop_images\/T_ReflectingGlass.png",
+            "treasure_detail_image": "shopify:\/\/shop_images\/ReflectingGlass.png",
+            "treasure_title": "Reflecting Glass"
+          }
+        }
+      },
+      "block_order": [
+        "treasure_slot_3BwQD4",
+        "treasure_slot_TgXd3B",
+        "treasure_slot_PNJWDh",
+        "treasure_slot_Wg9nL3",
+        "treasure_slot_VmVDJM",
+        "treasure_slot_xtfHb9",
+        "treasure_slot_VgWemp",
+        "treasure_slot_QF6hg4",
+        "treasure_slot_zzLEQF",
+        "treasure_slot_UWf6Ff",
+        "treasure_slot_WmeyQx",
+        "treasure_slot_Lfwd4p"
+      ],
+      "settings": {
+        "chest_image": "shopify:\/\/shop_images\/chest-closed.jpg",
+        "chest_hover_image": "shopify:\/\/shop_images\/chest-open.jpg"
+      }
+    },
+    "discovery_logs_BTPejy": {
+      "type": "discovery-logs",
+      "settings": {
+        "bordered": false,
+        "desk-hero": "shopify:\/\/shop_images\/DiscoveryLog_LOE_PageDesign_Desktop_E1_4da38783-95a0-4d01-8415-2e314e93061f.png",
+        "mobile-hero": "shopify:\/\/shop_images\/DiscoveryLog_LOE_PageDesign_Mobile_E1_f13eee81-cad1-4a5c-8795-7151f993ba7e.png",
+        "image_1_url": "shopify:\/\/shop_images\/Fiddlehead.png",
+        "custom_gif1": "shopify:\/\/shop_images\/LOE_A_Fiddle_a510c1ef-8bb2-44d0-bda9-c32924a3724b.gif",
+        "coords1": "168,100,288,99,287,135,165,136",
+        "coords1_mobile": "124,43,229,43,230,78,121,77",
+        "gif_right1": 29,
+        "gif_top1": 43,
+        "gif_width1": 4,
+        "gif_right1_m": 24,
+        "gif_top1_m": 57,
+        "gif_width1_m": 6,
+        "image_2_url": "shopify:\/\/shop_images\/Ichor.png",
+        "custom_gif2": "shopify:\/\/shop_images\/LOE_A_Ichor_8135abb1-66f0-4677-8654-a45b2ab8e000.gif",
+        "gif_right2": 24,
+        "gif_top2": 61,
+        "gif_width2": 4,
+        "gif_right2_m": 18,
+        "gif_top2_m": 69,
+        "gif_width2_m": 6,
+        "coords2": "905,166,911,84,923,41,941,99,952,159,934,186",
+        "coords2_mobile": "377,628,403,650,427,626,392,519",
+        "image_3_url": "shopify:\/\/shop_images\/Warlocky.png",
+        "custom_gif3": "shopify:\/\/shop_images\/transparent--title.png",
+        "gif_right3": 43,
+        "gif_top3": 85,
+        "gif_width3": 17,
+        "gif_right3_m": 65,
+        "gif_top3_m": 84,
+        "gif_width3_m": 23,
+        "coords3": "772,476,887,484,918,614,775,615",
+        "coords3_mobile": "195,589,287,614,302,721,192,711",
+        "gif_right4": 100,
+        "gif_top4": 0,
+        "gif_width4": 40,
+        "gif_right4_m": 1,
+        "gif_top4_m": 1,
+        "gif_width4_m": 8,
+        "coords4": "",
+        "coords4_mobile": "",
+        "zindex": "",
+        "margin": "30",
+        "margin_mobile": ""
+      }
+    },
+    "discovery_logs_LkVkbY": {
+      "type": "discovery-logs",
+      "settings": {
+        "bordered": false,
+        "desk-hero": "shopify:\/\/shop_images\/DiscoveryLog_LOE_PageDesign_Desktop_E2_398e87fc-78b1-460e-b5b8-f1a6360a4898.png",
+        "mobile-hero": "shopify:\/\/shop_images\/DiscoveryLog_LOE_PageDesign_Mobile_E2_3df3124d-6092-49f9-bb8f-78eb9de8c955.png",
+        "image_1_url": "shopify:\/\/shop_images\/SimulatedIntelligence.png",
+        "custom_gif1": "shopify:\/\/shop_images\/LOE_C_Intell.gif",
+        "coords1": "576,80,714,87,715,120,576,123",
+        "coords1_mobile": "124,43,229,43,230,78,121,77",
+        "gif_right1": 10,
+        "gif_top1": 84,
+        "gif_width1": 7,
+        "gif_right1_m": 100,
+        "gif_top1_m": 4,
+        "gif_width1_m": 15,
+        "image_2_url": "shopify:\/\/shop_images\/Chronomancer.png",
+        "custom_gif2": "shopify:\/\/shop_images\/LOE_B_Chrono.gif",
+        "gif_right2": 61,
+        "gif_top2": 16,
+        "gif_width2": 7,
+        "gif_right2_m": 38,
+        "gif_top2_m": 64,
+        "gif_width2_m": 12,
+        "coords2": "309,182,450,221,435,295,288,266",
+        "coords2_mobile": "271,539,386,567,370,634,260,606",
+        "image_3_url": "shopify:\/\/shop_images\/Satyrical.png",
+        "custom_gif3": "shopify:\/\/shop_images\/LOE_B_Satyrical.gif",
+        "gif_right3": 54,
+        "gif_top3": 80,
+        "gif_width3": 5,
+        "gif_right3_m": 12,
+        "gif_top3_m": 81,
+        "gif_width3_m": 10,
+        "coords3": "117,516,281,573,254,644,88,588",
+        "coords3_mobile": "463,738,494,702,594,766,552,817",
+        "image_4_url": "shopify:\/\/shop_images\/Gizmo.png",
+        "custom_gif4": "shopify:\/\/shop_images\/transparent--title.png",
+        "gif_right4": 78,
+        "gif_top4": 96,
+        "gif_width4": 16,
+        "gif_right4_m": 69,
+        "gif_top4_m": 90,
+        "gif_width4_m": 22,
+        "coords4": "",
+        "coords4_mobile": "",
+        "zindex": "1",
+        "margin": "",
+        "margin_mobile": ""
+      }
+    },
+    "discovery_logs_nCxqqK": {
+      "type": "discovery-logs",
+      "settings": {
+        "bordered": false,
+        "desk-hero": "shopify:\/\/shop_images\/DiscoveryLog_LOE_PageDesign_Desktop_E32_e9404059-7bfc-4c50-8995-e874f215a932.png",
+        "mobile-hero": "shopify:\/\/shop_images\/DiscoveryLog_LOE_PageDesign_Mobile_E3.png",
+        "image_1_url": "shopify:\/\/shop_images\/SimulatedIntelligence.png",
+        "custom_gif1": "shopify:\/\/shop_images\/LOE_C_Intell.gif",
+        "coords1": "163,65,304,68,302,107,161,103",
+        "coords1_mobile": "124,43,245,46,242,81,121,79",
+        "gif_right1": 14,
+        "gif_top1": 100,
+        "gif_width1": 1,
+        "gif_right1_m": 70,
+        "gif_top1_m": 75,
+        "gif_width1_m": 10,
+        "image_2_url": "shopify:\/\/shop_images\/Junker.png",
+        "custom_gif2": "shopify:\/\/shop_images\/LOE_C_Junker_8509752d-fd62-4a30-80ee-045a176915fb.gif",
+        "gif_right2": 33,
+        "gif_top2": 28,
+        "gif_width2": 9,
+        "gif_right2_m": 62,
+        "gif_top2_m": 58,
+        "gif_width2_m": 17,
+        "coords2": "780,94,901,59,993,159,894,230",
+        "coords2_mobile": "28,799,140,751,251,846,144,918,58,876",
+        "gif_right3": 8,
+        "gif_top3": 72,
+        "gif_width3": 2,
+        "gif_right3_m": 10,
+        "gif_top3_m": 79,
+        "gif_width3_m": 3,
+        "coords3": "1086,512,1121,537,1091,563,1069,540",
+        "coords3_mobile": "566,728,604,747,583,784,555,766",
+        "gif_right4": 100,
+        "gif_top4": 100,
+        "gif_width4": 40,
+        "gif_right4_m": 1,
+        "gif_top4_m": 1,
+        "gif_width4_m": 40,
+        "coords4": "",
+        "coords4_mobile": "",
+        "zindex": "",
+        "margin": "",
+        "margin_mobile": ""
+      }
+    },
+    "discovery_logs_Yj6KAG": {
+      "type": "discovery-logs",
+      "settings": {
+        "bordered": false,
+        "desk-hero": "shopify:\/\/shop_images\/DiscoveryLog_LOE_PageDesign_Desktop_E4.png",
+        "mobile-hero": "shopify:\/\/shop_images\/DiscoveryLog_LOE_PageDesign_Mobile_E4.png",
+        "image_1_url": "shopify:\/\/shop_images\/Lumbering.png",
+        "custom_gif1": "shopify:\/\/shop_images\/transparent--title.png",
+        "coords1": "575,48,679,50,674,92,575,96",
+        "coords1_mobile": "121,41,212,45,211,80,121,81",
+        "gif_right1": 42,
+        "gif_top1": 5,
+        "gif_width1": 18,
+        "gif_right1_m": 65,
+        "gif_top1_m": 0,
+        "gif_width1_m": 25,
+        "image_2_url": "shopify:\/\/shop_images\/Terrifying.png",
+        "custom_gif2": "shopify:\/\/shop_images\/LOE_D_Terrifying.gif",
+        "gif_right2": 62,
+        "gif_top2": 50,
+        "gif_width2": 4,
+        "gif_right2_m": 37,
+        "gif_top2_m": 86,
+        "gif_width2_m": 8,
+        "coords2": "236,165,386,144,385,249,249,282",
+        "coords2_mobile": "263,577,367,570,371,659,262,667",
+        "image_3_url": "shopify:\/\/shop_images\/Misty.png",
+        "custom_gif3": "shopify:\/\/shop_images\/LOE_D_Misty.gif",
+        "gif_right3": 71,
+        "gif_top3": 83,
+        "gif_width3": 3,
+        "gif_right3_m": 24,
+        "gif_top3_m": 92,
+        "gif_width3_m": 7,
+        "coords3": "115,450,189,447,200,524,122,537",
+        "coords3_mobile": "75,781,193,768,202,836,73,850",
+        "image_4_url": "shopify:\/\/shop_images\/Destructive.png",
+        "custom_gif4": "shopify:\/\/shop_images\/title.png",
+        "gif_right4": 86,
+        "gif_top4": 71,
+        "gif_width4": 6,
+        "gif_right4_m": 18,
+        "gif_top4_m": 53,
+        "gif_width4_m": 13,
+        "coords4": "787,539,986,544,989,638,751,639",
+        "coords4_mobile": "424,499,483,472,546,508,587,562,551,650,456,654,400,570",
+        "zindex": "",
+        "margin": "",
+        "margin_mobile": ""
+      }
+    },
+    "discovery_logs_yNhiXF": {
+      "type": "discovery-logs",
+      "settings": {
+        "bordered": false,
+        "desk-hero": "shopify:\/\/shop_images\/DiscoveryLog_LOE_PageDesign_Desktop_E5.png",
+        "mobile-hero": "shopify:\/\/shop_images\/DiscoveryLog_LOE_PageDesign_Mobile_E5.png",
+        "coords1": "163,31,265,32,264,67,157,78",
+        "coords1_mobile": "122,44,215,48,213,80,122,83",
+        "gif_right1": 76,
+        "gif_top1": 3,
+        "gif_width1": 10,
+        "gif_right1_m": 65,
+        "gif_top1_m": 2,
+        "gif_width1_m": 15,
+        "image_2_url": "shopify:\/\/shop_images\/Biotech.png",
+        "custom_gif2": "shopify:\/\/shop_images\/IEPage_GIF_GalaxyInAJar-min.gif",
+        "gif_right2": 58,
+        "gif_top2": 45,
+        "gif_width2": 9,
+        "gif_right2_m": 38,
+        "gif_top2_m": 26,
+        "gif_width2_m": 15,
+        "coords2": "991,112,1098,109,1096,168,988,159",
+        "coords2_mobile": "62,738,175,706,202,766,85,806",
+        "gif_right3": 25,
+        "gif_top3": 6,
+        "gif_width3": 7,
+        "gif_right3_m": 65,
+        "gif_top3_m": 62,
+        "gif_width3_m": 14,
+        "coords3": "811,298,1028,179,1098,210,1080,273,834,375",
+        "coords3_mobile": "78,629,302,703,329,637,145,541,73,557",
+        "image_4_url": "shopify:\/\/shop_images\/Repressed.png",
+        "custom_gif4": "shopify:\/\/shop_images\/title_41886bbc-a9f6-4ab2-9c0c-ebf82e6bc6e1.png",
+        "gif_right4": 34,
+        "gif_top4": 64,
+        "gif_width4": 2,
+        "gif_right4_m": 46,
+        "gif_top4_m": 80,
+        "gif_width4_m": 4,
+        "coords4": "884,421,1050,367,1072,462,888,493",
+        "coords4_mobile": "386,717,487,632,581,708,486,786,412,779",
+        "zindex": "",
+        "margin": "",
+        "margin_mobile": ""
+      }
+    },
+    "plush_hero_qYMMMn": {
+      "type": "plush-hero",
+      "disabled": true,
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/IE_Hero_Available_Desktop_2_e0749a0d-4e89-494a-833e-e54a44f5919e.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/IE_Hero_Available_Mobile_2_b65234b3-d9c3-4439-b7b4-967c11f70463.jpg",
+        "desk-hero-alt": "Imaginary Ends Button: BUY NOW. Doomlings Imaginary Ends box with a ton of cards splayed around it",
+        "button_link": "shopify:\/\/pages\/imaginary-ends"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "plush_hero_XimPfj",
+    "treasure_chest_Ue9NKU",
+    "discovery_logs_BTPejy",
+    "discovery_logs_LkVkbY",
+    "discovery_logs_nCxqqK",
+    "discovery_logs_Yj6KAG",
+    "discovery_logs_yNhiXF",
+    "plush_hero_qYMMMn"
+  ]
+}

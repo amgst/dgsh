@@ -1,0 +1,35 @@
+{
+  "sections": {
+    "rewards-page-249919": {
+      "type": "rewards-249919",
+      "disabled": true,
+      "settings": {}
+    },
+    "d4040990-6484-4ed9-a0d4-25a2520a2d14": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "Add Liquid code or HTML to create advanced customizations."
+      }
+    },
+    "5edcdb40-2d96-4710-8d56-a6d6e77c987f": {
+      "type": "write-review",
+      "settings": {
+        "title": "Where did you get your product?",
+        "walmart_image": "shopify:\/\/shop_images\/reviews_w.png",
+        "walmart_link": "shopify:\/\/pages\/walmart-review",
+        "target_image": "shopify:\/\/shop_images\/reviews_t.png",
+        "target_link": "shopify:\/\/pages\/target-review",
+        "amazon_image": "shopify:\/\/shop_images\/reviews_a.png",
+        "amazon_link": "shopify:\/\/pages\/amazon-review",
+        "doom_link": "shopify:\/\/pages\/doomlings-review",
+        "doomlings_image": "shopify:\/\/shop_images\/reviews_d.png"
+      }
+    }
+  },
+  "order": [
+    "rewards-page-249919",
+    "d4040990-6484-4ed9-a0d4-25a2520a2d14",
+    "5edcdb40-2d96-4710-8d56-a6d6e77c987f"
+  ]
+}

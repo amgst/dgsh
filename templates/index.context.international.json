@@ -1,0 +1,18 @@
+{
+  "parent": "index.json",
+  "context": {
+    "market": "international"
+  },
+  "sections": {
+    "packages_zgrrFj": {
+      "settings": {},
+      "blocks": {
+        "package_AAhjhG": {
+          "settings": {
+            "price_sale_enable": false
+          }
+        }
+      }
+    }
+  }
+}

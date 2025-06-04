@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_title": false,
+        "title_alignment": "left"
+      }
+    },
+    "fa5d090e-fdf9-4409-9a64-a1e6c0fd70a0": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"closeby-embed-0c53369aff0e51f4426df01bf1e806b7\"><\/div>\n<script>window.closeby = { mapKey: \"0c53369aff0e51f4426df01bf1e806b7\", options: { embed: true, height: 700 } };<\/script>\n<script src=\"https:\/\/embed.closeby.co\/v1.js\" async=\"\" defer><\/script>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "fa5d090e-fdf9-4409-9a64-a1e6c0fd70a0"
+  ]
+}

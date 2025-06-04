@@ -1,0 +1,412 @@
+{
+  "sections": {
+    "rewards-page-249919": {
+      "type": "rewards-249919",
+      "disabled": true,
+      "settings": {}
+    },
+    "d13ff8ab-6eba-4652-bb07-3575383551db": {
+      "type": "doom_review",
+      "blocks": {
+        "384d3452-47b9-4641-a8d0-1fef8d569b60": {
+          "type": "doomlings",
+          "settings": {
+            "product": "classic-doomlings-game"
+          }
+        },
+        "74607d1b-0e6d-4db0-b3ca-28882a7bc16f": {
+          "type": "doomlings",
+          "settings": {
+            "product": "doomlings-deluxe-bundle"
+          }
+        },
+        "4946cfd0-24ce-4544-a348-b67262674800": {
+          "type": "doomlings",
+          "settings": {
+            "product": "doomlings-deluxe-upgrade-pack"
+          }
+        },
+        "doomlings_WAGbcX": {
+          "type": "doomlings",
+          "settings": {
+            "product": "doomlings-overlush-mystery-expansion-4-pack"
+          }
+        },
+        "doomlings_YwpjFU": {
+          "type": "doomlings",
+          "settings": {
+            "product": "doomlings-overlush-single-mystery-pack"
+          }
+        },
+        "doomlings_CwpBjA": {
+          "type": "doomlings",
+          "settings": {
+            "product": "overlush-gold-pack"
+          }
+        },
+        "doomlings_mYhfU9": {
+          "type": "doomlings",
+          "settings": {
+            "product": "doomlings-ultimate-bundle"
+          }
+        },
+        "doomlings_LRgQQa": {
+          "type": "doomlings",
+          "settings": {
+            "product": "wooden-collectors-box"
+          }
+        },
+        "2b558b01-62f7-4dff-96ac-f5e85245d23c": {
+          "type": "doomlings",
+          "settings": {
+            "product": "community-playmat"
+          }
+        },
+        "773b4cd0-005f-4ad8-b063-e325b34c7925": {
+          "type": "doomlings",
+          "settings": {
+            "product": "6-pack-playmats"
+          }
+        },
+        "doomlings_CwG9N7": {
+          "type": "doomlings",
+          "settings": {
+            "product": "4-pack-playmats"
+          }
+        },
+        "5125de85-1a22-4502-a7f0-f6a96712bf12": {
+          "type": "doomlings",
+          "settings": {
+            "product": "single-playmat"
+          }
+        },
+        "7ce31d97-6b6d-4500-8a99-558c77cf19be": {
+          "type": "doomlings",
+          "settings": {
+            "product": "playermat-bag"
+          }
+        },
+        "fd8ab8a9-e7c9-4112-9bff-2b104d372442": {
+          "type": "doomlings",
+          "settings": {
+            "product": "300-doomsleeves"
+          }
+        },
+        "296fbae3-8965-4279-8102-4c5801f80872": {
+          "type": "doomlings",
+          "settings": {
+            "product": "rainbow-scutes-t-shirt"
+          }
+        },
+        "doomlings_eYpLDE": {
+          "type": "doomlings",
+          "settings": {
+            "product": "rainbow-scutes-plushie"
+          }
+        },
+        "doomlings_aG9rRz": {
+          "type": "doomlings",
+          "settings": {
+            "product": "lucky-plushie"
+          }
+        },
+        "doomlings_VfNMaF": {
+          "type": "doomlings",
+          "settings": {
+            "product": "nat-plushie"
+          }
+        },
+        "doomlings_VYCNnr": {
+          "type": "doomlings",
+          "settings": {
+            "product": "squirt-plushie"
+          }
+        },
+        "doomlings_KDrJWK": {
+          "type": "doomlings",
+          "settings": {
+            "product": "talia-plushie"
+          }
+        },
+        "doomlings_CYEBkV": {
+          "type": "doomlings",
+          "settings": {
+            "product": "shteve-plushie"
+          }
+        },
+        "doomlings_y6CtFJ": {
+          "type": "doomlings",
+          "settings": {
+            "product": "calysta-plushie"
+          }
+        },
+        "doomlings_Cna93q": {
+          "type": "doomlings",
+          "settings": {
+            "product": "lyric-plushie"
+          }
+        },
+        "doomlings_VQzRLq": {
+          "type": "doomlings",
+          "settings": {
+            "product": "fawn-plushie"
+          }
+        },
+        "doomlings_NMQVn9": {
+          "type": "doomlings",
+          "settings": {
+            "product": "alistair-plushie"
+          }
+        },
+        "doomlings_PiePDW": {
+          "type": "doomlings",
+          "settings": {
+            "product": "trixie-plushie"
+          }
+        },
+        "doomlings_dc3mcJ": {
+          "type": "doomlings",
+          "settings": {
+            "product": "willis-plushie"
+          }
+        },
+        "doomlings_qiQJzx": {
+          "type": "doomlings",
+          "settings": {
+            "product": "eugene-plushie"
+          }
+        },
+        "844a5d35-ded3-4706-9010-89c192d9d70c": {
+          "type": "doomlings",
+          "settings": {
+            "product": "rainbow-scutes-enamel-pin-1"
+          }
+        },
+        "7aa11bd7-233e-44fe-9678-b7519b84852e": {
+          "type": "doomlings",
+          "settings": {
+            "product": "nocturnal-enamel-pin"
+          }
+        },
+        "doomlings_EkhiFc": {
+          "type": "doomlings",
+          "settings": {
+            "product": "jumpy-enamel-pin"
+          }
+        },
+        "f4b912f3-32d2-42f7-baf8-6ec6468c50a0": {
+          "type": "doomlings",
+          "settings": {
+            "product": "bubbles-enamel-pin"
+          }
+        },
+        "doomlings_M7nwzj": {
+          "type": "doomlings",
+          "settings": {
+            "product": "gripplethorps_enamel_pin"
+          }
+        },
+        "708400ec-9210-4268-a62b-727ec186fb7e": {
+          "type": "doomlings",
+          "settings": {
+            "product": "baby-heroic-enamel-pin"
+          }
+        },
+        "ae356b34-4f2f-44ba-b7b9-2aa671595f6c": {
+          "type": "doomlings",
+          "settings": {
+            "product": "floofy-enamel-pin"
+          }
+        },
+        "bd16cc62-12df-4853-9d1f-427d9bdde897": {
+          "type": "doomlings",
+          "settings": {
+            "product": "echolocation-enamel-pin"
+          }
+        },
+        "doomlings_d6PCqh": {
+          "type": "doomlings",
+          "settings": {
+            "product": "appealing-enamel-pin"
+          }
+        },
+        "doomlings_np9bry": {
+          "type": "doomlings",
+          "settings": {
+            "product": "lucky-enamel-pin"
+          }
+        },
+        "3063584b-df6f-4c3a-8fa0-33ca99959b40": {
+          "type": "doomlings",
+          "settings": {
+            "product": "acrobatic-enamel-pin"
+          }
+        },
+        "doomlings_4qxYKU": {
+          "type": "doomlings",
+          "settings": {
+            "product": "hyper-intelligence-enamel-pin"
+          }
+        },
+        "a2d58f1e-1366-4576-8445-553f531fff54": {
+          "type": "doomlings",
+          "settings": {
+            "product": "red-panda-enamel-pin"
+          }
+        },
+        "doomlings_zTVcLL": {
+          "type": "doomlings",
+          "settings": {
+            "product": "clever-enamel-pin"
+          }
+        },
+        "doomlings_bYaXr8": {
+          "type": "doomlings",
+          "settings": {
+            "product": "toe-beans-enamel-pin"
+          }
+        },
+        "doomlings_mFxpUh": {
+          "type": "doomlings",
+          "settings": {
+            "product": "elusive-enamel-pin"
+          }
+        },
+        "doomlings_cCQVA3": {
+          "type": "doomlings",
+          "settings": {
+            "product": "mane-enamel-pin"
+          }
+        },
+        "doomlings_qMr8Yp": {
+          "type": "doomlings",
+          "settings": {
+            "product": "ruffled-enamel-pin"
+          }
+        },
+        "doomlings_V6qEKd": {
+          "type": "doomlings",
+          "settings": {
+            "product": "dart-enamel-pin"
+          }
+        },
+        "doomlings_9wiYnp": {
+          "type": "doomlings",
+          "settings": {
+            "product": "rainbow-scutes-first-player-medallion"
+          }
+        }
+      },
+      "block_order": [
+        "384d3452-47b9-4641-a8d0-1fef8d569b60",
+        "74607d1b-0e6d-4db0-b3ca-28882a7bc16f",
+        "4946cfd0-24ce-4544-a348-b67262674800",
+        "doomlings_WAGbcX",
+        "doomlings_YwpjFU",
+        "doomlings_CwpBjA",
+        "doomlings_mYhfU9",
+        "doomlings_LRgQQa",
+        "2b558b01-62f7-4dff-96ac-f5e85245d23c",
+        "773b4cd0-005f-4ad8-b063-e325b34c7925",
+        "doomlings_CwG9N7",
+        "5125de85-1a22-4502-a7f0-f6a96712bf12",
+        "7ce31d97-6b6d-4500-8a99-558c77cf19be",
+        "fd8ab8a9-e7c9-4112-9bff-2b104d372442",
+        "296fbae3-8965-4279-8102-4c5801f80872",
+        "doomlings_eYpLDE",
+        "doomlings_aG9rRz",
+        "doomlings_VfNMaF",
+        "doomlings_VYCNnr",
+        "doomlings_KDrJWK",
+        "doomlings_CYEBkV",
+        "doomlings_y6CtFJ",
+        "doomlings_Cna93q",
+        "doomlings_VQzRLq",
+        "doomlings_NMQVn9",
+        "doomlings_PiePDW",
+        "doomlings_dc3mcJ",
+        "doomlings_qiQJzx",
+        "844a5d35-ded3-4706-9010-89c192d9d70c",
+        "7aa11bd7-233e-44fe-9678-b7519b84852e",
+        "doomlings_EkhiFc",
+        "f4b912f3-32d2-42f7-baf8-6ec6468c50a0",
+        "doomlings_M7nwzj",
+        "708400ec-9210-4268-a62b-727ec186fb7e",
+        "ae356b34-4f2f-44ba-b7b9-2aa671595f6c",
+        "bd16cc62-12df-4853-9d1f-427d9bdde897",
+        "doomlings_d6PCqh",
+        "doomlings_np9bry",
+        "3063584b-df6f-4c3a-8fa0-33ca99959b40",
+        "doomlings_4qxYKU",
+        "a2d58f1e-1366-4576-8445-553f531fff54",
+        "doomlings_zTVcLL",
+        "doomlings_bYaXr8",
+        "doomlings_mFxpUh",
+        "doomlings_cCQVA3",
+        "doomlings_qMr8Yp",
+        "doomlings_V6qEKd",
+        "doomlings_9wiYnp"
+      ],
+      "settings": {
+        "title": "Choose a Product to Review"
+      }
+    },
+    "doom_review_cjxyjN": {
+      "type": "doom_review",
+      "blocks": {
+        "doomlings_4atW6D": {
+          "type": "doomlings",
+          "settings": {
+            "product": "elusive-first-player-medallion"
+          }
+        },
+        "doomlings_8Rz3jp": {
+          "type": "doomlings",
+          "settings": {
+            "product": "contagious-first-player-medallion"
+          }
+        },
+        "doomlings_ANmmNX": {
+          "type": "doomlings",
+          "settings": {
+            "product": "epic-first-player-medallion"
+          }
+        },
+        "doomlings_R9axLM": {
+          "type": "doomlings",
+          "settings": {
+            "product": "playful-first-player-medallion"
+          }
+        },
+        "doomlings_ePf4hH": {
+          "type": "doomlings",
+          "settings": {
+            "product": "mane-first-player-medallion"
+          }
+        }
+      },
+      "block_order": [
+        "doomlings_4atW6D",
+        "doomlings_8Rz3jp",
+        "doomlings_ANmmNX",
+        "doomlings_R9axLM",
+        "doomlings_ePf4hH"
+      ],
+      "settings": {
+        "title": ""
+      }
+    },
+    "custom_liquid_yiqaR4": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<br><br><br>"
+      }
+    }
+  },
+  "order": [
+    "rewards-page-249919",
+    "d13ff8ab-6eba-4652-bb07-3575383551db",
+    "doom_review_cjxyjN",
+    "custom_liquid_yiqaR4"
+  ]
+}

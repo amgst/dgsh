@@ -1,0 +1,478 @@
+{% schema %}
+{
+  "name": "discovery logs",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "desk-hero",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile-hero",
+      "label": "Mobile Image"
+    },    
+    {
+      "type": "header",
+      "content": "Area one"
+    },      
+    {
+      "type": "image_picker",
+      "id": "image_1_url",
+      "label": "Image 1 Popup"
+    },     
+    {
+      "type": "image_picker",
+      "id": "custom_gif1",
+      "label": "Image Gif"
+    },                
+    {
+      "type": "text",
+      "id": "coords1",
+      "label": "Coords one"
+    },  
+    {
+      "type": "text",
+      "id": "coords1_mobile",
+      "label": "Coords one mobile"
+    },  
+    {
+      "type": "header",
+      "content": "Desktop"
+    },    
+    {
+      "type": "range",
+      "id": "gif_right1",
+      "label": "GIF Right Position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gif_top1",
+      "label": "GIF Top Position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gif_width1",
+      "label": "GIF Width",
+      "min": 1,
+      "max": 40,
+      "step": 1,
+      "default": 10
+    },  
+    {
+      "type": "header",
+      "content": "Mobile"
+    },    
+    {
+      "type": "range",
+      "id": "gif_right1_m",
+      "label": "GIF Right Position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gif_top1_m",
+      "label": "GIF Top Position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gif_width1_m",
+      "label": "GIF Width",
+      "min": 1,
+      "max": 40,
+      "step": 1,
+      "default": 10
+    },       
+    {
+      "type": "header",
+      "content": "Area two"
+    },    
+    {
+      "type": "image_picker",
+      "id": "image_2_url",
+      "label": "Image 2 Popup"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_gif2",
+      "label": "Image Gif"
+    },  
+    {
+      "type": "header",
+      "content": "Desktop"
+    },    
+    {
+      "type": "range",
+      "id": "gif_right2",
+      "label": "GIF Right Position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gif_top2",
+      "label": "GIF Top Position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gif_width2",
+      "label": "GIF Width",
+      "min": 1,
+      "max": 40,
+      "step": 1,
+      "default": 10
+    },  
+    {
+      "type": "header",
+      "content": "Mobile"
+    },    
+    {
+      "type": "range",
+      "id": "gif_right2_m",
+      "label": "GIF Right Position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gif_top2_m",
+      "label": "GIF Top Position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gif_width2_m",
+      "label": "GIF Width",
+      "min": 1,
+      "max": 40,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "text",
+      "id": "coords2",
+      "label": "Coords two"
+    },       
+    {
+      "type": "text",
+      "id": "coords2_mobile",
+      "label": "Coords two mobile"
+    },       
+    {
+      "type": "header",
+      "content": "Area three"
+    },    
+    {
+      "type": "image_picker",
+      "id": "image_3_url",
+      "label": "Image 3 Popup"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_gif3",
+      "label": "Image Gif"
+    },  
+   
+    {
+      "type": "range",
+      "id": "gif_right3",
+      "label": "GIF Right Position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gif_top3",
+      "label": "GIF Top Position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gif_width3",
+      "label": "GIF Width",
+      "min": 1,
+      "max": 40,
+      "step": 1,
+      "default": 10
+    },    
+    {
+      "type": "header",
+      "content": "Mobile"
+    },       
+    {
+      "type": "range",
+      "id": "gif_right3_m",
+      "label": "GIF Right Position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gif_top3_m",
+      "label": "GIF Top Position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gif_width3_m",
+      "label": "GIF Width",
+      "min": 1,
+      "max": 40,
+      "step": 1,
+      "default": 10
+    },     
+    {
+      "type": "text",
+      "id": "coords3",
+      "label": "Coords three"
+    },
+    {
+      "type": "text",
+      "id": "coords3_mobile",
+      "label": "Coords three mobile"
+    },     
+    {
+      "type": "header",
+      "content": "Area four"
+    },    
+    {
+      "type": "image_picker",
+      "id": "image_4_url",
+      "label": "Image 4 Popup"
+    },
+    {
+      "type": "image_picker",
+      "id": "custom_gif4",
+      "label": "Image Gif"
+    },  
+   
+    {
+      "type": "range",
+      "id": "gif_right4",
+      "label": "GIF Right Position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gif_top4",
+      "label": "GIF Top Position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gif_width4",
+      "label": "GIF Width",
+      "min": 1,
+      "max": 40,
+      "step": 1,
+      "default": 10
+    },     
+    {
+      "type": "header",
+      "content": "Mobile"
+    },    
+    {
+      "type": "range",
+      "id": "gif_right4_m",
+      "label": "GIF Right Position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gif_top4_m",
+      "label": "GIF Top Position",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gif_width4_m",
+      "label": "GIF Width",
+      "min": 1,
+      "max": 40,
+      "step": 1,
+      "default": 10
+    },     
+    {
+      "type": "text",
+      "id": "coords4",
+      "label": "Coords four"
+    },
+    {
+      "type": "text",
+      "id": "coords4_mobile",
+      "label": "Coords four mobile"
+    },     
+    {
+      "type": "text",
+      "id": "zindex",
+      "label": "Z Index"
+    },
+    {
+      "type": "text",
+      "id": "margin",
+      "label": "Margin"
+    },
+    {
+      "type": "text",
+      "id": "margin_mobile",
+      "label": "Margin Mobile"
+    }                   
+  ],
+  "presets": [
+    {
+      "category": "section",
+      "name": "discovery logs"
+    }
+  ]
+}
+{% endschema %}
+
+{% assign filename = section.settings.image_1_url | split: '/' | last | replace: '.jpg', '' | replace: '.png', '' | replace: '.gif', '' %}
+
+
+<div class="section-discovery main-desktop" id="section-{{ section.id }}" style="margin-top:-{{section.settings.margin}}px;">
+  {% if section.settings.desk-hero %}
+    <img src="{{ section.settings.desk-hero | img_url: '1200x' }}" class="main" alt="Section main image" style="width: 100%; height: auto;" usemap="#Map-desktop-{{ section.id }}"/>
+  {% endif %} 
+  {% if section.settings.custom_gif1 %}
+    <img src="{{ section.settings.custom_gif1 | img_url: '400x' }}" alt="Custom GIF" class="gif-wrap gif-image1" 
+      style="right: {{ section.settings.gif_right1 }}%; top: {{ section.settings.gif_top1 }}%; width: {{ section.settings.gif_width1 }}%;" 
+      data-image-url="{{ section.settings.image_1_url | img_url: 'master' }}">
+  {% endif %} 
+  {% if section.settings.custom_gif2 %}
+    <img src="{{ section.settings.custom_gif2 | img_url: '400x' }}" alt="Custom GIF" class="gif-wrap gif-image2" 
+      style="right: {{ section.settings.gif_right2 }}%; top: {{ section.settings.gif_top2 }}%; width: {{ section.settings.gif_width2 }}%;" 
+      data-image-url="{{ section.settings.image_2_url | img_url: 'master' }}">
+  {% endif %} 
+  {% if section.settings.custom_gif3 %}
+    <img src="{{ section.settings.custom_gif3 | img_url: '400x' }}" alt="Custom GIF" class="gif-wrap gif-image3" 
+      style="right: {{ section.settings.gif_right3 }}%; top: {{ section.settings.gif_top3 }}%; width: {{ section.settings.gif_width3 }}%;" 
+      data-image-url="{{ section.settings.image_3_url | img_url: 'master' }}">
+  {% endif %}  
+  {% if section.settings.custom_gif4 %}
+    <img src="{{ section.settings.custom_gif4 | img_url: '400x' }}" alt="Custom GIF" class="gif-wrap gif-image" 
+      style="right: {{ section.settings.gif_right4 }}%; top: {{ section.settings.gif_top4 }}%; width: {{ section.settings.gif_width4 }}%;" 
+      data-image-url="{{ section.settings.image_4_url | img_url: 'master' }}">
+  {% endif %}
+
+  <map name="Map-desktop-{{ section.id }}">
+    {% if section.settings.image_1_url %}          
+      <area shape="poly" coords="{{ section.settings.coords1}}" href="#" alt="{{ filename }}" data-image-url="{{ section.settings.image_1_url | img_url: 'master' }}">
+    {% endif %} 
+  </map>
+
+  {% unless section.settings.custom_gif3 %}
+    <map name="Map-desktop-{{ section.id }}">
+      {% if section.settings.image_3_url %}          
+        <area shape="poly" coords="{{ section.settings.coords3}}" href="#" alt="{{ filename }}" data-image-url="{{ section.settings.image_3_url | img_url: 'master' }}">
+      {% endif %} 
+    </map>  
+  {% endunless %}
+</div>
+
+<div class="section-discovery main-mobile" id="section-{{ section.id }}"> 
+  {% if section.settings.mobile-hero %}
+    <img src="{{ section.settings.mobile-hero | img_url: '800x' }}" class="main" alt="Section main image" style="width: 100%; height: auto;" usemap="#Map-mobile-{{ section.id }}"/>
+  {% endif %}   
+  <map name="Map-mobile-{{ section.id }}">  
+    {% if section.settings.image_1_url %}          
+      <area shape="poly" coords="{{ section.settings.coords1_mobile}}" href="#" alt="{{ filename }}" data-image-url="{{ section.settings.image_1_url | img_url: '650x' }}">
+    {% endif %}
+  </map>
+  {% if section.settings.custom_gif1 %}
+    <img src="{{ section.settings.custom_gif1 | img_url: '400x' }}" alt="Custom GIF" class="gif-wrap gif-image1" 
+      style="right: {{ section.settings.gif_right1_m }}%; top: {{ section.settings.gif_top1_m }}%; width: {{ section.settings.gif_width1_m }}%;" 
+      data-image-url="{{ section.settings.image_1_url | img_url: 'master' }}">
+  {% endif %} 
+
+  {% if section.settings.custom_gif2 %}
+    <img src="{{ section.settings.custom_gif2 | img_url: '400x' }}" alt="Custom GIF" class="gif-wrap gif-image2" 
+      style="right: {{ section.settings.gif_right2_m }}%; top: {{ section.settings.gif_top2_m }}%; width: {{ section.settings.gif_width2_m }}%;" 
+      data-image-url="{{ section.settings.image_2_url | img_url: 'master' }}">
+  {% endif %} 
+  {% if section.settings.custom_gif3 %}
+    <img src="{{ section.settings.custom_gif3 | img_url: '400x' }}" alt="Custom GIF" class="gif-wrap gif-image3" 
+      style="right: {{ section.settings.gif_right3_m }}%; top: {{ section.settings.gif_top3_m }}%; width: {{ section.settings.gif_width3_m }}%;" 
+      data-image-url="{{ section.settings.image_3_url | img_url: 'master' }}">
+  {% endif %}  
+  {% if section.settings.custom_gif4 %}
+    <img src="{{ section.settings.custom_gif4 | img_url: '400x' }}" alt="Custom GIF" class="gif-wrap gif-image" 
+      style="right: {{ section.settings.gif_right4_m }}%; top: {{ section.settings.gif_top4_m }}%; width: {{ section.settings.gif_width4_m }}%;" 
+      data-image-url="{{ section.settings.image_4_url | img_url: 'master' }}">
+  {% endif %}
+
+
+
+<!--     {% if section.settings.image_2_url %} 
+      <area shape="poly" coords="{{ section.settings.coords2_mobile}}" href="#" alt="{{ filename }}" data-image-url="{{ section.settings.image_2_url | img_url: '650x' }}">
+    {% endif %}
+    {% if section.settings.image_3_url %}
+      <area shape="poly" coords="{{ section.settings.coords3_mobile}}" href="#" alt="{{ filename }}" data-image-url="{{ section.settings.image_3_url | img_url: '650x' }}">
+    {% endif %}
+    {% if section.settings.image_4_url %}
+      <area shape="poly" coords="{{ section.settings.coords4_mobile}}" href="#" alt="{{ filename }}" data-image-url="{{ section.settings.image_4_url | img_url: '650x' }}">
+    {% endif %}  -->   
+
+</div>
+
+<div class="section-discovery-overlay" id="overlay-{{ section.id }}"></div>
+<div class="section-discovery-popup" id="imagePopup-{{ section.id }}">
+  <span class="section-discovery-close-btn" onclick="closePopup('{{ section.id }}')">&times;</span>
+  <img src="" alt="Popup Image" id="popupImg-{{ section.id }}">
+</div>
+
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', function() {
+    resizeMap();
+    setupPopups();
+  });
+</script>
+

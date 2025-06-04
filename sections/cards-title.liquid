@@ -1,0 +1,24 @@
+{% schema %}
+{
+  "name": "Cards Title",
+  "settings": [
+    {
+      "type": "html",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "<h2>INTRODUCING <strong>Doomlings</strong></h2>"
+    }
+  ],
+  "presets": [
+    {
+      "category": "section",
+      "name": "Cards Title"
+    }
+  ]
+}
+
+{% endschema %}
+
+  <div class="section-title-image section-title-rainbow">
+      {{ section.settings.section_title }}
+  </div>

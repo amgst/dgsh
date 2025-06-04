@@ -1,0 +1,554 @@
+{% schema %}
+{
+  "name": "Cards Multi Section",
+  "max_blocks": 30,
+  "settings": [
+    {
+      "type": "text",
+      "id": "card_id",
+      "label": "Section ID"
+    },  
+    {
+      "type": "select",
+      "id": "page_style",
+      "label": "Page Style",
+      "options": [
+        {
+          "value": "doomlings",
+          "label": "Doomlings Style"
+        },
+        {
+          "value": "legends",
+          "label": "Legends Style"
+        }
+      ],
+      "default": "doomlings",
+      "info": "Controls the styling of various elements including buttons"
+    },    
+    {
+      "type": "html",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "<h2>INTRODUCING <strong>Doomlings</strong></h2>"
+    },
+    {
+      "type": "text",
+      "id": "sub_section_title",
+      "label": "Sub Section Title",
+      "default": "Section Sub Title"
+    },    
+
+    {
+      "type": "header",
+      "content": "Intro Section"
+    },    
+    {
+      "type": "checkbox",
+      "id": "intro_height",
+      "label": "Enable Custom Intro Height",
+      "default": false
+    },    
+    {
+      "type": "text",
+      "id": "intro_height_custom",
+      "label": "Entro Height"
+    },    
+    {
+        "type": "image_picker", 
+        "id": "back_desk",
+        "label": " Background Desktop"
+    },
+    {
+        "type": "image_picker",
+        "id": "back_mob",
+        "label": " Background Mobile"
+    },  
+    {
+        "type": "color",
+        "id": "back_color",
+        "label": " Background Color",
+        "info": " Fallback Color"
+    },         
+    {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Image one"
+    },
+          {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Image two"
+    },
+          {
+        "type": "image_picker",
+        "id": "image_3",
+        "label": "Image three"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full Width",
+      "default": true
+    },    
+    {
+    "type": "checkbox",
+    "id": "btn_enable",
+    "label": "Show Button",
+    "default": true
+    },
+    {
+    "type": "checkbox",
+    "id": "button_custom",
+    "label": "Show Button Custom Color",
+    "default": false
+    }, 
+    {
+        "type": "color",
+        "id": "button_custom_color",
+        "label": "Color"
+    },      
+    {
+        "type": "color",
+        "id": "button_custom_back_color",
+        "label": " Background Color"
+    },
+    {
+        "type": "color",
+        "id": "button_custom_hover_color",
+        "label": " Hover Color"
+    },             
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Get Doomlings"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    }  
+
+  ],
+  "blocks": [
+    {
+      "type": "cards",
+      "name": "Cards",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "card_image",
+          "label": "Card Image"
+        },
+        {
+          "type": "textarea",
+          "id": "card_description",
+          "label": "Card Description",
+          "default": "Card Description"
+        }        
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "section",
+      "name": "Cards Multi Section"
+    }
+  ]
+}
+
+{% endschema %}
+
+
+<div id="section-{{ section.id }}" class="section-{{ section.id }}-padding" style="overflow: hidden;">
+  <div class="section-title-image section-title-rainbow" 
+       id="{{ section.settings.card_id }}"
+       {% if section.settings.section_title == blank %} style="margin-bottom: -24px;" {% endif %}>
+      {{ section.settings.section_title }}
+  </div>
+
+  {% if section.settings.image_1 or section.settings.image_2 or section.settings.image_3 %}
+  <div class="intro-outer" id="{{ section.settings.card_id }}_2"> 
+    <div class="card-container">
+      <div class="intro-wrapper">
+        <div class="intro-inner">
+            {% if section.settings.image_1 %}
+              <div class="intro-img intro-img-one">
+                <img src="{{ section.settings.image_1 | img_url: 'master' }}" alt="Image 1" data-aos="fade-right" data-aos-delay="800" data-aos-once="false">
+              </div>
+            {% endif %}
+
+            {% if section.settings.image_2 %}
+              <div class="intro-img intro-img-two">
+                <img src="{{ section.settings.image_2 | img_url: 'master' }}" alt="Image 2" data-aos="fade-right" data-aos-delay="600" data-aos-once="false">
+              </div>
+            {% endif %}
+
+            {% if section.settings.image_3 %}
+              <div class="intro-img intro-img-three">
+                <img src="{{ section.settings.image_3 | img_url: 'master' }}" alt="Image 3" data-aos="fade-right" data-aos-delay="400" data-aos-once="false">
+              </div>
+            {% endif %}
+        </div>
+      </div> 
+    </div> 
+  </div> 
+  {% endif %}
+
+  <div class="card-container">
+    {% if section.settings.sub_section_title != blank %}
+      <div class="sub_section_title" style="text-align:center">
+        <h3>{{ section.settings.sub_section_title }}</h3>
+      </div>
+
+    {% endif %}
+
+    {% for block in section.blocks %}      
+      <div class="card-wrapper" >
+        <div class="card-image slide-top" data-aos="fade-right" data-aos-delay="{{ forloop.index0 | times: 200 }}" >
+          {% if block.settings.card_image %}
+          <img
+            alt="{{ block.settings.card_image.alt | escape }}"
+            width="390"
+            class="lazyload blur-up "
+            data-src="{{ block.settings.card_image | img_url: 'master' }}"
+            src="{{ block.settings.card_image | img_url: 'master' }}"  
+            >
+          {% else %}
+            <img
+            alt="Blank Image"
+            width="390"
+            class="lazyload blur-up "
+            data-src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/blank-img.png?v=1717846437"
+            src="https://cdn.shopify.com/s/files/1/0554/6190/4593/files/blank-img.png?v=1717846437"  
+            >
+          {% endif %}
+        </div>
+        <div class="card-content">
+        <p>{{ block.settings.card_description}}</p>
+        </div>
+      </div>
+    {% endfor %}
+    {% if section.settings.page_style == 'legends' %}
+      {% if section.settings.btn_enable %}
+        <div class="section-footer">
+          <a class="btn-legends" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+        </div>      
+      {% endif %}
+    {% else %}
+      {% if section.settings.btn_enable %}
+        <div class="section-footer">
+          <a class="btn-doomlings" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+        </div>      
+      {% endif %}
+    {% endif %}
+  </div>
+</div>
+
+{% style %}
+
+  #shopify-section-{{section.id}} .card-wrapper { display:flex;align-items: center; justify-content: center; padding: 14px 0;flex-direction: column;}
+  #shopify-section-{{section.id}} .card-wrapper .card-content { padding:20px 50px; max-width: 600px; }
+  #shopify-section-{{section.id}} .as-footer .as-btn {
+    margin-bottom: 25px;
+    color: #fff;
+    z-index: 99;
+    font-size: 18px;
+    padding: 10px 20px;
+    background-color: #ff0071;
+    background-image: linear-gradient(-180deg, rgba(207, 0, 91, 0.5) 0%, rgba(254, 0, 114, 0.5) 100%); 
+  }
+  .as-footer .as-btn:hover {background-image: linear-gradient(-180deg, rgba(254, 0, 114, 0.5) 0%, rgba(207, 0, 91, 0.5) 100%); color: #fff;}
+
+  @media (max-width:768px){
+    #shopify-section-{{section.id}} .card-wrapper{ padding:0 30px; }
+    #shopify-section-{{section.id}} .card-wrapper .card-content {text-align: center; padding: 0 20px;}
+    #shopify-section-{{section.id}} .section_title {padding-top: 35px;padding-bottom: 120px;  min-height: 180px;}
+/*    #shopify-section-{{section.id}} h2 strong { display:block; }*/
+  }
+  @media (min-width:768px){
+    #shopify-section-{{section.id}} .card-wrapper{ flex-direction: row; }
+    #shopify-section-{{section.id}} .btn-cards{ padding:30px 70px;border-radius: 50px;
+      font-size: 38px; }
+  }
+  @media (min-width:1000px){
+    #shopify-section-{{section.id}} .as-footer .as-btn {font-size: 28px;padding: 16px 40px;}
+  }
+  #shopify-section-{{section.id}} .section-image { width:100%; }
+  #shopify-section-{{section.id}} .section-footer { display:flex;padding: 40px 0; justify-content: center; }
+  @media (max-width:768px){
+    #shopify-section-{{section.id}} .section-footer { padding: 20px 0; }
+  }
+  #shopify-section-{{section.id}} .btn-cards {font-family: Lato, sans-serif;
+    font-weight: 900;
+    display: inline-block;
+    padding:18px 40px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 20px;
+    text-transform: uppercase;
+    transition: all .3s ease;
+    background-color: #cf0059;
+    color: #fff;}
+  .btn-cards:hover { color: #fff;}
+
+  #shopify-section-{{section.id}} .section-contents{ margin-top:-80px; }
+
+  {% if section.settings.back_color %}
+    #shopify-section-{{section.id}} .intro-outer { background-color:{{ section.settings.back_color}} }
+  {% endif %}
+  
+  {% if section.settings.back_desk %}
+    @media (min-width: 769px) {
+      #shopify-section-{{section.id}} .intro-outer {
+        background-image: url('{{ section.settings.back_desk | img_url: "master" }}');
+      }
+    }
+  {% endif %}
+  {% if section.settings.back_mob %}
+    @media (max-width: 768px) { 
+      #shopify-section-{{section.id}} .intro-outer {
+        background-image: url('{{ section.settings.back_mob | img_url: "master" }}');
+      }
+    }
+  {% endif %}
+  {% if section.settings.page_style == 'legends' %}
+    .intro-inner {max-width: 940px;}
+ 
+    {% if section.settings.back_desk or section.settings.back_mob %}
+      .intro-outer{background-size: cover;background-position: top center; background-attachment:local;  }
+        {% if section.settings.intro_height == true %}
+            #shopify-section-{{section.id}}  .intro-outer { max-height: {{ section.settings.intro_height_custom }}px; }
+        {% else %}
+            #shopify-section-{{section.id}}  .intro-outer { max-height: 600px; }
+        {% endif %}
+        @media (max-width: 768px) {
+          #shopify-section-{{section.id}}  .intro-outer { min-height: 300px;padding-top: 99px; }
+        }
+    {% endif %} 
+  {% else %}
+    {% if section.settings.back_desk or section.settings.back_mob %}
+      .intro-outer{background-size: cover;background-position: top center; background-attachment:local;  min-height: 610px;}
+       @media (min-width: 1800px){
+          .intro-outer{ min-height: 640px;}
+        }
+        @media (max-width: 768px) {
+        .intro-outer { min-height: 300px;padding-top: 99px; }
+        }
+    {% endif %} 
+  {% endif %}
+
+  {% if section.settings.button_custom %}
+    .btn-doomlings { color: {{ section.settings.button_custom_color}}; background-image:none; background-color:{{ section.settings.button_custom_back_color}}  }
+    .btn-doomlings:hover, a.btn-doomlings:hover { background-image:none; background-color:{{ section.settings.button_custom_hover_color}}  }
+    
+  {% endif %} 
+
+
+
+/*Specific to https://doomlings.com/pages/legends-of-enderas*/
+#treasures_2 .intro-img-one {
+  z-index: 1;
+  margin-top: 0;
+  margin-right: -24%;
+  max-width: 300px;
+}
+#treasures_2 .intro-img-two {
+  z-index: 3;
+  margin-top: -50px;
+  max-width: 470px;
+}
+#treasures_2 .intro-img-three {
+  z-index: 2;
+  max-width: 300px;
+}
+@media (min-width: 700px) {
+  #treasures_2 .intro-img-three img {
+    margin-left: -76px;
+  }
+}
+@media (max-width: 900px) {
+  #treasures_2 .intro-inner {
+    position: relative;
+  }
+  #treasures_2 .intro-img-one {
+    position: absolute;
+    max-width: 180px;
+    left: 25px;
+    top: -30px;
+  }
+  #treasures_2 .intro-img-two {
+    position: absolute;
+    max-width: 223px;
+    top: 5px;
+  }
+  #treasures_2 .intro-img-three {
+    position: absolute;
+    max-width: 160px;
+    right: -19px;
+    top: -36px;
+  }
+}
+
+#mythlings_2 .intro-img-one {
+  z-index: 1;
+}
+#mythlings_2 .intro-img-two {
+  z-index: 3;
+}
+#mythlings_2 .intro-img-three {
+  z-index: 2;
+}
+#mythlings_2 .intro-img-two {
+  margin-top: -5%;
+  margin-right: -20%;
+  margin-left: -20%;
+}
+#mythlings_2 .intro-img-three {
+  margin-right: -10%;
+}
+@media (max-width: 768px) {
+ #mythlings_2 .intro-inner {
+    position: relative;
+  }
+  #mythlings_2 .intro-img-one {
+    position: absolute;
+    max-width: 200px;
+    left: -30px;
+    top: -60px;
+  }
+  #mythlings_2 .intro-img-two {
+    position: absolute;
+    max-width: 280px;
+    top: -40px;
+  }
+  #mythlings_2 .intro-img-three {
+    position: absolute;
+    max-width: 220px;
+    right: -40px;
+    top: -60px;
+  }
+}
+
+
+#techlings_2 .intro-img-one {
+  z-index: 1;
+}
+#techlings_2 .intro-img-two {
+  z-index: 3;
+}
+#techlings_2 .intro-img-three {
+  z-index: 2;
+}
+#techlings_2 .intro-img-two {
+  margin-top: -8%;
+  margin-bottom: -8%;
+  margin-left: -5%;
+  margin-right: -8%;
+}
+@media (max-width: 768px) {
+ #techlings_2 .intro-inner {
+    position: relative;
+  }
+  #techlings_2 .intro-img-one {
+    position: absolute;
+    max-width: 190px;
+    left: -85px;
+    top: -34px;
+  }
+  #techlings_2 .intro-img-two {
+    position: absolute;
+    max-width: 240px;
+    top: -28px;
+  }
+  #techlings_2 .intro-img-three {
+    position: absolute;
+    max-width: 180px;
+    right: -40px;
+    top: -40px;
+  }
+}
+
+
+
+#dinolings_2 .intro-img-one {
+  z-index: 1;
+}
+#dinolings_2 .intro-img-two {
+  z-index: 3;
+}
+#dinolings_2 .intro-img-three {
+  z-index: 2;
+}
+#dinolings_2 .intro-img-two {
+  margin-top: -1%;
+  margin-right: -10%;
+  margin-left: -12%;
+}
+@media (max-width: 768px) {
+ #dinolings_2 .intro-inner {
+    position: relative;
+  }
+  #dinolings_2 .intro-img-one {
+    position: absolute;
+    max-width: 235px;
+    left: -70px;
+    top: -50px;
+  }
+ #dinolings_2 .intro-img-two {
+    position: absolute;
+    max-width: 251px;
+    top: -53px;
+  }
+  #dinolings_2 .intro-img-three {
+    position: absolute;
+    max-width: 190px;
+    right: -69px;
+    top: -30px;
+  }
+}
+
+
+
+#fuzelings_2 .intro-img-one {
+  z-index: 1;
+}
+#fuzelings_2 .intro-img-two {
+  z-index: 2;
+}
+#fuzelings_2 .intro-img-three {
+  z-index: 1;
+}
+#fuzelings_2 .intro-img-two {
+  margin-top: 2%;
+  margin-right: -15%;
+  margin-left: -5%;
+}
+@media (max-width: 768px) {
+  #fuzelings_2 .intro-inner {
+    position: relative;
+  }
+  #fuzelings_2 .intro-img-one {
+    position: absolute;
+    max-width: 250px;
+    left: -100px;
+    top: -74px;
+  }
+ #fuzelings_2 .intro-img-two {
+    position: absolute;
+    max-width: 221px;
+    top: -33px;
+  }
+  #fuzelings_2 .intro-img-three {
+    position: absolute;
+    max-width: 256px;
+    right: -96px;
+    top: -60px;
+  }
+}
+{% endstyle %} 
+ 
+
+
+

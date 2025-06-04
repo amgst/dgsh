@@ -1,0 +1,13 @@
+<!-- 2024-09-17T00:30:28.1123253Z -->
+<style> 
+  .shoplift-hide { opacity: 0 !important; }
+ #popclips-player-div{  z-index: 99999 !important;position: relative;}
+  .popclips-cart-button[data-v-9ca2f1c6] {background: red!important;}
+  .icon-logo-class { display:none !important; }
+  @media only screen and (max-width: 768px) {
+/*    #popclips-carousel-div {}*/
+    #popclips-player-div{ display: none !important;}
+  }
+</style>   
+
+<script type="text/javascript">(function(rootPath, template, themeRole, themeId, isThemePreview){ {{ shop.metafields.shoplift.snippet.value }} })("{{routes.root_url}}", { suffix: "{{ template.suffix }}", type: "{{ template.name }}" }, "{{theme.role}}", {{theme.id}}, {% if content_for_header contains "previewBarInjector.init();" %}true{% else %}false{% endif %})</script>

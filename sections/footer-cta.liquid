@@ -1,0 +1,61 @@
+{% schema %}  
+{
+  "name": "Footer CTA",
+  "settings": [
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Get Doomlings" 
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_image",
+      "label": "Footer Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image Alt Text",
+      "default": "Doomlings looking up"  
+    }
+  ],
+  "presets": [
+    {
+      "category": "section",
+      "name": "Footer CTA"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="section-{{ section.id }}">
+    <div class="as-footer">
+        <a class="btn-doomlings" href="{{ section.settings.button_link }}">{{ section.settings.button_text }}</a>
+        {% if section.settings.footer_image %}
+          <img 
+            src="{{ section.settings.footer_image | img_url: 'master' }}" 
+            alt="{{ section.settings.image_alt }}"
+            loading="lazy"
+          >
+        {% endif %}
+    </div>
+</div>
+
+{% style %}
+  .section-{{ section.id }} .as-footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+  }
+  .section-{{ section.id }} .btn-doomlings { 
+    margin-bottom: 45px; 
+  }
+{% endstyle %}

@@ -1,0 +1,95 @@
+{% schema %}
+  {
+    "name": "Hero Section",
+    "settings": [
+        {
+            "type": "image_picker", 
+            "id": "desk-hero",
+            "label": "Desktop Background"
+        },
+        {
+            "type": "image_picker",
+            "id": "mob-hero",
+            "label": "Mobile Background"
+        },  
+        {
+            "type": "text",
+            "id": "desk-hero-alt",
+            "label": "Accessibility Alt Text",
+            "default": "Describe the background image"
+        },            
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Slide Link"
+        }
+    ],
+    "presets": [
+      {
+        "category": "section",
+        "name": "Hero Section"
+      }
+    ]
+  }
+{% endschema %}
+<div id="do-hero">
+    {% if section.settings.button_link != blank %}
+    <a class="da-hero-test" href="{{ section.settings.button_link }}">
+    {% else %}
+    <div class="da-hero-test">
+    {% endif %}
+        <picture>
+            {% if section.settings.mob-hero %}
+            <source media="(max-width: 768px)" srcset="{{ section.settings.mob-hero | img_url: 'master' }}">
+            {% endif %}
+            {% if section.settings.desk-hero %}
+            <source media="(min-width: 769px)" srcset="{{ section.settings.desk-hero | img_url: 'master' }}">
+            <img src="{{ section.settings.desk-hero | img_url: 'master' }}" alt="{{ section.settings.desk-hero-alt }}" style="{% unless section.settings.desk-hero %}display:none;{% endunless %}">
+            {% else %}
+            <img src="#" alt="Placeholder image" style="display:none;">
+            {% endif %}
+        </picture>
+    {% if section.settings.button_link != blank %}
+    </a>
+    {% else %}
+    </div>
+    {% endif %}            
+</div>
+
+<style>
+.breadcrumbs-container{ display:none; }
+#fw-hero{display: none !important;}
+#shopify-section-{{section.id}} { margin-top:0 !important; }
+#do-hero{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+#do-hero > div.da-hero-test,
+#do-hero > div.da-hero-test > picture > img{
+    width: 100%;
+}
+
+#shopify-section-banner{
+  margin-top: 0;
+}
+
+@media screen and (max-width: 350px){
+    #do-hero > div.da-hero-links > div> a{
+        font-size: 3.5vw;
+    }
+} 
+
+
+
+
+{% if  template contains 'discovery-logs' %}
+    .breadcrumbs-container { display:none; }
+{% endif %}
+
+</style>

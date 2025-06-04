@@ -1,0 +1,46 @@
+{
+  "sections": {
+    "custom_liquid_QrfGfN": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<br><br>"
+      }
+    },
+    "plush_hero_6PY3rm": {
+      "type": "plush-hero",
+      "disabled": true,
+      "settings": {
+        "desk-hero": "shopify:\/\/shop_images\/GrippleSale_Banner_Desktop-2_06ad39e0-ee4b-46fd-a225-e068fb3176c4.jpg",
+        "mob-hero": "shopify:\/\/shop_images\/GrippleSale_Banner_Mobile-2_a1f18ae9-be55-41fb-a2c8-ee3a0eb31218.jpg",
+        "desk-hero-alt": "THIS WEEKEND ONLY We’re having a FALL SALE! SAVE 17% off all of your favorite items. PLUS the FIRST 777 ORDERS will receive a FREE Special Edition Gripplethorps holofoil!",
+        "button_link": ""
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "custom_css": [],
+      "settings": {
+        "enable_feature_header": false,
+        "grid": 4,
+        "grid_mobile": "2",
+        "pagination_limit": 48,
+        "show_total": true,
+        "show_vendor": false,
+        "show_filters": false,
+        "show_filter_prod_counts": true,
+        "show_sort_by": true,
+        "show_featured": false,
+        "show_product_icons": true,
+        "flex_direction": "row",
+        "icon_size_mobile": 40,
+        "icon_size": 70
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_QrfGfN",
+    "plush_hero_6PY3rm",
+    "main"
+  ]
+}
